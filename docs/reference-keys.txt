@@ -1,0 +1,7 @@
+fig:unnamed-chunk-1
+wocheplan-01
+sozialwissenschaftliche-datenanalyse
+ziel-des-kurses
+r-als-programm-rstudio
+lernziele-der-ersten-woche
+aufgaben-der-ersten-woche
