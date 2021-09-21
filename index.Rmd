@@ -7,7 +7,7 @@ output: bookdown::gitbook
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
-link-citations: true
+link-citations: TRUE
 github-repo: rstudio/bookdown-demo
 description: "Dieses Dokument ist ein Bookdown für das Hauptseminar 'Sozialwissenschaftliche Datenanalyse mit R' im HS21 und dient als Ergebnisicherung im Seminarverlauf."
 ---
