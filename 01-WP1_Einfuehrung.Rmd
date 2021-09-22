@@ -69,7 +69,8 @@ Für jede Woche werden Lernziele und Arbeitsaufträge definiert. Für die erste 
 
 4) Verwenden Sie ein wenig Zeit darauf, online nach R Tutorials, Foren, etc. zu suchen. Halten Sie die URLs von Seiten und Ressourcen fest, die Ihnen hilfreich und/oder wichtig vorkommen (aber unter Umständen noch etwas schwer zu durchschauen) !
 
-Erstellen Sie aus Ihren Notizen ein PDF Dokument, beschriften Sie dieses mit Fallloesung01_NameVorname.pdf und geben das Dokument via OLAT vor der nächsten Einheit ab. 
+Erstellen Sie aus Ihren Notizen ein PDF Dokument (Sie müssen in der ersten Woche noch keinen R Code abgeben), beschriften Sie dieses mit FL01_NameVorname.pdf und geben das Dokument via OLAT vor der nächsten Einheit ab. 
+
 
 
 [^1]: Die zwei miteinander verzahnte Lernziele führen auch dazu, dass das Seminar allerdings nicht als eigentliche Übung zur Vorlesung funktioniert (und das nicht alle Inhalte der Vorlesung im Seminar behandelt werden können).
