@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="wochenplan-02.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -166,6 +166,12 @@ div.csl-indent {
 <li class="chapter" data-level="1.3" data-path="wocheplan-01.html"><a href="wocheplan-01.html#r-als-programm-rstudio"><i class="fa fa-check"></i><b>1.3</b> R als Programm &amp; RStudio</a></li>
 <li class="chapter" data-level="1.4" data-path="wocheplan-01.html"><a href="wocheplan-01.html#lernziele-der-ersten-woche"><i class="fa fa-check"></i><b>1.4</b> Lernziele der ersten Woche</a></li>
 <li class="chapter" data-level="1.5" data-path="wocheplan-01.html"><a href="wocheplan-01.html#aufgaben-der-ersten-woche"><i class="fa fa-check"></i><b>1.5</b> Aufgaben der ersten Woche</a></li>
+<li class="chapter" data-level="1.6" data-path="wocheplan-01.html"><a href="wocheplan-01.html#ergänzung-standardabweichung-zwischen-grundgesamtheit-und-stichprobe"><i class="fa fa-check"></i><b>1.6</b> Ergänzung: Standardabweichung zwischen Grundgesamtheit und Stichprobe</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="wochenplan-02.html"><a href="wochenplan-02.html"><i class="fa fa-check"></i><b>2</b> Wochenplan 02</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="wochenplan-02.html"><a href="wochenplan-02.html#lernziele"><i class="fa fa-check"></i><b>2.1</b> Lernziele</a></li>
+<li class="chapter" data-level="2.2" data-path="wochenplan-02.html"><a href="wochenplan-02.html#aufgaben"><i class="fa fa-check"></i><b>2.2</b> Aufgaben</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -245,12 +251,82 @@ und R wird automatisch gestartet wird, wenn Sie RStudio starten <span class="cit
 <div id="aufgaben-der-ersten-woche" class="section level2" number="1.5">
 <h2><span class="header-section-number">1.5</span> Aufgaben der ersten Woche</h2>
 <ol style="list-style-type: decimal">
-<li><p>Installieren Sie die aktuellen Versionen von R und RStudio auf Ihrem Endgerät! Sie sollten sich Notizen machen, wenn es Probleme gibt – und für das nächste Mal gleich festhalten, wie Sie diese gelöst haben. Da die Details der Installation vom Betriebssystem und den Spezifikationen des Endgeräts abhängen, ist es normal, dass dieser Prozess manchmal erst auf den zweiten Versuch funktioniert.</p></li>
-<li><p>Installieren Sie das Paket “swirl” und laden Sie es. “swirl” ist eine in R implementierte interaktive Einführung in die Grundlagen von R!</p></li>
-<li><p>Rufen Sie die Funktion <code>swirl()</code> auf und spielen Sie ein wenig damit. Rufen Sie sich in Erinnerung, was Sie aus dem letzten Semester noch über die Arbeit mit R wissen! Notieren Sie sich, was Ihnen Sie noch kennen, was Ihnen neu vorkommt, und so weiter.</p></li>
-<li><p>Verwenden Sie ein wenig Zeit darauf, online nach R Tutorials, Foren, etc. zu suchen. Halten Sie die URLs von Seiten und Ressourcen fest, die Ihnen hilfreich und/oder wichtig vorkommen (aber unter Umständen noch etwas schwer zu durchschauen) !</p></li>
+<li>Installieren Sie die aktuellen Versionen von R und RStudio auf Ihrem Endgerät! Sie sollten sich Notizen machen, wenn es Probleme gibt – und für das nächste Mal gleich festhalten, wie Sie diese gelöst haben. Da die Details der Installation vom Betriebssystem und den Spezifikationen des Endgeräts abhängen, ist es normal, dass dieser Prozess manchmal erst auf den zweiten Versuch funktioniert.</li>
 </ol>
-<p>Erstellen Sie aus Ihren Notizen ein PDF Dokument (Sie müssen in der ersten Woche noch keinen R Code abgeben), beschriften Sie dieses mit FL01_NameVorname.pdf und geben das Dokument via OLAT vor der nächsten Einheit ab.</p>
+<p>Mittels der Funktion <code>version</code> (ACHTUNG: ohne Klammern) lässt sich die Version von R abrufen. Ob dies der aktuellsten Version von R entspricht lässt sich auf der <a href="https://www.r-project.org/">R Projektseite</a> überprüfen.</p>
+<p>RStudio lässt sich über die Menüsteuerung updaten: “Help” &gt; “Check for Updates.” <em>Wichtig</em>: RStudio als grafische Benutzeroberfläche ist nicht dasselbe wie R. Ein Update von RStudio ist also nicht nicht gleich ein Update von R, sondern letzteres muss manuell erfolgen.</p>
+<p>Das Paket “installr” und dessen Funktion <code>updateR()</code> ermöglicht auf Windows dass sowohl R als auch die installierten Pakete geupdated werden. Ebenfalls bietet RStudio über die Menüsteuerung eine Möglichkeit, die Pakete zu installieren (“Tools”&gt;“Check for Packages Updates”).</p>
+<p>Zwei Unklarheiten, die aufgetaucht sind:</p>
+<p>“Es sind <em>mehrere Versionen von R</em> auf meinen Computer installiert… Ist das ein Problem?” Nein, denn RStudio arbeitet automatisch mit der neusten Version. Aber es können auch ältere Versionen verwendet beziehungsweise zwischen den Versionen gewählt werden (siehe “Tools” &gt; “Global Options” &gt; “General” &gt; “R Version”).</p>
+<p>“Was passiert mit meinen <em>installierten Paketen</em>?” Die installierten Pakete bleiben grundsätzlich erhalten. Mittels der Funktion <code>.libPaths()</code> sehen Sie auch, wo diese installiert sind.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Weiter ist der Umgang mit Paketen kein wirkliches Problem. Da Sie jeweils in Ihrem Code auch spezifizieren, welche Pakete Sie installieren und laden, würde Ihnen ein Fehler sofort auffallen. Dies kann zum Beispiel wiefolgt gemacht werden als Kode in einem Markdown:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="wocheplan-01.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;swirl&quot;)</span></span>
+<span id="cb2-2"><a href="wocheplan-01.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(swirl)</span>
+<span id="cb2-3"><a href="wocheplan-01.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">swirl</span>()</span>
+<span id="cb2-4"><a href="wocheplan-01.html#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="wocheplan-01.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;soc.ca&quot;)</span></span>
+<span id="cb2-6"><a href="wocheplan-01.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(soc.ca)</span>
+<span id="cb2-7"><a href="wocheplan-01.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">soc.mca</span>(Datenset)</span></code></pre></div>
+<p>Der <code>install.packages()</code>-Befehl ergibt eine Fehlermeldung beim sogenannten ‘knitten,’ wenn dieser nicht als Kommentar formatiert ist. Der Fehler verweist darauf, dass R kein Repository via Markdown automatisch aufrufen kann.</p>
+<p>Zwei Möglichkeiten von Josias Bruderer, dies trotzdem zu umgehen (und den <code>install.packages()</code>-Befehl nicht einfach als Kommentar zu setzen):</p>
+<p>Eine Möglichkeit den Fehlerbefehl auszuschalten ist es, ein Repository anzugeben:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="wocheplan-01.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;swirl&quot;</span>, <span class="at">repos =</span> <span class="st">&quot;https://cran.rstudio.com/&quot;</span>)</span></code></pre></div>
+<p>Eine andere und erweiterte Möglichkeit ist einen Befehl zu ergänzen, der jeweils nur dann ein Paket installiert, wenn dieses benötigt und noch nicht installiert ist:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="wocheplan-01.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;swirl&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;swirl&quot;</span>)</span></code></pre></div>
+<p> </p>
+<ol start="2" style="list-style-type: decimal">
+<li>Installieren Sie das Paket “swirl” und laden Sie es. “swirl” ist eine in R implementierte interaktive Einführung in die Grundlagen von R!</li>
+</ol>
+<p>Hier ein Tipp von Julien Lattmann: Sollte dies nach dem Update von R und RStudio womöglich nicht funktioniert haben, dann lohnt es sich nochmals alles zu schliessen, ein paar Moment zu warten und dann nochmals neu zu probieren.</p>
+<p> </p>
+<ol start="3" style="list-style-type: decimal">
+<li>Rufen Sie die Funktion <code>swirl()</code> auf und spielen Sie ein wenig damit. Rufen Sie sich in Erinnerung, was Sie aus dem letzten Semester noch über die Arbeit mit R wissen! Notieren Sie sich, was Ihnen Sie noch kennen, was Ihnen neu vorkommt, und so weiter.</li>
+</ol>
+<p>Grundsätzlich ging es in dieser Teilaufgabe darum, einige Aspekte von R (erneut) kennenzulernen. Zwei zusammenhängende Dinge sollen hervorgehoben werden: Erwähnt wurde, dass das Programmieren verlangt, sehr genau zu schreiben und kleinste Ungenauigkeiten zu Fehlern führen (etwa ein fehlendes <code>"</code>). Hier bietet RStudio eine Hilfe an, in dem der Kode farbig gekennzeichnet wird. Diese Hilfe war jedoch um Umgang mit “swirl” noch nicht ersichtlich, da im Paket direkt in der R Konsole gearbeitet wird. Dies führt zum zweiten Aspekt: Dieser Fokus auf die Konsole beim Paket “swirl()” ist eher die Ausnahm - und der Hauptteil des Kondierens erfolgt eigentlich immer im einem Skript beziehungsweise in einem Markdown-Dokument (siehe WP02).</p>
+<p> </p>
+<ol start="4" style="list-style-type: decimal">
+<li>Verwenden Sie ein wenig Zeit darauf, online nach R Tutorials, Foren, etc. zu suchen. Halten Sie die URLs von Seiten und Ressourcen fest, die Ihnen hilfreich und/oder wichtig vorkommen (aber unter Umständen noch etwas schwer zu durchschauen) !</li>
+</ol>
+<p>Einige Hilfseiten aus Ihren Falllösungen:</p>
+<p><a href="http://r-statistics.co/">r-statistics.co</a>: Einführung zu spezifischen Verfahren</p>
+<p><a href="https://www.tutorialspoint.com/r/index.htm">R Tutorial</a>: viele kurze einführende Beiträge zu Aspekten von R.</p>
+<p><a href="https://www.beratung-statistik.de/statistik-beratung-infos/r-tutorial/">R Statistik Tutorial</a>: Deutsche Beiträg zu einzelnen Verfahren.</p>
+<p><a href="https://community.rstudio.com/">RStudio Community</a>: Forum für RStudio</p>
+<p><a href="http://methods-berlin.com/de/r-lernplattform/">R lernen</a>: einige einführende Beiträge auf Deutsch</p>
+<p><a href="http://www.r-forum.de/">R Forum</a>: deutschsprachiges Forum zu R</p>
+<p><a href="https://methodenlehre.github.io/einfuehrung-in-R/index.html">Einführung in R</a>: ein weiteres, deutsches Bookdown als Einführung in R</p>
+<p><a href="https://www.r-graph-gallery.com/">The R Graph Gallery</a>: für fortgeschrittene Grafiken, insbesondere mit “ggplot2”</p>
+<p><a href="https://stackoverflow.com/questions/tagged/r">stack overflow</a>: jede Menge Hilfe für alles um R (und Programmieren allgemein)</p>
+<p><a href="https://github.com/trending/r/">github</a>: eine andere Plattform – aber wiederum: jede Menge Hilfe für alles um R (und Programmieren allgemein)</p>
+<p><a href="https://www.datacamp.com/">datacamp</a>: kostenpflichte Tutorials für R</p>
+</div>
+<div id="ergänzung-standardabweichung-zwischen-grundgesamtheit-und-stichprobe" class="section level2" number="1.6">
+<h2><span class="header-section-number">1.6</span> Ergänzung: Standardabweichung zwischen Grundgesamtheit und Stichprobe</h2>
+<p>In der Einheit haben wir gesehen, dass sich eine von R berechnet Standardabweichung leicht von einer selbst berechneten Variante unterscheidet:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="wocheplan-01.html#cb5-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>)</span>
+<span id="cb5-2"><a href="wocheplan-01.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(y)</span></code></pre></div>
+<pre><code>## [1] 2.880972</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="wocheplan-01.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(</span>
+<span id="cb7-2"><a href="wocheplan-01.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>((y <span class="sc">-</span> <span class="fu">mean</span>(y))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb7-3"><a href="wocheplan-01.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">/</span> (<span class="fu">length</span>(y))</span>
+<span id="cb7-4"><a href="wocheplan-01.html#cb7-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## [1] 2.629956</code></pre>
+<p>In der Hilfeseite der Funktion finden wir den Hinweis darauf, dass mit <code>sd()</code> ähnlich wie mit <code>var()</code> der sogennante <em>unbiased estimator</em> berechnet wird, der von n - 1 ausgeht.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="wocheplan-01.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(sd)</span></code></pre></div>
+<p>“<em>Like var this uses denominator n - 1. […] The denominator n - 1 is used which gives an unbiased estimator of the (co)variance for i.i.d. observations.</em>” Die Standardabweichung wird berechnet, als würde man den Schätzwert für einer Grundgesamtheit aus einer Stichprobe berechnet (<em>i.i.d</em> = <em>Independent and identically distributed</em> random <em>variables</em>).</p>
+<p>Dies entspricht einer sogenannten Punkteschätzung <span class="citation">(<a href="#ref-DiazBone2019" role="doc-biblioref">Diaz-Bone 2019, 155f</a>)</span>:</p>
+<blockquote>
+<p>Bei der Punktschätzung errechnet man aus der Stichprobe einen Stichprobenkennwert und schätzt damit die entsprechende Maßzahl in der Grundgesamtheit. Der Stichprobenkennwert, mit dem die Schätzung erfolgt, heißt auch Schätzer. […] Die Standardabweichung eines metrischen Merkmals in der Stichprobe s ist dagegen keine erwartungstreue Schätzung für die Standardabweichung des metrischen Merkmals in der Grundgesamtheit. Aus einer Stichprobe kannman aber mit folgender Formel erwartungstreu schätzen:</p>
+</blockquote>
+<p><span class="math inline">\({\sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2}}\)</span></p>
+<p>Dabei wird n - 1 verwendet, da bei kleineren Stichprobenumfängen die Standardabweichung überschätzt wird. Bei grösseren Stichprobenumfängen wird dies dann immer weniger wichtig:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="wocheplan-01.html#cb10-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>) <span class="co">#eine standardnormalverteilte Varialbe mit n = 50</span></span>
+<span id="cb10-2"><a href="wocheplan-01.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(z)</span></code></pre></div>
+<pre><code>## [1] 1.002369</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="wocheplan-01.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(</span>
+<span id="cb12-2"><a href="wocheplan-01.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>((z <span class="sc">-</span> <span class="fu">mean</span>(z))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb12-3"><a href="wocheplan-01.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">/</span> (<span class="fu">length</span>(z))</span>
+<span id="cb12-4"><a href="wocheplan-01.html#cb12-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## [1] 1.001868</code></pre>
 
 </div>
 </div>
@@ -258,6 +334,9 @@ und R wird automatisch gestartet wird, wenn Sie RStudio starten <span class="cit
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-R-ggplot2" class="csl-entry">
 Chang, Winston, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, and Hiroaki Yutani. 2020. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. RStudio. <a href="http://ggplot2.tidyverse.org">http://ggplot2.tidyverse.org</a>.
+</div>
+<div id="ref-DiazBone2019" class="csl-entry">
+Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.
 </div>
 <div id="ref-Manderscheid2017" class="csl-entry">
 Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit r. Eine Einführung</em>. Wiesbaden: Springer VS.
@@ -273,6 +352,7 @@ Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Ti
 <hr />
 <ol start="1">
 <li id="fn1"><p>Die zwei miteinander verzahnte Lernziele führen auch dazu, dass das Seminar allerdings nicht als eigentliche Übung zur Vorlesung funktioniert (und das nicht alle Inhalte der Vorlesung im Seminar behandelt werden können).<a href="wocheplan-01.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Über die Funktionen können Sie ebenfalls prüfen, ob womöglich Ihre Pakete nicht auf Ihrem Rechner, sondern auf einem Server installiert werden (was oftmals bei nicht-persönlichen Firmen-Rechnern der Fall sein kann).<a href="wocheplan-01.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -281,7 +361,7 @@ Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Ti
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="wochenplan-02.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -335,6 +415,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

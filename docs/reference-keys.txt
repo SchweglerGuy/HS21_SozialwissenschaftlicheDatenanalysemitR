@@ -5,3 +5,7 @@ ziel-des-kurses
 r-als-programm-rstudio
 lernziele-der-ersten-woche
 aufgaben-der-ersten-woche
+ergänzung-standardabweichung-zwischen-grundgesamtheit-und-stichprobe
+wochenplan-02
+lernziele
+aufgaben

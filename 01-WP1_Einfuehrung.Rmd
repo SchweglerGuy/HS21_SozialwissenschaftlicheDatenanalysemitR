@@ -63,13 +63,119 @@ Für jede Woche werden Lernziele und Arbeitsaufträge definiert. Für die erste 
 
 1) Installieren Sie die aktuellen Versionen von R und RStudio auf Ihrem Endgerät! Sie sollten sich Notizen machen, wenn es Probleme gibt -- und für das nächste Mal gleich festhalten, wie Sie diese gelöst haben. Da die Details der Installation vom Betriebssystem und den Spezifikationen des Endgeräts abhängen, ist es normal, dass dieser Prozess manchmal erst auf den zweiten Versuch funktioniert. 
 
+Mittels der Funktion `version` (ACHTUNG: ohne Klammern) lässt sich die Version von R abrufen. Ob dies der aktuellsten Version von R entspricht lässt sich auf der [R Projektseite](https://www.r-project.org/) überprüfen.
+
+RStudio lässt sich über die Menüsteuerung updaten: "Help" > "Check for Updates". *Wichtig*: RStudio als grafische Benutzeroberfläche ist nicht dasselbe wie R. Ein Update von RStudio ist also nicht nicht gleich ein Update von R, sondern letzteres muss manuell erfolgen.
+
+Das Paket "installr" und dessen Funktion `updateR()` ermöglicht auf Windows dass sowohl R als auch die installierten Pakete geupdated werden. Ebenfalls bietet RStudio über die Menüsteuerung eine Möglichkeit, die Pakete zu installieren ("Tools">"Check for Packages Updates").
+
+
+Zwei Unklarheiten, die aufgetaucht sind:
+
+"Es sind *mehrere Versionen von R* auf meinen Computer installiert... Ist das ein Problem?" Nein, denn RStudio arbeitet automatisch mit der neusten Version. Aber es können auch ältere Versionen verwendet beziehungsweise zwischen den Versionen gewählt werden (siehe "Tools" > "Global Options" > "General" > "R Version").
+
+"Was passiert mit meinen *installierten Paketen*?" Die installierten Pakete bleiben grundsätzlich erhalten. Mittels der Funktion `.libPaths()` sehen Sie auch, wo diese installiert sind.^[Über die Funktionen können Sie ebenfalls prüfen, ob womöglich Ihre Pakete nicht auf Ihrem Rechner, sondern auf einem Server installiert werden (was oftmals bei nicht-persönlichen Firmen-Rechnern der Fall sein kann).] Weiter ist der Umgang mit Paketen kein wirkliches Problem. Da Sie jeweils in Ihrem Code auch spezifizieren, welche Pakete Sie installieren und laden, würde Ihnen ein Fehler sofort auffallen. Dies kann zum Beispiel wiefolgt gemacht werden als Kode in einem Markdown:
+
+```{r eval=FALSE}
+#install.packages("swirl")
+library(swirl)
+swirl()
+
+#install.packages("soc.ca")
+library(soc.ca)
+soc.mca(Datenset)
+```
+
+Der `install.packages()`-Befehl ergibt eine Fehlermeldung beim sogenannten 'knitten', wenn dieser nicht als Kommentar formatiert ist. Der Fehler verweist darauf, dass R kein Repository via Markdown automatisch aufrufen kann. 
+
+Zwei Möglichkeiten von Josias Bruderer, dies trotzdem zu umgehen (und den `install.packages()`-Befehl nicht einfach als Kommentar zu setzen):
+
+Eine Möglichkeit den Fehlerbefehl auszuschalten ist es, ein Repository anzugeben:
+```{r eval=FALSE}
+install.packages("swirl", repos = "https://cran.rstudio.com/")
+```
+
+Eine andere und erweiterte Möglichkeit ist einen Befehl zu ergänzen, der jeweils nur dann ein Paket installiert, wenn dieses benötigt und noch nicht installiert ist:
+```{r eval=FALSE}
+if (!require("swirl")) install.packages("swirl")
+```
+
+&nbsp;
+
 2) Installieren Sie das Paket "swirl" und laden Sie es. "swirl" ist eine in R implementierte interaktive Einführung in die Grundlagen von R!
+
+Hier ein Tipp von Julien Lattmann: Sollte dies nach dem Update von R und RStudio womöglich nicht funktioniert haben, dann lohnt es sich nochmals alles zu schliessen, ein paar Moment zu warten und dann nochmals neu zu probieren.
+
+&nbsp;
 
 3) Rufen Sie die Funktion `swirl()` auf und spielen Sie ein wenig damit. Rufen Sie sich in Erinnerung, was Sie aus dem letzten Semester noch über die Arbeit mit R wissen! Notieren Sie sich, was Ihnen Sie noch kennen, was Ihnen neu vorkommt, und so weiter. 
 
+Grundsätzlich ging es in dieser Teilaufgabe darum, einige Aspekte von R (erneut) kennenzulernen. Zwei zusammenhängende Dinge sollen hervorgehoben werden: Erwähnt wurde, dass das Programmieren verlangt, sehr genau zu schreiben und kleinste Ungenauigkeiten zu Fehlern führen (etwa ein fehlendes `"`). Hier bietet RStudio eine Hilfe an, in dem der Kode farbig gekennzeichnet wird. Diese Hilfe war jedoch um Umgang mit "swirl" noch nicht ersichtlich, da im Paket direkt in der R Konsole gearbeitet wird. Dies führt zum zweiten Aspekt: Dieser Fokus auf die Konsole beim Paket "swirl()" ist eher die  Ausnahm - und der Hauptteil des Kondierens erfolgt eigentlich immer im einem Skript beziehungsweise in einem Markdown-Dokument (siehe WP02).
+
+&nbsp;
+
 4) Verwenden Sie ein wenig Zeit darauf, online nach R Tutorials, Foren, etc. zu suchen. Halten Sie die URLs von Seiten und Ressourcen fest, die Ihnen hilfreich und/oder wichtig vorkommen (aber unter Umständen noch etwas schwer zu durchschauen) !
 
-Erstellen Sie aus Ihren Notizen ein PDF Dokument (Sie müssen in der ersten Woche noch keinen R Code abgeben), beschriften Sie dieses mit FL01_NameVorname.pdf und geben das Dokument via OLAT vor der nächsten Einheit ab. 
+Einige Hilfseiten aus Ihren Falllösungen:
+
+[r-statistics.co](http://r-statistics.co/): Einführung zu spezifischen Verfahren
+
+[R Tutorial](https://www.tutorialspoint.com/r/index.htm): viele kurze einführende Beiträge zu Aspekten von R.
+
+[R Statistik Tutorial](https://www.beratung-statistik.de/statistik-beratung-infos/r-tutorial/): Deutsche Beiträg zu einzelnen Verfahren.
+
+[RStudio Community](https://community.rstudio.com/): Forum für RStudio
+
+[R lernen](http://methods-berlin.com/de/r-lernplattform/): einige einführende Beiträge auf Deutsch
+
+[R Forum](http://www.r-forum.de/): deutschsprachiges Forum zu R
+
+[Einführung in R](https://methodenlehre.github.io/einfuehrung-in-R/index.html): ein weiteres, deutsches Bookdown als Einführung in R
+
+[The R Graph Gallery](https://www.r-graph-gallery.com/): für fortgeschrittene Grafiken, insbesondere mit "ggplot2"
+
+[stack overflow](https://stackoverflow.com/questions/tagged/r): jede Menge Hilfe für alles um R (und Programmieren allgemein)
+
+[github](https://github.com/trending/r/): eine andere Plattform – aber wiederum: jede Menge Hilfe für alles um R (und Programmieren allgemein)
+
+[datacamp](https://www.datacamp.com/): kostenpflichte Tutorials für R
+
+
+## Ergänzung: Standardabweichung zwischen Grundgesamtheit und Stichprobe
+
+In der Einheit haben wir gesehen, dass sich eine von R berechnet Standardabweichung leicht von einer selbst berechneten Variante unterscheidet:
+```{r}
+y <- c(2, 3, 4, 7, 8, 9)
+sd(y)
+sqrt(
+  sum((y - mean(y))^2)
+  / (length(y))
+)
+```
+
+In der Hilfeseite der Funktion finden wir den Hinweis darauf, dass mit `sd()` ähnlich wie mit `var()` der sogennante *unbiased estimator* berechnet wird, der von n - 1 ausgeht.
+```{r eval=FALSE}
+help(sd)
+```
+
+"*Like var this uses denominator n - 1. [...] The denominator n - 1 is used which gives an unbiased estimator of the (co)variance for i.i.d. observations.*" Die Standardabweichung wird berechnet, als würde man den Schätzwert für einer Grundgesamtheit aus einer Stichprobe berechnet (*i.i.d* = *Independent and identically distributed* random *variables*).
+
+Dies entspricht einer sogenannten Punkteschätzung [@DiazBone2019, 155f]:
+
+> Bei der Punktschätzung errechnet man aus der Stichprobe einen Stichprobenkennwert und schätzt damit die entsprechende Maßzahl in der Grundgesamtheit. Der Stichprobenkennwert, mit dem die Schätzung erfolgt, heißt auch Schätzer. [...] Die Standardabweichung eines metrischen Merkmals in der Stichprobe s ist dagegen keine erwartungstreue Schätzung für die Standardabweichung des metrischen Merkmals in der Grundgesamtheit. Aus einer Stichprobe kannman aber mit folgender Formel erwartungstreu schätzen:
+
+${\sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2}}$
+
+Dabei wird n - 1 verwendet, da bei kleineren Stichprobenumfängen die Standardabweichung überschätzt wird. Bei grösseren Stichprobenumfängen wird dies dann immer weniger wichtig:
+```{r}
+z <- rnorm(1000) #eine standardnormalverteilte Varialbe mit n = 50
+sd(z)
+sqrt(
+  sum((z - mean(z))^2)
+  / (length(z))
+)
+```
+
 
 
 
