@@ -9,3 +9,6 @@ ergänzung-standardabweichung-zwischen-grundgesamtheit-und-stichprobe
 wochenplan-02
 lernziele
 aufgaben
+wochenplan-03
+lernziele-1
+aufgaben-1

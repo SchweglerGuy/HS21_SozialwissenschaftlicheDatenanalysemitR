@@ -1,0 +1,44 @@
+# Wochenplan 03
+
+...Vorbereitung von der 03. auf die 04.Einheit.
+
+## Lernziele
+
+In der dritten Seminarwoche vertiefen wir Elemente der Programmiersprache R, die Sie bereits kennengelernt haben, und betten sie in neue Zusammenhänge ein. Vertieft wird nochmals der Umgang mit verschiedenen Datenarten und Objekttypen: Zahlen, Text und logische Werte sowie einzelne Werte, Vektoren und Matrizen. Neu wollen wir einige Möglichkeiten kennenlernen, über bestimmte Funktionen systematisch Vektoren zu definieren. Diese Grundlagen wollen wir dann nutzen, um erste statistische Inhalte bzw. Methoden einführen, nämlich die bivariaten Zusammenhänge von metrischen Variablen (Korrelation). 
+
+Zusammenfassend lassen sich damit folgende Seminarziele festhalten:
+
+* Sie können die drei bisher kennengelernten Objekttypen (einzelne Zahl, Vektor, und Matrix) kombinieren.
+* Sie kennen die drei verschiedenen Datenarten von R:
+  - Sie verstehen die Rolle von numerischen Daten,
+  - Sie verstehen die Rolle von textförmigen Daten
+  - Sie verstehen die Rolle von logischen Daten.
+* Sie können Vektoren mittels der Funktionen ...
+  - ... `seq()`
+  - ... sowie `rep()` definieren
+  - ... und diese auf alle drei Arten von Daten anwenden.
+* Sie verstehen, was eine Korrelation von zwei Variablen bedeutet und können bivariate Zusammenhänge in R berechnen und interpretieren.  
+
+
+## Aufgaben
+
+1. Erstellen Sie vier verschiedene Vektoren mit je einer Länge von vier und verbinden Sie diese zu einer 4x4-Matrix. Die Funktion `apply()` erlaubt Ihnen, eine Funktionen wie z.B. `mean()` oder `var()` auf diese Matrix anzuwenden. Nur wie genau? Sehen Sie sich die Hilfe zu `apply()` an, probieren Sie die Funktion aus und versuchen Sie zu verstehen, wie sie genau funktioniert. Erläutern Sie `apply()` dann in eigenen Worten und mit Hilfe der von Ihnen erzeugten 4x4-Matrix!
+
+2. Erstellen Sie je einen Vektor mit numerischen Daten, textförmigen Daten und logischen Daten. Die Funktionen `as.numeric()`, `as.character()` und `as.logical()` lassen Sie eine Datenarten in eine andere "zwingen" bzw. als eine andere Datenart interpretieren. Wann funktioniert dies? Und wo sind die Grenzen dieses "Zwingens"?
+
+3. Definieren Sie folgende Vektoren mittels der Funktionen `seq()` und `rep()`:
++ Vektor 3a: 1 2 3 4 5 6 7 8 9 10
++ Vektor 3b: 1 1 1 2 2 2 3 3 3
++ Vektor 3c: Die Zahlen des Vektors b als ausgeschriebene Wörter
++ Vektor 3d: 1 4 7 10 13
++ Vektor 3e: 1 4 9 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 1100 14899 678999
+
+4. Was macht das Argument `trim` für die Funktion `mean()`? Wozu könnten Sie dieses Argument in einem sozialwissenschaftlichen Kontext nutzen? Spezifizieren Sie das Argument auf sinnvolle Weise, um das arithmetische Mittel des in Aufgabe 3e erstellten Vektors zu berechnen!
+
+5. Sie sollen verschiedene Paare von Vektoren mittels der Funktionen `c()`, `rep()` und `seq()` definieren, die jeweils unterschiedlich korrelieren. Diese Vektoren -- d.h. Variablen -- und deren Korrelationen sollen sozialwissenschaftlichen Phänomenen entsprechen. Berechnen Sie jeweils den Korrelationskoeffizienten.
+  + Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine Korrelation von ca. 0.4 aufweisen.
+  + Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine sehr starke Korrelation aufweisen.
+  + Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine schwache negative Korrelation aufweisen.
+
+
+Bearbeiten Sie die Aufgaben wiederum in RMarkdown und 'knitten' Sie Ihre Ergebnisse zu einem PDF-Dokument. Beschriften Sie Ihr Dokument mit FL03_NameVorname.pdf und geben das Dokument via OLAT vor der nächsten Einheit ab.

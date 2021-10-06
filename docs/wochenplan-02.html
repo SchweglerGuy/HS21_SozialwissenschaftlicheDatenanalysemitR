@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="wocheplan-01.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="wochenplan-03.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -173,6 +173,11 @@ div.csl-indent {
 <li class="chapter" data-level="2.1" data-path="wochenplan-02.html"><a href="wochenplan-02.html#lernziele"><i class="fa fa-check"></i><b>2.1</b> Lernziele</a></li>
 <li class="chapter" data-level="2.2" data-path="wochenplan-02.html"><a href="wochenplan-02.html#aufgaben"><i class="fa fa-check"></i><b>2.2</b> Aufgaben</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="wochenplan-03.html"><a href="wochenplan-03.html"><i class="fa fa-check"></i><b>3</b> Wochenplan 03</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="wochenplan-03.html"><a href="wochenplan-03.html#lernziele-1"><i class="fa fa-check"></i><b>3.1</b> Lernziele</a></li>
+<li class="chapter" data-level="3.2" data-path="wochenplan-03.html"><a href="wochenplan-03.html#aufgaben-1"><i class="fa fa-check"></i><b>3.2</b> Aufgaben</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="./">Universität Luzern</a></li>
@@ -226,22 +231,260 @@ div.csl-indent {
 <div id="aufgaben" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Aufgaben</h2>
 <ol style="list-style-type: decimal">
-<li><p>Fassen Sie noch einmal für sich und in eigenen Worten die Funktionen der vier Fenster von RStudio zusammen.</p></li>
-<li><p>Was ist der Vorteil der Arbeit im Skript gegenüber dem Schreiben von Code direkt in der Konsole? Und was könnten dann die Vorteile davon sein, mit R Markdown zu arbeiten? Und wann könnten Sie trotzdem besser mit einem klassischen Skript arbeiten? Schauen Sie sich auch die Formatierungsmöglichkeiten für Fliesstext in den Cheatsheets zu R Markdown an (siehe <a href="https://rmarkdown.rstudio.com/articles.html">hier</a>)!</p></li>
-<li><p>Öffnen Sie eine neue R Markdown Datei. Versuchen Sie Ihre bisherigen Notizen zu den Aufgaben und Ihren Code in dieser Datei unterzubringen (falls Sie dies nicht schon gemacht haben). Arbeiten Sie für die folgenden Aufgaben mit dieser Datei
-weiter.</p></li>
-<li><p>Versuchen Sie allgemein zu beschreiben, was Funktionen und was Objekte sind. Fügen Sie eine kurze Erläuterung in Ihr Markdown-Dokument zur Frage ein, was im folgenden Code jeweils Funktionen und was Objekte (und wenn letzteres, welche Art von Objekt) sind:</p></li>
+<li>Fassen Sie noch einmal für sich und in eigenen Worten die Funktionen der vier Fenster von RStudio zusammen.</li>
 </ol>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="wochenplan-02.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(x)</span>
-<span id="cb14-2"><a href="wochenplan-02.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">&quot;sqrt&quot;</span>)</span>
-<span id="cb14-3"><a href="wochenplan-02.html#cb14-3" aria-hidden="true" tabindex="-1"></a>?help</span>
-<span id="cb14-4"><a href="wochenplan-02.html#cb14-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="cn">NA</span>)</span>
-<span id="cb14-5"><a href="wochenplan-02.html#cb14-5" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span>
-<span id="cb14-6"><a href="wochenplan-02.html#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">is.logical</span>(<span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Oben links findet sich in R-Studio das <strong>Skript</strong>-Fenster, in dem Befehle eingegeben und kommentiert werden können. Ausgeführt werden diese Befehle erst, wenn Sie <em>Ctrl</em> und <em>Enter</em> drücken (bzw. <em>Cmd</em> &amp; <em>Enter</em>). Diese Eingabe von Kodezeilen wird ergänzt durch die direkte Eingabe in der <strong>Konsole</strong>. In diesem Fenster läuft das eigentliche Programm R (es ist also dieselbe Ansicht wie wenn Sie R ohne grafische Benutzeroberfläche starten würden).<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> Im Gegensatz zum Skript können hier Befehle nur immer einzeln eingegeben und sie müssen dann direkt ausgeführt werden. Dies ermöglicht ein schneller ausprobieren, aber eben kein wirklich speichern, beständiges überarbeiten, kommentieren und eine klare Dokumentation des Ablaufs, wie dies im Skript erfolgen kann.</p>
+<p>Die beiden Fenster zur Eingabe von Kode werden vom <strong>Environment</strong>-Fenster ergänzt. Hier finden sich die abgespeicherten Objekte sowie in den weiteren Reitern die bisher ausgeführten Befehle (<em>History</em>), aber auch eine erweitere Netzwerk- bzw. Serverumgebung (<em>Connections</em>, <em>Build</em>, …), falls Sie z.Bsp. mit weiteren Personen an einem Projekt arbeiten. Im <strong>vierten Fenster</strong> werden Grafiken, Hilfeseiten, die Vorschau für geknittete Dokumente und auch die Ordnerstruktur angezeigt.</p>
+<p>Sie finden diverse Einstellungsoptionen zu den vier Fenster und deren Anordnung unter „Tools &gt; Gobal Options“. Dort können Sie etwa unter dem Reiter “General” die Option zum “Save Workspace to RData on exit” zu <em>Never</em> wechseln. Dies führt dazu, dass Ihre <em>Environment</em> beim Verlassen von R immer gelöscht wird. Dies ist nicht etwa ein Nachteil, sondern eine Technik die Sie dazu veranlasst, alle benötigen Schritte in Ihrem Kode unterzubringen. Weiter könne Sie unter dem Reiter “Spelling” auch noch die Rechtschreibefunktion deaktiveren, da das Feature noch nicht wirklich für die deutsche Rechtschreibung zu funktionieren scheint (bzw. die Ergänzung von neuen Wörterbüchern nicht fehlerfrei abläuft).</p>
+<p>Die Ordnerstruktur im Reiter <em>Files</em> des vierten Fensters hängt mit Ihrem aktuellen <strong>Arbeitsverzeichnis</strong> zusammen. Ein Arbeitsverzeichnis ist der Ort, auf den R immer als Erstes zugreift und wo Dinge automatisch abgelegt werden. Dieses können über die Menüsteuerung “Session &gt; Set Working Directory &gt; Choose Directory” oder über den Befehl <code>setwd()</code> definieren (erstere Variante ist etwas einfacher). Der <code>getwd()</code> Befehl wiederum gibt das aktuell festgelegte Verzeichnis aus. Speichern Sie jeweils Ihr aktuelles Arbeitsverzeichnis als Teil des Markdowns, z.Bsp. so:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="wochenplan-02.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/Users/SchweglG/R_Daten/HS20/E3&quot;</span>) </span>
+<span id="cb14-2"><a href="wochenplan-02.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Dies dient in einem Skript oder einem Markdown als Erinnerung, ... </span></span>
+<span id="cb14-3"><a href="wochenplan-02.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#...wo Ihr Arbeitsverzeichnis liegt (und damit wo Sie Ihre Daten wiederfinden)</span></span></code></pre></div>
+<p> </p>
+<ol start="2" style="list-style-type: decimal">
+<li>Was ist der Vorteil der Arbeit im Skript gegenüber dem Schreiben von Code direkt in der Konsole? Und was könnten dann die Vorteile davon sein, mit R Markdown zu arbeiten? Und wann könnten Sie trotzdem besser mit einem klassischen Skript arbeiten? Schauen Sie sich auch die Formatierungsmöglichkeiten für Fliesstext in den Cheatsheets zu R Markdown an (siehe <a href="https://rmarkdown.rstudio.com/articles.html">hier</a>)!</li>
+</ol>
+<p>Vorteile der Arbeit im <em>Skript</em>: Da Kodezeilen nicht sofort ausgeführt werden müssen ermöglicht “das Skript die Strukturierung und Abspeicherung von Befehlen” (Delia Bazzigher). Ein weiterer Vorteil kann es sein, “komplexe Funktion, die man
+z.B. in einem RMarkdown braucht, in einem Skript zu hinterlegen, um im RMarkdown nicht zu viel Code einzubauen, damit sich die Leser:innen nicht darum kümmern müssen” (Fabio Keller).</p>
+<p>Vorteile der Arbeit in <em>RMarkdown</em>: RMarkdown bietet die Möglichkeit, Kodezeilen (die <em>Chunk</em>) auf vielfältige Weise mit Text zu ergänzen und diesen Text zu formatieren: “bspw. Bold, Italics, Aufzählungszeichen, Übertitel in unterschiedlichen Grössen, etc. […]. Auch ‘zwingt’ es den User, genau zu arbeiten, da [ein RMarkdown] ‘geschlossen’ funktioniert (bspw. ein Objekt kann sich im Environment befinden, aber nicht ‘im Universum des Markdowns’) (Valentina Meyer).</p>
+<p>Vorteile der Konsole: In der <em>Konsole</em> kann über die beiden Pfeiltasten runter und rauf durch bisher ausgeführte Befehle <em>gescrollt</em> werden. So können Sie die Rechnung erneut aufrufen und dem Objekt <code>x</code> zuweisen. Ebenfalls können in der Konsole Dinge ausprobiert oder Hilfefunktionen aufgerufen werden.</p>
+<p> </p>
+<ol start="3" style="list-style-type: decimal">
+<li>Öffnen Sie eine neue R Markdown Datei. Versuchen Sie Ihre bisherigen Notizen zu den Aufgaben und Ihren Code in dieser Datei unterzubringen (falls Sie dies nicht schon gemacht haben). Arbeiten Sie für die folgenden Aufgaben mit dieser Datei
+weiter.</li>
+</ol>
+<p> </p>
+<ol start="4" style="list-style-type: decimal">
+<li>Versuchen Sie allgemein zu beschreiben, was Funktionen und was Objekte sind. Fügen Sie eine kurze Erläuterung in Ihr Markdown-Dokument zur Frage ein, was im folgenden Code jeweils Funktionen und was Objekte (und wenn letzteres, welche Art von Objekt) sind:</li>
+</ol>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="wochenplan-02.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(x)</span></code></pre></div>
+<p>Funktion(en): <code>sqrt()</code>
+Objekt(e): <code>x</code> - eine undefiniertes Objekt</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="wochenplan-02.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">&quot;sqrt&quot;</span>)</span></code></pre></div>
+<p>Funktion(en): <code>help()</code>
+Objekt(e): <code>sqrt()</code> - ein Funktion als Objekt, hier im <strong>Charakterformat</strong> ausgeschrieben</p>
+<p>Warum erfolgt jetzt die Schreibweise von “sqrt” in der Art und Weise? Gehen wir dazu kurz in die Hilfefunktion selber:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="wochenplan-02.html#cb17-1" aria-hidden="true" tabindex="-1"></a>?help</span></code></pre></div>
+<p>Funktion(en): <code>?</code> als andere Schreibweise von <code>help()</code>
+Objekt(e): <code>help()</code> - ein Funktion als Objekt, hier aber nicht im Charakterformat ausformuliert.</p>
+<p>Dort finden wir die Spezifizierung bei Topic:<br />
+<em>…usually, a name or character string specifying the topic for which help is sought. A character string (enclosed in explicit single or double quotes) is always taken as naming a topic.</em></p>
+<p>Was heisst jetzt ein Charakter-String?<br />
+Es gibt eben nicht nur numerische Daten…</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="wochenplan-02.html#cb18-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="dv">5</span></span></code></pre></div>
+<p>…sondern auch textliche oder Charakterdaten</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="wochenplan-02.html#cb19-1" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="st">&quot;fünf&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="wochenplan-02.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x1)</span>
+<span id="cb20-2"><a href="wochenplan-02.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;numeric&quot;</span></span>
+<span id="cb20-3"><a href="wochenplan-02.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(x1)</span>
+<span id="cb20-4"><a href="wochenplan-02.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;double&quot;</span></span>
+<span id="cb20-5"><a href="wochenplan-02.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x2)</span>
+<span id="cb20-6"><a href="wochenplan-02.html#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span>
+<span id="cb20-7"><a href="wochenplan-02.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(x2)</span>
+<span id="cb20-8"><a href="wochenplan-02.html#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span></code></pre></div>
+<p>Warum zeigt R uns zwei verschiedene Merkmale bei <code>x1</code> an?
+R speichert Zahlen auf eine bestimmte Art und Weise ab, nämlich normalerweise als sogennante “doubles” oder als Zahlen mit Nachkommastellen. Man könnte die <code>5</code> auch als Integer (also als Zahl ohne Kommata) abspeichern:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="wochenplan-02.html#cb21-1" aria-hidden="true" tabindex="-1"></a>x3 <span class="ot">&lt;-</span> 5L</span>
+<span id="cb21-2"><a href="wochenplan-02.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x3)</span></code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="wochenplan-02.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(x3)</span></code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<p>Das brauchen wir allerdings kaum im alltäglichen Umgang mit R.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="wochenplan-02.html#cb25-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="cn">NA</span>)</span>
+<span id="cb25-2"><a href="wochenplan-02.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#und</span></span>
+<span id="cb25-3"><a href="wochenplan-02.html#cb25-3" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span></code></pre></div>
+<p>Funktion(en): <code>&lt;-</code>, <code>c()</code>
+Objekt(e): <code>y</code>, <code>z</code> - ein <strong>Vektor</strong>; <code>1, 3, 4, 5, 6, 7</code>, <code>7, 8, 10, 11</code> - jeweils <strong>numerische Objekte</strong>; <code>NA</code> - ein <strong>fehlender Wert</strong></p>
+<p>Berechnen des arithmetischen Mittels:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="wochenplan-02.html#cb26-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">7</span><span class="sc">+</span> <span class="dv">8</span><span class="sc">+</span> <span class="dv">10</span><span class="sc">+</span> <span class="dv">11</span>) <span class="sc">/</span> <span class="dv">4</span></span></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="wochenplan-02.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(z) <span class="sc">/</span> <span class="fu">length</span>(z)</span></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="wochenplan-02.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(z)</span></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="wochenplan-02.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Was passiert hier?</span></span>
+<span id="cb32-2"><a href="wochenplan-02.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(y)</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="wochenplan-02.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(y, <span class="at">na.rm =</span> T)</span></code></pre></div>
+<pre><code>## [1] 4.333333</code></pre>
+<p>Hier haben wir wiederum ein Argument einer Funktion spezifiziert, um die fehlenden Werte auszuklammern.</p>
+<p>Wichtig: <code>NA</code> ist jetzt nicht dasselbe wie ein Charakter-Datum “NA”:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="wochenplan-02.html#cb36-1" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="cn">NA</span>)</span>
+<span id="cb36-2"><a href="wochenplan-02.html#cb36-2" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="st">&quot;NA&quot;</span>)</span>
+<span id="cb36-3"><a href="wochenplan-02.html#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="wochenplan-02.html#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(y1, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 4.333333</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="wochenplan-02.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(y2, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Warning in mean.default(y2, na.rm = TRUE): Argument ist weder numerisch noch
+## boolesch: gebe NA zurück</code></pre>
+<pre><code>## [1] NA</code></pre>
+<p>…und was ist jetzt mit dem Vektor <code>y1</code> passiert?<br />
+Wir sehen, dass Vektoren nur ein Datenformat enthalten können. Ansonsten müssten wir den Vektor als <strong>Liste</strong> speichern. Listen sind daher ein weiterer Objekttyp (mit dem wir aber nur selten arbeiten werden).</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="wochenplan-02.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.logical</span>(<span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Funktion(en): <code>is.logical()</code>
+Objekt(e): <code>TRUE</code> - ein <strong>logisches Datenformat</strong></p>
+<p>Was ist <code>TRUE</code>?</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="wochenplan-02.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="wochenplan-02.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<p><code>TRUE</code> und <code>FALSE</code> Dies sind logische Daten – also Daten die angeben ob etwas “wahr” oder “falsch” ist. Wir können auch daraus einen Vektor machen:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="wochenplan-02.html#cb46-1" aria-hidden="true" tabindex="-1"></a>lv <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Und was passiert wohl hierbei?</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="wochenplan-02.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">+</span> <span class="cn">FALSE</span></span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>Es sind also einfach auch Werte: 1 oder 0.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="wochenplan-02.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(y1, <span class="at">na.rm =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 4.333333</code></pre>
+<p><strong>Zusammenfassung</strong></p>
+<p>Wir haben jetzt bereits drei verschiedene Datenarten kennengelernt:</p>
+<ul>
+<li>numerische Daten</li>
+<li>Charakterdaten</li>
+<li>logische Daten.</li>
+</ul>
+<p>Weiter haben wir bereits drei verschiedene Objekttypen kennengelernt:</p>
+<ul>
+<li>einzelne Werte</li>
+<li>Vektoren (als eine Reihe von Werten derselben Datenart)</li>
+<li>Listen (also Reihe von Werten derselben Datenart)</li>
+</ul>
+<p>Diese drei Objekttypen werden in der 5. Aufgabe ergänzt von den sogenannten <strong>Matrizen</strong>.</p>
+<p> </p>
 <ol start="5" style="list-style-type: decimal">
 <li>Sehen Sie sich die Hilfeseite der Funktion <code>matrix()</code> an. Wozu dient diese Funktion? Welche Argumente akzeptiert / benötigt sie und wozu dienen diese? Illustrieren Sie die Funktionsweise anhand von einem Beispiel.</li>
 </ol>
-<p>Versuchen Sie abschliessend Ihr Markdown Dokument zu ‘knitten’ und so daraus ein PDF Dokument zu erstellen. ACHTUNG: Damit dies funktioniert, muss Ihr Kode fehlerfrei sein. Falls dies nicht klappt sollte notieren Sie bitte wieso und erstellen auf einem anderen Weg ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit FL02_NameVorname.pdf und geben das Dokument via OLAT vor der nächsten Einheit ab.</p>
+<p>Die Funktion <code>matrix()</code> erlaubt es uns ein zweidimensionales Objekt aus einem Set von Werten (einem Vektoren) zu erstellen:</p>
+<p>Ein Beispiel von Vanesse Leutener:<br />
+Beispiel: Bei einer kleinen Umfrage wurden 6 Befragte nach Geschlecht und der Höhe des monatlichen Einkommens befragt.</p>
+<p>Geschlecht<br />
+1 = weiblich<br />
+2 = männlich<br />
+3 = divers</p>
+<p>Monatliches Einkommen<br />
+1 = weniger als 800 CHF<br />
+2 = ab 800-1500 CHF<br />
+3 = ab 1500-3000 CHF<br />
+4 = ab 3000-6000 CHF<br />
+5 = mehr als 6000 CHF</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="wochenplan-02.html#cb51-1" aria-hidden="true" tabindex="-1"></a>Geschlecht <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb51-2"><a href="wochenplan-02.html#cb51-2" aria-hidden="true" tabindex="-1"></a>Einkommen <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">5</span>)</span>
+<span id="cb51-3"><a href="wochenplan-02.html#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="co">#so?</span></span>
+<span id="cb51-4"><a href="wochenplan-02.html#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(Geschlecht, Einkommen)</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    2    1
+## [2,]    3    1
+## [3,]    1    2</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="wochenplan-02.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co">#so?</span></span>
+<span id="cb53-2"><a href="wochenplan-02.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(Geschlecht, Einkommen))</span></code></pre></div>
+<pre><code>##       [,1]
+##  [1,]    2
+##  [2,]    3
+##  [3,]    1
+##  [4,]    1
+##  [5,]    1
+##  [6,]    2
+##  [7,]    3
+##  [8,]    5
+##  [9,]    4
+## [10,]    1
+## [11,]    5
+## [12,]    5</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="wochenplan-02.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co">#so sollte das passen:</span></span>
+<span id="cb55-2"><a href="wochenplan-02.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(Geschlecht, Einkommen), <span class="at">nrow =</span> <span class="dv">6</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    2    3
+## [2,]    3    5
+## [3,]    1    4
+## [4,]    1    1
+## [5,]    1    5
+## [6,]    2    5</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="wochenplan-02.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Warum stimmt das nicht?</span></span>
+<span id="cb57-2"><a href="wochenplan-02.html#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(Geschlecht, Einkommen), <span class="at">nrow =</span> <span class="dv">6</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> T)</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    2    3
+## [2,]    1    1
+## [3,]    1    2
+## [4,]    3    5
+## [5,]    4    1
+## [6,]    5    5</code></pre>
+<p>Bei der Anordnung von Zeilen und Spalten wollen wir jeweils Fälle/Personen als Zeilen und Variablen als Spalten darstellen.</p>
+<p>Und wie könnte wir diese Matrix beschriften?</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="wochenplan-02.html#cb59-1" aria-hidden="true" tabindex="-1"></a>LV_G <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(Geschlecht, Einkommen), <span class="at">nrow =</span> <span class="dv">6</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb59-2"><a href="wochenplan-02.html#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(LV_G) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Geschlecht&quot;</span>, <span class="st">&quot;Einkommen (Kat.)&quot;</span>)</span>
+<span id="cb59-3"><a href="wochenplan-02.html#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(LV_G) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;F1&quot;</span>, <span class="st">&quot;F2&quot;</span>, <span class="st">&quot;F3&quot;</span>, <span class="st">&quot;F4&quot;</span>, <span class="st">&quot;F5&quot;</span>, <span class="st">&quot;F6&quot;</span>)</span>
+<span id="cb59-4"><a href="wochenplan-02.html#cb59-4" aria-hidden="true" tabindex="-1"></a>LV_G</span></code></pre></div>
+<pre><code>##    Geschlecht Einkommen (Kat.)
+## F1          2                3
+## F2          3                5
+## F3          1                4
+## F4          1                1
+## F5          1                5
+## F6          2                5</code></pre>
+<p>Ein Beispiel von Delia Bazzigher:<br />
+Eine Studie untersucht die mediale Präsenz der aktuellen Geschehnisse in Afghanistan in der deutschsprachigen Schweiz im September. Dazu werden z.B. die Tageszeitungen untersucht. Es wird eine Häufigkeitszählung in den Zeitungen ‘Tages-Anzeiger,’ ‘NZZ,’ ‘Luzerner Zeitung’ und ‘Blick’ durchgeführt. Gezählt werden die Anzahl Artikel sowie deren jeweilige Position, d.h. ‘neutral/sachlich,’ ‘negati/verurteilend’ oder ‘positiv/unterstützend’ (die Codierung dieser Kategorien wird hier nicht erläutert).</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="wochenplan-02.html#cb61-1" aria-hidden="true" tabindex="-1"></a>mTageszeitungen <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">0</span>, <span class="dv">12</span>,<span class="dv">7</span>,<span class="dv">0</span>, <span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">0</span>, <span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">3</span>),</span>
+<span id="cb61-2"><a href="wochenplan-02.html#cb61-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">nrow =</span> <span class="dv">3</span>,</span>
+<span id="cb61-3"><a href="wochenplan-02.html#cb61-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">ncol =</span> <span class="dv">4</span>,</span>
+<span id="cb61-4"><a href="wochenplan-02.html#cb61-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">byrow =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb61-5"><a href="wochenplan-02.html#cb61-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;negativ&quot;</span>, <span class="st">&quot;neutral&quot;</span>, <span class="st">&quot;positiv&quot;</span>),</span>
+<span id="cb61-6"><a href="wochenplan-02.html#cb61-6" aria-hidden="true" tabindex="-1"></a>                                               <span class="fu">c</span>(<span class="st">&quot;Tages-Anzeiger&quot;</span>, <span class="st">&quot;NZZ&quot;</span>, <span class="st">&quot;Luzerner Zeitung&quot;</span>, <span class="st">&quot;Blick&quot;</span>)))</span>
+<span id="cb61-7"><a href="wochenplan-02.html#cb61-7" aria-hidden="true" tabindex="-1"></a>mTageszeitungen                          </span></code></pre></div>
+<pre><code>##         Tages-Anzeiger NZZ Luzerner Zeitung Blick
+## negativ              7  12                5     8
+## neutral              3   7                3     2
+## positiv              0   0                0     3</code></pre>
+<p>Was zeigt sich hier für ein Datenformat? Das ist eigentlich bereits abstrahiert!</p>
+<p>Wir könnten diese Kombination und das erstellen einer Matrix auch mit anderen Funktionen erreichen:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="wochenplan-02.html#cb63-1" aria-hidden="true" tabindex="-1"></a>LV_G1 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(Geschlecht, Einkommen)</span>
+<span id="cb63-2"><a href="wochenplan-02.html#cb63-2" aria-hidden="true" tabindex="-1"></a>LV_G2 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(Geschlecht, Einkommen)</span>
+<span id="cb63-3"><a href="wochenplan-02.html#cb63-3" aria-hidden="true" tabindex="-1"></a>LV_G1</span></code></pre></div>
+<pre><code>##      Geschlecht Einkommen
+## [1,]          2         3
+## [2,]          3         5
+## [3,]          1         4
+## [4,]          1         1
+## [5,]          1         5
+## [6,]          2         5</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="wochenplan-02.html#cb65-1" aria-hidden="true" tabindex="-1"></a>LV_G2</span></code></pre></div>
+<pre><code>##            [,1] [,2] [,3] [,4] [,5] [,6]
+## Geschlecht    2    3    1    1    1    2
+## Einkommen     3    5    4    1    5    5</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="wochenplan-02.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(LV_G1)</span></code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="wochenplan-02.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(LV_G1)</span></code></pre></div>
+<pre><code>## [1] &quot;matrix&quot; &quot;array&quot;</code></pre>
+<p>Was ist noch ein spezifische Eigenschaft einer Matrix?</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="wochenplan-02.html#cb71-1" aria-hidden="true" tabindex="-1"></a>Geschlecht_c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;m&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;m&quot;</span>)</span>
+<span id="cb71-2"><a href="wochenplan-02.html#cb71-2" aria-hidden="true" tabindex="-1"></a>LV_G3 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(Geschlecht_c, Einkommen)</span>
+<span id="cb71-3"><a href="wochenplan-02.html#cb71-3" aria-hidden="true" tabindex="-1"></a>LV_G3</span></code></pre></div>
+<pre><code>##      Geschlecht_c Einkommen
+## [1,] &quot;m&quot;          &quot;3&quot;      
+## [2,] &quot;d&quot;          &quot;5&quot;      
+## [3,] &quot;f&quot;          &quot;4&quot;      
+## [4,] &quot;f&quot;          &quot;1&quot;      
+## [5,] &quot;f&quot;          &quot;5&quot;      
+## [6,] &quot;m&quot;          &quot;5&quot;</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="wochenplan-02.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(LV_G3)</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="wochenplan-02.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(LV_G3)</span></code></pre></div>
+<pre><code>## [1] &quot;matrix&quot; &quot;array&quot;</code></pre>
+<p>Matrizen können nur ein Datenformat speichern - und wandeln daher verschiedene Datenarten in das “Niedrigste” um.</p>
+<p>Deshalb arbeiten wir eher mit dem Datenformat bzw. Objekttyp des sogennanten “<strong>data.frames</strong>” (oder in ggplot dann “tybbles”). Dieser Objekttyp ermöglicht ein Speichern von verschiedenen Datenarten in einem zweidimensionalen Format:</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="wochenplan-02.html#cb77-1" aria-hidden="true" tabindex="-1"></a>LV_G4 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(Geschlecht_c)</span>
+<span id="cb77-2"><a href="wochenplan-02.html#cb77-2" aria-hidden="true" tabindex="-1"></a>LV_G4 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(LV_G4, Einkommen)</span>
+<span id="cb77-3"><a href="wochenplan-02.html#cb77-3" aria-hidden="true" tabindex="-1"></a>LV_G4</span></code></pre></div>
+<pre><code>##   Geschlecht_c Einkommen
+## 1            m         3
+## 2            d         5
+## 3            f         4
+## 4            f         1
+## 5            f         5
+## 6            m         5</code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="wochenplan-02.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(LV_G4)</span></code></pre></div>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="wochenplan-02.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(LV_G4)</span></code></pre></div>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
 
 </div>
 </div>
@@ -249,6 +492,7 @@ weiter.</p></li>
 <hr />
 <ol start="3">
 <li id="fn3"><p>Falls Sie noch Probleme bei der Installation von R bzw. RStudio oder sonstige technische Schwierigkeiten haben, können Sie sich gerne weiterhin per E-Mail melden!<a href="wochenplan-02.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Neuere Versionen von RStudio bieten im Fenster der Konsole auch die Möglichkeit, sogenannte “Jobs” auszuführen (ein Tpp von Josias Bruderer), siehe [hier]:(<a href="https://www.youtube.com/watch?v=EBlk1kRbKeU" class="uri">https://www.youtube.com/watch?v=EBlk1kRbKeU</a>).<a href="wochenplan-02.html#fnref4" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -257,7 +501,7 @@ weiter.</p></li>
         </div>
       </div>
 <a href="wocheplan-01.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="wochenplan-03.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

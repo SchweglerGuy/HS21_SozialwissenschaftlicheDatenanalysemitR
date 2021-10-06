@@ -173,6 +173,11 @@ div.csl-indent {
 <li class="chapter" data-level="2.1" data-path="wochenplan-02.html"><a href="wochenplan-02.html#lernziele"><i class="fa fa-check"></i><b>2.1</b> Lernziele</a></li>
 <li class="chapter" data-level="2.2" data-path="wochenplan-02.html"><a href="wochenplan-02.html#aufgaben"><i class="fa fa-check"></i><b>2.2</b> Aufgaben</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="wochenplan-03.html"><a href="wochenplan-03.html"><i class="fa fa-check"></i><b>3</b> Wochenplan 03</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="wochenplan-03.html"><a href="wochenplan-03.html#lernziele-1"><i class="fa fa-check"></i><b>3.1</b> Lernziele</a></li>
+<li class="chapter" data-level="3.2" data-path="wochenplan-03.html"><a href="wochenplan-03.html#aufgaben-1"><i class="fa fa-check"></i><b>3.2</b> Aufgaben</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="./">Universität Luzern</a></li>
@@ -321,12 +326,12 @@ und R wird automatisch gestartet wird, wenn Sie RStudio starten <span class="cit
 <p>Dabei wird n - 1 verwendet, da bei kleineren Stichprobenumfängen die Standardabweichung überschätzt wird. Bei grösseren Stichprobenumfängen wird dies dann immer weniger wichtig:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="wocheplan-01.html#cb10-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>) <span class="co">#eine standardnormalverteilte Varialbe mit n = 50</span></span>
 <span id="cb10-2"><a href="wocheplan-01.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(z)</span></code></pre></div>
-<pre><code>## [1] 1.002369</code></pre>
+<pre><code>## [1] 1.028441</code></pre>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="wocheplan-01.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(</span>
 <span id="cb12-2"><a href="wocheplan-01.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>((z <span class="sc">-</span> <span class="fu">mean</span>(z))<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb12-3"><a href="wocheplan-01.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">/</span> (<span class="fu">length</span>(z))</span>
 <span id="cb12-4"><a href="wocheplan-01.html#cb12-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-<pre><code>## [1] 1.001868</code></pre>
+<pre><code>## [1] 1.027927</code></pre>
 
 </div>
 </div>
@@ -351,7 +356,7 @@ Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Ti
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Die zwei miteinander verzahnte Lernziele führen auch dazu, dass das Seminar allerdings nicht als eigentliche Übung zur Vorlesung funktioniert (und das nicht alle Inhalte der Vorlesung im Seminar behandelt werden können).<a href="wocheplan-01.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>Falls Sie noch Probleme bei der Installation von R bzw. RStudio oder sonstige technische Schwierigkeiten haben, können Sie sich gerne weiterhin per E-Mail melden!<a href="wocheplan-01.html#fnref1" class="footnote-back">↩︎</a></p></li>
 <li id="fn2"><p>Über die Funktionen können Sie ebenfalls prüfen, ob womöglich Ihre Pakete nicht auf Ihrem Rechner, sondern auf einem Server installiert werden (was oftmals bei nicht-persönlichen Firmen-Rechnern der Fall sein kann).<a href="wocheplan-01.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
