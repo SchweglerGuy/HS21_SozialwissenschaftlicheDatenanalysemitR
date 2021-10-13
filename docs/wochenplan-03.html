@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="wochenplan-02.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="wochenplan-04.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -177,6 +177,12 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="3.1" data-path="wochenplan-03.html"><a href="wochenplan-03.html#lernziele-1"><i class="fa fa-check"></i><b>3.1</b> Lernziele</a></li>
 <li class="chapter" data-level="3.2" data-path="wochenplan-03.html"><a href="wochenplan-03.html#aufgaben-1"><i class="fa fa-check"></i><b>3.2</b> Aufgaben</a></li>
+<li class="chapter" data-level="3.3" data-path="wochenplan-03.html"><a href="wochenplan-03.html#ergänzung-seitenumbruch-im-rmarkdown"><i class="fa fa-check"></i><b>3.3</b> Ergänzung: Seitenumbruch im RMarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wochenplan-04.html"><a href="wochenplan-04.html"><i class="fa fa-check"></i><b>4</b> Wochenplan 04</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="wochenplan-04.html"><a href="wochenplan-04.html#lernziele-2"><i class="fa fa-check"></i><b>4.1</b> Lernziele</a></li>
+<li class="chapter" data-level="4.2" data-path="wochenplan-04.html"><a href="wochenplan-04.html#aufgaben-2"><i class="fa fa-check"></i><b>4.2</b> Aufgaben</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -226,27 +232,196 @@ div.csl-indent {
 <div id="aufgaben-1" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Aufgaben</h2>
 <ol style="list-style-type: decimal">
-<li><p>Erstellen Sie vier verschiedene Vektoren mit je einer Länge von vier und verbinden Sie diese zu einer 4x4-Matrix. Die Funktion <code>apply()</code> erlaubt Ihnen, eine Funktionen wie z.B. <code>mean()</code> oder <code>var()</code> auf diese Matrix anzuwenden. Nur wie genau? Sehen Sie sich die Hilfe zu <code>apply()</code> an, probieren Sie die Funktion aus und versuchen Sie zu verstehen, wie sie genau funktioniert. Erläutern Sie <code>apply()</code> dann in eigenen Worten und mit Hilfe der von Ihnen erzeugten 4x4-Matrix!</p></li>
-<li><p>Erstellen Sie je einen Vektor mit numerischen Daten, textförmigen Daten und logischen Daten. Die Funktionen <code>as.numeric()</code>, <code>as.character()</code> und <code>as.logical()</code> lassen Sie eine Datenarten in eine andere “zwingen” bzw. als eine andere Datenart interpretieren. Wann funktioniert dies? Und wo sind die Grenzen dieses “Zwingens?”</p></li>
-<li><p>Definieren Sie folgende Vektoren mittels der Funktionen <code>seq()</code> und <code>rep()</code>:</p></li>
+<li>Erstellen Sie vier verschiedene Vektoren mit je einer Länge von vier und verbinden Sie diese zu einer 4x4-Matrix. Die Funktion <code>apply()</code> erlaubt Ihnen, eine Funktionen wie z.B. <code>mean()</code> oder <code>var()</code> auf diese Matrix anzuwenden. Nur wie genau? Sehen Sie sich die Hilfe zu <code>apply()</code> an, probieren Sie die Funktion aus und versuchen Sie zu verstehen, wie sie genau funktioniert. Erläutern Sie <code>apply()</code> dann in eigenen Worten und mit Hilfe der von Ihnen erzeugten 4x4-Matrix!</li>
 </ol>
-<ul>
-<li>Vektor 3a: 1 2 3 4 5 6 7 8 9 10</li>
-<li>Vektor 3b: 1 1 1 2 2 2 3 3 3</li>
-<li>Vektor 3c: Die Zahlen des Vektors b als ausgeschriebene Wörter</li>
-<li>Vektor 3d: 1 4 7 10 13</li>
-<li>Vektor 3e: 1 4 9 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 1100 14899 678999</li>
-</ul>
+<p>Zuerst können vier Vektoren erstellt werden:</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="wochenplan-03.html#cb83-1" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">9</span>)</span>
+<span id="cb83-2"><a href="wochenplan-03.html#cb83-2" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">5</span>,<span class="dv">2</span>)</span>
+<span id="cb83-3"><a href="wochenplan-03.html#cb83-3" aria-hidden="true" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>)</span>
+<span id="cb83-4"><a href="wochenplan-03.html#cb83-4" aria-hidden="true" tabindex="-1"></a>m4 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">6</span>)</span></code></pre></div>
+<p>Nachdem die vier Vektoren erstellt wurden lassen sie sich über die <code>rbind()</code> und <code>cbind()</code> Funktionen auf zwei verschiedene Weisen zu einer Matrix verbinden, entweder zeilen- oder spaltenweise (siehe die Objekte <code>ma</code> und <code>mb</code>).</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="wochenplan-03.html#cb84-1" aria-hidden="true" tabindex="-1"></a>ma <span class="ot">&lt;-</span> <span class="fu">cbind</span>(m1,m2,m3,m4)</span>
+<span id="cb84-2"><a href="wochenplan-03.html#cb84-2" aria-hidden="true" tabindex="-1"></a>mb <span class="ot">&lt;-</span> <span class="fu">rbind</span>(m1,m2,m3,m4)</span>
+<span id="cb84-3"><a href="wochenplan-03.html#cb84-3" aria-hidden="true" tabindex="-1"></a>ma</span></code></pre></div>
+<pre><code>##      m1 m2 m3 m4
+## [1,]  2  8  3  9
+## [2,]  4  9  5  8
+## [3,]  7  5  5  7
+## [4,]  9  2  5  6</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="wochenplan-03.html#cb86-1" aria-hidden="true" tabindex="-1"></a>mb</span></code></pre></div>
+<pre><code>##    [,1] [,2] [,3] [,4]
+## m1    2    4    7    9
+## m2    8    9    5    2
+## m3    3    5    5    5
+## m4    9    8    7    6</code></pre>
+<p>Als nächster Schritt wendet <code>apply()</code> dann eine bestimmte Funktion auf ein Objekte an. Bei einem Objekt des Typs Matrix muss allerdings noch spezifiziert werden, ob die Funktion Zeilen- oder Spalteweise angewendet wird. Zeilen oder Spalten werden über die Zahlen 1 bzw. 2 definiert.</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="wochenplan-03.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(ma, <span class="dv">1</span>, mean)</span></code></pre></div>
+<pre><code>## [1] 5.5 6.5 6.0 5.5</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="wochenplan-03.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(ma, <span class="dv">2</span>, mean)</span></code></pre></div>
+<pre><code>##  m1  m2  m3  m4 
+## 5.5 6.0 4.5 7.5</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="wochenplan-03.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(mb, <span class="dv">1</span>, mean)</span></code></pre></div>
+<pre><code>##  m1  m2  m3  m4 
+## 5.5 6.0 4.5 7.5</code></pre>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="wochenplan-03.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(mb, <span class="dv">2</span>, mean)</span></code></pre></div>
+<pre><code>## [1] 5.5 6.5 6.0 5.5</code></pre>
+<p>So ergeben sich insgesamt vier Möglichkeiten, für die Berechnung der des Durchschnitts – allerdings finden sich nur zwei unterschiedliche Ergebnisse.</p>
+<p>Was passiert nun hier?</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="wochenplan-03.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(ma, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), mean)</span></code></pre></div>
+<pre><code>##      m1 m2 m3 m4
+## [1,]  2  8  3  9
+## [2,]  4  9  5  8
+## [3,]  7  5  5  7
+## [4,]  9  2  5  6</code></pre>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="wochenplan-03.html#cb98-1" aria-hidden="true" tabindex="-1"></a>ma</span></code></pre></div>
+<pre><code>##      m1 m2 m3 m4
+## [1,]  2  8  3  9
+## [2,]  4  9  5  8
+## [3,]  7  5  5  7
+## [4,]  9  2  5  6</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="wochenplan-03.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(ma, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), var)</span></code></pre></div>
+<pre><code>##      m1 m2 m3 m4
+## [1,] NA NA NA NA
+## [2,] NA NA NA NA
+## [3,] NA NA NA NA
+## [4,] NA NA NA NA</code></pre>
+<p>Hier wird eine Funktion sowohl auf Spalten als auch auf Zeilen angewendet - das heisst einfach auf die einzelnen Werte. Von einem einzelnen Wert kann man dann das arithmetische Mittel berechen, hingegen nicht die Varianz:</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="wochenplan-03.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="wochenplan-03.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>Als Ergänzung finden Sie hier noch ein sozialwissenschaftliches Beispiel einer solchen Matrix von Katrin Oesch:</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="wochenplan-03.html#cb106-1" aria-hidden="true" tabindex="-1"></a>Alter <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">32</span>,<span class="dv">61</span>,<span class="dv">45</span>,<span class="dv">29</span>)</span>
+<span id="cb106-2"><a href="wochenplan-03.html#cb106-2" aria-hidden="true" tabindex="-1"></a>Arbeitsjahre <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span>,<span class="dv">33</span>,<span class="dv">20</span>,<span class="dv">2</span>)</span>
+<span id="cb106-3"><a href="wochenplan-03.html#cb106-3" aria-hidden="true" tabindex="-1"></a>Monatseinkommen <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5500</span>,<span class="dv">8700</span>,<span class="dv">10200</span>,<span class="dv">3750</span>)</span>
+<span id="cb106-4"><a href="wochenplan-03.html#cb106-4" aria-hidden="true" tabindex="-1"></a>Ausbildungsjahre <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">12</span>,<span class="dv">9</span>,<span class="dv">7</span>)</span>
+<span id="cb106-5"><a href="wochenplan-03.html#cb106-5" aria-hidden="true" tabindex="-1"></a>DS_1 <span class="ot">&lt;-</span><span class="fu">c</span>(Alter, Arbeitsjahre, Monatseinkommen, Ausbildungsjahre)</span>
+<span id="cb106-6"><a href="wochenplan-03.html#cb106-6" aria-hidden="true" tabindex="-1"></a>Matrix_1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(DS_1, <span class="at">nrow =</span> <span class="dv">4</span>, <span class="at">ncol =</span> <span class="dv">4</span>, <span class="at">byrow =</span> F)</span>
+<span id="cb106-7"><a href="wochenplan-03.html#cb106-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(Matrix_1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Alter&quot;</span>,<span class="st">&quot;Ausbildungsjahre&quot;</span>,<span class="st">&quot;Monatseinkommen&quot;</span>,<span class="st">&quot;Ausbildungsjahre&quot;</span>)</span>
+<span id="cb106-8"><a href="wochenplan-03.html#cb106-8" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(Matrix_1, <span class="at">MARGIN=</span><span class="dv">2</span>, <span class="at">FUN =</span> mean)</span></code></pre></div>
+<pre><code>##            Alter Ausbildungsjahre  Monatseinkommen Ausbildungsjahre 
+##            41.75            17.25          7037.50             7.75</code></pre>
+<p> </p>
+<ol start="2" style="list-style-type: decimal">
+<li>Erstellen Sie je einen Vektor mit numerischen Daten, textförmigen Daten und logischen Daten. Die Funktionen <code>as.numeric()</code>, <code>as.character()</code> und <code>as.logical()</code> lassen Sie eine Datenarten in eine andere “zwingen” bzw. als eine andere Datenart interpretieren. Wann funktioniert dies? Und wo sind die Grenzen dieses “Zwingens?”</li>
+</ol>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="wochenplan-03.html#cb108-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb108-2"><a href="wochenplan-03.html#cb108-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, T) <span class="co">#Die logischen Objekte können sowohl ausgeschreiben als auch lediglich als T und F aufgeführt werden</span></span>
+<span id="cb108-3"><a href="wochenplan-03.html#cb108-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;null&quot;</span>, <span class="st">&quot;eins&quot;</span>, <span class="st">&quot;zwei&quot;</span>) <span class="co">#die Anführungs- und Schlusszeichen beachten</span></span></code></pre></div>
+<p>Nachdem wir die Vektoren definiert haben, können wir deren Typ bestimmen und mit den <code>as.</code>-Funktionen spielen:</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="wochenplan-03.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.numeric</span>(a)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="wochenplan-03.html#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.logical</span>(b)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="wochenplan-03.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.character</span>(c)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="wochenplan-03.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(b)</span></code></pre></div>
+<pre><code>## [1] 1 0 1</code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="wochenplan-03.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(c)</span></code></pre></div>
+<pre><code>## Warning: NAs durch Umwandlung erzeugt</code></pre>
+<pre><code>## [1] NA NA NA</code></pre>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="wochenplan-03.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(a)</span></code></pre></div>
+<pre><code>## [1] FALSE  TRUE  TRUE</code></pre>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="wochenplan-03.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(c)</span></code></pre></div>
+<pre><code>## [1] NA NA NA</code></pre>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="wochenplan-03.html#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(a)</span></code></pre></div>
+<pre><code>## [1] &quot;0&quot; &quot;1&quot; &quot;2&quot;</code></pre>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="wochenplan-03.html#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(b)</span></code></pre></div>
+<pre><code>## [1] &quot;TRUE&quot;  &quot;FALSE&quot; &quot;TRUE&quot;</code></pre>
+<p>Die Grenzen dieses “Zwingens” der <code>as.</code>-Funktionen finden sich auf der einen Seite im Zusammenhang zu den logischen Daten: Dies funktioniert nur mit numerischen Daten – und alles über 1 wird als <code>TRUE</code> interpretiert. Auf der anderen Seite zeigt sich die Grenze bei ausgeschriebenen Zahlen in einem Charakter-Vektor. Diese können von R nicht in numerische oder auch logische Daten umformuliert werden. Allerdings gilt es eine wichtige Ausnahme zu beachten, nämlich wenn Zahlen als Charakter aufgeführt wurden:</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="wochenplan-03.html#cb128-1" aria-hidden="true" tabindex="-1"></a>c2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;0&quot;</span>, <span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>)</span>
+<span id="cb128-2"><a href="wochenplan-03.html#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.character</span>(c2)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="wochenplan-03.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(c2)</span></code></pre></div>
+<pre><code>## [1] 0 1 2</code></pre>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="wochenplan-03.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="fu">as.numeric</span>(c2))</span></code></pre></div>
+<pre><code>## [1] FALSE  TRUE  TRUE</code></pre>
+<p>Insbesondere beim Importieren von Datensätzen, die nicht in einem Rohformat gespeichert sind (etwa “.sav” Dateien), kann es passieren, dass metrische Variablen als Charakter-Vektor eingelesen werden.</p>
+<p> </p>
+<ol start="3" style="list-style-type: decimal">
+<li>Definieren Sie folgende Vektoren mittels der Funktionen <code>seq()</code> und <code>rep()</code>:</li>
+</ol>
+<p>Vektor 3a: 1 2 3 4 5 6 7 8 9 10</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="wochenplan-03.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="wochenplan-03.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="co">#oder einfacher noch:</span></span>
+<span id="cb136-2"><a href="wochenplan-03.html#cb136-2" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<p>Vektor 3b: 1 1 1 2 2 2 3 3 3</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="wochenplan-03.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="fu">rep</span>(<span class="dv">2</span>,<span class="dv">3</span>), <span class="fu">rep</span>(<span class="dv">3</span>,<span class="dv">3</span>))</span></code></pre></div>
+<pre><code>## [1] 1 1 1 2 2 2 3 3 3</code></pre>
+<p>Vektor 3c: Die Zahlen des Vektors b als ausgeschriebene Wörter</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="wochenplan-03.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;Eins&quot;</span>,<span class="dv">3</span>), <span class="fu">rep</span>(<span class="st">&quot;Zwei&quot;</span>,<span class="dv">3</span>), <span class="fu">rep</span>(<span class="st">&quot;Drei&quot;</span>,<span class="dv">3</span>))</span></code></pre></div>
+<pre><code>## [1] &quot;Eins&quot; &quot;Eins&quot; &quot;Eins&quot; &quot;Zwei&quot; &quot;Zwei&quot; &quot;Zwei&quot; &quot;Drei&quot; &quot;Drei&quot; &quot;Drei&quot;</code></pre>
+<p>Vektor 3d: 1 4 7 10 13</p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="wochenplan-03.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">13</span>, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1]  1  4  7 10 13</code></pre>
+<p>Vektor 3e: 1 4 9 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 1100 14899 678999</p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="wochenplan-03.html#cb144-1" aria-hidden="true" tabindex="-1"></a>V3e <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">1</span>), <span class="dv">1100</span>, <span class="dv">14899</span>, <span class="dv">678999</span>)</span>
+<span id="cb144-2"><a href="wochenplan-03.html#cb144-2" aria-hidden="true" tabindex="-1"></a>V3e</span></code></pre></div>
+<pre><code>##  [1]      1      4      9     50     51     52     53     54     55     56
+## [11]     57     58     59     60     61     62     63     64     65     66
+## [21]     67     68     69     70     71     72     73     74     75     76
+## [31]     77     78     79     80     81     82     83     84     85     86
+## [41]     87     88     89     90     91     92     93     94     95     96
+## [51]     97     98     99    100   1100  14899 678999</code></pre>
+<p> </p>
 <ol start="4" style="list-style-type: decimal">
-<li><p>Was macht das Argument <code>trim</code> für die Funktion <code>mean()</code>? Wozu könnten Sie dieses Argument in einem sozialwissenschaftlichen Kontext nutzen? Spezifizieren Sie das Argument auf sinnvolle Weise, um das arithmetische Mittel des in Aufgabe 3e erstellten Vektors zu berechnen!</p></li>
-<li><p>Sie sollen verschiedene Paare von Vektoren mittels der Funktionen <code>c()</code>, <code>rep()</code> und <code>seq()</code> definieren, die jeweils unterschiedlich korrelieren. Diese Vektoren – d.h. Variablen – und deren Korrelationen sollen sozialwissenschaftlichen Phänomenen entsprechen. Berechnen Sie jeweils den Korrelationskoeffizienten.</p></li>
+<li>Was macht das Argument <code>trim</code> für die Funktion <code>mean()</code>? Wozu könnten Sie dieses Argument in einem sozialwissenschaftlichen Kontext nutzen? Spezifizieren Sie das Argument auf sinnvolle Weise, um das arithmetische Mittel des in Aufgabe 3e erstellten Vektors zu berechnen!</li>
 </ol>
-<ul>
-<li>Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine Korrelation von ca. 0.4 aufweisen.</li>
-<li>Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine sehr starke Korrelation aufweisen.</li>
-<li>Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine schwache negative Korrelation aufweisen.</li>
-</ul>
-<p>Bearbeiten Sie die Aufgaben wiederum in RMarkdown und ‘knitten’ Sie Ihre Ergebnisse zu einem PDF-Dokument. Beschriften Sie Ihr Dokument mit FL03_NameVorname.pdf und geben das Dokument via OLAT vor der nächsten Einheit ab.</p>
+<p>Mittels des Arguments <code>trim</code> können bestimmte Anteile der Elemente eines Vektors für die Berechnung entfernt werden. Dies ermöglicht es Extremwerte (sowohl sehr hohe als auch sehr tiefe Werte) aus der Berechnung zu entfernen.</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="wochenplan-03.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(V3e)</span></code></pre></div>
+<pre><code>## [1] 12260.3</code></pre>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="wochenplan-03.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(V3e, <span class="at">trim =</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<pre><code>## [1] 75</code></pre>
+<p>Was erfolgt nun genau mit dem Wert 0.1? Eine Formel von Fabio Keller:</p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="wochenplan-03.html#cb150-1" aria-hidden="true" tabindex="-1"></a>V3e</span></code></pre></div>
+<pre><code>##  [1]      1      4      9     50     51     52     53     54     55     56
+## [11]     57     58     59     60     61     62     63     64     65     66
+## [21]     67     68     69     70     71     72     73     74     75     76
+## [31]     77     78     79     80     81     82     83     84     85     86
+## [41]     87     88     89     90     91     92     93     94     95     96
+## [51]     97     98     99    100   1100  14899 678999</code></pre>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="wochenplan-03.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="co">#...die zwei kleinsten und grössten Werte</span></span>
+<span id="cb152-2"><a href="wochenplan-03.html#cb152-2" aria-hidden="true" tabindex="-1"></a><span class="fl">0.05</span> <span class="sc">*</span> <span class="fu">length</span>(V3e)</span></code></pre></div>
+<pre><code>## [1] 2.85</code></pre>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="wochenplan-03.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(V3e, <span class="at">trim =</span> <span class="fl">0.05</span>)</span></code></pre></div>
+<pre><code>## [1] 93.09434</code></pre>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="wochenplan-03.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="co">#...die drei kleinsten und grössten Werte</span></span>
+<span id="cb156-2"><a href="wochenplan-03.html#cb156-2" aria-hidden="true" tabindex="-1"></a><span class="fl">0.06</span> <span class="sc">*</span> <span class="fu">length</span>(V3e)</span></code></pre></div>
+<pre><code>## [1] 3.42</code></pre>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="wochenplan-03.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(V3e, <span class="at">trim =</span> <span class="fl">0.06</span>)</span></code></pre></div>
+<pre><code>## [1] 75</code></pre>
+<p>Warum ändert sich allerdings nichts am Durchschnittswert, egal wie ich <code>trim</code> im Bereich zwischen 0.06 und 0.5 definiere (0.5 ist der Maximalwert)?</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="wochenplan-03.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(V3e, <span class="at">trim =</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<pre><code>## [1] 75</code></pre>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="wochenplan-03.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(V3e, <span class="at">trim =</span> <span class="fl">0.49</span>)</span></code></pre></div>
+<pre><code>## [1] 75</code></pre>
+<p>Da der Vektor eine Zahlenreihe ist bleibt der Durchschnittswert immer gleich wenn jeweils von den Enden dieselbe Anzahlobjekte entfernt wird.</p>
+<p> </p>
+<ol start="5" style="list-style-type: decimal">
+<li>Sie sollen verschiedene Paare von Vektoren mittels der Funktionen <code>c()</code>, <code>rep()</code> und <code>seq()</code> definieren, die jeweils unterschiedlich korrelieren. Diese Vektoren – d.h. Variablen – und deren Korrelationen sollen sozialwissenschaftlichen Phänomenen entsprechen. Berechnen Sie jeweils den Korrelationskoeffizienten.</li>
+</ol>
+<p>Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine Korrelation von ca. 0.4 aufweisen, anhand eines Beispiels von Vanessa Leutner:</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="wochenplan-03.html#cb164-1" aria-hidden="true" tabindex="-1"></a>Freundschaften <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">4</span>), <span class="at">each =</span> <span class="dv">5</span>)</span>
+<span id="cb164-2"><a href="wochenplan-03.html#cb164-2" aria-hidden="true" tabindex="-1"></a>Lebenszufriedenheit <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">1</span>), <span class="at">each =</span><span class="dv">5</span>)</span>
+<span id="cb164-3"><a href="wochenplan-03.html#cb164-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(Freundschaften, Lebenszufriedenheit)</span></code></pre></div>
+<pre><code>## [1] 0.403411</code></pre>
+<p>Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine sehr starke Korrelation aufweisen, anhand eines Beispiels von Dario Haab:</p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="wochenplan-03.html#cb166-1" aria-hidden="true" tabindex="-1"></a>VektorA <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb166-2"><a href="wochenplan-03.html#cb166-2" aria-hidden="true" tabindex="-1"></a>VektorB <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>, <span class="at">each =</span> <span class="dv">2</span>)</span>
+<span id="cb166-3"><a href="wochenplan-03.html#cb166-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(VektorA, VektorB)</span></code></pre></div>
+<pre><code>## [1] 0.99985</code></pre>
+<p>Wie könnte dieses Beispiel sozialwissenschaftlich interpretiert werden? Die Verteilung könnte beispielsweise von einer Firma stammen, die ihre Löhne alle zwei Jahre bei den Mitarbeiter*innen erhöht.</p>
+<p>Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine schwache negative Korrelation aufweisen, anhand eines Beispiels von Julien Lattmann:</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="wochenplan-03.html#cb168-1" aria-hidden="true" tabindex="-1"></a>Alter <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="dv">15</span>, <span class="dv">65</span>, <span class="dv">2</span>), <span class="dv">4</span>)</span>
+<span id="cb168-2"><a href="wochenplan-03.html#cb168-2" aria-hidden="true" tabindex="-1"></a>Nutzungsdauer_Smartphone <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="fu">seq</span>(<span class="dv">120</span>, <span class="dv">30</span>, <span class="sc">-</span><span class="dv">10</span>), <span class="dv">3</span>), <span class="fu">rep</span>(<span class="dv">70</span>, <span class="dv">20</span>), <span class="fu">rep</span>(<span class="dv">50</span>, <span class="dv">20</span>), <span class="fu">rep</span>(<span class="dv">30</span>, <span class="dv">20</span>), <span class="fu">rep</span>(<span class="dv">10</span>, <span class="dv">14</span>))</span>
+<span id="cb168-3"><a href="wochenplan-03.html#cb168-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(Alter, Nutzungsdauer_Smartphone)</span></code></pre></div>
+<pre><code>## [1] -0.1453604</code></pre>
+</div>
+<div id="ergänzung-seitenumbruch-im-rmarkdown" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Ergänzung: Seitenumbruch im RMarkdown</h2>
+<p>In der Einheit wurde noch kurz besprochen, wie es in RMarkdown möglich ist, einen Seitenumbruch für das ‘geknittete’ PDF einzufügen. Josias Bruderer schlug vor <code>\newpage</code> im Text einzufügen. Eine weitere Möglichkeiten könnten auch <code>\pagebreak</code>sein (siehe <a href="https://qastack.com.de/programming/25240541/how-to-add-newpage-in-rmarkdown-in-a-smart-way">hier</a>).</p>
 
 </div>
 </div>
@@ -256,7 +431,7 @@ div.csl-indent {
         </div>
       </div>
 <a href="wochenplan-02.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="wochenplan-04.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

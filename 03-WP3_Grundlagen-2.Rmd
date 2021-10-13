@@ -24,21 +24,182 @@ Zusammenfassend lassen sich damit folgende Seminarziele festhalten:
 
 1. Erstellen Sie vier verschiedene Vektoren mit je einer Länge von vier und verbinden Sie diese zu einer 4x4-Matrix. Die Funktion `apply()` erlaubt Ihnen, eine Funktionen wie z.B. `mean()` oder `var()` auf diese Matrix anzuwenden. Nur wie genau? Sehen Sie sich die Hilfe zu `apply()` an, probieren Sie die Funktion aus und versuchen Sie zu verstehen, wie sie genau funktioniert. Erläutern Sie `apply()` dann in eigenen Worten und mit Hilfe der von Ihnen erzeugten 4x4-Matrix!
 
+Zuerst können vier Vektoren erstellt werden:
+```{r}
+m1 <- c(2,4,7,9)
+m2 <- c(8,9,5,2)
+m3 <- c(3,5,5,5)
+m4 <- c(9,8,7,6)
+```
+Nachdem die vier Vektoren erstellt wurden lassen sie sich über die `rbind()` und `cbind()` Funktionen auf zwei verschiedene Weisen zu einer Matrix verbinden, entweder zeilen- oder spaltenweise (siehe die Objekte `ma` und `mb`).
+```{r}
+ma <- cbind(m1,m2,m3,m4)
+mb <- rbind(m1,m2,m3,m4)
+ma
+mb
+```
+
+Als nächster Schritt wendet `apply()` dann eine bestimmte Funktion auf ein Objekte an. Bei einem Objekt des Typs Matrix muss allerdings noch spezifiziert werden, ob die Funktion Zeilen- oder Spalteweise angewendet wird. Zeilen oder Spalten werden über die Zahlen 1 bzw. 2 definiert.
+```{r}
+apply(ma, 1, mean)
+apply(ma, 2, mean)
+apply(mb, 1, mean)
+apply(mb, 2, mean)
+```
+
+So ergeben sich insgesamt vier Möglichkeiten, für die Berechnung der des Durchschnitts – allerdings finden sich nur zwei unterschiedliche Ergebnisse.
+
+Was passiert nun hier?
+```{r}
+apply(ma, c(1,2), mean)
+ma
+apply(ma, c(1,2), var)
+```
+Hier wird eine Funktion sowohl auf Spalten als auch auf Zeilen angewendet - das heisst einfach auf die einzelnen Werte. Von einem einzelnen Wert kann man dann das arithmetische Mittel berechen, hingegen nicht die Varianz:
+```{r}
+var(2)
+mean(2)
+```
+
+Als Ergänzung finden Sie hier noch ein sozialwissenschaftliches Beispiel einer solchen Matrix von Katrin Oesch:
+```{r}
+Alter <-c(32,61,45,29)
+Arbeitsjahre <- c(14,33,20,2)
+Monatseinkommen <- c(5500,8700,10200,3750)
+Ausbildungsjahre <- c(3,12,9,7)
+DS_1 <-c(Alter, Arbeitsjahre, Monatseinkommen, Ausbildungsjahre)
+Matrix_1 <- matrix(DS_1, nrow = 4, ncol = 4, byrow = F)
+colnames(Matrix_1) <- c("Alter","Ausbildungsjahre","Monatseinkommen","Ausbildungsjahre")
+apply(Matrix_1, MARGIN=2, FUN = mean)
+
+```
+
+&nbsp;  
+
 2. Erstellen Sie je einen Vektor mit numerischen Daten, textförmigen Daten und logischen Daten. Die Funktionen `as.numeric()`, `as.character()` und `as.logical()` lassen Sie eine Datenarten in eine andere "zwingen" bzw. als eine andere Datenart interpretieren. Wann funktioniert dies? Und wo sind die Grenzen dieses "Zwingens"?
 
+```{r}
+a <- c(0, 1, 2)
+b <- c(TRUE, FALSE, T) #Die logischen Objekte können sowohl ausgeschreiben als auch lediglich als T und F aufgeführt werden
+c <- c("null", "eins", "zwei") #die Anführungs- und Schlusszeichen beachten
+
+```
+Nachdem wir die Vektoren definiert haben, können wir deren Typ bestimmen und mit den `as.`-Funktionen spielen:
+```{r}
+is.numeric(a)
+is.logical(b)
+is.character(c)
+
+as.numeric(b)
+as.numeric(c)
+
+as.logical(a)
+as.logical(c)
+
+as.character(a)
+as.character(b)
+```
+Die Grenzen dieses "Zwingens" der `as.`-Funktionen finden sich auf der einen Seite im Zusammenhang zu den logischen Daten: Dies funktioniert nur mit numerischen Daten – und alles über 1 wird als `TRUE` interpretiert. Auf der anderen Seite zeigt sich die Grenze bei ausgeschriebenen Zahlen in einem Charakter-Vektor. Diese können von R nicht in numerische oder auch logische Daten umformuliert werden. Allerdings gilt es eine wichtige Ausnahme zu beachten, nämlich wenn Zahlen als Charakter aufgeführt wurden:
+```{r}
+c2 <- c("0", "1", "2")
+is.character(c2)
+as.numeric(c2)
+as.logical(as.numeric(c2))
+```
+Insbesondere beim Importieren von Datensätzen, die nicht in einem Rohformat gespeichert sind (etwa ".sav" Dateien), kann es passieren, dass metrische Variablen als Charakter-Vektor eingelesen werden.
+
+&nbsp;  
+
 3. Definieren Sie folgende Vektoren mittels der Funktionen `seq()` und `rep()`:
-+ Vektor 3a: 1 2 3 4 5 6 7 8 9 10
-+ Vektor 3b: 1 1 1 2 2 2 3 3 3
-+ Vektor 3c: Die Zahlen des Vektors b als ausgeschriebene Wörter
-+ Vektor 3d: 1 4 7 10 13
-+ Vektor 3e: 1 4 9 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 1100 14899 678999
+
+Vektor 3a: 1 2 3 4 5 6 7 8 9 10
+```{r}
+seq(from = 1, to = 10, by = 1)
+#oder einfacher noch:
+seq(1, 10, 1)
+```
+
+Vektor 3b: 1 1 1 2 2 2 3 3 3
+```{r}
+c(rep(1,3), rep(2,3), rep(3,3))
+```
+
+Vektor 3c: Die Zahlen des Vektors b als ausgeschriebene Wörter
+```{r}
+c(rep("Eins",3), rep("Zwei",3), rep("Drei",3))
+```
+
+Vektor 3d: 1 4 7 10 13
+```{r}
+seq(1, 13, 3)
+```
+
+Vektor 3e: 1 4 9 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 1100 14899 678999
+```{r}
+V3e <- c(1, 4, 9, seq(50, 100, 1), 1100, 14899, 678999)
+V3e
+```
+
+
+&nbsp;  
 
 4. Was macht das Argument `trim` für die Funktion `mean()`? Wozu könnten Sie dieses Argument in einem sozialwissenschaftlichen Kontext nutzen? Spezifizieren Sie das Argument auf sinnvolle Weise, um das arithmetische Mittel des in Aufgabe 3e erstellten Vektors zu berechnen!
 
+Mittels des Arguments `trim` können bestimmte Anteile der Elemente eines Vektors für die Berechnung entfernt werden. Dies ermöglicht es Extremwerte (sowohl sehr hohe als auch sehr tiefe Werte) aus der Berechnung zu entfernen.
+```{r}
+mean(V3e)
+mean(V3e, trim = 0.1)
+```
+
+Was erfolgt nun genau mit dem Wert 0.1? Eine Formel von Fabio Keller:
+```{r}
+V3e
+
+#...die zwei kleinsten und grössten Werte
+0.05 * length(V3e)
+mean(V3e, trim = 0.05)
+
+#...die drei kleinsten und grössten Werte
+0.06 * length(V3e)
+mean(V3e, trim = 0.06)
+
+```
+
+Warum ändert sich allerdings nichts am Durchschnittswert, egal wie ich `trim` im Bereich zwischen 0.06 und 0.5 definiere (0.5 ist der Maximalwert)?
+```{r}
+mean(V3e, trim = 0.1)
+mean(V3e, trim = 0.49)
+```
+
+Da der Vektor eine Zahlenreihe ist bleibt der Durchschnittswert immer gleich wenn jeweils von den Enden dieselbe Anzahlobjekte entfernt wird.
+
+&nbsp;  
+
 5. Sie sollen verschiedene Paare von Vektoren mittels der Funktionen `c()`, `rep()` und `seq()` definieren, die jeweils unterschiedlich korrelieren. Diese Vektoren -- d.h. Variablen -- und deren Korrelationen sollen sozialwissenschaftlichen Phänomenen entsprechen. Berechnen Sie jeweils den Korrelationskoeffizienten.
-  + Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine Korrelation von ca. 0.4 aufweisen.
-  + Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine sehr starke Korrelation aufweisen.
-  + Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine schwache negative Korrelation aufweisen.
+
+Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine Korrelation von ca. 0.4 aufweisen, anhand eines Beispiels von Vanessa Leutner: 
+```{r}
+Freundschaften <- rep(c(2, 3, 10, 4, 1, 6, 3, 3, 3, 4, 4, 1, 9, 4, 2, 8, 5, 6, 3, 4), each = 5)
+Lebenszufriedenheit <- rep(c(2, 2, 6, 3, 4, 5, 1, 4, 3, 5, 1, 5, 6, 1, 1, 4, 3, 4, 7, 1), each =5)
+cor(Freundschaften, Lebenszufriedenheit)
+```
+
+Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine sehr starke Korrelation aufweisen, anhand eines Beispiels von Dario Haab:
+```{r}
+VektorA <- seq(1, 100, by = 1)
+VektorB <- rep(1:50, each = 2)
+cor(VektorA, VektorB)
+```
+Wie könnte dieses Beispiel sozialwissenschaftlich interpretiert werden? Die Verteilung könnte beispielsweise von einer Firma stammen, die ihre Löhne alle zwei Jahre bei den Mitarbeiter*innen erhöht.
+
+Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine schwache negative Korrelation aufweisen, anhand eines Beispiels von Julien Lattmann:
+```{r}
+Alter <- rep(seq(15, 65, 2), 4)
+Nutzungsdauer_Smartphone <- c(rep(seq(120, 30, -10), 3), rep(70, 20), rep(50, 20), rep(30, 20), rep(10, 14))
+cor(Alter, Nutzungsdauer_Smartphone)
+```
 
 
-Bearbeiten Sie die Aufgaben wiederum in RMarkdown und 'knitten' Sie Ihre Ergebnisse zu einem PDF-Dokument. Beschriften Sie Ihr Dokument mit FL03_NameVorname.pdf und geben das Dokument via OLAT vor der nächsten Einheit ab.
+## Ergänzung: Seitenumbruch im RMarkdown
+
+In der Einheit wurde noch kurz besprochen, wie es in RMarkdown möglich ist, einen Seitenumbruch für das 'geknittete' PDF einzufügen. Josias Bruderer schlug vor `\newpage` im Text einzufügen. Eine weitere Möglichkeiten könnten auch `\pagebreak`sein (siehe [hier](https://qastack.com.de/programming/25240541/how-to-add-newpage-in-rmarkdown-in-a-smart-way)).

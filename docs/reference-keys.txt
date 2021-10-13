@@ -12,3 +12,7 @@ aufgaben
 wochenplan-03
 lernziele-1
 aufgaben-1
+ergänzung-seitenumbruch-im-rmarkdown
+wochenplan-04
+lernziele-2
+aufgaben-2

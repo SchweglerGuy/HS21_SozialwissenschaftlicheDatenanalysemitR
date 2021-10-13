@@ -1,0 +1,44 @@
+# Wochenplan 04
+
+...Vorbereitung von der 04. auf die 05.Einheit.
+
+## Lernziele
+
+Nachdem wir uns bereits verschiedenste Grundlagen für die Arbeit mit R Studio erarbeitet und erste statistische Inhalte kennengelernt haben stehen nun einige ergänzende Aspekte an. Mittels diesen Aspekten wollen wir uns immer näher an die tatsächliche Arbeit der sozialwissenschaftlichen Datenanalyse bewegen: grafische Techniken sollen ausprobiert, Zufallsvariablen kennengelernt und weitere Datensätze erstellt werden. Der vierte Wochenplan soll uns so nicht zuletzt vorbereiten, das Prinzip der Inferenzstatistik mittels R zu verstehen.  
+
+Konkret lassen sich folgende Seminarziele festhalten:
+
+* Sie können zwei Variablen in einem Streudiagramm darstellen und die Darstellungen interpretieren. 
+* Sie kennen den Unterschied von Gleichverteilungen und Normalverteilungen und können in R entsprechend verteilte Zufallsvariablen erstellen.
+* Sie können metrische Verteilungen in Histogrammen darstellen.
+* Sie haben erste Techniken kennenglernt, wie Grafiken erweitert und kombiniert werden können.
+* Sie verstehen, was ein Dataframe in R ist und können die Unterschiede zu einer Matrix benennen.
+* Sie haben sich in R die Grundlagen für ein Verständnis von Inferenzstatistik allgemein und des Stichprobenfehlers im Besonderen erarbeitet.
+
+## Aufgaben
+
+1. Nutzten Sie `plot()` um die Verteilung eines Variablen-Paars darszustellen, das Sie im Rahmen des letzten Wochenplans und der Aufgabe zu den Korrelationen erstellt haben. Verwenden Sie weiter auch eine Farbe für den Plot und verweisen Sie im Titel sowie in den Achsenbeschriftungen auf das sozialwissenschaftliche Phänomen, das Sie darstellen.
+
+2. Erstellen Sie Vektoren für eine Gleichverteilung mittels `runif()` und für eine Normalverteilung mittels `rnorm()`. Diese Vektoren sollen als Variablen Körpergrössen repräsentieren. Erstellen Sie die jeweils zwei Vektoren in unterschiedlichen Längen, und zwar...
+
+  * ...mit je 10,
+  * ...mit je 30
+  * ...und mit je 1000 Fällen.
+
+3. Als nächstes sollen Sie die beiden Verteilungen aus der Aufgabe 2, die 1.000 Fälle aufweisen, grafisch darstellen.
+
+  * Nutzen Sie die Funktion für Histogramme, um die beiden Verteilungen darzustellen. Die beiden Histogramme sollen dieselbe Spannbreite in der x-Achsen haben und jeweils 10 Klassen aufweisen. Wählen Sie je eine Farbe für die Gleich- und Normalverteilung.
+  * Über die Funktion `abline()` kann dem aktuellen Plot eine Linie hinzugefügt werden. Fügen Sie jeweils einem Histogramm den Mittelwert der anderen Verteilung als vertikale Linie hinzu (ebenfalls in der entsprechenden Farbe).
+  * Das Argument `add = TRUE` lässt Sie eine neue Grafik über die aktuelle Grafik legen. Versuchen Sie, auf diese Art Ihre beiden Histogramme in einer Grafik darzustellen.
+  
+4. Erzeugen Sie ein Dataframe, das aus fünf Variablen besteht und 100 Fälle umfasst. Nutzen Sie dazu die verschiedenen Funktionen, die wir bisher kennengelernt haben (Zufallsvariablen, `rep()`, `seq()`, ...). Probieren Sie ebenfalls, dass die fünfte Variablen dem Character Datenformat entspricht. Überlegen Sie sich einen sozialwissenschaftlichen Kontext für dieses Dataframe und benennen Sie die Variablen dementsprechend. Mit diesem Datensatz werden wir im nächsten Wochenplan weiterarbeiten.
+
+5. *Bonusaufgabe*: Das Paket "ggplot2" (als Teil der grösseren Paketsammlung "tidyverse") ermöglicht gegenüber der Basisversion von R besonders komplexe grafische Lösungen. Versuchen Sie Ihre Variablenverteilung aus Aufgabe 1 auch mit diesem Paket darzustellen. Sie können den Beispielcode unten nutzen (die von Ihnen zu ergänzende Aspekte sind mittels den beiden Zeichen >< im Code versehen) und gleichzeitig etwas recherchieren, wie "ggplot2" funktioniert.
+```{r eval=FALSE}
+p1 <- ggplot(data = data.frame(cbind(>Variable1<, >Variable2<)),
+            mapping = aes(x = >Variable1<,
+                          y = >Variable2<))
+p1 + geom_point(size = >Zahl<, color = ">Farbe<") + ggtitle(">Ihr Titel<")
+```
+
+Arbeiten Sie für die Falllösung wiederum mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit FL04_NameVorname.pdf und geben das Dokument via OLAT vor der nächsten Einheit ab.

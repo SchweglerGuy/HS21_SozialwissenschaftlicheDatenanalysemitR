@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Sozialwissenschaftliche Datenanalyse mit R</title>
+  <title>4 Wochenplan 04 | Sozialwissenschaftliche Datenanalyse mit R</title>
   <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:title" content="4 Wochenplan 04 | Sozialwissenschaftliche Datenanalyse mit R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta name="twitter:title" content="4 Wochenplan 04 | Sozialwissenschaftliche Datenanalyse mit R" />
   
   <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="wochenplan-03.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -205,19 +205,60 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="wochenplan-04" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Wochenplan 04</h1>
+<p>…Vorbereitung von der 04. auf die 05.Einheit.</p>
+<div id="lernziele-2" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Lernziele</h2>
+<p>Nachdem wir uns bereits verschiedenste Grundlagen für die Arbeit mit R Studio erarbeitet und erste statistische Inhalte kennengelernt haben stehen nun einige ergänzende Aspekte an. Mittels diesen Aspekten wollen wir uns immer näher an die tatsächliche Arbeit der sozialwissenschaftlichen Datenanalyse bewegen: grafische Techniken sollen ausprobiert, Zufallsvariablen kennengelernt und weitere Datensätze erstellt werden. Der vierte Wochenplan soll uns so nicht zuletzt vorbereiten, das Prinzip der Inferenzstatistik mittels R zu verstehen.</p>
+<p>Konkret lassen sich folgende Seminarziele festhalten:</p>
+<ul>
+<li>Sie können zwei Variablen in einem Streudiagramm darstellen und die Darstellungen interpretieren.</li>
+<li>Sie kennen den Unterschied von Gleichverteilungen und Normalverteilungen und können in R entsprechend verteilte Zufallsvariablen erstellen.</li>
+<li>Sie können metrische Verteilungen in Histogrammen darstellen.</li>
+<li>Sie haben erste Techniken kennenglernt, wie Grafiken erweitert und kombiniert werden können.</li>
+<li>Sie verstehen, was ein Dataframe in R ist und können die Unterschiede zu einer Matrix benennen.</li>
+<li>Sie haben sich in R die Grundlagen für ein Verständnis von Inferenzstatistik allgemein und des Stichprobenfehlers im Besonderen erarbeitet.</li>
+</ul>
+</div>
+<div id="aufgaben-2" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Aufgaben</h2>
+<ol style="list-style-type: decimal">
+<li><p>Nutzten Sie <code>plot()</code> um die Verteilung eines Variablen-Paars darszustellen, das Sie im Rahmen des letzten Wochenplans und der Aufgabe zu den Korrelationen erstellt haben. Verwenden Sie weiter auch eine Farbe für den Plot und verweisen Sie im Titel sowie in den Achsenbeschriftungen auf das sozialwissenschaftliche Phänomen, das Sie darstellen.</p></li>
+<li><p>Erstellen Sie Vektoren für eine Gleichverteilung mittels <code>runif()</code> und für eine Normalverteilung mittels <code>rnorm()</code>. Diese Vektoren sollen als Variablen Körpergrössen repräsentieren. Erstellen Sie die jeweils zwei Vektoren in unterschiedlichen Längen, und zwar…</p></li>
+</ol>
+<ul>
+<li>…mit je 10,</li>
+<li>…mit je 30</li>
+<li>…und mit je 1000 Fällen.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Als nächstes sollen Sie die beiden Verteilungen aus der Aufgabe 2, die 1.000 Fälle aufweisen, grafisch darstellen.</li>
+</ol>
+<ul>
+<li>Nutzen Sie die Funktion für Histogramme, um die beiden Verteilungen darzustellen. Die beiden Histogramme sollen dieselbe Spannbreite in der x-Achsen haben und jeweils 10 Klassen aufweisen. Wählen Sie je eine Farbe für die Gleich- und Normalverteilung.</li>
+<li>Über die Funktion <code>abline()</code> kann dem aktuellen Plot eine Linie hinzugefügt werden. Fügen Sie jeweils einem Histogramm den Mittelwert der anderen Verteilung als vertikale Linie hinzu (ebenfalls in der entsprechenden Farbe).</li>
+<li>Das Argument <code>add = TRUE</code> lässt Sie eine neue Grafik über die aktuelle Grafik legen. Versuchen Sie, auf diese Art Ihre beiden Histogramme in einer Grafik darzustellen.</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Erzeugen Sie ein Dataframe, das aus fünf Variablen besteht und 100 Fälle umfasst. Nutzen Sie dazu die verschiedenen Funktionen, die wir bisher kennengelernt haben (Zufallsvariablen, <code>rep()</code>, <code>seq()</code>, …). Probieren Sie ebenfalls, dass die fünfte Variablen dem Character Datenformat entspricht. Überlegen Sie sich einen sozialwissenschaftlichen Kontext für dieses Dataframe und benennen Sie die Variablen dementsprechend. Mit diesem Datensatz werden wir im nächsten Wochenplan weiterarbeiten.</p></li>
+<li><p><em>Bonusaufgabe</em>: Das Paket “ggplot2” (als Teil der grösseren Paketsammlung “tidyverse”) ermöglicht gegenüber der Basisversion von R besonders komplexe grafische Lösungen. Versuchen Sie Ihre Variablenverteilung aus Aufgabe 1 auch mit diesem Paket darzustellen. Sie können den Beispielcode unten nutzen (die von Ihnen zu ergänzende Aspekte sind mittels den beiden Zeichen &gt;&lt; im Code versehen) und gleichzeitig etwas recherchieren, wie “ggplot2” funktioniert.</p></li>
+</ol>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="wochenplan-04.html#cb170-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(<span class="sc">&gt;</span>Variable1<span class="sc">&lt;</span>, <span class="sc">&gt;</span>Variable2<span class="sc">&lt;</span>)),</span>
+<span id="cb170-2"><a href="wochenplan-04.html#cb170-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="sc">&gt;</span>Variable1<span class="sc">&lt;</span>,</span>
+<span id="cb170-3"><a href="wochenplan-04.html#cb170-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span> <span class="sc">&gt;</span>Variable2<span class="sc">&lt;</span>))</span>
+<span id="cb170-4"><a href="wochenplan-04.html#cb170-4" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="sc">&gt;</span>Zahl<span class="sc">&lt;</span>, <span class="at">color =</span> <span class="st">&quot;&gt;Farbe&lt;&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;&gt;Ihr Titel&lt;&quot;</span>)</span></code></pre></div>
+<p>Arbeiten Sie für die Falllösung wiederum mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit FL04_NameVorname.pdf und geben das Dokument via OLAT vor der nächsten Einheit ab.</p>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="wochenplan-03.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -248,7 +289,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/%s",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-WP4_Grafiken-Zufallsvariablen.Rmd",
 "text": "Edit"
 },
 "history": {
