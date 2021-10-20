@@ -19,19 +19,203 @@ Konkret lassen sich folgende Seminarziele festhalten:
 
 1. Nutzten Sie `plot()` um die Verteilung eines Variablen-Paars darszustellen, das Sie im Rahmen des letzten Wochenplans und der Aufgabe zu den Korrelationen erstellt haben. Verwenden Sie weiter auch eine Farbe für den Plot und verweisen Sie im Titel sowie in den Achsenbeschriftungen auf das sozialwissenschaftliche Phänomen, das Sie darstellen.
 
+
+Als Beispiel dient hier ein Variablenpaar von Delia Bazzigher, das eine schwach-positive Korrelation aufweist:
+```{r}
+age <- c(11, 16, rep(seq(12, 25, 3), 7), 17, 27, rep(seq(12, 70, 3), 3), 22)
+screenhours <- c(rep(c(20, 25, 24, seq(23, 70, 3), 19, 20), 4), rep(40:47, 2))
+cor(age, screenhours)
+```
+
+Zuerst ein simpler Plot...
+```{r}
+plot(age, screenhours)
+
+```
+
+...dann wir dann über diverse Elemente erweitern können:
+
+-   `help(plot)`
+-   *Implizit* haben wir immer schon einen Typ bestimmt, nämlich `type= "p"`
+-   ...davon können wir die Punktform und Grösse bestimmten: `pch =` & `lwd =`
+-   Titel (auch mit *Zeilenumbruch*): `main =`
+-   Achsenbeschriftung: `xlab =` & `ylab =`
+-   Grössen des Textes: `cex.lab =`
+-   Farbe (sowohl über eine schriftliche Bezeichnung als auch über Zahlen): `col =`
+-   (...)
+
+```{r}
+plot(age, screenhours,
+     type = "p",
+     pch = 15,
+     lwd = 2,
+     main = "Zusammenhang zwischen Alter und \nZeit, die vor einem Bildschirm verbracht wurde",
+     xlab = "Alter (j)",
+     ylab = "Bildschirmzeit (h)",
+     cex.lab = 1.2,
+     col = c(1:100)
+     )
+```
+
+&nbsp;
+
 2. Erstellen Sie Vektoren für eine Gleichverteilung mittels `runif()` und für eine Normalverteilung mittels `rnorm()`. Diese Vektoren sollen als Variablen Körpergrössen repräsentieren. Erstellen Sie die jeweils zwei Vektoren in unterschiedlichen Längen, und zwar...
 
-  * ...mit je 10,
-  * ...mit je 30
-  * ...und mit je 1000 Fällen.
+m Folgenden werden die in der Aufgabe verlangten Verteilungen als Histogramme dargestellt. Insbesondere bei grösseren Fallzahlen werden so die Eigenschaften der Verteilungen deutlicher:\
+Bei der Gleichverteilung hat jede Ausprägung dieselbe Auftrittswahrscheinlichkeit. Das heisst, dass jede Körpergrösse zwischen Minimal- und Maximalwert (die beiden Parameter der Funktion `runif()`) mit derselben Häufigkeit vorkommt. Dies entspricht aber nicht der empirischen Realität von Körpergrössen.\
+Bei der Normalverteilung gruppieren sich die meisten Werte um den Mittelwert von 170cm, während kleine und grosse Werte mit zunehmender Abweichung immer weniger häufig auftreten. Dies wiederum entspricht stärker der tatsächlichen, empirischen Verteilungen von Körpergrössen. Unterschieden werden die Normalverteilungen (auch in der Funktion `rnorm()`) über die beiden expliziten Parameter des arithmetischen Mittels und der Standardabweichung [@DiazBone2019, 140f].
+
+
+...mit je 10 Fällen:
+```{r}
+summary(runif(10,150,210))
+summary(rnorm(10,180,10))
+hist(runif(10,150,210))
+hist(rnorm(10,180,10))
+```
+
+...mit je 30 Fällen:
+```{r}
+summary(runif(30,150,210))
+summary(rnorm(30,180,10))
+hist(runif(30,150,210))
+hist(rnorm(30,180,10))
+```
+
+...und mit je 1000 Fällen:
+```{r}
+summary(runif(1000,150,210))
+summary(rnorm(1000,180,10))
+hist(runif(1000,150,210))
+hist(rnorm(1000,180,10))
+```
+
+*Als Ergänzung*: `runif()` und `rnorm()` werden noch von der Funktion 'rbinom()' ergänzt, die zufällige binomiale Verteilungen erstellt. Dies sind Verteilungen die angeben, ob ein Ereignis bei einer bestimmten Wahrscheinlichkeit eingetreten ist oder nicht. Damit kann zum Beispiel aufgezeigt werden, wie oft Sie bei zehn Münzwürfen Kopf bekommen (Beispiel 1), oder auch wie oft Sie bei 100 Mal würfeln mit zwei Würfeln zwei Sechsen erzielen (Beispiel 2).
+
+```{r}
+rbinom(10, size = 1, prob = 0.5) #Beispiel 1
+rbinom(100, 2, (1/6 * 1/6)) #Beispiel 2
+```
+
+
+&nbsp;
+
 
 3. Als nächstes sollen Sie die beiden Verteilungen aus der Aufgabe 2, die 1.000 Fälle aufweisen, grafisch darstellen.
 
-  * Nutzen Sie die Funktion für Histogramme, um die beiden Verteilungen darzustellen. Die beiden Histogramme sollen dieselbe Spannbreite in der x-Achsen haben und jeweils 10 Klassen aufweisen. Wählen Sie je eine Farbe für die Gleich- und Normalverteilung.
-  * Über die Funktion `abline()` kann dem aktuellen Plot eine Linie hinzugefügt werden. Fügen Sie jeweils einem Histogramm den Mittelwert der anderen Verteilung als vertikale Linie hinzu (ebenfalls in der entsprechenden Farbe).
-  * Das Argument `add = TRUE` lässt Sie eine neue Grafik über die aktuelle Grafik legen. Versuchen Sie, auf diese Art Ihre beiden Histogramme in einer Grafik darzustellen.
+Wie können die 10 Klassen erreicht werden? Die Variante `breaks = 10` scheint nicht immer zu funktionieren, sondern ist lediglich ein zu erreichender "Vorschlag" (vgl. die Hinweise in der Hilfe zu `hist()` unter dem Punkt *breaks*). Wir können aber die Punkte, wo die Klassenumbrüche erfolgen sollen, selber bestimmen. Insbesondere bei Gleichverteilungen mit deren klaren Grenzen funktionerit dies einfach über eine Sequenz. Bei der Normalverteilung müssten wir die Punkte, wo die Breaks erfolgen, teilweise noch "händisch" bestimmen.
+```{r}
+hist(runif(1000,150,210),
+     main = "Körpergrösse, \n gleichverteilt",
+     xlab = "Körgpergrösse (cm)",
+     col = "darkgreen",
+     xlim = c(150,210),
+     breaks = seq(from=150, 
+                  to=210, 
+                  by= ((210-150)/10)))
+
+hist(rnorm(1000,180,10),
+     main = "Körpergrösse, \n normalverteilt",
+     xlab = "Körgpergrösse (cm)",
+     col = "orange",
+     xlim = c(150,210),
+     breaks = c(100, 156, 162, 168, 174, 180, 186, 192, 198, 204, 300))
+```
+
+Über die Funktion `abline()` kann dem aktuellen Plot eine Linie hinzugefügt werden. Fügen Sie jeweils einem Histogramm den Mittelwert der anderen Verteilung als vertikale Linie hinzu (ebenfalls in der entsprechenden Farbe).
+```{r}
+hist(runif(1000,150,210),
+     main = "Körpergrösse, \n gleichverteilt",
+     xlab = "Körgpergrösse (cm)",
+     col = "darkgreen",
+     xlim = c(150,210),
+     breaks = seq(from=150, 
+                  to=210, 
+                  by= ((210-150)/10)))
+abline(v = mean(rnorm(1000,180,10)), col = "orange", lwd = 3)
+
+hist(rnorm(1000,180,10),
+     main = "Körpergrösse, \n normalverteilt",
+     xlab = "Körgpergrösse (cm)",
+     col = "orange",
+     xlim = c(150,210),
+     breaks = c(100, 156, 162, 168, 174, 180, 186, 192, 198, 204, 300))
+abline(v = mean(runif(1000,150,210)), col = "darkgreen", lwd = 3)
+
+```
+*Hinweis*: Es konnte zu Problemen beim 'knitten' führen, wenn die `abline()` in einem anderen Codechunk aufgerufen wurde.
+
+Das Argument `add = TRUE` lässt Sie eine neue Grafik über die aktuelle Grafik legen. Versuchen Sie, auf diese Art Ihre beiden Histogramme in einer Grafik darzustellen. Hierzu können noch drei weitere Anpassungen vorgenommen werden: 
+
+* Die Dimensionen der Y-Achse können angepasst werden über `ylim = `.
+* Die Farben der Histogramme können transparent gemacht werden in dem wir auf RGB Werte zurückgreifen (ein Vorschlag von Felix Sigrist).
+* Wir können der Grafik noch eine Legende hinzufügen (ein Vorschlag von Josias Bruderer).
+
+```{r}
+hist(runif(1000,150,210),
+     main = "Körpergrössen",
+     xlab = "Körgpergrösse (cm)",
+     col = "darkgreen",
+     xlim = c(145,215),
+     ylim = c(0, 250))
+
+#Funktion um die RGB-Daten der Farbe "Orange" zu erhalten:
+col2rgb("orange")
+
+hist(rnorm(1000,180,10),
+     col = rgb(255, 165, 0, 255/4, maxColorValue = 255),
+     add = T)
+
+abline(v = mean(rnorm(1000,180,10)), col = "orange", lwd = 3)
+abline(v = mean(runif(1000,150,210)), col = "darkgreen", lwd = 3)
+
+legend(195, 200, 
+       legend = c("gleichverteil", "normalverteilt"),
+       fill = c("darkgreen","orange"),
+       cex = 0.75 )
+```
+
+
+&nbsp;
   
 4. Erzeugen Sie ein Dataframe, das aus fünf Variablen besteht und 100 Fälle umfasst. Nutzen Sie dazu die verschiedenen Funktionen, die wir bisher kennengelernt haben (Zufallsvariablen, `rep()`, `seq()`, ...). Probieren Sie ebenfalls, dass die fünfte Variablen dem Character Datenformat entspricht. Überlegen Sie sich einen sozialwissenschaftlichen Kontext für dieses Dataframe und benennen Sie die Variablen dementsprechend. Mit diesem Datensatz werden wir im nächsten Wochenplan weiterarbeiten.
+
+Für diese Aufgabe gab es viele tolle Beispiele. Hier zwei Varianten, einmal von Vanessa Leutner und einmal von Josias Bruderer:
+```{r}
+#Beispiel von Vanessa Leutner
+Einkommen <- c(seq(from = 2000, to = 12000, length.out = 100))
+Krankheitstage <- rnorm(100, mean = 6.5, sd = 3)
+Ausbildungsjahre <- rep(c(3,6,9,3,13,4,6,7,10,5), each = 10)
+Anzahl_Kinder <- rep(c(1,0,1,2,3,2,3,5,6,7,1,2,3,4,5,3,2,1,4,5), each = 5)
+Geschlecht <- rep(c("weiblich", "männlich", "weiblich", "mänlich", "divers"), each = 20)
+df_vl <- data.frame(Einkommen, Krankheitstage, Ausbildungsjahre, Anzahl_Kinder, Geschlecht)
+
+#Beispiel von Josias Bruderer
+df_jb <- data.frame(alter = round(runif(100, 18, 64)),
+                    geschlecht = sample(rep(c(seq(1,3),2,3), 20)),
+                    tvdauer = sample(round(rnorm(100, 3, 1), 0)),
+                    happiness = sample(c(sample(1:10, 80, replace = T), rep(NA, 20))),
+                    prog = sample(rep(c("Kinder","Unterhaltung","Unterhaltung","News","Sport"), 20)))
+
+```
+
+Die Funktion `round()`wurde von vielen anderen auch genutzt. Eine andere Variante zum Runden hat noch Fabio Keller vorgeschlagen, nämlich mittels `as.integer()`:
+```{r}
+alter = as.integer(runif(100, 18, 64))
+alter
+```
+
+Zur Wiederholung: Was ist nochmals ein Objekt des Typs data.frames [@Manderscheid2017, 39]?
+
+> Während (...) Vektoren weitgehend dem entsprechen, was in der sozialwissenschaftlichen Statistik und in anderen Auswertungsprogrammen als Variable
+bezeichnet wird, enthält das Objekt Dataframe mehrere Variablen: Die Zeilen eines
+Dataframes enthalten die Beobachtungen als Fälle, die Spalten die Faktoren und Vektoren
+als Variablen. Damit entspricht ein Dataframe einem zweidimensionalen, tabellarisch
+darstellbaren Datensatz. Die Faktoren und Vektoren in den Spalten müssen
+dabei die selbe Länge, d. h. die selbe Anzahl von Elementen haben, können dabei aber
+sowohl Zahlen als auch Buchstaben enthalten. 
+
+&nbsp;
 
 5. *Bonusaufgabe*: Das Paket "ggplot2" (als Teil der grösseren Paketsammlung "tidyverse") ermöglicht gegenüber der Basisversion von R besonders komplexe grafische Lösungen. Versuchen Sie Ihre Variablenverteilung aus Aufgabe 1 auch mit diesem Paket darzustellen. Sie können den Beispielcode unten nutzen (die von Ihnen zu ergänzende Aspekte sind mittels den beiden Zeichen >< im Code versehen) und gleichzeitig etwas recherchieren, wie "ggplot2" funktioniert.
 ```{r eval=FALSE}
@@ -41,4 +225,4 @@ p1 <- ggplot(data = data.frame(cbind(>Variable1<, >Variable2<)),
 p1 + geom_point(size = >Zahl<, color = ">Farbe<") + ggtitle(">Ihr Titel<")
 ```
 
-Arbeiten Sie für die Falllösung wiederum mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit FL04_NameVorname.pdf und geben das Dokument via OLAT vor der nächsten Einheit ab.
+Das Paket "ggplot2" hat eine sehr eigene Logik davon, wie Grafiken erstellt werden. Im Seminar selber werden wir in diese Logik nicht vertieft einsteigen. Ein gute Einführung in das Paket und dessen Möglichkeiten bietet das Buch *Data Visualization* [@Healy2019].

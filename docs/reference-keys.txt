@@ -16,3 +16,7 @@ ergänzung-seitenumbruch-im-rmarkdown
 wochenplan-04
 lernziele-2
 aufgaben-2
+wochenplan-05
+lernziele-wp05
+aufgaben-wp05
+hinweise-indizieren-subsetting

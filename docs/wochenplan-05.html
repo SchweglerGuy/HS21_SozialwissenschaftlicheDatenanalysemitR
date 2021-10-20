@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | Sozialwissenschaftliche Datenanalyse mit R</title>
+  <title>5 Wochenplan 05 | Sozialwissenschaftliche Datenanalyse mit R</title>
   <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:title" content="5 Wochenplan 05 | Sozialwissenschaftliche Datenanalyse mit R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta name="twitter:title" content="5 Wochenplan 05 | Sozialwissenschaftliche Datenanalyse mit R" />
   
   <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="wochenplan-05.html"/>
-
+<link rel="prev" href="wochenplan-04.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -211,52 +211,63 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
-
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div class="csl-entry">
-Chang, Winston, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, and Hiroaki Yutani. 2020. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. RStudio. <a href="http://ggplot2.tidyverse.org">http://ggplot2.tidyverse.org</a>.
+<div id="wochenplan-05" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Wochenplan 05</h1>
+<p>. . . zur Einheit von der 05. auf die 06.Einheit.</p>
+<div id="lernziele-wp05" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Lernziele WP05</h2>
+<p>In der kommenden Arbeitswoche geht es nun darum, zwei neue Aspekte der Arbeit mit R kennenzulernen und einzuüben: das <em>Zugreifen</em> auf einzelne Elemente und Teile von Datenobjekten (Indizieren und Subsetting) und die <em>Kontrolle</em> von längeren Befehlsabläufen mittels Schleifen (als erste einfache, eigene Funktionen). Für das Kennenlernen und Einüben der beiden Aspekte dient uns das data.frame-Objekt, das im Rahmen des letzten Wochenplans erstellt wurde.</p>
+<p>Folgende Lernziele lassen sich festhalten:</p>
+<ul>
+<li>Sie können gezielt auf einzelne Teile eines Datenobjekts zugreifen und kennen verschiedene Wege, das zu tun.</li>
+<li>Sie beginnen in der Arbeit mit R gezielt Funktionen zur Abfrage von Attributen von Objekten zu nutzen.</li>
+<li>Sie verstehen, wie eine <em>for</em>-Schleife funktioniert und können einfache Varianten davon selbst erstellen.</li>
+</ul>
 </div>
-<div class="csl-entry">
-Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.
+<div id="aufgaben-wp05" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Aufgaben WP05</h2>
+<ol style="list-style-type: decimal">
+<li><p>Wenden Sie die Funktionen <code>dim()</code>, <code>names()</code>, <code>str()</code>, <code>class()</code> und <code>typeof()</code> auf Ihren Datensatz an (d.h. das data.frame-Objekt an, welches Sie im Rahmen des letzten Wochenplans erstellt haben). Was sagen Ihnen diese Funktionen jeweils? Welcher Output dieser Funktionen leuchtet Ihnen ein, welcher weniger?</p></li>
+<li><p>Wählen Sie aus Ihrem Datensatz die Fälle 20 bis 30 sowie die zweite und dritte Variable aus (ohne einen Teildatensatz zu erstellen). Tun Sie dies auf zwei verschiedene Varianten!</p></li>
+<li><p>Suchen Sie Fälle in Ihrem Datensatz unter der Verwendung von mindestens zwei Variablen. Diese Fälle sollen “spezielle” oder “interessante” Beispiele repräsentieren – begründen Sie Ihre Wahl! Falls Sie keine solche Fälle in Ihrem Datensatz finden können Sie vorhandene Ausprägungen auch anpassen.</p></li>
+<li><p>Definieren Sie eine logische Bedingung die Ihnen erlaubt, Ihr Dataframe anhand der Character-Variable in zwei Gruppen zu teilen. Dies ist eine erste Variante um Teildatensätz zu erstellen (TD1 &amp; TD2). Teilen Sie dann als zweite Variante Ihren Datensatz anhand einer anderen logischen Bedingung in zwei andere Gruppen (TD3 &amp; TD4). Nutzen Sie hierfür wenn möglich zwei numerische Variablen.</p></li>
+<li><p>Berechnen Sie jeweils die Standardabweichungen einer Variable bei den vier Teildatensätze, die Sie in Aufgabe 3 erstellt haben. Was wären (kurze) sozialwissenschaftliche Interpretationen Ihrer Ergebnisse?</p></li>
+<li><p>Berechnen Sie für eine Variable und bei einer der vier Möglichkeiten aus Aufgabe 3 den Mittelwert, nun allerdings in einem Schritt (das heisst ohne zuerst einen Teildatensatz zu erstellen).</p></li>
+</ol>
+<p>Arbeiten Sie für die Falllösung wiederum mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit FL04_NameVorname.pdf und geben das Dokument via OLAT vor der nächsten Einheit ab.</p>
 </div>
-<div class="csl-entry">
-Healy, Kieran. 2019. <em>Data Visualization</em>. Princeton, NJ: Princeton University Press.
+<div id="hinweise-indizieren-subsetting" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Hinweise Indizieren &amp; Subsetting</h2>
+<p>Wie können wir nun mittels <em>Indizieren</em> (Auswählen) und <em>Subsetting</em> (Aufteilen) auf einzelne Elemente eines Objektes zugreifen? Teilweise haben wir diesen Aspekte im Umgang mit R bereits kennengelernt – aber nur implizit! Jetzt geht es darum, dies explizit zu machen. Dabei können wir drei Varianten, mit denen wir auf Daten zugreifen:</p>
+<p>Variante: <strong>[]</strong>
+Die erste Variante wählt nach den Dimensionen von Objekte die Elemente aus:</p>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="wochenplan-05.html#cb207-1" aria-hidden="true" tabindex="-1"></a>vektor1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">13</span>,<span class="dv">20</span>)</span>
+<span id="cb207-2"><a href="wochenplan-05.html#cb207-2" aria-hidden="true" tabindex="-1"></a>vektor2[<span class="dv">4</span>]</span>
+<span id="cb207-3"><a href="wochenplan-05.html#cb207-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb207-4"><a href="wochenplan-05.html#cb207-4" aria-hidden="true" tabindex="-1"></a>datensatz <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(vektor1, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>))</span>
+<span id="cb207-5"><a href="wochenplan-05.html#cb207-5" aria-hidden="true" tabindex="-1"></a>datensatz</span>
+<span id="cb207-6"><a href="wochenplan-05.html#cb207-6" aria-hidden="true" tabindex="-1"></a>datensatz[<span class="dv">1</span>,<span class="dv">1</span>]</span>
+<span id="cb207-7"><a href="wochenplan-05.html#cb207-7" aria-hidden="true" tabindex="-1"></a>datensatz[<span class="dv">6</span>,<span class="dv">1</span>]</span>
+<span id="cb207-8"><a href="wochenplan-05.html#cb207-8" aria-hidden="true" tabindex="-1"></a>datensatz[,<span class="dv">0</span>]</span></code></pre></div>
+<p>Variante: <strong>$</strong>
+Die zweite Variante funktioniert in einer Logik von benannten “Unterelementen” eines Objektes, wie wir dies etwa als Variablen bei Datensätzen kennen:</p>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="wochenplan-05.html#cb208-1" aria-hidden="true" tabindex="-1"></a>datensatz<span class="sc">$</span>vektor1</span></code></pre></div>
+<p>Variante: <strong>which()</strong>
+Mittels der dritten Variante fragen wir in einem Objekt die Eigenschaften von dessen einzelnen Elementen ab. Dies entspricht einer Vorstellung auf das Zugreifen von Fällen. Und wir tun dies über logische Bedingungen:</p>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="wochenplan-05.html#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(datensatz<span class="sc">$</span>vektor1<span class="sc">==</span><span class="dv">20</span>)</span></code></pre></div>
+<p>Sie sehen bereits im letzten Beispiel, dass die Varianten kombinert werden können. Damit können wir uns Beispielweise einen Teildatensatz erstellen:</p>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="wochenplan-05.html#cb210-1" aria-hidden="true" tabindex="-1"></a>datensatz[<span class="fu">which</span>(datensatz<span class="sc">$</span>vektor1<span class="sc">==</span><span class="dv">20</span>),]</span>
+<span id="cb210-2"><a href="wochenplan-05.html#cb210-2" aria-hidden="true" tabindex="-1"></a>datensatz[datensatz<span class="sc">$</span>vektor1<span class="sc">==</span><span class="dv">20</span>,] <span class="co">#als einfachere Schreibweise</span></span></code></pre></div>
+
 </div>
-<div class="csl-entry">
-Kabacoff, Robert. 2015. <em>R in Action: Data Analysis and Graphics with r</em>. Shelter Island, NY: Manning.
 </div>
-<div class="csl-entry">
-Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit r. Eine Einführung</em>. Wiesbaden: Springer VS.
-</div>
-<div class="csl-entry">
-Sauer, Sebastian. 2019. <em>Moderne Datenanalyse Mit r: Daten Einlesen, Aufbereiten, Visualisieren, Modellieren Und Kommunizieren</em>. Wiesbaden: Springer VS.
-</div>
-<div class="csl-entry">
-Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. Sebastopol, CA: O’Reilly. <a href="https://r4ds.had.co.nz/index.html">https://r4ds.had.co.nz/index.html</a>.
-</div>
-<div class="csl-entry">
-Xie, Yihui. 2020. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
-</div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="wochenplan-05.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="wochenplan-04.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -287,7 +298,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/15-references.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-WP5_IndizierenSubsetting.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -1,0 +1,67 @@
+# Wochenplan 05
+
+. . . zur Einheit von der 05. auf die 06.Einheit.
+
+## Lernziele WP05
+
+In der kommenden Arbeitswoche geht es nun darum, zwei neue Aspekte der Arbeit mit R kennenzulernen und einzuüben: das *Zugreifen* auf einzelne Elemente und Teile von Datenobjekten (Indizieren und Subsetting) und die *Kontrolle* von längeren Befehlsabläufen mittels Schleifen (als erste einfache, eigene Funktionen). Für das Kennenlernen und Einüben der beiden Aspekte dient uns das data.frame-Objekt, das im Rahmen des letzten Wochenplans erstellt wurde.
+
+Folgende Lernziele lassen sich festhalten:
+
+-   Sie können gezielt auf einzelne Teile eines Datenobjekts zugreifen und kennen verschiedene Wege, das zu tun.
+-   Sie beginnen in der Arbeit mit R gezielt Funktionen zur Abfrage von Attributen von Objekten zu nutzen.
+-   Sie verstehen, wie eine *for*-Schleife funktioniert und können einfache Varianten davon selbst erstellen.
+
+## Aufgaben WP05
+
+1.  Wenden Sie die Funktionen `dim()`, `names()`, `str()`, `class()` und `typeof()` auf Ihren Datensatz an (d.h. das data.frame-Objekt an, welches Sie im Rahmen des letzten Wochenplans erstellt haben). Was sagen Ihnen diese Funktionen jeweils? Welcher Output dieser Funktionen leuchtet Ihnen ein, welcher weniger?
+
+2.  Wählen Sie aus Ihrem Datensatz die Fälle 20 bis 30 sowie die zweite und dritte Variable aus (ohne einen Teildatensatz zu erstellen). Tun Sie dies auf zwei verschiedene Varianten!
+
+3.  Suchen Sie Fälle in Ihrem Datensatz unter der Verwendung von mindestens zwei Variablen. Diese Fälle sollen "spezielle" oder "interessante" Beispiele repräsentieren -- begründen Sie Ihre Wahl! Falls Sie keine solche Fälle in Ihrem Datensatz finden können Sie vorhandene Ausprägungen auch anpassen.
+
+4.  Definieren Sie eine logische Bedingung die Ihnen erlaubt, Ihr Dataframe anhand der Character-Variable in zwei Gruppen zu teilen. Dies ist eine erste Variante um Teildatensätz zu erstellen (TD1 & TD2). Teilen Sie dann als zweite Variante Ihren Datensatz anhand einer anderen logischen Bedingung in zwei andere Gruppen (TD3 & TD4). Nutzen Sie hierfür wenn möglich zwei numerische Variablen.
+
+5.  Berechnen Sie jeweils die Standardabweichungen einer Variable bei den vier Teildatensätze, die Sie in Aufgabe 3 erstellt haben. Was wären (kurze) sozialwissenschaftliche Interpretationen Ihrer Ergebnisse?
+
+6.  Berechnen Sie für eine Variable und bei einer der vier Möglichkeiten aus Aufgabe 3 den Mittelwert, nun allerdings in einem Schritt (das heisst ohne zuerst einen Teildatensatz zu erstellen).
+
+Arbeiten Sie für die Falllösung wiederum mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit FL04_NameVorname.pdf und geben das Dokument via OLAT vor der nächsten Einheit ab.
+
+## Hinweise Indizieren & Subsetting
+
+Wie können wir nun mittels *Indizieren* (Auswählen) und *Subsetting* (Aufteilen) auf einzelne Elemente eines Objektes zugreifen? Teilweise haben wir diesen Aspekte im Umgang mit R bereits kennengelernt -- aber nur implizit! Jetzt geht es darum, dies explizit zu machen. Dabei können wir drei Varianten, mit denen wir auf Daten zugreifen:
+
+Variante: **[]**
+Die erste Variante wählt nach den Dimensionen von Objekte die Elemente aus:
+
+```{r eval=F}
+vektor1 <- c(1,2,10,5,13,20)
+vektor2[4]
+
+datensatz <- data.frame(vektor1, c(1,1,1,1,2,1))
+datensatz
+datensatz[1,1]
+datensatz[6,1]
+datensatz[,0]
+```
+
+Variante: **$**
+    Die zweite Variante funktioniert in einer Logik von benannten "Unterelementen" eines Objektes, wie wir dies etwa als Variablen bei Datensätzen kennen:
+
+```{r eval=F}
+datensatz$vektor1
+```
+
+Variante: **which()**
+Mittels der dritten Variante fragen wir in einem Objekt die Eigenschaften von dessen einzelnen Elementen ab. Dies entspricht einer Vorstellung auf das Zugreifen von Fällen. Und wir tun dies über logische Bedingungen:
+
+```{r eval=F}
+which(datensatz$vektor1==20)
+```
+
+Sie sehen bereits im letzten Beispiel, dass die Varianten kombinert werden können. Damit können wir uns Beispielweise einen Teildatensatz erstellen:
+```{r eval=F}
+datensatz[which(datensatz$vektor1==20),]
+datensatz[datensatz$vektor1==20,] #als einfachere Schreibweise
+```
