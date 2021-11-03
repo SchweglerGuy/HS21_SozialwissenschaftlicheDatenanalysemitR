@@ -190,10 +190,16 @@ div.csl-indent {
 <li class="chapter" data-level="5.2" data-path="wochenplan-05.html"><a href="wochenplan-05.html#hinweise-indizieren-subsetting"><i class="fa fa-check"></i><b>5.2</b> Hinweise Indizieren &amp; Subsetting</a></li>
 <li class="chapter" data-level="5.3" data-path="wochenplan-05.html"><a href="wochenplan-05.html#aufgaben-wp05"><i class="fa fa-check"></i><b>5.3</b> Aufgaben WP05</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="wochenplan-05-1.html"><a href="wochenplan-05-1.html"><i class="fa fa-check"></i><b>6</b> Wochenplan 05</a>
+<li class="chapter" data-level="6" data-path="wochenplan-06.html"><a href="wochenplan-06.html"><i class="fa fa-check"></i><b>6</b> Wochenplan 06</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="wochenplan-05-1.html"><a href="wochenplan-05-1.html#lernziele-3"><i class="fa fa-check"></i><b>6.1</b> Lernziele</a></li>
-<li class="chapter" data-level="6.2" data-path="wochenplan-05-1.html"><a href="wochenplan-05-1.html#aufgaben-3"><i class="fa fa-check"></i><b>6.2</b> Aufgaben</a></li>
+<li class="chapter" data-level="6.1" data-path="wochenplan-06.html"><a href="wochenplan-06.html#lernziele-3"><i class="fa fa-check"></i><b>6.1</b> Lernziele</a></li>
+<li class="chapter" data-level="6.2" data-path="wochenplan-06.html"><a href="wochenplan-06.html#besprechung-skript-standardfehler.r"><i class="fa fa-check"></i><b>6.2</b> Besprechung Skript “standardfehler.R”</a></li>
+<li class="chapter" data-level="6.3" data-path="wochenplan-06.html"><a href="wochenplan-06.html#ggplot2-darstellung"><i class="fa fa-check"></i><b>6.3</b> ggplot2 Darstellung</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="wochenplan-07.html"><a href="wochenplan-07.html"><i class="fa fa-check"></i><b>7</b> Wochenplan 07</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="wochenplan-07.html"><a href="wochenplan-07.html#lernziele-4"><i class="fa fa-check"></i><b>7.1</b> Lernziele</a></li>
+<li class="chapter" data-level="7.2" data-path="wochenplan-07.html"><a href="wochenplan-07.html#aufgaben-3"><i class="fa fa-check"></i><b>7.2</b> Aufgaben</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -224,7 +230,7 @@ div.csl-indent {
 <p>Das Seminar “sozialwissenschaftliche Datenanalyse mit R” versucht eine Realität des statistischen Arbeitens zu vermitteln und ergänzt so die Vorlesung “Grundlagen der multivariaten Statistik” gleich in zweierlei Hinsicht: Erstens wird eine Auswahl der gelernten statistischen Verfahren konkret angewendet (und so auch nochmals repetiert). Zweitens zeigt sich neben den eigentlichen Verfahren ein weiterer, impliziter Teil der Statistik: ein Umgang mit Daten, deren Aufbereitung und Verarbeitung sowie die damit einhergehenden Herausforderungen.</p>
 Hinter dem Seminar steht eine bestimmte Vorstellung der sozialwissenschaftlichen Datenanalyse, die folgende Teile enthält <span class="citation">(<a href="#ref-WickhamGrolemund2016" role="doc-biblioref">Wickham and Grolemund 2016</a>)</span>:
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
-<img src="Bilder/Modell.jpg" alt="Modell Datenanalyse"  />
+<img src="Bilder/Modell.jpg" alt="Modell Datenanalyse" width="484" />
 <p class="caption">
 Figure 1.1: Modell Datenanalyse
 </p>
@@ -343,12 +349,12 @@ und R wird automatisch gestartet wird, wenn Sie RStudio starten <span class="cit
 <p>Dabei wird n - 1 verwendet, da bei kleineren Stichprobenumfängen die Standardabweichung überschätzt wird. Bei grösseren Stichprobenumfängen wird dies dann immer weniger wichtig:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="wocheplan-01.html#cb10-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>) <span class="co">#eine standardnormalverteilte Varialbe mit n = 50</span></span>
 <span id="cb10-2"><a href="wocheplan-01.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(z)</span></code></pre></div>
-<pre><code>## [1] 0.973144</code></pre>
+<pre><code>## [1] 0.9992143</code></pre>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="wocheplan-01.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(</span>
 <span id="cb12-2"><a href="wocheplan-01.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>((z <span class="sc">-</span> <span class="fu">mean</span>(z))<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb12-3"><a href="wocheplan-01.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">/</span> (<span class="fu">length</span>(z))</span>
 <span id="cb12-4"><a href="wocheplan-01.html#cb12-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-<pre><code>## [1] 0.9726573</code></pre>
+<pre><code>## [1] 0.9987146</code></pre>
 
 </div>
 </div>
@@ -373,7 +379,7 @@ Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Ti
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Falls Sie noch Probleme bei der Installation von R bzw. RStudio oder sonstige technische Schwierigkeiten haben, können Sie sich gerne weiterhin per E-Mail melden!<a href="wocheplan-01.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>Die zwei miteinander verzahnte Lernziele führen auch dazu, dass das Seminar allerdings nicht als eigentliche Übung zur Vorlesung funktioniert (und das nicht alle Inhalte der Vorlesung im Seminar behandelt werden können).<a href="wocheplan-01.html#fnref1" class="footnote-back">↩︎</a></p></li>
 <li id="fn2"><p>Über die Funktionen können Sie ebenfalls prüfen, ob womöglich Ihre Pakete nicht auf Ihrem Rechner, sondern auf einem Server installiert werden (was oftmals bei nicht-persönlichen Firmen-Rechnern der Fall sein kann).<a href="wocheplan-01.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>

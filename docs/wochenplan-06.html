@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Wochenplan 06 | Sozialwissenschaftliche Datenanalyse mit R</title>
+  <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Wochenplan 06 | Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Wochenplan 06 | Sozialwissenschaftliche Datenanalyse mit R" />
+  
+  <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
+  
+
+<meta name="author" content="Kenneth Horvath &amp; Guy Schwegler" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="wochenplan-05.html"/>
+<link rel="next" href="wochenplan-07.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R - HS21</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Einführung</a></li>
+<li class="chapter" data-level="1" data-path="wocheplan-01.html"><a href="wocheplan-01.html"><i class="fa fa-check"></i><b>1</b> Wocheplan 01</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="wocheplan-01.html"><a href="wocheplan-01.html#sozialwissenschaftliche-datenanalyse"><i class="fa fa-check"></i><b>1.1</b> Sozialwissenschaftliche Datenanalyse</a></li>
+<li class="chapter" data-level="1.2" data-path="wocheplan-01.html"><a href="wocheplan-01.html#ziel-des-kurses"><i class="fa fa-check"></i><b>1.2</b> Ziel des Kurses</a></li>
+<li class="chapter" data-level="1.3" data-path="wocheplan-01.html"><a href="wocheplan-01.html#r-als-programm-rstudio"><i class="fa fa-check"></i><b>1.3</b> R als Programm &amp; RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="wocheplan-01.html"><a href="wocheplan-01.html#lernziele-der-ersten-woche"><i class="fa fa-check"></i><b>1.4</b> Lernziele der ersten Woche</a></li>
+<li class="chapter" data-level="1.5" data-path="wocheplan-01.html"><a href="wocheplan-01.html#aufgaben-der-ersten-woche"><i class="fa fa-check"></i><b>1.5</b> Aufgaben der ersten Woche</a></li>
+<li class="chapter" data-level="1.6" data-path="wocheplan-01.html"><a href="wocheplan-01.html#ergänzung-standardabweichung-zwischen-grundgesamtheit-und-stichprobe"><i class="fa fa-check"></i><b>1.6</b> Ergänzung: Standardabweichung zwischen Grundgesamtheit und Stichprobe</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="wochenplan-02.html"><a href="wochenplan-02.html"><i class="fa fa-check"></i><b>2</b> Wochenplan 02</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="wochenplan-02.html"><a href="wochenplan-02.html#lernziele"><i class="fa fa-check"></i><b>2.1</b> Lernziele</a></li>
+<li class="chapter" data-level="2.2" data-path="wochenplan-02.html"><a href="wochenplan-02.html#aufgaben"><i class="fa fa-check"></i><b>2.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="wochenplan-03.html"><a href="wochenplan-03.html"><i class="fa fa-check"></i><b>3</b> Wochenplan 03</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="wochenplan-03.html"><a href="wochenplan-03.html#lernziele-1"><i class="fa fa-check"></i><b>3.1</b> Lernziele</a></li>
+<li class="chapter" data-level="3.2" data-path="wochenplan-03.html"><a href="wochenplan-03.html#aufgaben-1"><i class="fa fa-check"></i><b>3.2</b> Aufgaben</a></li>
+<li class="chapter" data-level="3.3" data-path="wochenplan-03.html"><a href="wochenplan-03.html#ergänzung-seitenumbruch-im-rmarkdown"><i class="fa fa-check"></i><b>3.3</b> Ergänzung: Seitenumbruch im RMarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wochenplan-04.html"><a href="wochenplan-04.html"><i class="fa fa-check"></i><b>4</b> Wochenplan 04</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="wochenplan-04.html"><a href="wochenplan-04.html#lernziele-2"><i class="fa fa-check"></i><b>4.1</b> Lernziele</a></li>
+<li class="chapter" data-level="4.2" data-path="wochenplan-04.html"><a href="wochenplan-04.html#aufgaben-2"><i class="fa fa-check"></i><b>4.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="wochenplan-05.html"><a href="wochenplan-05.html"><i class="fa fa-check"></i><b>5</b> Wochenplan 05</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="wochenplan-05.html"><a href="wochenplan-05.html#lernziele-wp05"><i class="fa fa-check"></i><b>5.1</b> Lernziele WP05</a></li>
+<li class="chapter" data-level="5.2" data-path="wochenplan-05.html"><a href="wochenplan-05.html#hinweise-indizieren-subsetting"><i class="fa fa-check"></i><b>5.2</b> Hinweise Indizieren &amp; Subsetting</a></li>
+<li class="chapter" data-level="5.3" data-path="wochenplan-05.html"><a href="wochenplan-05.html#aufgaben-wp05"><i class="fa fa-check"></i><b>5.3</b> Aufgaben WP05</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="wochenplan-06.html"><a href="wochenplan-06.html"><i class="fa fa-check"></i><b>6</b> Wochenplan 06</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="wochenplan-06.html"><a href="wochenplan-06.html#lernziele-3"><i class="fa fa-check"></i><b>6.1</b> Lernziele</a></li>
+<li class="chapter" data-level="6.2" data-path="wochenplan-06.html"><a href="wochenplan-06.html#besprechung-skript-standardfehler.r"><i class="fa fa-check"></i><b>6.2</b> Besprechung Skript “standardfehler.R”</a></li>
+<li class="chapter" data-level="6.3" data-path="wochenplan-06.html"><a href="wochenplan-06.html#ggplot2-darstellung"><i class="fa fa-check"></i><b>6.3</b> ggplot2 Darstellung</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="wochenplan-07.html"><a href="wochenplan-07.html"><i class="fa fa-check"></i><b>7</b> Wochenplan 07</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="wochenplan-07.html"><a href="wochenplan-07.html#lernziele-4"><i class="fa fa-check"></i><b>7.1</b> Lernziele</a></li>
+<li class="chapter" data-level="7.2" data-path="wochenplan-07.html"><a href="wochenplan-07.html#aufgaben-3"><i class="fa fa-check"></i><b>7.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="./">Universität Luzern</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sozialwissenschaftliche Datenanalyse mit R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="wochenplan-06" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Wochenplan 06</h1>
+<p>… zur Einheit der 06. und 07.Woche.</p>
+<div id="lernziele-3" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Lernziele</h2>
+<p>Über die vergangenen Wochen haben wir zahlreiche grundlegende Aspekte der Arbeit mit R kennengelernt. Als Vorbereitung im Rahmen des Wochenplans 06 sollen Sie diese Inhalte noch einmal Revue passieren lassen. Im Rahmen dieser Repetition werden weiter zwei neue Dinge vermittelt werden: Auf der einen Seite erfolgt die Schulung aktiver Rezeptionsfertigkeiten (sprich: R-Code lesen und verstehen lernen). Auch dies ist eine wichtige Arbeitstechnik in R. Auf der anderen Seite sollen Sie mit dem rezipierten Code das Prinzip der Inferenzstatistik (und der Stichprobenverteilung sowie des Standardfehlers) in R veranschaulicht bekommen.</p>
+<p>Konkret lassen sich folgende Seminarziele festhalten:</p>
+<ul>
+<li><p>Sie können von einer anderen Person geschriebenen R-Code entziffern und mit Kommentaren versehen.</p></li>
+<li><p>Sie entwickeln dabei ein Gefühl für unterschiedliche Arten, Code lesbar zu gestalten.</p></li>
+<li><p>Sie wissen, wie selbstgeschriebene Funktionen in R aussehen und können diese Schritt für Schritt interpretieren.</p></li>
+<li><p>Sie entwickeln Ihr Verständnis davon weiter, wie in R Grafiken genutzt und angepasst werden, um statistische Inhalte zu visualisieren.</p></li>
+<li><p>Sie nutzen R um über Konzepte der Inferenzstatistik (wie den Standardfehler) nachzudenken.</p></li>
+</ul>
+</div>
+<div id="besprechung-skript-standardfehler.r" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Besprechung Skript “standardfehler.R”</h2>
+<p>Der folgende Code ist ein Skript zur Simulation des Standardfehlers und soll helfen, das Prinzip der Inferenzstatistik, den Standardfehler sowie die damit zusammenhängenden Ebenen von Grundgesamtheit, einzelner Stichprobe und Stichprobenverteilung zu verstehen und zu veranschaulichen <span class="citation">(vgl. <a href="#ref-DiazBone2019" role="doc-biblioref">Diaz-Bone 2019, 145f</a>)</span>.</p>
+<p><strong>Ebene der Grundgesamtheit</strong>:<br />
+Unsere Grundgesamtheit bilden 1000 Ausprägungen einer beliebigen Variable, die hier nun gleichverteilt ist und sich zwischen 0 und 20 bewegt. Die Verteilung dieser Variable können wir dann in einem Histogramm darstellen.</p>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="wochenplan-06.html#cb252-1" aria-hidden="true" tabindex="-1"></a>variable_population <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">10000</span>,</span>
+<span id="cb252-2"><a href="wochenplan-06.html#cb252-2" aria-hidden="true" tabindex="-1"></a>                             <span class="at">min =</span> <span class="dv">0</span>,</span>
+<span id="cb252-3"><a href="wochenplan-06.html#cb252-3" aria-hidden="true" tabindex="-1"></a>                             <span class="at">max =</span> <span class="dv">20</span>)</span>
+<span id="cb252-4"><a href="wochenplan-06.html#cb252-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(variable_population)</span></code></pre></div>
+<pre><code>## [1] 10.0505</code></pre>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="wochenplan-06.html#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(variable_population)</span></code></pre></div>
+<pre><code>## [1] 5.786569</code></pre>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="wochenplan-06.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(variable_population,</span>
+<span id="cb256-2"><a href="wochenplan-06.html#cb256-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">30</span>,</span>
+<span id="cb256-3"><a href="wochenplan-06.html#cb256-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="st">&quot;orange&quot;</span>,</span>
+<span id="cb256-4"><a href="wochenplan-06.html#cb256-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Unsere Grundgesamtheit&quot;</span>,</span>
+<span id="cb256-5"><a href="wochenplan-06.html#cb256-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
+<span id="cb256-6"><a href="wochenplan-06.html#cb256-6" aria-hidden="true" tabindex="-1"></a>     )</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-93-1.png" width="672" /></p>
+<p><strong>Ebene der einzelnen Stichprobe</strong>:<br />
+Als nächster Schritt wird nun eine Stichprobe gezogen mit der Funktion <code>sample()</code>, in der zufällig 100 Fälle der Grundgesamtheit landen. Von dieser Stichprobe können wir dann den Mittelwert berechnen und diesen Wert in das Histogramm der Grundgesamtheit einfügen. Der Mittelwert der Stichprobe (schwarz) unterscheidet sich natürlich minimal vom Mittelwert der Grundgesamt (rot).<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> Letzterer wird dann über die Funktion <code>abline()</code> eingezeichnet.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></p>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="wochenplan-06.html#cb257-1" aria-hidden="true" tabindex="-1"></a>sample1 <span class="ot">&lt;-</span> <span class="fu">sample</span>(variable_population, <span class="dv">100</span>)</span>
+<span id="cb257-2"><a href="wochenplan-06.html#cb257-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(variable_population)</span></code></pre></div>
+<pre><code>## [1] 10.0505</code></pre>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="wochenplan-06.html#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(sample1)</span></code></pre></div>
+<pre><code>## [1] 10.71276</code></pre>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="wochenplan-06.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(variable_population,</span>
+<span id="cb261-2"><a href="wochenplan-06.html#cb261-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">30</span>,</span>
+<span id="cb261-3"><a href="wochenplan-06.html#cb261-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="st">&quot;orange&quot;</span>,</span>
+<span id="cb261-4"><a href="wochenplan-06.html#cb261-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Unsere Grundgesamtheit&quot;</span>,</span>
+<span id="cb261-5"><a href="wochenplan-06.html#cb261-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
+<span id="cb261-6"><a href="wochenplan-06.html#cb261-6" aria-hidden="true" tabindex="-1"></a>     )</span>
+<span id="cb261-7"><a href="wochenplan-06.html#cb261-7" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="fu">rep</span>(<span class="fu">mean</span>(sample1), <span class="dv">2</span>),</span>
+<span id="cb261-8"><a href="wochenplan-06.html#cb261-8" aria-hidden="true" tabindex="-1"></a>       <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>),</span>
+<span id="cb261-9"><a href="wochenplan-06.html#cb261-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">type =</span> <span class="st">&quot;l&quot;</span>,</span>
+<span id="cb261-10"><a href="wochenplan-06.html#cb261-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb261-11"><a href="wochenplan-06.html#cb261-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">lwd =</span> <span class="dv">8</span>)</span>
+<span id="cb261-12"><a href="wochenplan-06.html#cb261-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb261-13"><a href="wochenplan-06.html#cb261-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Hier wird nun auch noch der Mittelwert der Grundgesamtheit eingefügt</span></span>
+<span id="cb261-14"><a href="wochenplan-06.html#cb261-14" aria-hidden="true" tabindex="-1"></a><span class="co">#...aber mittels der Funktion &#39;abline()&#39;</span></span>
+<span id="cb261-15"><a href="wochenplan-06.html#cb261-15" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">mean</span>(variable_population), <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
+<p>Da wir nun mit einer fiktiven Grundgesamtheit und in einem Modell arbeiten können wir immer wieder neue Stichproben ziehen. Dies könnten wir realisieren, indem wir den Codechunk von oben immer wieder repetieren. Oder als “elegantere” Variante: Wir schreiben uns den Code für eine <em>for</em>-Schleife, die uns eine beliebige Anzahl Stichproben zieht (i), den Mittelwert der Stichprobe berechnet und diesen Mittelwert in das Histogramm der Grundgesamtheit einzeichnet.</p>
+<p><strong>Ebene der einzelnen Stichprobe als Loop</strong>:<br />
+Der folgende Code ruft nun nochmals das Histogramm der Grundgesamtheit auf. Anschliessend zieht die Schleife 100 Stichproben, berechnet deren Mittelwerte und fügt diese als Linie mit verschiedenen Farben in die Grafik ein.</p>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="wochenplan-06.html#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(variable_population,</span>
+<span id="cb262-2"><a href="wochenplan-06.html#cb262-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">30</span>,</span>
+<span id="cb262-3"><a href="wochenplan-06.html#cb262-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;orange&quot;</span>,</span>
+<span id="cb262-4"><a href="wochenplan-06.html#cb262-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Unsere Grundgesamtheit&quot;</span>,</span>
+<span id="cb262-5"><a href="wochenplan-06.html#cb262-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
+<span id="cb262-6"><a href="wochenplan-06.html#cb262-6" aria-hidden="true" tabindex="-1"></a>     )</span>
+<span id="cb262-7"><a href="wochenplan-06.html#cb262-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb262-8"><a href="wochenplan-06.html#cb262-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>) {</span>
+<span id="cb262-9"><a href="wochenplan-06.html#cb262-9" aria-hidden="true" tabindex="-1"></a>sample1 <span class="ot">&lt;-</span> <span class="fu">sample</span>(variable_population, <span class="dv">100</span>)</span>
+<span id="cb262-10"><a href="wochenplan-06.html#cb262-10" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="fu">rep</span>(<span class="fu">mean</span>(sample1), <span class="dv">2</span>),</span>
+<span id="cb262-11"><a href="wochenplan-06.html#cb262-11" aria-hidden="true" tabindex="-1"></a>       <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">200</span>),</span>
+<span id="cb262-12"><a href="wochenplan-06.html#cb262-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">type =</span> <span class="st">&quot;l&quot;</span>,</span>
+<span id="cb262-13"><a href="wochenplan-06.html#cb262-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> i,</span>
+<span id="cb262-14"><a href="wochenplan-06.html#cb262-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">lwd =</span> <span class="dv">1</span>)</span>
+<span id="cb262-15"><a href="wochenplan-06.html#cb262-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-95-1.png" width="672" />
+Wir sehen, dass mit jeder gezogenen Stichprobe der Mittelwert etwas abweicht von demjenigen Wert in der Grundgesamtheit. Die Abweichung ist nun auch deutlicher zu sehen als vorher.</p>
+<p><strong>Stichprobenziehung als Funktion</strong>:<br />
+Als nächster Schritt wird nun eine Funktion geschrieben, mit der wir eine beliebige Anzahl Stichproben mit einer beliebigen Grösse ziehen können. Die Grundstruktur von Funktionen entspricht folgender Form <span class="citation">(<a href="#ref-Manderscheid2017" role="doc-biblioref">Manderscheid 2017, 240f</a>)</span>:</p>
+<p><code>eigene.funktion &lt;- function(argumente) {</code><br />
+<code>anweisung</code><br />
+<code>}</code></p>
+<p>Im Funktionskopf innerhalb der runden Klammern, die auf <code>function()</code> folgen, werden die formalen Argumente benannt und durch Kommas voneinander getrennt. Damit wird festgelegt, welche Eingabeinformationen die Funktion benötigt. In unserem Beispiel sind dies die <em>selbstgewählten</em> Begriffe <code>x</code> (Objekt, von dem die Stichprobe gezogen werden soll), <code>n</code> (Grösse der Stichprobe) und <code>trials</code>(Anzahl der zu ziehenden Stichproben).<br />
+Alle im Funktionskopf enthaltenen Argumente müssen im Funktionsrumpf, der in geschweiften Klammern <code>{}</code> folgt, als Objekte definiert werden. Der Funktionsrumpf besteht aus einer Reihe von Befehlen. Die in unserem Code definierte Funktion definiert zuerst ein Sample von der Grösse <code>n</code> aus dem Objekt <code>x</code>. Anschliessend hängt eine Schleife die Anzahl <code>trials-1</code> weitere Sample an das bereits gezogene Sample dran. Die Spezifikation von <code>-1</code>erfolgt da ja bereits eine erste Stichprobe gezogen wird, bevor dann die weiteren darangehängt werden (wenn also 200 Stichproben gemacht werden sollen, dann wird zuerst 1 gezogen und dann 199 angehängt).<br />
+Die einzelnen Schritte, die im Funktionsrumpf festgelegt werden, erscheinen nicht in der Konsole. Nur das Ergebnis der letzten Funktion im Rumpf erscheint abschliessend als Rückgabewert. Da in unserem Beispiel kein Ergebnis erzeugt wurde stellt die Funktion <code>return()</code> sicher, dass das Resultat der Funktion (das Objekt <code>variable sample</code>) ausgegeben wird.</p>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="wochenplan-06.html#cb263-1" aria-hidden="true" tabindex="-1"></a>meine_samples <span class="ot">&lt;-</span> <span class="cf">function</span>(x, n, trials) {</span>
+<span id="cb263-2"><a href="wochenplan-06.html#cb263-2" aria-hidden="true" tabindex="-1"></a>variable_sample <span class="ot">&lt;-</span> <span class="fu">sample</span>(x, n)</span>
+<span id="cb263-3"><a href="wochenplan-06.html#cb263-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(trials <span class="sc">-</span> <span class="dv">1</span>)){</span>
+<span id="cb263-4"><a href="wochenplan-06.html#cb263-4" aria-hidden="true" tabindex="-1"></a>variable_sample <span class="ot">&lt;-</span> <span class="fu">cbind</span>(variable_sample, <span class="fu">sample</span>(x, n))</span>
+<span id="cb263-5"><a href="wochenplan-06.html#cb263-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb263-6"><a href="wochenplan-06.html#cb263-6" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(variable_sample)</span>
+<span id="cb263-7"><a href="wochenplan-06.html#cb263-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Im letzten Codestück wird dann vom unsere Grundgesamtheit (<code>x</code>) eine 30er Stichprobe gezogen (<code>n</code>), und zwar 200mal (<code>trials</code>). Das Objekt <code>stichproben_200</code> ist also eine Matrix mit 30 Zeilen und 200 Spalten.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></p>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="wochenplan-06.html#cb264-1" aria-hidden="true" tabindex="-1"></a>stichproben_200 <span class="ot">&lt;-</span> <span class="fu">meine_samples</span>(variable_population, <span class="dv">30</span>, <span class="dv">200</span>)</span></code></pre></div>
+<p><strong>Ebene der Stichprobenverteilung</strong>:<br />
+Bereits in den vorhergehenden beiden Schritten (Stichprobe als Schleife und Stichprobe als Funktion) ging es nicht mehr nur um eine einzelne Stichprobe, sondern um verschiedene Stichproben und deren jeweilige Mittelwerte. Wir gehen also über zu einer Stichprobenverteilung. Im folgenden Code werden zuerst die Stichprobenkennwerte berechnet (d.h. die Mittelwerte der 200 gezogenen Stichproben) und dann als Histogramm dargestellt: Das Histogramm entspricht der Stichprobenverteilung der Stichprobenkennwerte.<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></p>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="wochenplan-06.html#cb265-1" aria-hidden="true" tabindex="-1"></a>mittelwerte <span class="ot">&lt;-</span> <span class="fu">apply</span>(stichproben_200, <span class="dv">2</span>, mean)</span>
+<span id="cb265-2"><a href="wochenplan-06.html#cb265-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(mittelwerte,</span>
+<span id="cb265-3"><a href="wochenplan-06.html#cb265-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">10</span>,</span>
+<span id="cb265-4"><a href="wochenplan-06.html#cb265-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb265-5"><a href="wochenplan-06.html#cb265-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Unsere Stichprobenmittelwerte&quot;</span>,</span>
+<span id="cb265-6"><a href="wochenplan-06.html#cb265-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">17</span>)</span>
+<span id="cb265-7"><a href="wochenplan-06.html#cb265-7" aria-hidden="true" tabindex="-1"></a>     )</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-98-1.png" width="672" /></p>
+<p>Hierbei wird nun ersichtlich, dass diese Stichprobenverteilung der Normalverteilung folgt (ab einem Stichprobenumfang von 30). Das heisst eben auch, dass je stärker ein Stichprobenmittelwert vom Mittelwert der Grundgesamtheit abweicht, desto unwahrscheinlicher ist dieser Wert. Oder umgekehrt: Tritt ein sehr stark abweichender Wert auf ist dies mit hoher Wahrscheinlichkeit nicht zufällig.</p>
+<p><strong>Gemeinsame Darstellung der Stichprobenverteilung in der Grundgesamtheit anhand der Histogramme</strong>:<br />
+In den folgenden Codezeilen wird nun die Stichprobenverteilung in das Histogramm der Grundgesamtheit eingefügt. Die Idee hierbei ist, dass die Stichprobengrösse dank der eigenen Funktion variiert werden kann. Daraus wird ersichtlich, dass je grösser der Stichprobenumfang ist, desto schmaler wird die Stichprobenverteilung (das blaue Histogramm), das heisst: desto kleiner wird der Standardfehler.</p>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="wochenplan-06.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(variable_population,</span>
+<span id="cb266-2"><a href="wochenplan-06.html#cb266-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">30</span>,</span>
+<span id="cb266-3"><a href="wochenplan-06.html#cb266-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;orange&quot;</span>,</span>
+<span id="cb266-4"><a href="wochenplan-06.html#cb266-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Grundgesamtheit mit Stichprobenverteilung&quot;</span>,</span>
+<span id="cb266-5"><a href="wochenplan-06.html#cb266-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">20</span>),</span>
+<span id="cb266-6"><a href="wochenplan-06.html#cb266-6" aria-hidden="true" tabindex="-1"></a>     )</span>
+<span id="cb266-7"><a href="wochenplan-06.html#cb266-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Hiweise hier stimmt der Titel zuerst natürlich noch nicht.</span></span>
+<span id="cb266-8"><a href="wochenplan-06.html#cb266-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Erst wenn das zweite Histogram darüber gelegt wird stimmt auch der Titel.</span></span>
+<span id="cb266-9"><a href="wochenplan-06.html#cb266-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb266-10"><a href="wochenplan-06.html#cb266-10" aria-hidden="true" tabindex="-1"></a>mittelwerte_samples <span class="ot">&lt;-</span> <span class="fu">apply</span>(<span class="fu">meine_samples</span>(variable_population,</span>
+<span id="cb266-11"><a href="wochenplan-06.html#cb266-11" aria-hidden="true" tabindex="-1"></a>                                           <span class="dv">30</span>,</span>
+<span id="cb266-12"><a href="wochenplan-06.html#cb266-12" aria-hidden="true" tabindex="-1"></a>                                           <span class="dv">1000</span>),</span>
+<span id="cb266-13"><a href="wochenplan-06.html#cb266-13" aria-hidden="true" tabindex="-1"></a>                             <span class="dv">2</span>,</span>
+<span id="cb266-14"><a href="wochenplan-06.html#cb266-14" aria-hidden="true" tabindex="-1"></a>                             mean)</span>
+<span id="cb266-15"><a href="wochenplan-06.html#cb266-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb266-16"><a href="wochenplan-06.html#cb266-16" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(mittelwerte_samples,</span>
+<span id="cb266-17"><a href="wochenplan-06.html#cb266-17" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">10</span>,</span>
+<span id="cb266-18"><a href="wochenplan-06.html#cb266-18" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb266-19"><a href="wochenplan-06.html#cb266-19" aria-hidden="true" tabindex="-1"></a>     <span class="at">add =</span> T)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-99-1.png" width="672" /></p>
+<p>Mit der Darstellung können wir uns nochmals die expliziten Parameter der Stichprobenverteilung vergegenwärtigen. Auf der einen Seite haben wir das arithmetische Mittel der Stichprobenmittelwerte, das heisst:</p>
+<p>$  $</p>
+<p>Dieser Wert entspricht (annährend) dem arithmetischen Mittelwert des metrischen Merkmals in der Grundgesamtheit:</p>
+<p>$  = $</p>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="wochenplan-06.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(mittelwerte_samples)</span></code></pre></div>
+<pre><code>## [1] 10.00937</code></pre>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="wochenplan-06.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(variable_population)</span></code></pre></div>
+<pre><code>## [1] 10.0505</code></pre>
+<p>Auf der anderen Seite finden wir die Standardabweichung der Stichprobenverteilung, der Standardfehler (oder Stichprobenfehler):</p>
+<p>$  =  $</p>
+<p>Dieser Wert gibt das Ausmass der Streuung der einzelnen Stichprobenmittelwerte um den Mittelwert der Stichprobenverteilung beziehungweise der Grundgesamtheit an.</p>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="wochenplan-06.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(variable_population)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">30</span>)</span></code></pre></div>
+<p>…und entspricht ungefähr der Standardabweichung unserer Stichprobenverteilung:</p>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="wochenplan-06.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(mittelwerte_samples)</span></code></pre></div>
+<p>Die Stichprobenmittelwerte streuen umso geringer um den Mittelwert der Stichprobenverteilung (das heisst um den Wert in der Grundgesamtheit), je grösser der Umfang der Stichprobe ist. Das heisst die Stichprobenwerte werden immer “genauer,” da deren zufällige Abweichung verkleinert wird.</p>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="wochenplan-06.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(variable_population,</span>
+<span id="cb273-2"><a href="wochenplan-06.html#cb273-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">30</span>,</span>
+<span id="cb273-3"><a href="wochenplan-06.html#cb273-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;orange&quot;</span>,</span>
+<span id="cb273-4"><a href="wochenplan-06.html#cb273-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Grundgesamtheit mit Stichprobenverteilung&quot;</span>,</span>
+<span id="cb273-5"><a href="wochenplan-06.html#cb273-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">20</span>),</span>
+<span id="cb273-6"><a href="wochenplan-06.html#cb273-6" aria-hidden="true" tabindex="-1"></a>     )</span>
+<span id="cb273-7"><a href="wochenplan-06.html#cb273-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb273-8"><a href="wochenplan-06.html#cb273-8" aria-hidden="true" tabindex="-1"></a>mittelwerte_samples <span class="ot">&lt;-</span> <span class="fu">apply</span>(<span class="fu">meine_samples</span>(variable_population,</span>
+<span id="cb273-9"><a href="wochenplan-06.html#cb273-9" aria-hidden="true" tabindex="-1"></a>                                           <span class="dv">120</span>,</span>
+<span id="cb273-10"><a href="wochenplan-06.html#cb273-10" aria-hidden="true" tabindex="-1"></a>                                           <span class="dv">1000</span>),</span>
+<span id="cb273-11"><a href="wochenplan-06.html#cb273-11" aria-hidden="true" tabindex="-1"></a>                             <span class="dv">2</span>,</span>
+<span id="cb273-12"><a href="wochenplan-06.html#cb273-12" aria-hidden="true" tabindex="-1"></a>                             mean)</span>
+<span id="cb273-13"><a href="wochenplan-06.html#cb273-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb273-14"><a href="wochenplan-06.html#cb273-14" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(mittelwerte_samples,</span>
+<span id="cb273-15"><a href="wochenplan-06.html#cb273-15" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">10</span>,</span>
+<span id="cb273-16"><a href="wochenplan-06.html#cb273-16" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb273-17"><a href="wochenplan-06.html#cb273-17" aria-hidden="true" tabindex="-1"></a>     <span class="at">add =</span> T)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-103-1.png" width="672" /></p>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="wochenplan-06.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(mittelwerte_samples) </span></code></pre></div>
+<pre><code>## [1] 0.5417475</code></pre>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="wochenplan-06.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Der Standardfehler wurde halbiert, da die Stichprobengrösse vervierfacht wurde.</span></span></code></pre></div>
+<p>Was hat uns nun dieses Skript und insbesondere die letzten Darstellungen gebracht <span class="citation">(<a href="#ref-DiazBone2019" role="doc-biblioref">Diaz-Bone 2019, 240f</a>)</span>?</p>
+<ul>
+<li>Das blaue Histogram visualisiert das, was wir jeweils bei der Intervallschätzung sowie beim Testen in der Inferenzstatistik konstruieren, nämlich eine Stichprobenverteilung. Bei der Intervallschätzung konstruieren wir ein Konfidenzintervall mittels des Stichprobenkennwerts, also eine Stichprobenverteilung anhand des Wertes beziehungsweis um den Wert aus der Stichprobe. Beim Testen von Hypothesen konstruieren wir die Stichprobenverteilungen unter Annahme der 0-Hypothese und prüfen dann, ob unser Stichprobenkennwert in den Annahme- oder in den Rückweisungsbereich fällt.</li>
+<li>Weiter zeigt uns die Darstellung den Stichprobenfehler/Standardfehler. Diese Kennzahl wird uns jeweils bei inferenzstatistischen Berechnungen ebenfalls ausgegeben. Sie hilft uns gemeinsam mit dem Stichprobenkennwert und der Stichprobengrösse ein jeweiliges Ergebnis zu beurteilen und ergänzt so die Aussagen, dass ein Ergebnis einfach nur signifikant ist oder nicht.</li>
+</ul>
+</div>
+<div id="ggplot2-darstellung" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> ggplot2 Darstellung</h2>
+<p>Wir könnten natürlich die letzte Darstellung, in der gemeinsam die Stichprobenverteilung in der Grundgesamtheit anhand der Histogramme abgebildet wird, ebenfalls mittels des Paketes “ggplot2” darstellen. Dieses umfasst komplexere Möglichkeiten, Grafiken mittels R zu kreieren und ist eigentlich der Standard für Grafiken.</p>
+<p>Als erstes müssen wir hierfür einen Datensatz generieren, in dem beide Variablen enthalten sind (also die Verteilungen der Grundgesamtheit und die Stichprobenverteilung). Diese Daten sind allerdings in einer speziellen Form abgespeichert, nämlich in einem sogenannten <em>long</em>-Format <span class="citation">(<a href="#ref-Healy2019" role="doc-biblioref">Healy 2019, 56</a>)</span>:</p>
+<blockquote>
+<p>Social scientists will likely be familiar with the distinction between wide-format and longjormat data. In a long-format table, every variable is a column, and every observation is a row. In a wide-format table, some variables are spread out across columns.</p>
+</blockquote>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="wochenplan-06.html#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Zur Veranschaulichung werden nochmals die beiden Variablen generiert...</span></span>
+<span id="cb277-2"><a href="wochenplan-06.html#cb277-2" aria-hidden="true" tabindex="-1"></a>variable_population <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">10000</span>,</span>
+<span id="cb277-3"><a href="wochenplan-06.html#cb277-3" aria-hidden="true" tabindex="-1"></a>                             <span class="at">min =</span> <span class="dv">0</span>,</span>
+<span id="cb277-4"><a href="wochenplan-06.html#cb277-4" aria-hidden="true" tabindex="-1"></a>                             <span class="at">max =</span> <span class="dv">20</span>)</span>
+<span id="cb277-5"><a href="wochenplan-06.html#cb277-5" aria-hidden="true" tabindex="-1"></a>mittelwerte_samples <span class="ot">&lt;-</span> <span class="fu">apply</span>(<span class="fu">meine_samples</span>(variable_population,</span>
+<span id="cb277-6"><a href="wochenplan-06.html#cb277-6" aria-hidden="true" tabindex="-1"></a>                                           <span class="dv">30</span>,</span>
+<span id="cb277-7"><a href="wochenplan-06.html#cb277-7" aria-hidden="true" tabindex="-1"></a>                                           <span class="dv">1000</span>),</span>
+<span id="cb277-8"><a href="wochenplan-06.html#cb277-8" aria-hidden="true" tabindex="-1"></a>                             <span class="dv">2</span>,</span>
+<span id="cb277-9"><a href="wochenplan-06.html#cb277-9" aria-hidden="true" tabindex="-1"></a>                             mean)</span>
+<span id="cb277-10"><a href="wochenplan-06.html#cb277-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb277-11"><a href="wochenplan-06.html#cb277-11" aria-hidden="true" tabindex="-1"></a><span class="co">#...und dann in einem dataframe Objekt zusammengefasst. </span></span>
+<span id="cb277-12"><a href="wochenplan-06.html#cb277-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Diese Daten sind nun in einem &#39;long&#39;-Format.</span></span>
+<span id="cb277-13"><a href="wochenplan-06.html#cb277-13" aria-hidden="true" tabindex="-1"></a>daten_spv <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Verteilung =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;Grundgesamtheit&quot;</span>, <span class="dv">10000</span>),</span>
+<span id="cb277-14"><a href="wochenplan-06.html#cb277-14" aria-hidden="true" tabindex="-1"></a>                                      <span class="fu">rep</span>(<span class="st">&quot;Stichprobenverteilung&quot;</span>, <span class="dv">1000</span>)),</span>
+<span id="cb277-15"><a href="wochenplan-06.html#cb277-15" aria-hidden="true" tabindex="-1"></a>                       <span class="at">Werte =</span> <span class="fu">c</span>(variable_population, mittelwerte_samples))</span></code></pre></div>
+<p>Anschliessend können wir die Grafik mittels der Funktion <code>ggplot()</code> erstellen. Zuerst wird das “leere” Grafikobjekt generiert. Dieses greift auf die Werte zu (<code>x</code>) und unterscheidet diese über die verschiedenen Verteilungen (<code>fill</code>). Erst anschliessend werden über die <code>+</code> die weiteren Aspekte hinzugefügt als Schichten oder <em>Layer</em> der Grafik <span class="citation">(vgl. <a href="#ref-Healy2019" role="doc-biblioref">Healy 2019, 59f</a>)</span>.</p>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="wochenplan-06.html#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb278-2"><a href="wochenplan-06.html#cb278-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(daten_spv, <span class="fu">aes</span>(<span class="at">x=</span>Werte, <span class="at">fill=</span>Verteilung))</span>
+<span id="cb278-3"><a href="wochenplan-06.html#cb278-3" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">col =</span> <span class="st">&quot;black&quot;</span>, </span>
+<span id="cb278-4"><a href="wochenplan-06.html#cb278-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">position =</span> <span class="st">&#39;identity&#39;</span>,</span>
+<span id="cb278-5"><a href="wochenplan-06.html#cb278-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">bins =</span> <span class="dv">40</span>)  <span class="sc">+</span> <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Anzahl&quot;</span>) <span class="sc">+</span> <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;orange&quot;</span>, <span class="st">&quot;blue&quot;</span>))</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-105-1.png" width="672" /></p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-DiazBone2019" class="csl-entry">
+Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.
+</div>
+<div id="ref-Healy2019" class="csl-entry">
+Healy, Kieran. 2019. <em>Data Visualization</em>. Princeton, NJ: Princeton University Press.
+</div>
+<div id="ref-Manderscheid2017" class="csl-entry">
+Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit r. Eine Einführung</em>. Wiesbaden: Springer VS.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="5">
+<li id="fn5"><p><em>Hinweis</em>: Gewisse Argumente wie <code>col</code> oder auch <code>type</code> tauchen bei verschiedenen Funktionen auf – das heisst wir können oftmals auf ähnliche Begriffe zurückgreifen, inbesondere dann wenn es um Funktionen und deren Argumente im Rahmen eines Paketes geht (wie etwa bei Basispaket von R). Bei Funktionen aus anderen Paketen können dann aber teilweise die Bezeichnungen der Argumente wechseln.<a href="wochenplan-06.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p><em>Hinweis</em>: Sowohl <code>points()</code>als auch <code>abline()</code> greifen auf den aktuellen abgebildeten Plot zu. Dies kann natürlich zu Problemen führen (z.Bsp. beim ‘Knitten’), etwa wenn die FUnktionen für einen Plot und diejenige zum Integrieren von neuen Elementen (egal ob Linien oder Punkte) in unterschiedlichen Code-Chunks enthalten sind.<a href="wochenplan-06.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p><em>Hinweis</em>: Das Objekt <code>stichproben_200</code> umfasst lediglich metrisch Daten und auch ist es nicht nötig, weitere Aspekte zu ergänzen (beispielsweise eine detaillierte Variablenbeschreibung neben den Namen). Deshalb können hier ohne Probleme mit einem zweidimensionalen Objekt als Matrix arbeiten. Sobald wir aber mehr als eine Datenart sowie weitere Spezifikationen nutzen möchten, müssen wir mit einem Dataframe arbeiten. Und für den (eher unwahrscheinlichen) Fall, dass wir mit einem mehr als zweidimensionalen Objekt arbeiten möchten, dann würden wir auf einen sogenannten Array verwenden. Gleichzeitig scheint R Matrizen-Objekte jeweils immer als Arrays abzuspeichern (vgl. hier: <a href="https://colinfay.me/intro-to-r/arrays-and-matrices.html" class="uri">https://colinfay.me/intro-to-r/arrays-and-matrices.html</a>).<a href="wochenplan-06.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p><em>Hinweis</em>: Wiederum sehen wir bei genauer Betrachtung des Histogramms, dass die gewählten Parameter (konkret <code>xlim=c(3,17)</code>) nicht genau übernommen wurden, ähnlich wie wir das auch bereits bei Klasseneinteilungen erfahren haben.<a href="wochenplan-06.html#fnref8" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="wochenplan-05.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="wochenplan-07.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/06_WP6_CodeRezipieren-Standardfehler.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

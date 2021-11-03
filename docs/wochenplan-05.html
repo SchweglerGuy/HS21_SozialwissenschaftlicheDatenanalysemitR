@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="wochenplan-04.html"/>
-<link rel="next" href="wochenplan-05-1.html"/>
+<link rel="next" href="wochenplan-06.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -190,10 +190,16 @@ div.csl-indent {
 <li class="chapter" data-level="5.2" data-path="wochenplan-05.html"><a href="wochenplan-05.html#hinweise-indizieren-subsetting"><i class="fa fa-check"></i><b>5.2</b> Hinweise Indizieren &amp; Subsetting</a></li>
 <li class="chapter" data-level="5.3" data-path="wochenplan-05.html"><a href="wochenplan-05.html#aufgaben-wp05"><i class="fa fa-check"></i><b>5.3</b> Aufgaben WP05</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="wochenplan-05-1.html"><a href="wochenplan-05-1.html"><i class="fa fa-check"></i><b>6</b> Wochenplan 05</a>
+<li class="chapter" data-level="6" data-path="wochenplan-06.html"><a href="wochenplan-06.html"><i class="fa fa-check"></i><b>6</b> Wochenplan 06</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="wochenplan-05-1.html"><a href="wochenplan-05-1.html#lernziele-3"><i class="fa fa-check"></i><b>6.1</b> Lernziele</a></li>
-<li class="chapter" data-level="6.2" data-path="wochenplan-05-1.html"><a href="wochenplan-05-1.html#aufgaben-3"><i class="fa fa-check"></i><b>6.2</b> Aufgaben</a></li>
+<li class="chapter" data-level="6.1" data-path="wochenplan-06.html"><a href="wochenplan-06.html#lernziele-3"><i class="fa fa-check"></i><b>6.1</b> Lernziele</a></li>
+<li class="chapter" data-level="6.2" data-path="wochenplan-06.html"><a href="wochenplan-06.html#besprechung-skript-standardfehler.r"><i class="fa fa-check"></i><b>6.2</b> Besprechung Skript “standardfehler.R”</a></li>
+<li class="chapter" data-level="6.3" data-path="wochenplan-06.html"><a href="wochenplan-06.html#ggplot2-darstellung"><i class="fa fa-check"></i><b>6.3</b> ggplot2 Darstellung</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="wochenplan-07.html"><a href="wochenplan-07.html"><i class="fa fa-check"></i><b>7</b> Wochenplan 07</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="wochenplan-07.html"><a href="wochenplan-07.html#lernziele-4"><i class="fa fa-check"></i><b>7.1</b> Lernziele</a></li>
+<li class="chapter" data-level="7.2" data-path="wochenplan-07.html"><a href="wochenplan-07.html#aufgaben-3"><i class="fa fa-check"></i><b>7.2</b> Aufgaben</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -288,7 +294,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="wochenplan-05.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df_VM)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    100 obs. of  5 variables:
 ##  $ ID             : int  1 2 3 4 5 6 7 8 9 10 ...
-##  $ Alter          : chr  &quot;14.4660895359702&quot; &quot;13.9345591184683&quot; &quot;15.7792836318258&quot; &quot;13.5771148554049&quot; ...
+##  $ Alter          : chr  &quot;13.9144967491738&quot; &quot;17.1165043169167&quot; &quot;13.5244613578543&quot; &quot;17.2376146826427&quot; ...
 ##  $ Gewicht        : num  15 15 15 15 16 16 16 16 17 17 ...
 ##  $ Sportminuten   : num  10 12 14 16 18 20 22 24 26 28 ...
 ##  $ Internetnutzung: num  10 14 18 22 26 30 34 38 42 46 ...</code></pre>
@@ -388,11 +394,13 @@ div.csl-indent {
 <span id="cb234-7"><a href="wochenplan-05.html#cb234-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb234-8"><a href="wochenplan-05.html#cb234-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Ein spezieller Fall?</span></span>
 <span id="cb234-9"><a href="wochenplan-05.html#cb234-9" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(df_FK<span class="sc">$</span>income <span class="sc">&gt;</span> <span class="dv">15000</span> <span class="sc">&amp;</span> df_FK<span class="sc">$</span>education <span class="sc">==</span> <span class="dv">0</span>)</span></code></pre></div>
-<pre><code>## [1] 86</code></pre>
+<pre><code>## [1] 51 74 87</code></pre>
 <div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="wochenplan-05.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="co">#oder einfach:</span></span>
 <span id="cb236-2"><a href="wochenplan-05.html#cb236-2" aria-hidden="true" tabindex="-1"></a>df_FK[df_FK<span class="sc">$</span>income <span class="sc">&gt;</span> <span class="dv">15000</span> <span class="sc">&amp;</span> df_FK<span class="sc">$</span>education <span class="sc">==</span> <span class="dv">0</span>,]</span></code></pre></div>
-<pre><code>##    gender   income education      age   home
-## 86      1 17368.97         0 61.26299 suburb</code></pre>
+<pre><code>##    gender   income education      age        home
+## 51      0 17505.31         0 26.31201        city
+## 74      1 16395.75         0 68.89958 countryside
+## 87      0 15399.60         0 49.41555        city</code></pre>
 <p>Ein Datensatz und Beispiel von Vanessa Leutener:</p>
 <div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="wochenplan-05.html#cb238-1" aria-hidden="true" tabindex="-1"></a>Einkommen <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">2000</span>, <span class="at">to =</span> <span class="dv">12000</span>, <span class="at">length.out =</span> <span class="dv">100</span>))</span>
 <span id="cb238-2"><a href="wochenplan-05.html#cb238-2" aria-hidden="true" tabindex="-1"></a>Krankheitstage <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="fu">runif</span>(<span class="dv">100</span>, <span class="at">min =</span> <span class="dv">3</span>, <span class="at">max =</span> <span class="dv">40</span>), </span>
@@ -485,10 +493,10 @@ div.csl-indent {
 <span id="cb243-14"><a href="wochenplan-05.html#cb243-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">mean</span>(t<span class="sc">$</span>tvdauer, <span class="at">na.rm =</span> T));</span>
 <span id="cb243-15"><a href="wochenplan-05.html#cb243-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">sd</span>(t<span class="sc">$</span>tvdauer, <span class="at">na.rm =</span> T))</span>
 <span id="cb243-16"><a href="wochenplan-05.html#cb243-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<pre><code>## [1] 2.8125
-## [1] 1.202253
-## [1] 3.35
-## [1] 1.03999</code></pre>
+<pre><code>## [1] 3.0875
+## [1] 0.874299
+## [1] 2.75
+## [1] 1.118034</code></pre>
 <p>Hier sehen wir ein komplexeres Beispiel einer Schleife, dass die Möglichkeit von Listen nutzt. Schleifen können daher beliebig komplex werden – und sie sind ein erster Schritt hin zum <strong>Schreiben von eigenen Funktionen</strong>. Wir nehmen nochmals die Schleife von oben und wenden diese Auf den Datensatz von Katrin Oesch an:</p>
 <div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="wochenplan-05.html#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">ncol</span>(df_KO)<span class="sc">-</span><span class="dv">1</span>)) {</span>
 <span id="cb245-2"><a href="wochenplan-05.html#cb245-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">mean</span>(df_KO[,i]))</span>
@@ -531,11 +539,11 @@ div.csl-indent {
 <span id="cb248-13"><a href="wochenplan-05.html#cb248-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Variante 1</span></span>
 <span id="cb248-14"><a href="wochenplan-05.html#cb248-14" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df_LJ[df_LJ<span class="sc">$</span>Einstiegsgehalt <span class="sc">&gt;=</span> <span class="dv">6000</span> <span class="sc">&amp;</span> </span>
 <span id="cb248-15"><a href="wochenplan-05.html#cb248-15" aria-hidden="true" tabindex="-1"></a>             df_LJ<span class="sc">$</span>Dauer_Ausbildung <span class="sc">&gt;=</span> <span class="dv">14</span>,<span class="st">&quot;Einstiegsgehalt&quot;</span>])</span></code></pre></div>
-<pre><code>## [1] 7424.067</code></pre>
+<pre><code>## [1] 7456.419</code></pre>
 <div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="wochenplan-05.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Variante 2</span></span>
 <span id="cb250-2"><a href="wochenplan-05.html#cb250-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df_LJ<span class="sc">$</span>Einstiegsgehalt[df_LJ<span class="sc">$</span>Einstiegsgehalt <span class="sc">&gt;=</span> <span class="dv">6000</span> </span>
 <span id="cb250-3"><a href="wochenplan-05.html#cb250-3" aria-hidden="true" tabindex="-1"></a>                               <span class="sc">&amp;</span> df_LJ<span class="sc">$</span>Dauer_Ausbildung <span class="sc">&gt;=</span> <span class="dv">14</span>])</span></code></pre></div>
-<pre><code>## [1] 7424.067</code></pre>
+<pre><code>## [1] 7456.419</code></pre>
 
 </div>
 </div>
@@ -551,7 +559,7 @@ Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit r. E
         </div>
       </div>
 <a href="wochenplan-04.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="wochenplan-05-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="wochenplan-06.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,7 +4,7 @@
 
 ## Lernziele
 
-In der zweiten Seminarwoche geht es darum, die Grundlagen von R und RStudio zu repetieren und zu erweitern.[^1] Für den weiteren Verlauf wollen wir *R als Sprache* auffassen – sowohl als Programmiersprache als auch als Sprache in einem metaphorischen Sinn. Wir wollen also ein komplexes System zur Kommunikation kennenlernen. Wie bei einer anderen Sprache gibt es auch hier Zeichen mit Bedeutungen (ähnliche wie Nomen, Verben, . . . ) und Regeln zur Verknüpfung dieser Zeichen (ähnlich wie eine Grammatik). Diese Grundlagen gilt es alle erstmal kennenzulernen und zu verstehen. Am Anfang wird vieles schwer fallen, mit der Zeit gewinnt man aber Sicherheit.
+In der zweiten Seminarwoche geht es darum, die Grundlagen von R und RStudio zu repetieren und zu erweitern.^[Falls Sie noch Probleme bei der Installation von R bzw. RStudio oder sonstige technische Schwierigkeiten haben, können Sie sich gerne weiterhin per E-Mail melden!] Für den weiteren Verlauf wollen wir *R als Sprache* auffassen – sowohl als Programmiersprache als auch als Sprache in einem metaphorischen Sinn. Wir wollen also ein komplexes System zur Kommunikation kennenlernen. Wie bei einer anderen Sprache gibt es auch hier Zeichen mit Bedeutungen (ähnliche wie Nomen, Verben, . . . ) und Regeln zur Verknüpfung dieser Zeichen (ähnlich wie eine Grammatik). Diese Grundlagen gilt es alle erstmal kennenzulernen und zu verstehen. Am Anfang wird vieles schwer fallen, mit der Zeit gewinnt man aber Sicherheit.
 
 Der zentrale Punkt in dieser Vorstellung von R als Sprache ist dabei folgender: Wir lernen eine Sprache dadurch, dass wir sie immer wieder anwenden, Probleme lösen und vor allem auch Fehler machen. R als Software und als Programmiersprache hat eine steile Lernkurve und zu Beginn werden viele Probleme auftauchen. Im Umgang mit den Problemen soll allerdings auch eine eigene Arbeitsweise mit dem Programm erlernt werden (Fehlermeldungen lesen, Lösungsstrategien im Codieren erlernen, selber Hilfe suchen, . . . ). Für die beständige Erweiterung der Grundlagen und das Erlernen der “Sprache R” besteht eine Herausforderung darin, den Weg zwischen scheinbarer *Trivialität* und überfordernder *Komplexität* zu finden: Es gilt die kleinen Schritte ernstzunehmen, sonst werden die grossen Schritte sehr schnell mühsam.
 
@@ -29,7 +29,7 @@ Für die zweite Seminarwoche lassen sich folgende Seminarziele festhalten:
 
 1. Fassen Sie noch einmal für sich und in eigenen Worten die Funktionen der vier Fenster von RStudio zusammen.
 
-Oben links findet sich in R-Studio das **Skript**-Fenster, in dem Befehle eingegeben und kommentiert werden können. Ausgeführt werden diese Befehle erst, wenn Sie *Ctrl* und *Enter* drücken (bzw. *Cmd* & *Enter*). Diese Eingabe von Kodezeilen wird ergänzt durch die direkte Eingabe in der **Konsole**. In diesem Fenster läuft das eigentliche Programm R (es ist also dieselbe Ansicht wie wenn Sie R ohne grafische Benutzeroberfläche starten würden).[^2] Im Gegensatz zum Skript können hier Befehle nur immer einzeln eingegeben und sie müssen dann direkt ausgeführt werden. Dies ermöglicht ein schneller ausprobieren, aber eben kein wirklich speichern, beständiges überarbeiten, kommentieren und eine klare Dokumentation des Ablaufs, wie dies im Skript erfolgen kann.
+Oben links findet sich in R-Studio das **Skript**-Fenster, in dem Befehle eingegeben und kommentiert werden können. Ausgeführt werden diese Befehle erst, wenn Sie *Ctrl* und *Enter* drücken (bzw. *Cmd* & *Enter*). Diese Eingabe von Kodezeilen wird ergänzt durch die direkte Eingabe in der **Konsole**. In diesem Fenster läuft das eigentliche Programm R (es ist also dieselbe Ansicht wie wenn Sie R ohne grafische Benutzeroberfläche starten würden).^[Neuere Versionen von RStudio bieten im Fenster der Konsole auch die Möglichkeit, sogenannte "Jobs" auszuführen (ein Tpp von Josias Bruderer), siehe [hier]:(https://www.youtube.com/watch?v=EBlk1kRbKeU).] Im Gegensatz zum Skript können hier Befehle nur immer einzeln eingegeben und sie müssen dann direkt ausgeführt werden. Dies ermöglicht ein schneller ausprobieren, aber eben kein wirklich speichern, beständiges überarbeiten, kommentieren und eine klare Dokumentation des Ablaufs, wie dies im Skript erfolgen kann.
 
 Die beiden Fenster zur Eingabe von Kode werden vom **Environment**-Fenster ergänzt. Hier finden sich  die abgespeicherten Objekte sowie in den weiteren Reitern die bisher ausgeführten Befehle (*History*), aber auch eine erweitere Netzwerk- bzw. Serverumgebung (*Connections*, *Build*, …), falls Sie z.Bsp. mit weiteren Personen an einem Projekt arbeiten. Im **vierten Fenster** werden Grafiken, Hilfeseiten, die Vorschau für geknittete Dokumente und auch die Ordnerstruktur angezeigt.
 
@@ -273,8 +273,3 @@ LV_G4
 typeof(LV_G4)
 class(LV_G4)
 ```
-
-
-[^1]: Falls Sie noch Probleme bei der Installation von R bzw. RStudio oder sonstige technische Schwierigkeiten haben, können Sie sich gerne weiterhin per E-Mail melden!
-
-[^2]: Neuere Versionen von RStudio bieten im Fenster der Konsole auch die Möglichkeit, sogenannte "Jobs" auszuführen (ein Tpp von Josias Bruderer), siehe [hier]:(https://www.youtube.com/watch?v=EBlk1kRbKeU).  

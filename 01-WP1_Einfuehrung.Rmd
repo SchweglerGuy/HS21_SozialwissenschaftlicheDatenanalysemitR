@@ -19,7 +19,7 @@ Das Transformieren, Visualisieren und Modellieren der Daten ist dabei keineswegs
 Diese Prozesse der Datenanalyse finden alle in einem bestimmen **Rahmen** statt [vgl. auch @Sauer2019, 3]. Dies ist auf der einen Seite die Idees des Programmierens im Vorgehen selber [vgl. @WickhamGrolemund2016, Kap.1.1]. Auf der anderen Seite bilden aber die Sozialwissenschaften selber auch einen Rahmen, anhand dessen etwa Datenstrukturen (z.Bsp. dass eine Person ein Fall und damit eine Zeile ist) oder angemessene Ziele der Analyse (ab wann ist ein Zusammenhang etwa "gross"?) vorgegeben werden. 
 
 ## Ziel des Kurses
-Das Seminar verfolgt zwei miteinander verzahnte, übergeordnete Lernziele. Einerseits sollen die Studierenden sich Grundkenntnisse der statistischen Datenanalyse mit R aneignen. Andererseits werden ausgewählte Inhalte der Vorlesung praktisch angewandt und damit auch veranschaulicht.[^1]
+Das Seminar verfolgt zwei miteinander verzahnte, übergeordnete Lernziele. Einerseits sollen die Studierenden sich Grundkenntnisse der statistischen Datenanalyse mit R aneignen. Andererseits werden ausgewählte Inhalte der Vorlesung praktisch angewandt und damit auch veranschaulicht.^[Die zwei miteinander verzahnte Lernziele führen auch dazu, dass das Seminar allerdings nicht als eigentliche Übung zur Vorlesung funktioniert (und das nicht alle Inhalte der Vorlesung im Seminar behandelt werden können).]
 
 Konkret sollen die Studierenden am Ende des Semesters...
 
@@ -175,8 +175,3 @@ sqrt(
   / (length(z))
 )
 ```
-
-
-
-
-[^1]: Die zwei miteinander verzahnte Lernziele führen auch dazu, dass das Seminar allerdings nicht als eigentliche Übung zur Vorlesung funktioniert (und das nicht alle Inhalte der Vorlesung im Seminar behandelt werden können).
