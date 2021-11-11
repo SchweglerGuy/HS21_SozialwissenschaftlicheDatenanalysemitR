@@ -299,7 +299,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="wochenplan-05.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df_VM)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    100 obs. of  5 variables:
 ##  $ ID             : int  1 2 3 4 5 6 7 8 9 10 ...
-##  $ Alter          : chr  &quot;16.6333127028774&quot; &quot;15.4936078174505&quot; &quot;14.178390692221&quot; &quot;13.430488291895&quot; ...
+##  $ Alter          : chr  &quot;17.5222911110613&quot; &quot;15.6519015722442&quot; &quot;14.2168056983501&quot; &quot;13.2265859011095&quot; ...
 ##  $ Gewicht        : num  15 15 15 15 16 16 16 16 17 17 ...
 ##  $ Sportminuten   : num  10 12 14 16 18 20 22 24 26 28 ...
 ##  $ Internetnutzung: num  10 14 18 22 26 30 34 38 42 46 ...</code></pre>
@@ -496,10 +496,10 @@ div.csl-indent {
 <span id="cb243-14"><a href="wochenplan-05.html#cb243-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">mean</span>(t<span class="sc">$</span>tvdauer, <span class="at">na.rm =</span> T));</span>
 <span id="cb243-15"><a href="wochenplan-05.html#cb243-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">sd</span>(t<span class="sc">$</span>tvdauer, <span class="at">na.rm =</span> T))</span>
 <span id="cb243-16"><a href="wochenplan-05.html#cb243-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<pre><code>## [1] 3.15
-## [1] 0.9821186
-## [1] 2.55
-## [1] 1.145931</code></pre>
+<pre><code>## [1] 3.025
+## [1] 0.9933322
+## [1] 3.4
+## [1] 0.9947229</code></pre>
 <p>Hier sehen wir ein komplexeres Beispiel einer Schleife, dass die Möglichkeit von Listen nutzt. Schleifen können daher beliebig komplex werden – und sie sind ein erster Schritt hin zum <strong>Schreiben von eigenen Funktionen</strong>. Wir nehmen nochmals die Schleife von oben und wenden diese Auf den Datensatz von Katrin Oesch an:</p>
 <div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="wochenplan-05.html#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">ncol</span>(df_KO)<span class="sc">-</span><span class="dv">1</span>)) {</span>
 <span id="cb245-2"><a href="wochenplan-05.html#cb245-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">mean</span>(df_KO[,i]))</span>
@@ -542,11 +542,11 @@ div.csl-indent {
 <span id="cb248-13"><a href="wochenplan-05.html#cb248-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Variante 1</span></span>
 <span id="cb248-14"><a href="wochenplan-05.html#cb248-14" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df_LJ[df_LJ<span class="sc">$</span>Einstiegsgehalt <span class="sc">&gt;=</span> <span class="dv">6000</span> <span class="sc">&amp;</span> </span>
 <span id="cb248-15"><a href="wochenplan-05.html#cb248-15" aria-hidden="true" tabindex="-1"></a>             df_LJ<span class="sc">$</span>Dauer_Ausbildung <span class="sc">&gt;=</span> <span class="dv">14</span>,<span class="st">&quot;Einstiegsgehalt&quot;</span>])</span></code></pre></div>
-<pre><code>## [1] 7204.026</code></pre>
+<pre><code>## [1] 7443.966</code></pre>
 <div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="wochenplan-05.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Variante 2</span></span>
 <span id="cb250-2"><a href="wochenplan-05.html#cb250-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df_LJ<span class="sc">$</span>Einstiegsgehalt[df_LJ<span class="sc">$</span>Einstiegsgehalt <span class="sc">&gt;=</span> <span class="dv">6000</span> </span>
 <span id="cb250-3"><a href="wochenplan-05.html#cb250-3" aria-hidden="true" tabindex="-1"></a>                               <span class="sc">&amp;</span> df_LJ<span class="sc">$</span>Dauer_Ausbildung <span class="sc">&gt;=</span> <span class="dv">14</span>])</span></code></pre></div>
-<pre><code>## [1] 7204.026</code></pre>
+<pre><code>## [1] 7443.966</code></pre>
 
 </div>
 </div>
