@@ -1,0 +1,33 @@
+# Wochenplan 08
+
+...Vorbereitung von der 08. auf die 09.Einheit.
+
+## Lernziele
+
+Nachdem wir uns bereits etwas mit dem ESS-Datensatz und dessen Struktur vertraut gemacht haben, gehen wir nun zur Datenanalyse in R über. Dieser Übergang ist ein fliessender: Die Schritte zum Kennenlernen eines Datensatzes, die Plausibilitätsprüfung und die Suche nach Fehlern liefern häufig bereits erste Ergebnisse im Sinne einer explorativen Datenanalysen, die umgekehrt dann womöglich neue Schritte zur Aufbereitung des Datensatzes veranlassen. Der 08. Wochenplan fokussiert die Rolle von Kreuztabellen in diesem Prozess, inklusive der Berechnung von Chi-Quadrat-Tests. Von hier geht es dann in den Folgewochen schrittweise weiter zu Berechnung von Regressionsanalysen.
+
+Wir können daher folgende Lernziele festhalten:
+
+* Sie verstehen den Nutzen (und auch die Gefahren) der Funktion `attach()`.
+* Sie können Kreuztabellen auf verschiedene Weisen darstellen und inhaltlich zutreffend interpretieren.
+* Sie lernen die Interpretation von inferenzstatstischen Test in R anhand von einem Chi-Quadrat Test kennen.
+* Sie verstehen, wie man das Ergebnis von Funktionen als Objekt “abspeichert”, und wissen, wie man auf die Elemente solcher “Ergebnisobjekte” zugreift.
+* Sie entwickeln ein vertieftes Verständnis davon, wie die Phasen der Datenaufbereitung, der Datenexploration und der Datenanalyse zusammenhängen.
+
+## Aufgaben
+
+1. Laden Sie den Datensatz in RStudio, der 200 zufällige Fälle aus dem ganzen ESS Datensatz enthält. ^[Nutzen Sie falls möglich einen von Ihnen selbst zufällig erstellen Datensatz. Sollte dies aus einem Grund nicht geklappt haben finden Sie auf OLAT eine zur Verfügung gestellte CSV-Datei.] Erfassen Sie den hierfür benötigten Code nicht nur im Markdown, sondern erstellen Sie zusätlich ein eigenes R-Skript (z.B. unter dem Namen ”ess_import.R"). Dieses Skript sollte automatisch das richtige Arbeitsverzeichnis definieren, den Datensatz laden und alle notwendigen Datenaufbereitungen vornehmen. Sie können also auch bereits die ersten Definitionen von fehlenden Werten dort integrieren. Die Idee ist, dass dieses Skript über die kommenden Wochen umfangreicher wird, wenn wir Faktoren definieren, Variablenbezeichnungen ändern, neue Variablen berechnen, usw.
+
+2. Erläutern Sie in eigenen Worten die Idee der Funktion `attach()`. Nutzen Sie diese Funktion für die Aufgaben 3 und 4. Wenden Sie den `detach()`-Befehl an, bevor Sie zu Aufgabe 5 übergehen.
+
+3. Erstellen Sie mittels der Funktion `table()` eine Kreuztabelle zwischen der Variable zu Geschlecht und derjenigen zum Interesse an Politik. Wie können Sie vorgehen, um eine Kreuztabelle mit Prozentwerten (relative statt absolute Häufigkeiten) zu erstellen, die ausserdem die Randsummen enthält? Suchen Sie eine Darstellung der Tabelle –- d.h. der Anordnung der Variablen in Zeilen und Spalten sowie der Wahl der Randsummen –-, die sinnvoll das Verhältnis von abhängiger und unabhängiger Variable wiedergibt. Was fällt Ihnen inhaltlich an der Tabelle auf?
+
+4. Die Funktion `CrossTable()` ist Teil des Paketes "gmodels" und ermöglicht die flexible und detailreiche Arbeit mit Kreuztabellen. Versuchen Sie mittels dieser Funktion die Kreuztabelle aus Aufgabe 2 nachzubauen.
+
+5. Mittels `CrossTable()` lassen sich nicht nur Tabellen erstellen, sondern auch Chi-Quadrat Tests durchführen. 
+  + Kopieren Sie Ihren Kode der Kreuztabelle aus Ausgabe 4, ergänzen Sie diesen um das nötige Argument für den Chi-Quadrat Test und speichern Sie dies als ein neues Objekt 'CT_Ergebnis'.
+  + Greifen Sie anschliessend auf die darin enthaltenen Angaben zum Chi-Quadrat Test zu und interpretieren Sie diese -– sowohl deskriptiv als auch inferenzstatistisch.
+
+&nbsp;
+
+Arbeiten Sie für die Falllösung wie immer mit RMarkdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "FL08_NameVorname.pdf" und geben das Dokument via OLAT vor der nächsten Einheit ab.

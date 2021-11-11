@@ -27,3 +27,6 @@ ggplot2-darstellung
 wochenplan-07
 lernziele-4
 aufgaben-3
+wochenplan-08
+lernziele-5
+aufgaben-4

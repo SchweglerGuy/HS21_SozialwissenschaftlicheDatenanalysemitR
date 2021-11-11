@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Sozialwissenschaftliche Datenanalyse mit R</title>
+  <title>8 Wochenplan 08 | Sozialwissenschaftliche Datenanalyse mit R</title>
   <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:title" content="8 Wochenplan 08 | Sozialwissenschaftliche Datenanalyse mit R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta name="twitter:title" content="8 Wochenplan 08 | Sozialwissenschaftliche Datenanalyse mit R" />
   
   <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="wocheplan-01.html"/>
+<link rel="prev" href="wochenplan-07.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -227,39 +227,52 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Sozialwissenschaftliche Datenanalyse mit R</h1>
-<p class="author"><em>Kenneth Horvath &amp; Guy Schwegler</em></p>
-<p class="date"><em>HS 2021</em></p>
+<div id="wochenplan-08" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Wochenplan 08</h1>
+<p>…Vorbereitung von der 08. auf die 09.Einheit.</p>
+<div id="lernziele-5" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Lernziele</h2>
+<p>Nachdem wir uns bereits etwas mit dem ESS-Datensatz und dessen Struktur vertraut gemacht haben, gehen wir nun zur Datenanalyse in R über. Dieser Übergang ist ein fliessender: Die Schritte zum Kennenlernen eines Datensatzes, die Plausibilitätsprüfung und die Suche nach Fehlern liefern häufig bereits erste Ergebnisse im Sinne einer explorativen Datenanalysen, die umgekehrt dann womöglich neue Schritte zur Aufbereitung des Datensatzes veranlassen. Der 08. Wochenplan fokussiert die Rolle von Kreuztabellen in diesem Prozess, inklusive der Berechnung von Chi-Quadrat-Tests. Von hier geht es dann in den Folgewochen schrittweise weiter zu Berechnung von Regressionsanalysen.</p>
+<p>Wir können daher folgende Lernziele festhalten:</p>
+<ul>
+<li>Sie verstehen den Nutzen (und auch die Gefahren) der Funktion <code>attach()</code>.</li>
+<li>Sie können Kreuztabellen auf verschiedene Weisen darstellen und inhaltlich zutreffend interpretieren.</li>
+<li>Sie lernen die Interpretation von inferenzstatstischen Test in R anhand von einem Chi-Quadrat Test kennen.</li>
+<li>Sie verstehen, wie man das Ergebnis von Funktionen als Objekt “abspeichert,” und wissen, wie man auf die Elemente solcher “Ergebnisobjekte” zugreift.</li>
+<li>Sie entwickeln ein vertieftes Verständnis davon, wie die Phasen der Datenaufbereitung, der Datenexploration und der Datenanalyse zusammenhängen.</li>
+</ul>
 </div>
-<div id="einführung" class="section level1 unnumbered">
-<h1>Einführung</h1>
-<p>Das Seminar “Sozialwissenschaftliche Datenanalyse mit R” bietet eine systematische Einführung in das Statistikpaket R sowie die Benutzeroberfläche RStudio. R ist eine Open Source Software, die sich unter anderem durch Flexibilität sowie durch vielfältige Möglichkeiten der numerischen und grafischen Datenanalyse auszeichnet. Das Seminar führt auf der einen Seite allgemein in den Aufbau des Programms und dessen Funktionsweisen ein. Auf der anderen Seite werden gewisse statistische Verfahren auch in inhaltliche Abstimmung mit der Vorlesung “Grundlagen der multivariaten Statistik” vermittelt. Anhand der Funktionsweisen und der Verfahren werden dann Techniken des effizienten Datenmanagements, Möglichkeiten zur eigenständigen Programmierung von kleinen Funktionen sowie Formen der grafischen Datenanalyse und Ergebnisdarstellung besprochen.</p>
-<p>Das vorliegende Dokument ist ein sogenanntes Bookdown <span class="citation">(<a href="#ref-R-bookdown" role="doc-biblioref">Xie 2020</a>)</span>, siehe auch <a href="https://bookdown.org/">hier</a>, und dient der Ergebnissicherung im Seminarverlauf. Das heisst dass die im Seminar besprochene Themen hiernochmals schriftlich festgehalten, diskutiert und allenfalls mit Literatur ergänzt werden (siehe für allgemeine Literatur etwa <span class="citation"><a href="#ref-DiazBone2019" role="doc-biblioref">Diaz-Bone</a> (<a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>)</span>, <span class="citation"><a href="#ref-Kabacoff2015" role="doc-biblioref">Kabacoff</a> (<a href="#ref-Kabacoff2015" role="doc-biblioref">2015</a>)</span> oder <span class="citation"><a href="#ref-Manderscheid2017" role="doc-biblioref">Manderscheid</a> (<a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>)</span>). Das Bookdown wird laufend aktualisiert. Ebenfalls werden in diesem Bookdown die Lösungen für die im Seminar beziehungsweise in den Wochenplänen gestellten Aufgaben präsentiert (Falllösungen).</p>
+<div id="aufgaben-4" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Aufgaben</h2>
+<ol style="list-style-type: decimal">
+<li><p>Laden Sie den Datensatz in RStudio, der 200 zufällige Fälle aus dem ganzen ESS Datensatz enthält.<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> Erfassen Sie den hierfür benötigten Code nicht nur im Markdown, sondern erstellen Sie zusätlich ein eigenes R-Skript (z.B. unter dem Namen ”ess_import.R”). Dieses Skript sollte automatisch das richtige Arbeitsverzeichnis definieren, den Datensatz laden und alle notwendigen Datenaufbereitungen vornehmen. Sie können also auch bereits die ersten Definitionen von fehlenden Werten dort integrieren. Die Idee ist, dass dieses Skript über die kommenden Wochen umfangreicher wird, wenn wir Faktoren definieren, Variablenbezeichnungen ändern, neue Variablen berechnen, usw.</p></li>
+<li><p>Erläutern Sie in eigenen Worten die Idee der Funktion <code>attach()</code>. Nutzen Sie diese Funktion für die Aufgaben 3 und 4. Wenden Sie den <code>detach()</code>-Befehl an, bevor Sie zu Aufgabe 5 übergehen.</p></li>
+<li><p>Erstellen Sie mittels der Funktion <code>table()</code> eine Kreuztabelle zwischen der Variable zu Geschlecht und derjenigen zum Interesse an Politik. Wie können Sie vorgehen, um eine Kreuztabelle mit Prozentwerten (relative statt absolute Häufigkeiten) zu erstellen, die ausserdem die Randsummen enthält? Suchen Sie eine Darstellung der Tabelle –- d.h. der Anordnung der Variablen in Zeilen und Spalten sowie der Wahl der Randsummen –-, die sinnvoll das Verhältnis von abhängiger und unabhängiger Variable wiedergibt. Was fällt Ihnen inhaltlich an der Tabelle auf?</p></li>
+<li><p>Die Funktion <code>CrossTable()</code> ist Teil des Paketes “gmodels” und ermöglicht die flexible und detailreiche Arbeit mit Kreuztabellen. Versuchen Sie mittels dieser Funktion die Kreuztabelle aus Aufgabe 2 nachzubauen.</p></li>
+<li><p>Mittels <code>CrossTable()</code> lassen sich nicht nur Tabellen erstellen, sondern auch Chi-Quadrat Tests durchführen.</p></li>
+</ol>
+<ul>
+<li>Kopieren Sie Ihren Kode der Kreuztabelle aus Ausgabe 4, ergänzen Sie diesen um das nötige Argument für den Chi-Quadrat Test und speichern Sie dies als ein neues Objekt ‘CT_Ergebnis.’</li>
+<li>Greifen Sie anschliessend auf die darin enthaltenen Angaben zum Chi-Quadrat Test zu und interpretieren Sie diese -– sowohl deskriptiv als auch inferenzstatistisch.</li>
+</ul>
+<p> </p>
+<p>Arbeiten Sie für die Falllösung wie immer mit RMarkdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit “FL08_NameVorname.pdf” und geben das Dokument via OLAT vor der nächsten Einheit ab.</p>
 
 </div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-DiazBone2019" class="csl-entry">
-Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.
 </div>
-<div id="ref-Kabacoff2015" class="csl-entry">
-Kabacoff, Robert. 2015. <em>R in Action: Data Analysis and Graphics with r</em>. Shelter Island, NY: Manning.
-</div>
-<div id="ref-Manderscheid2017" class="csl-entry">
-Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit r. Eine Einführung</em>. Wiesbaden: Springer VS.
-</div>
-<div id="ref-R-bookdown" class="csl-entry">
-Xie, Yihui. 2020. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
-</div>
+<div class="footnotes">
+<hr />
+<ol start="11">
+<li id="fn11"><p>Nutzen Sie falls möglich einen von Ihnen selbst zufällig erstellen Datensatz. Sollte dies aus einem Grund nicht geklappt haben finden Sie auf OLAT eine zur Verfügung gestellte CSV-Datei.<a href="wochenplan-08.html#fnref11" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="wocheplan-01.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="wochenplan-07.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -290,7 +303,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/08_WP08_EinfuehrungDatenanalyse-Kreuztabellen.Rmd",
 "text": "Edit"
 },
 "history": {
