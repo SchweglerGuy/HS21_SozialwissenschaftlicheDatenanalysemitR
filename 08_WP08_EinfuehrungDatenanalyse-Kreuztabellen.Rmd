@@ -1,6 +1,6 @@
 # Wochenplan 08
 
-...Vorbereitung von der 08. auf die 09.Einheit.
+...zur Einheit der 08. auf die 09.Woche.
 
 ## Lernziele
 
@@ -18,16 +18,329 @@ Wir können daher folgende Lernziele festhalten:
 
 1. Laden Sie den Datensatz in RStudio, der 200 zufällige Fälle aus dem ganzen ESS Datensatz enthält. ^[Nutzen Sie falls möglich einen von Ihnen selbst zufällig erstellen Datensatz. Sollte dies aus einem Grund nicht geklappt haben finden Sie auf OLAT eine zur Verfügung gestellte CSV-Datei.] Erfassen Sie den hierfür benötigten Code nicht nur im Markdown, sondern erstellen Sie zusätlich ein eigenes R-Skript (z.B. unter dem Namen ”ess_import.R"). Dieses Skript sollte automatisch das richtige Arbeitsverzeichnis definieren, den Datensatz laden und alle notwendigen Datenaufbereitungen vornehmen. Sie können also auch bereits die ersten Definitionen von fehlenden Werten dort integrieren. Die Idee ist, dass dieses Skript über die kommenden Wochen umfangreicher wird, wenn wir Faktoren definieren, Variablenbezeichnungen ändern, neue Variablen berechnen, usw.
 
+Hier das Beispiel eines möglichen Importskripts:
+```{r eval=FALSE}
+# Laden der Daten
+setwd("C:/Users/SchweglG/R_Daten/06_HS21/R_Seminar-HS21")
+#daten_ess <- read.csv(file = "Daten/ESS1-8e01.csv")
+#daten_ess <- daten_ess[sample(row.names(daten_ess),200),]
+#write.csv(daten_ess, file = "Daten/ESS1-8e01_HS21.csv")
+daten_ess <- read.csv(file = "Daten/ESS1-8e01_HS21.csv")
+
+# nicht benoetigte Variablen loeschen
+## bisher keine nicht benoetigen Variablen vorhanden
+
+
+# Definieren von fehlenden Werten
+daten_ess$yrbrn[daten_ess$yrbrn==7777 |
+                  daten_ess$yrbrn==8888 |
+                  daten_ess$yrbrn==9999] <- NA
+daten_ess$agea[daten_ess$agea==999] <- NA
+daten_ess$edulvla[daten_ess$edulvla>5] <- NA
+daten_ess$eisced[daten_ess$eisced>7] <- NA
+daten_ess$eduyrs[daten_ess$eduyrs>76] <- NA
+
+# Fehler in den Faellen Korrigieren
+## Fall 132
+daten_ess$agea[daten_ess$x==132] <- 2016 - daten_ess$yrbrn[daten_ess$x==132]
+daten_ess$agea[daten_ess$x==132]
+## Fall 352
+daten_ess$agea[daten_ess$x==352] <- 2016 - daten_ess$yrbrn[daten_ess$x==352]
+## Fall 443 
+daten_ess$edulvla[daten_ess$x==443] <- NA
+## Fall 1414
+daten_ess$agea[daten_ess$x==1414] <- NA
+daten_ess$yrbrn[daten_ess$x==1414] <- NA
+## Fall 1482
+daten_ess$eduyrs[daten_ess$x==1482] <- round(mean(daten_ess$eduyrs[daten_ess$edulvla==3],
+                                     na.rm = T))
+
+# Faktoren definieren
+## folgt in der naechsten Einheit
+
+```
+Das R-Skript kann nun laufend ergänzt werden, etwa mit der Definition von weiteren fehlenden Werte bei anderen Variablen oder mit der Erstellen von Faktoren (siehe nächster WP). Das hat den Vorteil, dass zu Beginn einer neuen Einheit (d.h. wenn Sie ein neues Markdown erstellen) jeweils nicht der ganze Code nochmals aufgeführt werden muss, sondern direkt dieses Skript ausgeführt werden kann. Das Ausführen eines Skriptes (oder auch einer sonstigen Textdatei) erfolgt über die Funktion `source()`.
+```{r eval=FALSE}
+#Nochmals das Arbeitsverzeichnis definieren falls nötig:
+setwd("C:/Users/SchweglG/R_Daten/06_HS21/R_Seminar-HS21")
+#Aufrufen des R Skripts:
+source(file = "ess_import.R")
+```
+
+```{r include=FALSE}
+source(file = "Daten/ess_import.R")
+```
+*Zur Wiederholung*: Wir laden uns also wiederum Rohdaten und müssen dann fehlende Werte definieren. Natürlich kennt die Funktion `read.csv()` ein Umgang mit fehlenden Werten über das Argument `na.strings`. Allerdings sind in unserem Rohdatensatz fehlende Werte eben auch als Zahlen definiert (z.Bsp. 7777) und werden -- bevor dies nicht anders definiert haben -- auch als numerische Werte eingelesen.
+
+&nbsp;
 2. Erläutern Sie in eigenen Worten die Idee der Funktion `attach()`. Nutzen Sie diese Funktion für die Aufgaben 3 und 4. Wenden Sie den `detach()`-Befehl an, bevor Sie zu Aufgabe 5 übergehen.
 
+Die `attach()`-Funktion erlaubt es uns, einen bestimmten Datensatz (d.h. ein Dataframe-Objekt) zu „aktivieren“ [@Manderscheid2017, 54]. Dadurch können wir direkt auf diesen Datensatz zugreifen, ohne den Umweg des `$`-Zeichens:
+```{r}
+#Am Beispiel der Variable zu Geschlecht:
+##...vor dem attachen:
+table(daten_ess$gndr)
+
+##die Funktion
+attach(daten_ess)
+
+##...nach dem attachen:
+table(gndr)
+```
+
+Ohne die `attach()`-Funktion würde die letzte Zeile des Code-Chunks oben zu einer Fehlermeldung führen. 
+
+**Fabio Keller** hat dies nochmals etwas anders formuliert, um den Prozess der Funktion zu verdeutlichen:  
+"Standardmässig gibt es das Global Environment, also die Super-Umgebung, in der alle Objekte existieren, die wir bisher erstellt haben. Die Funktion `attach()` erstellt eine zusätzliche Umgebung, in der Objekte existieren können. Sie zerteilt ein DataFrame, das mit dem `what` Argument angegeben wird, in seine einzelnen Variablen und lässt sie als freie Objekte in der neuen Umgebung leben, dessen Name man mit dem
+`name` Argument spezifizieren kann."
+
+Wann sollten wir mit der Funktion arbeiten, wann nicht? 
+Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die *Arbeit mit nur einem Datensatz* im Zentrum steht und wenn *keine Änderungen* mehr am Datensatz selber vorgenommen werden. Bei der Arbeit mit mehreren Datensatzsätzen könnte die Funktion leicht für Verwirrung sorgen (gerade auch dann wenn Ihre Codezeilen von jemand anderem interpretiert werden sollen). Eine Hierarchie bei mehreren 'attachten' Objekten könnte noch über das Argument `post`definiert werden. Dies macht allerdings kaum Sinn. Sollten Sie weiterhin Änderungen am Datensatz vornehmen kann die `attach()`-Funktion dazu führen, dass die von Ihnen gemachten Änderungen nicht sichtbar werden (beim Betrachten des Datensatzes) oder auch nicht in die weiteren Schritte/Berechnungen aufgenommen werden. Sobald also Änderungen vorgenommen werden gilt es auch den Datensatz wieder zu „detachen“.
+
+Nach folgender Befehlszeile kommt eine Warnung -- was könnte das Problem sein?
+```{r eval=FALSE}
+attach(daten_ess)
+```
+Jetzt findet R verschiedene "freie Objekte" (Keller) mit dem selben Namen in der Environment. Dies aufgrund der Tatsache, dass eben ein Datensatz mehrmals 'attached' wurde (ersichtlich über *Global Enviroment*). Wenn der Datensatz jetzt nur einmal 'detached' wird kann immer noch direkt auf dieses Objekt zugreifen, weil es eben noch ein zweites Mal 'attached' wurde:
+```{r eval=FALSE}
+detach(daten_ess)
+table(gndr)
+```
+
+
+&nbsp;
 3. Erstellen Sie mittels der Funktion `table()` eine Kreuztabelle zwischen der Variable zu Geschlecht und derjenigen zum Interesse an Politik. Wie können Sie vorgehen, um eine Kreuztabelle mit Prozentwerten (relative statt absolute Häufigkeiten) zu erstellen, die ausserdem die Randsummen enthält? Suchen Sie eine Darstellung der Tabelle –- d.h. der Anordnung der Variablen in Zeilen und Spalten sowie der Wahl der Randsummen –-, die sinnvoll das Verhältnis von abhängiger und unabhängiger Variable wiedergibt. Was fällt Ihnen inhaltlich an der Tabelle auf?
 
+Wenn wir Tabellen (bzw. Kontingenztabellen) darstellen, so ist die Konvention dass "bei gerichteten Beziehungen die Ausprägungen der unabhängigen Variablen (X) den Spalten zugeordnet werden und die Ausprägungen der abhängigen Variablen (Y) den Reihen zugeordnet werden" [@DiazBone2019, 70]. Die Aufgabenstellung spricht zwar nicht von einer gerichteten Beziehung, aber gleichzeitig macht es Sinn, Geschlecht als unabhängige Variable anzusehen (und nicht dass das Interesse an Politik das Geschlecht einer Person bestimmt). Gemäss dieser Überlegung sollen dann auch die Randsummen ausgerichtet werden, da uns die Verteilungen des Politikinteresses je nach Geschlecht interessiert. Das heisst das pro Geschlecht jeweils auf 100% summiert werden soll.
+
+Zur Erinnerung: Dies sind Ausprägungen der beiden Variablen:
+"gndr"  
+1	Male  
+2	Female  
+9	No answer  
+"polintr"  
+1	Very interested  
+2	Quite interested  
+3	Hardly interested  
+4	Not at all interested  
+7	Refusal  
+8	Don't know  
+9	No answer  
+
+Die Verteilung von "gndr" haben wir oben bereits betrachtet, daher folgt hier nur noch die Variable "polintr":
+```{r}
+table(polintr)
+# Womöglich verfügt die Variable "polintr" über fehlende Werte. Diese können wir definieren:
+daten_ess$polintr[daten_ess$polintr>4] <- NA
+#Dieser Befehl könnten wir dann ebenfalls in unser Import-Skript übernehmen.
+```
+
+Anschliessend erstellen wir die benötige Tabelle. Hierbei lohnt es sich von "innen" nach "aussen" vorzugehen [vgl. auch @Manderscheid2017, 95]:
+```{r eval=FALSE}
+#als logischer Aufbau der Tabelle
+addmargins(table(polintr, gndr))
+prop.table(table(polintr, gndr))
+
+# Welche Variante macht nun mehr Sinn?
+prop.table(table(polintr, gndr),2)
+prop.table(table(polintr, gndr),1)
+
+#Randsummen ergänzen:
+addmargins(prop.table(table(polintr, gndr),2))
+
+#Warum könnten wir eine der beiden Randsummen weglassen? Wieso nicht?
+# V1
+addmargins(prop.table(table(polintr, gndr),2),1)
+round(addmargins(prop.table(table(polintr, gndr),2),1),2)
+#V2
+round(addmargins(prop.table(table(polintr, gndr),2)),2)
+```
+
+Hier wäre nun unsere benötigte Tabelle:
+```{r}
+round(addmargins(prop.table(table(polintr, gndr),2),1),2)
+```
+Diese verdeutlicht, dass  zwischen den Variablen ein Zusammenhang bestehen könnte, da Männer anscheinend öfters angeben, sehr an Politik interessiert zu sein.
+
+&nbsp;
 4. Die Funktion `CrossTable()` ist Teil des Paketes "gmodels" und ermöglicht die flexible und detailreiche Arbeit mit Kreuztabellen. Versuchen Sie mittels dieser Funktion die Kreuztabelle aus Aufgabe 2 nachzubauen.
 
+
+```{r}
+#install.packages("gmodels")
+library(gmodels)
+?CrossTable
+```
+
+Ein Blick in die Hilfeseite zeigt uns, dass wir vor allem diejenigen Argument anders definieren müssen, die wir nicht in unserer Tabelle haben wollen. Das heisst wir müssen angeben (`FALSE`), dass wir keine Spalten- und Tabellenprozente sowie keine Angaben zum Chi-Quadrat-Beiträgen haben möchten. Leider scheint aber kein Argument vorhanden zu sein, mit der wir die absoluten Zahlen entfernen und die Randverteilung auch noch gemäss der Tabelle oben darstellen könnten.
+```{r}
+CrossTable(polintr, gndr, 
+           digits = 2,
+           prop.r = F,
+           prop.t = F,
+           prop.chisq = F,
+           )
+```
+
+Hingegen bietet die Funktion über das Argument `format` noch eine schöne Darstellungsweise, die **Josias Bruder** genutzt hat:
+```{r}
+CrossTable(polintr, gndr, 
+           digits = 2,
+           prop.r = F,
+           prop.t = F,
+           prop.chisq = F,
+           format = "SPSS")
+```
+
+*Hinweis*: Die Funktion `CrossTable()` kennt keinen Weg mit fehlenden Wert umzugehen. Sollten Sie also einen fehlenden Wert in einer Variable haben müssen Sie diesen selber "entfernen". Hier ein Beispiel, in dem ein fehlender Wert beim Fall 45 (z.Bsp. bei der Variable "polintr") vorhanden wäre:
+```{r eval=FALSE}
+CrossTable(polintr[-c(45)], gndr[-c(45)], 
+           digits = 2,
+           prop.r = F,
+           prop.t = F,
+           prop.chisq = F,
+           format = "SPSS")
+```
+
+
+&nbsp;
 5. Mittels `CrossTable()` lassen sich nicht nur Tabellen erstellen, sondern auch Chi-Quadrat Tests durchführen. 
   + Kopieren Sie Ihren Kode der Kreuztabelle aus Ausgabe 4, ergänzen Sie diesen um das nötige Argument für den Chi-Quadrat Test und speichern Sie dies als ein neues Objekt 'CT_Ergebnis'.
   + Greifen Sie anschliessend auf die darin enthaltenen Angaben zum Chi-Quadrat Test zu und interpretieren Sie diese -– sowohl deskriptiv als auch inferenzstatistisch.
 
-&nbsp;
+```{r}
+detach(daten_ess)
+CT_Ergebnis <- CrossTable(daten_ess$polintr, daten_ess$gndr, 
+           digits = 2,
+           prop.r = F,
+           prop.t = F,
+           prop.chisq = F,
+           chisq = T) #Achtung: hier muss nun das Format 'SPSS' entfernt werden
+summary(CT_Ergebnis)
+str(CT_Ergebnis)
+```
 
-Arbeiten Sie für die Falllösung wie immer mit RMarkdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "FL08_NameVorname.pdf" und geben das Dokument via OLAT vor der nächsten Einheit ab.
+Neben den verschiedenen Werten der Tabellen (Fallzahlen sowie den Spalten-, Reihen- und Tabellenprozenten) finden wir auch das Unterobjekt des Chi-Quadrattests: "chisq". Auf dieses können wir sowohl insgesamt zugreifen...
+```{r}
+CT_Ergebnis$chisq
+#oder etwas umständlicher, aber auch möglich:
+CT_Ergebnis["chisq"]
+```
+...als eben auch auf die Unterelemente:
+```{r}
+CT_Ergebnis$chisq$statistic
+CT_Ergebnis$chisq$parameter
+CT_Ergebnis$chisq$p.value
+CT_Ergebnis$chisq$method
+CT_Ergebnis$chisq$data.name
+CT_Ergebnis$chisq$observed
+CT_Ergebnis$chisq$expected
+CT_Ergebnis$chisq$residuals
+```
+
+Wie können wir die Ergebnisse nun interpretieren?  
+Zuerst *deskriptiv statistisch*: Wir erhalten einen Chi-Quadrat Wert gemäss Pearson von: 
+```{r}
+CT_Ergebnis$chisq$statistic
+```
+Das heisst dass ein Zusammenhang zwischen den beiden Variablen Geschlecht und Politikinteresse besteht. Allerdings ist die Grössenordnung dieses Wertes nicht nur durch eine Stärke des Zusammenhangs bestimmt, sondern auch durch das Tabellenformat [@DiazBone2019, 86]. Dieses Tabellenformat wird über die Freiheitsgrade (*df*) deutlich: (i-1) x (j-1). Oder eben:
+```{r}
+CT_Ergebnis$chisq$parameter
+```
+Möchte man hingegen verschiedene Zusammenhänge und deren Stärke miteinander vergleichen, so kann man auf Cramer’s V zurückgreifen (etwa über die Funktion `cramersV()` im Paket „lsr“). 
+```{r}
+#install.packages("lsr")
+library(lsr)
+cramersV(daten_ess$polintr, daten_ess$gndr)
+
+#oder auch manuell:
+sqrt(CT_Ergebnis$chisq$statistic/(200*(2-1)))
+```
+Cramer's V verweist so auf einen schwachen bis mittleren Zusammenhang.
+
+Anschliessend können wir zur *inferenzstatistischen Betrachtung* übergehen:  
+Einige von den Teilnehmer*innen haben den Chi-Quadrat Test "von Hand" durchgeführt. Dies ist natürlich auch möglich [vgl. @DiazBone2019, 86]:
+
+(1) Hypothesen  
+H0: In der Grundgesamtheit besteht kein Zusammenhang zwischen Geschlecht und Politikinteresse.
+H1: Es besteht in der Grundgesamtheit ein Zusammenhang zwischen Geschlecht und Politikinteresse.
+
+(2) Stichprobnerverteilung  
+Wiederum können wir die Stichprobernvertilung mittels des "parameter"-Unterobjektes bestimmen, nämlich als Verteilung mittels 3 Freiheitsgraden:
+```{r}
+CT_Ergebnis$chisq$parameter
+```
+
+(3) Annahme- und Rückweisungsbereich  
+Der Test soll mit einem Signifikanzniveau von 5% durchgeführt werden:
+```{r}
+qchisq(0.95,3, lower.tail = T)
+```
+
+(4) Auswertung der STichprobe und Testentscheidung  
+Der Stichprobenkennwert ist:
+```{r}
+CT_Ergebnis$chisq$statistic
+```
+Dieser Wert fällt nun in den Rückweisungsbereich und der Stichprobenbefund ist signifikant. Die H0 muss verworfen werden und auch in der Grundgesamtheit  besteht ein Zusammenhang zwischen Geschlecht und Politikinteresse.
+
+Dieses Vorgehen entspricht allerdings nicht der Realität des statistischen Arbeitens. Wir arbeiten nämlich direkt mit dem sogenannten "p-Wert". Dieser Wert liegt bei:
+```{r}
+CT_Ergebnis$chisq$p.value
+```
+Unser berechnete Prüfwert Chi-Quadrat fällt auf einem 5% Signifikanzniveau in den Ablehnungsbereich beziehungsweise können wir auf einem 95% Signifikanzniveau die Alternativhypothese annehmen, dass auch in der Grundgesamtheit ein Zusammenhang zwischen den beiden Variablen besteht [vgl. auch @Manderscheid2017, 165f]. Der p-Wert dreht dabei die Logik etwas um: Konkret sagt dieser Wert nämlich aus, dass lediglich eine 
+```{r}
+round(CT_Ergebnis$chisq$p.value,3)*100
+```
+...% Wahrscheinlichkeit besteht, dass unser Zusammenhang in der Stichprobe zufällig aufgetreten ist.
+
+
+Ist jetzt das einfach ein *dummes Beispiel*? Wir könnten uns jetzt nochmals anschauen, wie dieser Chi-Quadrat Wert zustandekommt:
+```{r}
+CrossTable(daten_ess$polintr, daten_ess$gndr, 
+           prop.r = F,
+           prop.t = F,
+           prop.c = F)
+```
+Und dort sehen wir, dass vor allem die Unterschiede in der ersten Ausprägung ("polintr = 1") die Differenz ausmachen.
+
+
+## Einführung Faktoren
+
+Genau genommen haben wir bisher immer so getant, als wären Variablen wie "gndr" und "polintr" metrische Variablen. Dies ist natürlich nicht korrekt, sondern wir haben es hier mit einer nominalen und einer ordinalen Variable zu tun. Solche nicht-metrischen oder eben kategorialen Variablen können wir in R über Faktoren definieren.
+
+Neben Vektoren (die wir bisher vor allem mit metrischen Variablen gleichgesetzt haben) sind Faktoren ein weiterer wichtiger Objekttyp der für die Organisation von sozialwissenschaftlichen Beobachtungen in Form von Variablen relevant ist [@Manderscheid2017, 35]. Dieser Objekttyp enthält nun nicht mehr die Zahlen in einer Reihe, sondern "Levels". Dies sind benannte Elemente und wir können diese insbesondere für Variablen mit nominalen oder ordinalen Skalenniveau verwenden. Der Unterschied zwischen numerischen Variablen/Vektoren und kategorial Variablen/Faktoren wird in R wichtig, denn zwischen den Objekttypen wird differenziert. Das heisst das gewisse Funktionen nicht mehr mit Faktoren ausgeführt werden können.
+
+Am Beispiel von `gndr`:
+```{r}
+#daten_ess$gndr + 1 #würde eigentlich aktuell noch Sinn machen
+table(daten_ess$gndr)
+plot(daten_ess$gndr)
+
+daten_ess$gndr <- factor(daten_ess$gndr)
+levels(daten_ess$gndr)
+levels(daten_ess$gndr) <- c("weiblich", "männlich")
+str(daten_ess$gndr)
+
+#daten_ess$gndr + 1 #funktioniert jetzt nicht mehr
+table(daten_ess$gndr)
+plot(daten_ess$gndr)
+```
+
+Und am Beispiel von `polintr`, was nun einem geordneten (d.h. ordinalen) Faktorn entspricht:
+```{r}
+table(daten_ess$polintr)
+plot(daten_ess$polintr)
+#Die Tabelle macht deutlich, dass hier eben die numerischen Ausprägungen in umgekehrter Reihenfolge aufgeführt sind 
+# 1=als die ranghöchste Ausprägung, deshalb muss zuerst die Reihenfogle der Levels bestimmt werden:
+daten_ess$polintr <- factor(daten_ess$polintr, 
+                            levels =c(4,3,2,1), 
+                            ordered = T)
+str(daten_ess$polintr)
+levels(daten_ess$polintr) <- c("Not at all interested", "Hardly interested",
+                               "Quite interested", "Very interested")
+
+str(daten_ess$polintr)
+table(daten_ess$polintr)
+plot(daten_ess$polintr)
+```
