@@ -261,9 +261,9 @@ Unsere Grundgesamtheit bilden 1000 Ausprägungen einer beliebigen Variable, die 
 <span id="cb252-2"><a href="wochenplan-06-code-rezipieren.html#cb252-2" aria-hidden="true" tabindex="-1"></a>                             <span class="at">min =</span> <span class="dv">0</span>,</span>
 <span id="cb252-3"><a href="wochenplan-06-code-rezipieren.html#cb252-3" aria-hidden="true" tabindex="-1"></a>                             <span class="at">max =</span> <span class="dv">20</span>)</span>
 <span id="cb252-4"><a href="wochenplan-06-code-rezipieren.html#cb252-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(variable_population)</span></code></pre></div>
-<pre><code>## [1] 10.06184</code></pre>
+<pre><code>## [1] 9.976568</code></pre>
 <div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="wochenplan-06-code-rezipieren.html#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(variable_population)</span></code></pre></div>
-<pre><code>## [1] 5.768258</code></pre>
+<pre><code>## [1] 5.77083</code></pre>
 <div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="wochenplan-06-code-rezipieren.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(variable_population,</span>
 <span id="cb256-2"><a href="wochenplan-06-code-rezipieren.html#cb256-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">30</span>,</span>
 <span id="cb256-3"><a href="wochenplan-06-code-rezipieren.html#cb256-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="st">&quot;orange&quot;</span>,</span>
@@ -275,9 +275,9 @@ Unsere Grundgesamtheit bilden 1000 Ausprägungen einer beliebigen Variable, die 
 Als nächster Schritt wird nun eine Stichprobe gezogen mit der Funktion <code>sample()</code>, in der zufällig 100 Fälle der Grundgesamtheit landen. Von dieser Stichprobe können wir dann den Mittelwert berechnen und diesen Wert in das Histogramm der Grundgesamtheit einfügen. Der Mittelwert der Stichprobe (schwarz) unterscheidet sich natürlich minimal vom Mittelwert der Grundgesamt (rot).<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> Letzterer wird dann über die Funktion <code>abline()</code> eingezeichnet.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></p>
 <div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="wochenplan-06-code-rezipieren.html#cb257-1" aria-hidden="true" tabindex="-1"></a>sample1 <span class="ot">&lt;-</span> <span class="fu">sample</span>(variable_population, <span class="dv">100</span>)</span>
 <span id="cb257-2"><a href="wochenplan-06-code-rezipieren.html#cb257-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(variable_population)</span></code></pre></div>
-<pre><code>## [1] 10.06184</code></pre>
+<pre><code>## [1] 9.976568</code></pre>
 <div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="wochenplan-06-code-rezipieren.html#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(sample1)</span></code></pre></div>
-<pre><code>## [1] 8.709552</code></pre>
+<pre><code>## [1] 10.55245</code></pre>
 <div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="wochenplan-06-code-rezipieren.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(variable_population,</span>
 <span id="cb261-2"><a href="wochenplan-06-code-rezipieren.html#cb261-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">30</span>,</span>
 <span id="cb261-3"><a href="wochenplan-06-code-rezipieren.html#cb261-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="st">&quot;orange&quot;</span>,</span>
@@ -369,9 +369,9 @@ In den folgenden Codezeilen wird nun die Stichprobenverteilung in das Histogramm
 <p>Dieser Wert entspricht (annährend) dem arithmetischen Mittelwert des metrischen Merkmals in der Grundgesamtheit:</p>
 <p>$  = $</p>
 <div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="wochenplan-06-code-rezipieren.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(mittelwerte_samples)</span></code></pre></div>
-<pre><code>## [1] 10.02287</code></pre>
+<pre><code>## [1] 10.02402</code></pre>
 <div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="wochenplan-06-code-rezipieren.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(variable_population)</span></code></pre></div>
-<pre><code>## [1] 10.06184</code></pre>
+<pre><code>## [1] 9.976568</code></pre>
 <p>Auf der anderen Seite finden wir die Standardabweichung der Stichprobenverteilung, der Standardfehler (oder Stichprobenfehler):</p>
 <p>$  =  $</p>
 <p>Dieser Wert gibt das Ausmass der Streuung der einzelnen Stichprobenmittelwerte um den Mittelwert der Stichprobenverteilung beziehungweise der Grundgesamtheit an.</p>
@@ -398,7 +398,7 @@ In den folgenden Codezeilen wird nun die Stichprobenverteilung in das Histogramm
 <span id="cb273-17"><a href="wochenplan-06-code-rezipieren.html#cb273-17" aria-hidden="true" tabindex="-1"></a>     <span class="at">add =</span> T)</span></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-103-1.png" width="672" /></p>
 <div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="wochenplan-06-code-rezipieren.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(mittelwerte_samples) </span></code></pre></div>
-<pre><code>## [1] 0.5190602</code></pre>
+<pre><code>## [1] 0.5271789</code></pre>
 <div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="wochenplan-06-code-rezipieren.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Der Standardfehler wurde halbiert, da die Stichprobengrösse vervierfacht wurde.</span></span></code></pre></div>
 <p>Was hat uns nun dieses Skript und insbesondere die letzten Darstellungen gebracht <span class="citation">(<a href="#ref-DiazBone2019" role="doc-biblioref">Diaz-Bone 2019, 240f</a>)</span>?</p>
 <ul>

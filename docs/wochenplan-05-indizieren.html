@@ -309,7 +309,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="wochenplan-05-indizieren.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df_VM)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    100 obs. of  5 variables:
 ##  $ ID             : int  1 2 3 4 5 6 7 8 9 10 ...
-##  $ Alter          : chr  &quot;15.462373226881&quot; &quot;15.3442175344098&quot; &quot;16.5140035452787&quot; &quot;13.4985245713033&quot; ...
+##  $ Alter          : chr  &quot;15.4152673920617&quot; &quot;16.3496129815467&quot; &quot;16.0599377385806&quot; &quot;16.1561157118995&quot; ...
 ##  $ Gewicht        : num  15 15 15 15 16 16 16 16 17 17 ...
 ##  $ Sportminuten   : num  10 12 14 16 18 20 22 24 26 28 ...
 ##  $ Internetnutzung: num  10 14 18 22 26 30 34 38 42 46 ...</code></pre>
@@ -409,11 +409,11 @@ div.csl-indent {
 <span id="cb234-7"><a href="wochenplan-05-indizieren.html#cb234-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb234-8"><a href="wochenplan-05-indizieren.html#cb234-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Ein spezieller Fall?</span></span>
 <span id="cb234-9"><a href="wochenplan-05-indizieren.html#cb234-9" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(df_FK<span class="sc">$</span>income <span class="sc">&gt;</span> <span class="dv">15000</span> <span class="sc">&amp;</span> df_FK<span class="sc">$</span>education <span class="sc">==</span> <span class="dv">0</span>)</span></code></pre></div>
-<pre><code>## integer(0)</code></pre>
+<pre><code>## [1] 71</code></pre>
 <div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="wochenplan-05-indizieren.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="co">#oder einfach:</span></span>
 <span id="cb236-2"><a href="wochenplan-05-indizieren.html#cb236-2" aria-hidden="true" tabindex="-1"></a>df_FK[df_FK<span class="sc">$</span>income <span class="sc">&gt;</span> <span class="dv">15000</span> <span class="sc">&amp;</span> df_FK<span class="sc">$</span>education <span class="sc">==</span> <span class="dv">0</span>,]</span></code></pre></div>
-<pre><code>## [1] gender    income    education age       home     
-## &lt;0 Zeilen&gt; (oder row.names mit Länge 0)</code></pre>
+<pre><code>##    gender   income education     age        home
+## 71      1 15606.57         0 20.0592 countryside</code></pre>
 <p>Ein Datensatz und Beispiel von Vanessa Leutener:</p>
 <div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="wochenplan-05-indizieren.html#cb238-1" aria-hidden="true" tabindex="-1"></a>Einkommen <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">2000</span>, <span class="at">to =</span> <span class="dv">12000</span>, <span class="at">length.out =</span> <span class="dv">100</span>))</span>
 <span id="cb238-2"><a href="wochenplan-05-indizieren.html#cb238-2" aria-hidden="true" tabindex="-1"></a>Krankheitstage <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="fu">runif</span>(<span class="dv">100</span>, <span class="at">min =</span> <span class="dv">3</span>, <span class="at">max =</span> <span class="dv">40</span>), </span>
@@ -506,9 +506,9 @@ div.csl-indent {
 <span id="cb243-14"><a href="wochenplan-05-indizieren.html#cb243-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">mean</span>(t<span class="sc">$</span>tvdauer, <span class="at">na.rm =</span> T));</span>
 <span id="cb243-15"><a href="wochenplan-05-indizieren.html#cb243-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">sd</span>(t<span class="sc">$</span>tvdauer, <span class="at">na.rm =</span> T))</span>
 <span id="cb243-16"><a href="wochenplan-05-indizieren.html#cb243-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<pre><code>## [1] 3.075
-## [1] 1.188287
-## [1] 2.85
+<pre><code>## [1] 3.125
+## [1] 1.059914
+## [1] 3.15
 ## [1] 0.8127277</code></pre>
 <p>Hier sehen wir ein komplexeres Beispiel einer Schleife, dass die Möglichkeit von Listen nutzt. Schleifen können daher beliebig komplex werden – und sie sind ein erster Schritt hin zum <strong>Schreiben von eigenen Funktionen</strong>. Wir nehmen nochmals die Schleife von oben und wenden diese Auf den Datensatz von Katrin Oesch an:</p>
 <div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="wochenplan-05-indizieren.html#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">ncol</span>(df_KO)<span class="sc">-</span><span class="dv">1</span>)) {</span>
@@ -552,11 +552,11 @@ div.csl-indent {
 <span id="cb248-13"><a href="wochenplan-05-indizieren.html#cb248-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Variante 1</span></span>
 <span id="cb248-14"><a href="wochenplan-05-indizieren.html#cb248-14" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df_LJ[df_LJ<span class="sc">$</span>Einstiegsgehalt <span class="sc">&gt;=</span> <span class="dv">6000</span> <span class="sc">&amp;</span> </span>
 <span id="cb248-15"><a href="wochenplan-05-indizieren.html#cb248-15" aria-hidden="true" tabindex="-1"></a>             df_LJ<span class="sc">$</span>Dauer_Ausbildung <span class="sc">&gt;=</span> <span class="dv">14</span>,<span class="st">&quot;Einstiegsgehalt&quot;</span>])</span></code></pre></div>
-<pre><code>## [1] 7364.481</code></pre>
+<pre><code>## [1] 7530.963</code></pre>
 <div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="wochenplan-05-indizieren.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Variante 2</span></span>
 <span id="cb250-2"><a href="wochenplan-05-indizieren.html#cb250-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df_LJ<span class="sc">$</span>Einstiegsgehalt[df_LJ<span class="sc">$</span>Einstiegsgehalt <span class="sc">&gt;=</span> <span class="dv">6000</span> </span>
 <span id="cb250-3"><a href="wochenplan-05-indizieren.html#cb250-3" aria-hidden="true" tabindex="-1"></a>                               <span class="sc">&amp;</span> df_LJ<span class="sc">$</span>Dauer_Ausbildung <span class="sc">&gt;=</span> <span class="dv">14</span>])</span></code></pre></div>
-<pre><code>## [1] 7364.481</code></pre>
+<pre><code>## [1] 7530.963</code></pre>
 
 </div>
 </div>
