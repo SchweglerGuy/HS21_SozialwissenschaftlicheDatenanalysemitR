@@ -1,6 +1,6 @@
-# Wocheplan 01
+# Wocheplan 01: Einführung
 
-...Vorbereitung von der 01. auf die 02.Einheit.
+...im Rahmen der 01. und 02.Einheit.
 
 ## Sozialwissenschaftliche Datenanalyse
 Das Seminar "sozialwissenschaftliche Datenanalyse mit R" versucht eine Realität des statistischen Arbeitens zu vermitteln und ergänzt so die Vorlesung "Grundlagen der multivariaten Statistik" gleich in zweierlei Hinsicht: Erstens wird eine Auswahl der gelernten statistischen Verfahren konkret angewendet (und so auch nochmals repetiert). Zweitens zeigt sich neben den eigentlichen Verfahren ein weiterer, impliziter Teil der Statistik: ein Umgang mit Daten, deren Aufbereitung und Verarbeitung sowie die damit einhergehenden Herausforderungen.

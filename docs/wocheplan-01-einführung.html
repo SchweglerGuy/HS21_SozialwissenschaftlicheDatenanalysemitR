@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Wocheplan 01: Einführung | Sozialwissenschaftliche Datenanalyse mit R</title>
+  <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Wocheplan 01: Einführung | Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Wocheplan 01: Einführung | Sozialwissenschaftliche Datenanalyse mit R" />
+  
+  <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
+  
+
+<meta name="author" content="Kenneth Horvath &amp; Guy Schwegler" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="wochenplan-02-grundlagen-i.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R - HS21</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Einführung</a></li>
+<li class="chapter" data-level="1" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html"><i class="fa fa-check"></i><b>1</b> Wocheplan 01: Einführung</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#sozialwissenschaftliche-datenanalyse"><i class="fa fa-check"></i><b>1.1</b> Sozialwissenschaftliche Datenanalyse</a></li>
+<li class="chapter" data-level="1.2" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#ziel-des-kurses"><i class="fa fa-check"></i><b>1.2</b> Ziel des Kurses</a></li>
+<li class="chapter" data-level="1.3" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#r-als-programm-rstudio"><i class="fa fa-check"></i><b>1.3</b> R als Programm &amp; RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#lernziele-der-ersten-woche"><i class="fa fa-check"></i><b>1.4</b> Lernziele der ersten Woche</a></li>
+<li class="chapter" data-level="1.5" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#aufgaben-der-ersten-woche"><i class="fa fa-check"></i><b>1.5</b> Aufgaben der ersten Woche</a></li>
+<li class="chapter" data-level="1.6" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#ergänzung-standardabweichung-zwischen-grundgesamtheit-und-stichprobe"><i class="fa fa-check"></i><b>1.6</b> Ergänzung: Standardabweichung zwischen Grundgesamtheit und Stichprobe</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="wochenplan-02-grundlagen-i.html"><a href="wochenplan-02-grundlagen-i.html"><i class="fa fa-check"></i><b>2</b> Wochenplan 02: Grundlagen I</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="wochenplan-02-grundlagen-i.html"><a href="wochenplan-02-grundlagen-i.html#lernziele"><i class="fa fa-check"></i><b>2.1</b> Lernziele</a></li>
+<li class="chapter" data-level="2.2" data-path="wochenplan-02-grundlagen-i.html"><a href="wochenplan-02-grundlagen-i.html#aufgaben"><i class="fa fa-check"></i><b>2.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="wochenplan-03-grundlagen-ii.html"><a href="wochenplan-03-grundlagen-ii.html"><i class="fa fa-check"></i><b>3</b> Wochenplan 03: Grundlagen II</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="wochenplan-03-grundlagen-ii.html"><a href="wochenplan-03-grundlagen-ii.html#lernziele-1"><i class="fa fa-check"></i><b>3.1</b> Lernziele</a></li>
+<li class="chapter" data-level="3.2" data-path="wochenplan-03-grundlagen-ii.html"><a href="wochenplan-03-grundlagen-ii.html#aufgaben-1"><i class="fa fa-check"></i><b>3.2</b> Aufgaben</a></li>
+<li class="chapter" data-level="3.3" data-path="wochenplan-03-grundlagen-ii.html"><a href="wochenplan-03-grundlagen-ii.html#ergänzung-seitenumbruch-im-rmarkdown"><i class="fa fa-check"></i><b>3.3</b> Ergänzung: Seitenumbruch im RMarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wochenplan-04-grafiken.html"><a href="wochenplan-04-grafiken.html"><i class="fa fa-check"></i><b>4</b> Wochenplan 04: Grafiken</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="wochenplan-04-grafiken.html"><a href="wochenplan-04-grafiken.html#lernziele-2"><i class="fa fa-check"></i><b>4.1</b> Lernziele</a></li>
+<li class="chapter" data-level="4.2" data-path="wochenplan-04-grafiken.html"><a href="wochenplan-04-grafiken.html#aufgaben-2"><i class="fa fa-check"></i><b>4.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="wochenplan-05-indizieren.html"><a href="wochenplan-05-indizieren.html"><i class="fa fa-check"></i><b>5</b> Wochenplan 05: Indizieren</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="wochenplan-05-indizieren.html"><a href="wochenplan-05-indizieren.html#lernziele-wp05"><i class="fa fa-check"></i><b>5.1</b> Lernziele WP05</a></li>
+<li class="chapter" data-level="5.2" data-path="wochenplan-05-indizieren.html"><a href="wochenplan-05-indizieren.html#hinweise-indizieren-subsetting"><i class="fa fa-check"></i><b>5.2</b> Hinweise Indizieren &amp; Subsetting</a></li>
+<li class="chapter" data-level="5.3" data-path="wochenplan-05-indizieren.html"><a href="wochenplan-05-indizieren.html#aufgaben-wp05"><i class="fa fa-check"></i><b>5.3</b> Aufgaben WP05</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="wochenplan-06-code-rezipieren.html"><a href="wochenplan-06-code-rezipieren.html"><i class="fa fa-check"></i><b>6</b> Wochenplan 06: Code Rezipieren</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="wochenplan-06-code-rezipieren.html"><a href="wochenplan-06-code-rezipieren.html#lernziele-3"><i class="fa fa-check"></i><b>6.1</b> Lernziele</a></li>
+<li class="chapter" data-level="6.2" data-path="wochenplan-06-code-rezipieren.html"><a href="wochenplan-06-code-rezipieren.html#besprechung-skript-standardfehler.r"><i class="fa fa-check"></i><b>6.2</b> Besprechung Skript “standardfehler.R”</a></li>
+<li class="chapter" data-level="6.3" data-path="wochenplan-06-code-rezipieren.html"><a href="wochenplan-06-code-rezipieren.html#ggplot2-darstellung"><i class="fa fa-check"></i><b>6.3</b> ggplot2 Darstellung</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="wochenplan-07-datenaufbereitung.html"><a href="wochenplan-07-datenaufbereitung.html"><i class="fa fa-check"></i><b>7</b> Wochenplan 07: Datenaufbereitung</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="wochenplan-07-datenaufbereitung.html"><a href="wochenplan-07-datenaufbereitung.html#lernziele-4"><i class="fa fa-check"></i><b>7.1</b> Lernziele</a></li>
+<li class="chapter" data-level="7.2" data-path="wochenplan-07-datenaufbereitung.html"><a href="wochenplan-07-datenaufbereitung.html#aufgaben-3"><i class="fa fa-check"></i><b>7.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="wochenplan-08-kreuztabellen.html"><a href="wochenplan-08-kreuztabellen.html"><i class="fa fa-check"></i><b>8</b> Wochenplan 08: Kreuztabellen</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="wochenplan-08-kreuztabellen.html"><a href="wochenplan-08-kreuztabellen.html#lernziele-5"><i class="fa fa-check"></i><b>8.1</b> Lernziele</a></li>
+<li class="chapter" data-level="8.2" data-path="wochenplan-08-kreuztabellen.html"><a href="wochenplan-08-kreuztabellen.html#aufgaben-4"><i class="fa fa-check"></i><b>8.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="wochenplan-09-faktoren.html"><a href="wochenplan-09-faktoren.html"><i class="fa fa-check"></i><b>9</b> Wochenplan 09: Faktoren</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="wochenplan-09-faktoren.html"><a href="wochenplan-09-faktoren.html#lernziele-6"><i class="fa fa-check"></i><b>9.1</b> Lernziele</a></li>
+<li class="chapter" data-level="9.2" data-path="wochenplan-09-faktoren.html"><a href="wochenplan-09-faktoren.html#einführung-faktoren-lösung-aufgaben"><i class="fa fa-check"></i><b>9.2</b> Einführung Faktoren (Lösung Aufgaben)</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="wochenplan-10.html"><a href="wochenplan-10.html"><i class="fa fa-check"></i><b>10</b> Wochenplan 10</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="wochenplan-10.html"><a href="wochenplan-10.html#lernziele-7"><i class="fa fa-check"></i><b>10.1</b> Lernziele</a></li>
+<li class="chapter" data-level="10.2" data-path="wochenplan-10.html"><a href="wochenplan-10.html#aufgaben-5"><i class="fa fa-check"></i><b>10.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="./">Universität Luzern</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sozialwissenschaftliche Datenanalyse mit R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="wocheplan-01-einführung" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Wocheplan 01: Einführung</h1>
+<p>…im Rahmen der 01. und 02.Einheit.</p>
+<div id="sozialwissenschaftliche-datenanalyse" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Sozialwissenschaftliche Datenanalyse</h2>
+<p>Das Seminar “sozialwissenschaftliche Datenanalyse mit R” versucht eine Realität des statistischen Arbeitens zu vermitteln und ergänzt so die Vorlesung “Grundlagen der multivariaten Statistik” gleich in zweierlei Hinsicht: Erstens wird eine Auswahl der gelernten statistischen Verfahren konkret angewendet (und so auch nochmals repetiert). Zweitens zeigt sich neben den eigentlichen Verfahren ein weiterer, impliziter Teil der Statistik: ein Umgang mit Daten, deren Aufbereitung und Verarbeitung sowie die damit einhergehenden Herausforderungen.</p>
+Hinter dem Seminar steht eine bestimmte Vorstellung der sozialwissenschaftlichen Datenanalyse, die folgende Teile enthält <span class="citation">(<a href="#ref-WickhamGrolemund2016" role="doc-biblioref">Wickham and Grolemund 2016</a>)</span>:
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="Bilder/Modell.jpg" alt="Modell Datenanalyse" width="484" />
+<p class="caption">
+Figure 1.1: Modell Datenanalyse
+</p>
+</div>
+<p>Als erster Schritt müssen die Daten eingelesen bzw. <strong>importiert</strong> werden. Die importierten Daten gilt es dann <strong>aufzubereiten</strong> und aufzuräumen. Das bedeutet, dass sie in einer konsistenten Form gespeichert werden sollen (z.Bsp. dass jede Zeile einer Person und jede Spalte einer Variable entspricht). Dieser zweite Schritt ist im Rahmen von Sekundärdaten (wie auch wir sie verwenden werden) oft bereits erfolgt. Ein weiterer Schritt ist es dann, die Daten zu <strong>transformieren</strong>. Das heisst die Fälle und ihre Ausprägungen werden auf ein bestimmes Interesse eingegrenzt (z.Bsp. auf alle Personen die über ein bestimmtes Einkommen verfügen), neue Variablen werden erstellt (die Funktionen bestehender Variablen sind, etwa Einkommensklassen), und eine Reihe von zusammenfassenden Statistiken werden berechnet (verschiedene univariate Kennwerte). Das Aufbereiten und Transformieren ist ein grosser Teil der statistischen Analyse <span class="citation">(es ist ein Kampf mit den Daten, <a href="#ref-WickhamGrolemund2016" role="doc-biblioref">Wickham and Grolemund 2016, Kap.1.1</a>)</span>. Ziel dieser Arbeit ist es, die Daten in eine passende Form zu bringen, um optimal mit ihnen arbeiten zu können.</p>
+<p>Wenn die Daten (voerst) in einer optimalen Form vorliegen gibt es zwei Hauptmotoren der Wissensgenerierung <span class="citation">(<a href="#ref-WickhamGrolemund2016" role="doc-biblioref">Wickham and Grolemund 2016, Kap.1.1</a>)</span>: Visualisierung und Modellierung. Mit <strong>Visualisierungen</strong> lässt sich schnell eine Übersicht gewinnen (z.Bsp. könnte es überhaupt einen Zusammenhang zwischen zwei Variablen geben?). <strong>Modellierungen</strong> wiederum ergänzen diese ersten Einsichten, indem präzise Antworten auf Fragen möglich sind (wie gross ist der Zusammenhang genau?).</p>
+<p>Das Transformieren, Visualisieren und Modellieren der Daten ist dabei keineswegs ein linearer Prozess, sondern es ergeben sich in ihm immer wieder Wechselwirkungen, Rückbezüge und dadurch neue Wege, um an die Daten heranzutreten. Der letzte Schritt der Datenanalyse ist die <strong>Kommunikation</strong>. Es gilt also sowohl das Vorgehen (zumindest teilweise) als inbesondere auch die Ergebnisse der Analyse anderen mitzuteilen.</p>
+<p>Diese Prozesse der Datenanalyse finden alle in einem bestimmen <strong>Rahmen</strong> statt <span class="citation">(vgl. auch <a href="#ref-Sauer2019" role="doc-biblioref">Sauer 2019, 3</a>)</span>. Dies ist auf der einen Seite die Idees des Programmierens im Vorgehen selber <span class="citation">(vgl. <a href="#ref-WickhamGrolemund2016" role="doc-biblioref">Wickham and Grolemund 2016, Kap.1.1</a>)</span>. Auf der anderen Seite bilden aber die Sozialwissenschaften selber auch einen Rahmen, anhand dessen etwa Datenstrukturen (z.Bsp. dass eine Person ein Fall und damit eine Zeile ist) oder angemessene Ziele der Analyse (ab wann ist ein Zusammenhang etwa “gross?”) vorgegeben werden.</p>
+</div>
+<div id="ziel-des-kurses" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Ziel des Kurses</h2>
+<p>Das Seminar verfolgt zwei miteinander verzahnte, übergeordnete Lernziele. Einerseits sollen die Studierenden sich Grundkenntnisse der statistischen Datenanalyse mit R aneignen. Andererseits werden ausgewählte Inhalte der Vorlesung praktisch angewandt und damit auch veranschaulicht.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Konkret sollen die Studierenden am Ende des Semesters…</p>
+<ul>
+<li>…einen ersten Einblick in Abläufe und Anforderungen softwaregestützter Datenanalyse haben,</li>
+<li>…typische Herausforderungen statistischen Arbeitens eigenständig bewältigen können,</li>
+<li>…die allgemeine Funktionsweise und die Struktur von R verstehen,</li>
+<li>…die Umsetzung ausgewählter multivariater Verfahren in R beherrschen,</li>
+<li>…dabei auch grafische Verfahren als zentrale Bausteine aktueller Datenanalyse einsetzen können</li>
+<li>…sowie die Grundlage dafür erworben haben, flexibel eigene Analysestrategien in R umzusetzen.</li>
+</ul>
+</div>
+<div id="r-als-programm-rstudio" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> R als Programm &amp; RStudio</h2>
+<p>R als Programmiersprache wurde von Beginn an für die Statistik beziehungsweise für die Statistiklehre entwickelt. Die Anfänge des Programms fanden in den 1990er Jahre an der Universität Auckland in Neuseeland statt, wo R von Ross Ihaka und Robert Gentleman entwickelt wurde <span class="citation">(<a href="#ref-Manderscheid2017" role="doc-biblioref">Manderscheid 2017, 1</a>)</span>. Der Buchstabe “R” als Name geht sowohl auf eine ältere Grundlage zurück – die Programmiersprache “S” – als auch auf die Vornamen der beiden Entwickler <span class="citation">(ebd., vgl. auch <a href="#ref-Sauer2019" role="doc-biblioref">Sauer 2019, 13f</a>)</span>. Das R-Projekt wurde in der Zusammenareit mit weiteren Wissenschaftler_Innen voran getrieben und bald auch unter der General Public Licence (<a href="https://en.wikipedia.org/wiki/GNU">GNU</a>) veröffentlicht <span class="citation">(<a href="#ref-Manderscheid2017" role="doc-biblioref">Manderscheid 2017, 1</a>)</span>. R ist daher frei zugänglich, kostenlos und darf von allen verändert werden. Es ist insbesondere auch diese <em>Open Source</em> Idee, die R zu seiner Verbreitung half – und die sicherstellt, dass die neusten Entwicklungen in und mit der Software stattfinden.</p>
+<p>R als Programm ist in Paketen organisiert und präsentiert sich als “Statistikumgebung” <span class="citation">(<a href="#ref-Manderscheid2017" role="doc-biblioref">Manderscheid 2017, 1</a>)</span>. Ausgehend von der Basisversion bzw. des Basispaketes kann R beliebig erweitert werden. Unter <a href="https://cran.r-project.org/">https://cran.r-project.org/</a> findet sich eine beständig wachsende und umfangreiche Sammlung von Paketen, die sowohl Lösungen für allgemeine Verfahren anbieten (etwa Pakete für die multiple Korrespondenzanalyse, siehe “soc.ca”) als auch für spezifische Probleme (etwa für “Atomic Force Microscope Image Analysis” beim Paket “AFM”). Diese Pakete können installiert werden und es gilt sie dann jeweils noch zu laden, bevor sie verwendet werden können. Nach dem Beenden des Programms werden die verwendeten Pakete wieder “versorgt” und es gilt sie beim nächsten Mal erneut zu laden (die Pakete beleiben aber installiert). Letzterer Vorgang stellt sicher, dass R “schlank” bleibt, d.h. nur immer die benötigen Dinge auch ausgeführt werden.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="wocheplan-01-einführung.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;soc.ca&quot;</span>) <span class="co">#...installiert das Paket</span></span>
+<span id="cb1-2"><a href="wocheplan-01-einführung.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(soc.ca) <span class="co">#...lädt das Paket</span></span></code></pre></div>
+<p>Neben dieser <em>Open Source</em> Idee und der daraus folgenden, beständigen Aktualisierung und Erweiterungen des Programms zeichnet R sich weiter durch dessen Stärke im Bereich der Visualisierung aus. Es bieten sich unbegrenzte Möglichkeiten für Grafiken und Diagramme, sowohl bereits in der Basisversion als insbesondere auch mit spezifischen Paketen <span class="citation">(siehe <a href="#ref-R-ggplot2" role="doc-biblioref">Chang et al. 2020</a>)</span>.</p>
+<p>Neben der Basisversion von R und R als eigentlicher Programmiersprache gibt es grafische Benutzeroberflächen (GUIs), um mit der Programmiersprache umzugehen. Im Zentrum unseres Seminars steht <strong>RStudio</strong>, die am weitesten verbreitete grafische Benutzeroberfläche von R. Diese Oberfläche bietet einige praktische Zusatzfunktionen und erleichtert so das Arbeiten mit R durch Autovervollständigkeitsfunktionen, automatische Einrückungen, Syntaxhervorhebung, integrierte Hilfsfunktion, Informationen zu Objekten im Workspace, menügestützten Oberflächen und Daten-Viewer <span class="citation">(<a href="#ref-Manderscheid2017" role="doc-biblioref">Manderscheid 2017, 18</a>)</span>. Die eigentliche Arbeit verrichtet aber weiterhin R selber,
+und R wird automatisch gestartet wird, wenn Sie RStudio starten <span class="citation">(<a href="#ref-Sauer2019" role="doc-biblioref">Sauer 2019, 21</a>)</span>. Man kann diese Arbeitsteilung mit einem Auto vergleichen: R ist der Motor des Autos, während RStudio das Amaturenbrett ist, vor dem Sie sitzen und das Auto lenken.</p>
+</div>
+<div id="lernziele-der-ersten-woche" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Lernziele der ersten Woche</h2>
+<p>Die erste Seminarwoche dient dazu, die technischen Voraussetzungen für die gemeinsame Arbeit im Seminar zu prüfen und mit der geplanten Arbeitsweise vertraut zu werden.</p>
+<p>Das Seminar zielt nicht nur auf einen Frontalunterricht ab, sondern ist als eine Art “flipped classroom” konzipiert. Sie bekommen also von Woche zu Woche konkrete Arbeitsaufträge (die Falllösungen). Diese sollen Sie eigenständig bewältigen und alle Probleme und Unklarheiten notieren, die sich im Arbeitsprozess ergeben. Die gemeinsamen Sitzungen dienen dann dazu, Lösungswege zu den Aufgaben zu präsentieren, offene Fragen zu klären, Konzepte vertiefend zu erläutern und die nächsten Schritte vorzubereiten.</p>
+<p>Für jede Woche werden Lernziele und Arbeitsaufträge definiert. Für die erste Seminarwoche lassen sich als Lernziele festhalten:</p>
+<ul>
+<li>Sie wissen, wie Sie die aktuellen Versionen von R und RStudio auf Ihrem Computer installieren</li>
+<li>Sie wissen, wie man R-Pakete installiert und in R lädt</li>
+<li>Sie können eine Funktion aufrufen</li>
+<li>Sie haben einen soliden ersten Eindruck, wie man mit R kommuniziert und einfache Operationen durchführt</li>
+<li>Sie haben eine erste Orientierung zu Unterstützungsangeboten, die man online findet (auch wenn diese teilweise noch überfordernd wirken)</li>
+</ul>
+</div>
+<div id="aufgaben-der-ersten-woche" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Aufgaben der ersten Woche</h2>
+<ol style="list-style-type: decimal">
+<li>Installieren Sie die aktuellen Versionen von R und RStudio auf Ihrem Endgerät! Sie sollten sich Notizen machen, wenn es Probleme gibt – und für das nächste Mal gleich festhalten, wie Sie diese gelöst haben. Da die Details der Installation vom Betriebssystem und den Spezifikationen des Endgeräts abhängen, ist es normal, dass dieser Prozess manchmal erst auf den zweiten Versuch funktioniert.</li>
+</ol>
+<p>Mittels der Funktion <code>version</code> (ACHTUNG: ohne Klammern) lässt sich die Version von R abrufen. Ob dies der aktuellsten Version von R entspricht lässt sich auf der <a href="https://www.r-project.org/">R Projektseite</a> überprüfen.</p>
+<p>RStudio lässt sich über die Menüsteuerung updaten: “Help” &gt; “Check for Updates.” <em>Wichtig</em>: RStudio als grafische Benutzeroberfläche ist nicht dasselbe wie R. Ein Update von RStudio ist also nicht nicht gleich ein Update von R, sondern letzteres muss manuell erfolgen.</p>
+<p>Das Paket “installr” und dessen Funktion <code>updateR()</code> ermöglicht auf Windows dass sowohl R als auch die installierten Pakete geupdated werden. Ebenfalls bietet RStudio über die Menüsteuerung eine Möglichkeit, die Pakete zu installieren (“Tools”&gt;“Check for Packages Updates”).</p>
+<p>Zwei Unklarheiten, die aufgetaucht sind:</p>
+<p>“Es sind <em>mehrere Versionen von R</em> auf meinen Computer installiert… Ist das ein Problem?” Nein, denn RStudio arbeitet automatisch mit der neusten Version. Aber es können auch ältere Versionen verwendet beziehungsweise zwischen den Versionen gewählt werden (siehe “Tools” &gt; “Global Options” &gt; “General” &gt; “R Version”).</p>
+<p>“Was passiert mit meinen <em>installierten Paketen</em>?” Die installierten Pakete bleiben grundsätzlich erhalten. Mittels der Funktion <code>.libPaths()</code> sehen Sie auch, wo diese installiert sind.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Weiter ist der Umgang mit Paketen kein wirkliches Problem. Da Sie jeweils in Ihrem Code auch spezifizieren, welche Pakete Sie installieren und laden, würde Ihnen ein Fehler sofort auffallen. Dies kann zum Beispiel wiefolgt gemacht werden als Kode in einem Markdown:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="wocheplan-01-einführung.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;swirl&quot;)</span></span>
+<span id="cb2-2"><a href="wocheplan-01-einführung.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(swirl)</span>
+<span id="cb2-3"><a href="wocheplan-01-einführung.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">swirl</span>()</span>
+<span id="cb2-4"><a href="wocheplan-01-einführung.html#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="wocheplan-01-einführung.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;soc.ca&quot;)</span></span>
+<span id="cb2-6"><a href="wocheplan-01-einführung.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(soc.ca)</span>
+<span id="cb2-7"><a href="wocheplan-01-einführung.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">soc.mca</span>(Datenset)</span></code></pre></div>
+<p>Der <code>install.packages()</code>-Befehl ergibt eine Fehlermeldung beim sogenannten ‘knitten,’ wenn dieser nicht als Kommentar formatiert ist. Der Fehler verweist darauf, dass R kein Repository via Markdown automatisch aufrufen kann.</p>
+<p>Zwei Möglichkeiten von Josias Bruderer, dies trotzdem zu umgehen (und den <code>install.packages()</code>-Befehl nicht einfach als Kommentar zu setzen):</p>
+<p>Eine Möglichkeit den Fehlerbefehl auszuschalten ist es, ein Repository anzugeben:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="wocheplan-01-einführung.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;swirl&quot;</span>, <span class="at">repos =</span> <span class="st">&quot;https://cran.rstudio.com/&quot;</span>)</span></code></pre></div>
+<p>Eine andere und erweiterte Möglichkeit ist einen Befehl zu ergänzen, der jeweils nur dann ein Paket installiert, wenn dieses benötigt und noch nicht installiert ist:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="wocheplan-01-einführung.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;swirl&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;swirl&quot;</span>)</span></code></pre></div>
+<p> </p>
+<ol start="2" style="list-style-type: decimal">
+<li>Installieren Sie das Paket “swirl” und laden Sie es. “swirl” ist eine in R implementierte interaktive Einführung in die Grundlagen von R!</li>
+</ol>
+<p>Hier ein Tipp von Julien Lattmann: Sollte dies nach dem Update von R und RStudio womöglich nicht funktioniert haben, dann lohnt es sich nochmals alles zu schliessen, ein paar Moment zu warten und dann nochmals neu zu probieren.</p>
+<p> </p>
+<ol start="3" style="list-style-type: decimal">
+<li>Rufen Sie die Funktion <code>swirl()</code> auf und spielen Sie ein wenig damit. Rufen Sie sich in Erinnerung, was Sie aus dem letzten Semester noch über die Arbeit mit R wissen! Notieren Sie sich, was Ihnen Sie noch kennen, was Ihnen neu vorkommt, und so weiter.</li>
+</ol>
+<p>Grundsätzlich ging es in dieser Teilaufgabe darum, einige Aspekte von R (erneut) kennenzulernen. Zwei zusammenhängende Dinge sollen hervorgehoben werden: Erwähnt wurde, dass das Programmieren verlangt, sehr genau zu schreiben und kleinste Ungenauigkeiten zu Fehlern führen (etwa ein fehlendes <code>"</code>). Hier bietet RStudio eine Hilfe an, in dem der Kode farbig gekennzeichnet wird. Diese Hilfe war jedoch um Umgang mit “swirl” noch nicht ersichtlich, da im Paket direkt in der R Konsole gearbeitet wird. Dies führt zum zweiten Aspekt: Dieser Fokus auf die Konsole beim Paket “swirl()” ist eher die Ausnahm - und der Hauptteil des Kondierens erfolgt eigentlich immer im einem Skript beziehungsweise in einem Markdown-Dokument (siehe WP02).</p>
+<p> </p>
+<ol start="4" style="list-style-type: decimal">
+<li>Verwenden Sie ein wenig Zeit darauf, online nach R Tutorials, Foren, etc. zu suchen. Halten Sie die URLs von Seiten und Ressourcen fest, die Ihnen hilfreich und/oder wichtig vorkommen (aber unter Umständen noch etwas schwer zu durchschauen) !</li>
+</ol>
+<p>Einige Hilfseiten aus Ihren Falllösungen:</p>
+<p><a href="http://r-statistics.co/">r-statistics.co</a>: Einführung zu spezifischen Verfahren</p>
+<p><a href="https://www.tutorialspoint.com/r/index.htm">R Tutorial</a>: viele kurze einführende Beiträge zu Aspekten von R.</p>
+<p><a href="https://www.beratung-statistik.de/statistik-beratung-infos/r-tutorial/">R Statistik Tutorial</a>: Deutsche Beiträg zu einzelnen Verfahren.</p>
+<p><a href="https://community.rstudio.com/">RStudio Community</a>: Forum für RStudio</p>
+<p><a href="http://methods-berlin.com/de/r-lernplattform/">R lernen</a>: einige einführende Beiträge auf Deutsch</p>
+<p><a href="http://www.r-forum.de/">R Forum</a>: deutschsprachiges Forum zu R</p>
+<p><a href="https://methodenlehre.github.io/einfuehrung-in-R/index.html">Einführung in R</a>: ein weiteres, deutsches Bookdown als Einführung in R</p>
+<p><a href="https://www.r-graph-gallery.com/">The R Graph Gallery</a>: für fortgeschrittene Grafiken, insbesondere mit “ggplot2”</p>
+<p><a href="https://stackoverflow.com/questions/tagged/r">stack overflow</a>: jede Menge Hilfe für alles um R (und Programmieren allgemein)</p>
+<p><a href="https://github.com/trending/r/">github</a>: eine andere Plattform – aber wiederum: jede Menge Hilfe für alles um R (und Programmieren allgemein)</p>
+<p><a href="https://www.datacamp.com/">datacamp</a>: kostenpflichte Tutorials für R</p>
+</div>
+<div id="ergänzung-standardabweichung-zwischen-grundgesamtheit-und-stichprobe" class="section level2" number="1.6">
+<h2><span class="header-section-number">1.6</span> Ergänzung: Standardabweichung zwischen Grundgesamtheit und Stichprobe</h2>
+<p>In der Einheit haben wir gesehen, dass sich eine von R berechnet Standardabweichung leicht von einer selbst berechneten Variante unterscheidet:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="wocheplan-01-einführung.html#cb5-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>)</span>
+<span id="cb5-2"><a href="wocheplan-01-einführung.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(y)</span></code></pre></div>
+<pre><code>## [1] 2.880972</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="wocheplan-01-einführung.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(</span>
+<span id="cb7-2"><a href="wocheplan-01-einführung.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>((y <span class="sc">-</span> <span class="fu">mean</span>(y))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb7-3"><a href="wocheplan-01-einführung.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">/</span> (<span class="fu">length</span>(y))</span>
+<span id="cb7-4"><a href="wocheplan-01-einführung.html#cb7-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## [1] 2.629956</code></pre>
+<p>In der Hilfeseite der Funktion finden wir den Hinweis darauf, dass mit <code>sd()</code> ähnlich wie mit <code>var()</code> der sogennante <em>unbiased estimator</em> berechnet wird, der von n - 1 ausgeht.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="wocheplan-01-einführung.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(sd)</span></code></pre></div>
+<p>“<em>Like var this uses denominator n - 1. […] The denominator n - 1 is used which gives an unbiased estimator of the (co)variance for i.i.d. observations.</em>” Die Standardabweichung wird berechnet, als würde man den Schätzwert für einer Grundgesamtheit aus einer Stichprobe berechnet (<em>i.i.d</em> = <em>Independent and identically distributed</em> random <em>variables</em>).</p>
+<p>Dies entspricht einer sogenannten Punkteschätzung <span class="citation">(<a href="#ref-DiazBone2019" role="doc-biblioref">Diaz-Bone 2019, 155f</a>)</span>:</p>
+<blockquote>
+<p>Bei der Punktschätzung errechnet man aus der Stichprobe einen Stichprobenkennwert und schätzt damit die entsprechende Maßzahl in der Grundgesamtheit. Der Stichprobenkennwert, mit dem die Schätzung erfolgt, heißt auch Schätzer. […] Die Standardabweichung eines metrischen Merkmals in der Stichprobe s ist dagegen keine erwartungstreue Schätzung für die Standardabweichung des metrischen Merkmals in der Grundgesamtheit. Aus einer Stichprobe kannman aber mit folgender Formel erwartungstreu schätzen:</p>
+</blockquote>
+<p><span class="math inline">\({\sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2}}\)</span></p>
+<p>Dabei wird n - 1 verwendet, da bei kleineren Stichprobenumfängen die Standardabweichung überschätzt wird. Bei grösseren Stichprobenumfängen wird dies dann immer weniger wichtig:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="wocheplan-01-einführung.html#cb10-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>) <span class="co">#eine standardnormalverteilte Varialbe mit n = 50</span></span>
+<span id="cb10-2"><a href="wocheplan-01-einführung.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(z)</span></code></pre></div>
+<pre><code>## [1] 1.014222</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="wocheplan-01-einführung.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(</span>
+<span id="cb12-2"><a href="wocheplan-01-einführung.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>((z <span class="sc">-</span> <span class="fu">mean</span>(z))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb12-3"><a href="wocheplan-01-einführung.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">/</span> (<span class="fu">length</span>(z))</span>
+<span id="cb12-4"><a href="wocheplan-01-einführung.html#cb12-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## [1] 1.013714</code></pre>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-R-ggplot2" class="csl-entry">
+Chang, Winston, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, and Hiroaki Yutani. 2020. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. RStudio. <a href="http://ggplot2.tidyverse.org">http://ggplot2.tidyverse.org</a>.
+</div>
+<div id="ref-DiazBone2019" class="csl-entry">
+Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.
+</div>
+<div id="ref-Manderscheid2017" class="csl-entry">
+Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit r. Eine Einführung</em>. Wiesbaden: Springer VS.
+</div>
+<div id="ref-Sauer2019" class="csl-entry">
+Sauer, Sebastian. 2019. <em>Moderne Datenanalyse Mit r: Daten Einlesen, Aufbereiten, Visualisieren, Modellieren Und Kommunizieren</em>. Wiesbaden: Springer VS.
+</div>
+<div id="ref-WickhamGrolemund2016" class="csl-entry">
+Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. Sebastopol, CA: O’Reilly. <a href="https://r4ds.had.co.nz/index.html">https://r4ds.had.co.nz/index.html</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Die zwei miteinander verzahnte Lernziele führen auch dazu, dass das Seminar allerdings nicht als eigentliche Übung zur Vorlesung funktioniert (und das nicht alle Inhalte der Vorlesung im Seminar behandelt werden können).<a href="wocheplan-01-einführung.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Über die Funktionen können Sie ebenfalls prüfen, ob womöglich Ihre Pakete nicht auf Ihrem Rechner, sondern auf einem Server installiert werden (was oftmals bei nicht-persönlichen Firmen-Rechnern der Fall sein kann).<a href="wocheplan-01-einführung.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="wochenplan-02-grundlagen-i.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-WP1_Einfuehrung.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

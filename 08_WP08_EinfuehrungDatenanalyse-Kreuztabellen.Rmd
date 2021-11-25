@@ -1,6 +1,6 @@
-# Wochenplan 08
+# Wochenplan 08: Kreuztabellen
 
-...zur Einheit der 08. auf die 09.Woche.
+...im Rahmen der 08. auf die 09.Einheit.
 
 ## Lernziele
 
@@ -29,7 +29,6 @@ daten_ess <- read.csv(file = "Daten/ESS1-8e01_HS21.csv")
 
 # nicht benoetigte Variablen loeschen
 ## bisher keine nicht benoetigen Variablen vorhanden
-
 
 # Definieren von fehlenden Werten
 daten_ess$yrbrn[daten_ess$yrbrn==7777 |
@@ -303,44 +302,3 @@ CrossTable(daten_ess$polintr, daten_ess$gndr,
            prop.c = F)
 ```
 Und dort sehen wir, dass vor allem die Unterschiede in der ersten Ausprägung ("polintr = 1") die Differenz ausmachen.
-
-
-## Einführung Faktoren
-
-Genau genommen haben wir bisher immer so getant, als wären Variablen wie "gndr" und "polintr" metrische Variablen. Dies ist natürlich nicht korrekt, sondern wir haben es hier mit einer nominalen und einer ordinalen Variable zu tun. Solche nicht-metrischen oder eben kategorialen Variablen können wir in R über Faktoren definieren.
-
-Neben Vektoren (die wir bisher vor allem mit metrischen Variablen gleichgesetzt haben) sind Faktoren ein weiterer wichtiger Objekttyp der für die Organisation von sozialwissenschaftlichen Beobachtungen in Form von Variablen relevant ist [@Manderscheid2017, 35]. Dieser Objekttyp enthält nun nicht mehr die Zahlen in einer Reihe, sondern "Levels". Dies sind benannte Elemente und wir können diese insbesondere für Variablen mit nominalen oder ordinalen Skalenniveau verwenden. Der Unterschied zwischen numerischen Variablen/Vektoren und kategorial Variablen/Faktoren wird in R wichtig, denn zwischen den Objekttypen wird differenziert. Das heisst das gewisse Funktionen nicht mehr mit Faktoren ausgeführt werden können.
-
-Am Beispiel von `gndr`:
-```{r}
-#daten_ess$gndr + 1 #würde eigentlich aktuell noch Sinn machen
-table(daten_ess$gndr)
-plot(daten_ess$gndr)
-
-daten_ess$gndr <- factor(daten_ess$gndr)
-levels(daten_ess$gndr)
-levels(daten_ess$gndr) <- c("weiblich", "männlich")
-str(daten_ess$gndr)
-
-#daten_ess$gndr + 1 #funktioniert jetzt nicht mehr
-table(daten_ess$gndr)
-plot(daten_ess$gndr)
-```
-
-Und am Beispiel von `polintr`, was nun einem geordneten (d.h. ordinalen) Faktorn entspricht:
-```{r}
-table(daten_ess$polintr)
-plot(daten_ess$polintr)
-#Die Tabelle macht deutlich, dass hier eben die numerischen Ausprägungen in umgekehrter Reihenfolge aufgeführt sind 
-# 1=als die ranghöchste Ausprägung, deshalb muss zuerst die Reihenfogle der Levels bestimmt werden:
-daten_ess$polintr <- factor(daten_ess$polintr, 
-                            levels =c(4,3,2,1), 
-                            ordered = T)
-str(daten_ess$polintr)
-levels(daten_ess$polintr) <- c("Not at all interested", "Hardly interested",
-                               "Quite interested", "Very interested")
-
-str(daten_ess$polintr)
-table(daten_ess$polintr)
-plot(daten_ess$polintr)
-```

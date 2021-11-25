@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8 Wochenplan 08: Kreuztabellen | Sozialwissenschaftliche Datenanalyse mit R</title>
+  <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8 Wochenplan 08: Kreuztabellen | Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8 Wochenplan 08: Kreuztabellen | Sozialwissenschaftliche Datenanalyse mit R" />
+  
+  <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
+  
+
+<meta name="author" content="Kenneth Horvath &amp; Guy Schwegler" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="wochenplan-07-datenaufbereitung.html"/>
+<link rel="next" href="wochenplan-09-faktoren.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R - HS21</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Einführung</a></li>
+<li class="chapter" data-level="1" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html"><i class="fa fa-check"></i><b>1</b> Wocheplan 01: Einführung</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#sozialwissenschaftliche-datenanalyse"><i class="fa fa-check"></i><b>1.1</b> Sozialwissenschaftliche Datenanalyse</a></li>
+<li class="chapter" data-level="1.2" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#ziel-des-kurses"><i class="fa fa-check"></i><b>1.2</b> Ziel des Kurses</a></li>
+<li class="chapter" data-level="1.3" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#r-als-programm-rstudio"><i class="fa fa-check"></i><b>1.3</b> R als Programm &amp; RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#lernziele-der-ersten-woche"><i class="fa fa-check"></i><b>1.4</b> Lernziele der ersten Woche</a></li>
+<li class="chapter" data-level="1.5" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#aufgaben-der-ersten-woche"><i class="fa fa-check"></i><b>1.5</b> Aufgaben der ersten Woche</a></li>
+<li class="chapter" data-level="1.6" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#ergänzung-standardabweichung-zwischen-grundgesamtheit-und-stichprobe"><i class="fa fa-check"></i><b>1.6</b> Ergänzung: Standardabweichung zwischen Grundgesamtheit und Stichprobe</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="wochenplan-02-grundlagen-i.html"><a href="wochenplan-02-grundlagen-i.html"><i class="fa fa-check"></i><b>2</b> Wochenplan 02: Grundlagen I</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="wochenplan-02-grundlagen-i.html"><a href="wochenplan-02-grundlagen-i.html#lernziele"><i class="fa fa-check"></i><b>2.1</b> Lernziele</a></li>
+<li class="chapter" data-level="2.2" data-path="wochenplan-02-grundlagen-i.html"><a href="wochenplan-02-grundlagen-i.html#aufgaben"><i class="fa fa-check"></i><b>2.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="wochenplan-03-grundlagen-ii.html"><a href="wochenplan-03-grundlagen-ii.html"><i class="fa fa-check"></i><b>3</b> Wochenplan 03: Grundlagen II</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="wochenplan-03-grundlagen-ii.html"><a href="wochenplan-03-grundlagen-ii.html#lernziele-1"><i class="fa fa-check"></i><b>3.1</b> Lernziele</a></li>
+<li class="chapter" data-level="3.2" data-path="wochenplan-03-grundlagen-ii.html"><a href="wochenplan-03-grundlagen-ii.html#aufgaben-1"><i class="fa fa-check"></i><b>3.2</b> Aufgaben</a></li>
+<li class="chapter" data-level="3.3" data-path="wochenplan-03-grundlagen-ii.html"><a href="wochenplan-03-grundlagen-ii.html#ergänzung-seitenumbruch-im-rmarkdown"><i class="fa fa-check"></i><b>3.3</b> Ergänzung: Seitenumbruch im RMarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wochenplan-04-grafiken.html"><a href="wochenplan-04-grafiken.html"><i class="fa fa-check"></i><b>4</b> Wochenplan 04: Grafiken</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="wochenplan-04-grafiken.html"><a href="wochenplan-04-grafiken.html#lernziele-2"><i class="fa fa-check"></i><b>4.1</b> Lernziele</a></li>
+<li class="chapter" data-level="4.2" data-path="wochenplan-04-grafiken.html"><a href="wochenplan-04-grafiken.html#aufgaben-2"><i class="fa fa-check"></i><b>4.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="wochenplan-05-indizieren.html"><a href="wochenplan-05-indizieren.html"><i class="fa fa-check"></i><b>5</b> Wochenplan 05: Indizieren</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="wochenplan-05-indizieren.html"><a href="wochenplan-05-indizieren.html#lernziele-wp05"><i class="fa fa-check"></i><b>5.1</b> Lernziele WP05</a></li>
+<li class="chapter" data-level="5.2" data-path="wochenplan-05-indizieren.html"><a href="wochenplan-05-indizieren.html#hinweise-indizieren-subsetting"><i class="fa fa-check"></i><b>5.2</b> Hinweise Indizieren &amp; Subsetting</a></li>
+<li class="chapter" data-level="5.3" data-path="wochenplan-05-indizieren.html"><a href="wochenplan-05-indizieren.html#aufgaben-wp05"><i class="fa fa-check"></i><b>5.3</b> Aufgaben WP05</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="wochenplan-06-code-rezipieren.html"><a href="wochenplan-06-code-rezipieren.html"><i class="fa fa-check"></i><b>6</b> Wochenplan 06: Code Rezipieren</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="wochenplan-06-code-rezipieren.html"><a href="wochenplan-06-code-rezipieren.html#lernziele-3"><i class="fa fa-check"></i><b>6.1</b> Lernziele</a></li>
+<li class="chapter" data-level="6.2" data-path="wochenplan-06-code-rezipieren.html"><a href="wochenplan-06-code-rezipieren.html#besprechung-skript-standardfehler.r"><i class="fa fa-check"></i><b>6.2</b> Besprechung Skript “standardfehler.R”</a></li>
+<li class="chapter" data-level="6.3" data-path="wochenplan-06-code-rezipieren.html"><a href="wochenplan-06-code-rezipieren.html#ggplot2-darstellung"><i class="fa fa-check"></i><b>6.3</b> ggplot2 Darstellung</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="wochenplan-07-datenaufbereitung.html"><a href="wochenplan-07-datenaufbereitung.html"><i class="fa fa-check"></i><b>7</b> Wochenplan 07: Datenaufbereitung</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="wochenplan-07-datenaufbereitung.html"><a href="wochenplan-07-datenaufbereitung.html#lernziele-4"><i class="fa fa-check"></i><b>7.1</b> Lernziele</a></li>
+<li class="chapter" data-level="7.2" data-path="wochenplan-07-datenaufbereitung.html"><a href="wochenplan-07-datenaufbereitung.html#aufgaben-3"><i class="fa fa-check"></i><b>7.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="wochenplan-08-kreuztabellen.html"><a href="wochenplan-08-kreuztabellen.html"><i class="fa fa-check"></i><b>8</b> Wochenplan 08: Kreuztabellen</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="wochenplan-08-kreuztabellen.html"><a href="wochenplan-08-kreuztabellen.html#lernziele-5"><i class="fa fa-check"></i><b>8.1</b> Lernziele</a></li>
+<li class="chapter" data-level="8.2" data-path="wochenplan-08-kreuztabellen.html"><a href="wochenplan-08-kreuztabellen.html#aufgaben-4"><i class="fa fa-check"></i><b>8.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="wochenplan-09-faktoren.html"><a href="wochenplan-09-faktoren.html"><i class="fa fa-check"></i><b>9</b> Wochenplan 09: Faktoren</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="wochenplan-09-faktoren.html"><a href="wochenplan-09-faktoren.html#lernziele-6"><i class="fa fa-check"></i><b>9.1</b> Lernziele</a></li>
+<li class="chapter" data-level="9.2" data-path="wochenplan-09-faktoren.html"><a href="wochenplan-09-faktoren.html#einführung-faktoren-lösung-aufgaben"><i class="fa fa-check"></i><b>9.2</b> Einführung Faktoren (Lösung Aufgaben)</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="wochenplan-10.html"><a href="wochenplan-10.html"><i class="fa fa-check"></i><b>10</b> Wochenplan 10</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="wochenplan-10.html"><a href="wochenplan-10.html#lernziele-7"><i class="fa fa-check"></i><b>10.1</b> Lernziele</a></li>
+<li class="chapter" data-level="10.2" data-path="wochenplan-10.html"><a href="wochenplan-10.html#aufgaben-5"><i class="fa fa-check"></i><b>10.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="./">Universität Luzern</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sozialwissenschaftliche Datenanalyse mit R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="wochenplan-08-kreuztabellen" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Wochenplan 08: Kreuztabellen</h1>
+<p>…im Rahmen der 08. auf die 09.Einheit.</p>
+<div id="lernziele-5" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Lernziele</h2>
+<p>Nachdem wir uns bereits etwas mit dem ESS-Datensatz und dessen Struktur vertraut gemacht haben, gehen wir nun zur Datenanalyse in R über. Dieser Übergang ist ein fliessender: Die Schritte zum Kennenlernen eines Datensatzes, die Plausibilitätsprüfung und die Suche nach Fehlern liefern häufig bereits erste Ergebnisse im Sinne einer explorativen Datenanalysen, die umgekehrt dann womöglich neue Schritte zur Aufbereitung des Datensatzes veranlassen. Der 08. Wochenplan fokussiert die Rolle von Kreuztabellen in diesem Prozess, inklusive der Berechnung von Chi-Quadrat-Tests. Von hier geht es dann in den Folgewochen schrittweise weiter zu Berechnung von Regressionsanalysen.</p>
+<p>Wir können daher folgende Lernziele festhalten:</p>
+<ul>
+<li>Sie verstehen den Nutzen (und auch die Gefahren) der Funktion <code>attach()</code>.</li>
+<li>Sie können Kreuztabellen auf verschiedene Weisen darstellen und inhaltlich zutreffend interpretieren.</li>
+<li>Sie lernen die Interpretation von inferenzstatstischen Test in R anhand von einem Chi-Quadrat Test kennen.</li>
+<li>Sie verstehen, wie man das Ergebnis von Funktionen als Objekt “abspeichert,” und wissen, wie man auf die Elemente solcher “Ergebnisobjekte” zugreift.</li>
+<li>Sie entwickeln ein vertieftes Verständnis davon, wie die Phasen der Datenaufbereitung, der Datenexploration und der Datenanalyse zusammenhängen.</li>
+</ul>
+</div>
+<div id="aufgaben-4" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Aufgaben</h2>
+<ol style="list-style-type: decimal">
+<li>Laden Sie den Datensatz in RStudio, der 200 zufällige Fälle aus dem ganzen ESS Datensatz enthält.<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> Erfassen Sie den hierfür benötigten Code nicht nur im Markdown, sondern erstellen Sie zusätlich ein eigenes R-Skript (z.B. unter dem Namen ”ess_import.R”). Dieses Skript sollte automatisch das richtige Arbeitsverzeichnis definieren, den Datensatz laden und alle notwendigen Datenaufbereitungen vornehmen. Sie können also auch bereits die ersten Definitionen von fehlenden Werten dort integrieren. Die Idee ist, dass dieses Skript über die kommenden Wochen umfangreicher wird, wenn wir Faktoren definieren, Variablenbezeichnungen ändern, neue Variablen berechnen, usw.</li>
+</ol>
+<p>Hier das Beispiel eines möglichen Importskripts:</p>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="wochenplan-08-kreuztabellen.html#cb360-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Laden der Daten</span></span>
+<span id="cb360-2"><a href="wochenplan-08-kreuztabellen.html#cb360-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/Users/SchweglG/R_Daten/06_HS21/R_Seminar-HS21&quot;</span>)</span>
+<span id="cb360-3"><a href="wochenplan-08-kreuztabellen.html#cb360-3" aria-hidden="true" tabindex="-1"></a><span class="co">#daten_ess &lt;- read.csv(file = &quot;Daten/ESS1-8e01.csv&quot;)</span></span>
+<span id="cb360-4"><a href="wochenplan-08-kreuztabellen.html#cb360-4" aria-hidden="true" tabindex="-1"></a><span class="co">#daten_ess &lt;- daten_ess[sample(row.names(daten_ess),200),]</span></span>
+<span id="cb360-5"><a href="wochenplan-08-kreuztabellen.html#cb360-5" aria-hidden="true" tabindex="-1"></a><span class="co">#write.csv(daten_ess, file = &quot;Daten/ESS1-8e01_HS21.csv&quot;)</span></span>
+<span id="cb360-6"><a href="wochenplan-08-kreuztabellen.html#cb360-6" aria-hidden="true" tabindex="-1"></a>daten_ess <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;Daten/ESS1-8e01_HS21.csv&quot;</span>)</span>
+<span id="cb360-7"><a href="wochenplan-08-kreuztabellen.html#cb360-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb360-8"><a href="wochenplan-08-kreuztabellen.html#cb360-8" aria-hidden="true" tabindex="-1"></a><span class="co"># nicht benoetigte Variablen loeschen</span></span>
+<span id="cb360-9"><a href="wochenplan-08-kreuztabellen.html#cb360-9" aria-hidden="true" tabindex="-1"></a><span class="do">## bisher keine nicht benoetigen Variablen vorhanden</span></span>
+<span id="cb360-10"><a href="wochenplan-08-kreuztabellen.html#cb360-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb360-11"><a href="wochenplan-08-kreuztabellen.html#cb360-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Definieren von fehlenden Werten</span></span>
+<span id="cb360-12"><a href="wochenplan-08-kreuztabellen.html#cb360-12" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>yrbrn[daten_ess<span class="sc">$</span>yrbrn<span class="sc">==</span><span class="dv">7777</span> <span class="sc">|</span></span>
+<span id="cb360-13"><a href="wochenplan-08-kreuztabellen.html#cb360-13" aria-hidden="true" tabindex="-1"></a>                  daten_ess<span class="sc">$</span>yrbrn<span class="sc">==</span><span class="dv">8888</span> <span class="sc">|</span></span>
+<span id="cb360-14"><a href="wochenplan-08-kreuztabellen.html#cb360-14" aria-hidden="true" tabindex="-1"></a>                  daten_ess<span class="sc">$</span>yrbrn<span class="sc">==</span><span class="dv">9999</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb360-15"><a href="wochenplan-08-kreuztabellen.html#cb360-15" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>agea[daten_ess<span class="sc">$</span>agea<span class="sc">==</span><span class="dv">999</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb360-16"><a href="wochenplan-08-kreuztabellen.html#cb360-16" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>edulvla[daten_ess<span class="sc">$</span>edulvla<span class="sc">&gt;</span><span class="dv">5</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb360-17"><a href="wochenplan-08-kreuztabellen.html#cb360-17" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>eisced[daten_ess<span class="sc">$</span>eisced<span class="sc">&gt;</span><span class="dv">7</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb360-18"><a href="wochenplan-08-kreuztabellen.html#cb360-18" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>eduyrs[daten_ess<span class="sc">$</span>eduyrs<span class="sc">&gt;</span><span class="dv">76</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb360-19"><a href="wochenplan-08-kreuztabellen.html#cb360-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb360-20"><a href="wochenplan-08-kreuztabellen.html#cb360-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Fehler in den Faellen Korrigieren</span></span>
+<span id="cb360-21"><a href="wochenplan-08-kreuztabellen.html#cb360-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Fall 132</span></span>
+<span id="cb360-22"><a href="wochenplan-08-kreuztabellen.html#cb360-22" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>agea[daten_ess<span class="sc">$</span>x<span class="sc">==</span><span class="dv">132</span>] <span class="ot">&lt;-</span> <span class="dv">2016</span> <span class="sc">-</span> daten_ess<span class="sc">$</span>yrbrn[daten_ess<span class="sc">$</span>x<span class="sc">==</span><span class="dv">132</span>]</span>
+<span id="cb360-23"><a href="wochenplan-08-kreuztabellen.html#cb360-23" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>agea[daten_ess<span class="sc">$</span>x<span class="sc">==</span><span class="dv">132</span>]</span>
+<span id="cb360-24"><a href="wochenplan-08-kreuztabellen.html#cb360-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Fall 352</span></span>
+<span id="cb360-25"><a href="wochenplan-08-kreuztabellen.html#cb360-25" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>agea[daten_ess<span class="sc">$</span>x<span class="sc">==</span><span class="dv">352</span>] <span class="ot">&lt;-</span> <span class="dv">2016</span> <span class="sc">-</span> daten_ess<span class="sc">$</span>yrbrn[daten_ess<span class="sc">$</span>x<span class="sc">==</span><span class="dv">352</span>]</span>
+<span id="cb360-26"><a href="wochenplan-08-kreuztabellen.html#cb360-26" aria-hidden="true" tabindex="-1"></a><span class="do">## Fall 443 </span></span>
+<span id="cb360-27"><a href="wochenplan-08-kreuztabellen.html#cb360-27" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>edulvla[daten_ess<span class="sc">$</span>x<span class="sc">==</span><span class="dv">443</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb360-28"><a href="wochenplan-08-kreuztabellen.html#cb360-28" aria-hidden="true" tabindex="-1"></a><span class="do">## Fall 1414</span></span>
+<span id="cb360-29"><a href="wochenplan-08-kreuztabellen.html#cb360-29" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>agea[daten_ess<span class="sc">$</span>x<span class="sc">==</span><span class="dv">1414</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb360-30"><a href="wochenplan-08-kreuztabellen.html#cb360-30" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>yrbrn[daten_ess<span class="sc">$</span>x<span class="sc">==</span><span class="dv">1414</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb360-31"><a href="wochenplan-08-kreuztabellen.html#cb360-31" aria-hidden="true" tabindex="-1"></a><span class="do">## Fall 1482</span></span>
+<span id="cb360-32"><a href="wochenplan-08-kreuztabellen.html#cb360-32" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>eduyrs[daten_ess<span class="sc">$</span>x<span class="sc">==</span><span class="dv">1482</span>] <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">mean</span>(daten_ess<span class="sc">$</span>eduyrs[daten_ess<span class="sc">$</span>edulvla<span class="sc">==</span><span class="dv">3</span>],</span>
+<span id="cb360-33"><a href="wochenplan-08-kreuztabellen.html#cb360-33" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">na.rm =</span> T))</span>
+<span id="cb360-34"><a href="wochenplan-08-kreuztabellen.html#cb360-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb360-35"><a href="wochenplan-08-kreuztabellen.html#cb360-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Faktoren definieren</span></span>
+<span id="cb360-36"><a href="wochenplan-08-kreuztabellen.html#cb360-36" aria-hidden="true" tabindex="-1"></a><span class="do">## folgt in der naechsten Einheit</span></span></code></pre></div>
+<p>Das R-Skript kann nun laufend ergänzt werden, etwa mit der Definition von weiteren fehlenden Werte bei anderen Variablen oder mit der Erstellen von Faktoren (siehe nächster WP). Das hat den Vorteil, dass zu Beginn einer neuen Einheit (d.h. wenn Sie ein neues Markdown erstellen) jeweils nicht der ganze Code nochmals aufgeführt werden muss, sondern direkt dieses Skript ausgeführt werden kann. Das Ausführen eines Skriptes (oder auch einer sonstigen Textdatei) erfolgt über die Funktion <code>source()</code>.</p>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="wochenplan-08-kreuztabellen.html#cb361-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Nochmals das Arbeitsverzeichnis definieren falls nötig:</span></span>
+<span id="cb361-2"><a href="wochenplan-08-kreuztabellen.html#cb361-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/Users/SchweglG/R_Daten/06_HS21/R_Seminar-HS21&quot;</span>)</span>
+<span id="cb361-3"><a href="wochenplan-08-kreuztabellen.html#cb361-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Aufrufen des R Skripts:</span></span>
+<span id="cb361-4"><a href="wochenplan-08-kreuztabellen.html#cb361-4" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="at">file =</span> <span class="st">&quot;ess_import.R&quot;</span>)</span></code></pre></div>
+<p><em>Zur Wiederholung</em>: Wir laden uns also wiederum Rohdaten und müssen dann fehlende Werte definieren. Natürlich kennt die Funktion <code>read.csv()</code> ein Umgang mit fehlenden Werten über das Argument <code>na.strings</code>. Allerdings sind in unserem Rohdatensatz fehlende Werte eben auch als Zahlen definiert (z.Bsp. 7777) und werden – bevor dies nicht anders definiert haben – auch als numerische Werte eingelesen.</p>
+<p> 
+2. Erläutern Sie in eigenen Worten die Idee der Funktion <code>attach()</code>. Nutzen Sie diese Funktion für die Aufgaben 3 und 4. Wenden Sie den <code>detach()</code>-Befehl an, bevor Sie zu Aufgabe 5 übergehen.</p>
+<p>Die <code>attach()</code>-Funktion erlaubt es uns, einen bestimmten Datensatz (d.h. ein Dataframe-Objekt) zu „aktivieren“ <span class="citation">(<a href="#ref-Manderscheid2017" role="doc-biblioref">Manderscheid 2017, 54</a>)</span>. Dadurch können wir direkt auf diesen Datensatz zugreifen, ohne den Umweg des <code>$</code>-Zeichens:</p>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="wochenplan-08-kreuztabellen.html#cb362-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Am Beispiel der Variable zu Geschlecht:</span></span>
+<span id="cb362-2"><a href="wochenplan-08-kreuztabellen.html#cb362-2" aria-hidden="true" tabindex="-1"></a><span class="do">##...vor dem attachen:</span></span>
+<span id="cb362-3"><a href="wochenplan-08-kreuztabellen.html#cb362-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>gndr)</span></code></pre></div>
+<pre><code>## 
+##   Male Female 
+##    104     96</code></pre>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="wochenplan-08-kreuztabellen.html#cb364-1" aria-hidden="true" tabindex="-1"></a><span class="do">##die Funktion</span></span>
+<span id="cb364-2"><a href="wochenplan-08-kreuztabellen.html#cb364-2" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(daten_ess)</span>
+<span id="cb364-3"><a href="wochenplan-08-kreuztabellen.html#cb364-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb364-4"><a href="wochenplan-08-kreuztabellen.html#cb364-4" aria-hidden="true" tabindex="-1"></a><span class="do">##...nach dem attachen:</span></span>
+<span id="cb364-5"><a href="wochenplan-08-kreuztabellen.html#cb364-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gndr)</span></code></pre></div>
+<pre><code>## gndr
+##   Male Female 
+##    104     96</code></pre>
+<p>Ohne die <code>attach()</code>-Funktion würde die letzte Zeile des Code-Chunks oben zu einer Fehlermeldung führen.</p>
+<p><strong>Fabio Keller</strong> hat dies nochmals etwas anders formuliert, um den Prozess der Funktion zu verdeutlichen:<br />
+“Standardmässig gibt es das Global Environment, also die Super-Umgebung, in der alle Objekte existieren, die wir bisher erstellt haben. Die Funktion <code>attach()</code> erstellt eine zusätzliche Umgebung, in der Objekte existieren können. Sie zerteilt ein DataFrame, das mit dem <code>what</code> Argument angegeben wird, in seine einzelnen Variablen und lässt sie als freie Objekte in der neuen Umgebung leben, dessen Name man mit dem
+<code>name</code> Argument spezifizieren kann.”</p>
+<p>Wann sollten wir mit der Funktion arbeiten, wann nicht?
+Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die <em>Arbeit mit nur einem Datensatz</em> im Zentrum steht und wenn <em>keine Änderungen</em> mehr am Datensatz selber vorgenommen werden. Bei der Arbeit mit mehreren Datensatzsätzen könnte die Funktion leicht für Verwirrung sorgen (gerade auch dann wenn Ihre Codezeilen von jemand anderem interpretiert werden sollen). Eine Hierarchie bei mehreren ‘attachten’ Objekten könnte noch über das Argument <code>post</code>definiert werden. Dies macht allerdings kaum Sinn. Sollten Sie weiterhin Änderungen am Datensatz vornehmen kann die <code>attach()</code>-Funktion dazu führen, dass die von Ihnen gemachten Änderungen nicht sichtbar werden (beim Betrachten des Datensatzes) oder auch nicht in die weiteren Schritte/Berechnungen aufgenommen werden. Sobald also Änderungen vorgenommen werden gilt es auch den Datensatz wieder zu „detachen“.</p>
+<p>Nach folgender Befehlszeile kommt eine Warnung – was könnte das Problem sein?</p>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="wochenplan-08-kreuztabellen.html#cb366-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(daten_ess)</span></code></pre></div>
+<p>Jetzt findet R verschiedene “freie Objekte” (Keller) mit dem selben Namen in der Environment. Dies aufgrund der Tatsache, dass eben ein Datensatz mehrmals ‘attached’ wurde (ersichtlich über <em>Global Enviroment</em>). Wenn der Datensatz jetzt nur einmal ‘detached’ wird kann immer noch direkt auf dieses Objekt zugreifen, weil es eben noch ein zweites Mal ‘attached’ wurde:</p>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="wochenplan-08-kreuztabellen.html#cb367-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(daten_ess)</span>
+<span id="cb367-2"><a href="wochenplan-08-kreuztabellen.html#cb367-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gndr)</span></code></pre></div>
+<p> 
+3. Erstellen Sie mittels der Funktion <code>table()</code> eine Kreuztabelle zwischen der Variable zu Geschlecht und derjenigen zum Interesse an Politik. Wie können Sie vorgehen, um eine Kreuztabelle mit Prozentwerten (relative statt absolute Häufigkeiten) zu erstellen, die ausserdem die Randsummen enthält? Suchen Sie eine Darstellung der Tabelle –- d.h. der Anordnung der Variablen in Zeilen und Spalten sowie der Wahl der Randsummen –-, die sinnvoll das Verhältnis von abhängiger und unabhängiger Variable wiedergibt. Was fällt Ihnen inhaltlich an der Tabelle auf?</p>
+<p>Wenn wir Tabellen (bzw. Kontingenztabellen) darstellen, so ist die Konvention dass “bei gerichteten Beziehungen die Ausprägungen der unabhängigen Variablen (X) den Spalten zugeordnet werden und die Ausprägungen der abhängigen Variablen (Y) den Reihen zugeordnet werden” <span class="citation">(<a href="#ref-DiazBone2019" role="doc-biblioref">Diaz-Bone 2019, 70</a>)</span>. Die Aufgabenstellung spricht zwar nicht von einer gerichteten Beziehung, aber gleichzeitig macht es Sinn, Geschlecht als unabhängige Variable anzusehen (und nicht dass das Interesse an Politik das Geschlecht einer Person bestimmt). Gemäss dieser Überlegung sollen dann auch die Randsummen ausgerichtet werden, da uns die Verteilungen des Politikinteresses je nach Geschlecht interessiert. Das heisst das pro Geschlecht jeweils auf 100% summiert werden soll.</p>
+<p>Zur Erinnerung: Dies sind Ausprägungen der beiden Variablen:
+“gndr”<br />
+1 Male<br />
+2 Female<br />
+9 No answer<br />
+“polintr”<br />
+1 Very interested<br />
+2 Quite interested<br />
+3 Hardly interested<br />
+4 Not at all interested<br />
+7 Refusal<br />
+8 Don’t know<br />
+9 No answer</p>
+<p>Die Verteilung von “gndr” haben wir oben bereits betrachtet, daher folgt hier nur noch die Variable “polintr”:</p>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="wochenplan-08-kreuztabellen.html#cb368-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(polintr)</span></code></pre></div>
+<pre><code>## polintr
+## Not at all interested     Hardly interested      Quite interested 
+##                    19                    67                    81 
+##       Very interested 
+##                    33</code></pre>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="wochenplan-08-kreuztabellen.html#cb370-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Womöglich verfügt die Variable &quot;polintr&quot; über fehlende Werte. Diese können wir definieren:</span></span>
+<span id="cb370-2"><a href="wochenplan-08-kreuztabellen.html#cb370-2" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>polintr[daten_ess<span class="sc">$</span>polintr<span class="sc">&gt;</span><span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb370-3"><a href="wochenplan-08-kreuztabellen.html#cb370-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Dieser Befehl könnten wir dann ebenfalls in unser Import-Skript übernehmen.</span></span></code></pre></div>
+<p>Anschliessend erstellen wir die benötige Tabelle. Hierbei lohnt es sich von “innen” nach “aussen” vorzugehen <span class="citation">(vgl. auch <a href="#ref-Manderscheid2017" role="doc-biblioref">Manderscheid 2017, 95</a>)</span>:</p>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="wochenplan-08-kreuztabellen.html#cb371-1" aria-hidden="true" tabindex="-1"></a><span class="co">#als logischer Aufbau der Tabelle</span></span>
+<span id="cb371-2"><a href="wochenplan-08-kreuztabellen.html#cb371-2" aria-hidden="true" tabindex="-1"></a><span class="fu">addmargins</span>(<span class="fu">table</span>(polintr, gndr))</span>
+<span id="cb371-3"><a href="wochenplan-08-kreuztabellen.html#cb371-3" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(polintr, gndr))</span>
+<span id="cb371-4"><a href="wochenplan-08-kreuztabellen.html#cb371-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb371-5"><a href="wochenplan-08-kreuztabellen.html#cb371-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Welche Variante macht nun mehr Sinn?</span></span>
+<span id="cb371-6"><a href="wochenplan-08-kreuztabellen.html#cb371-6" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(polintr, gndr),<span class="dv">2</span>)</span>
+<span id="cb371-7"><a href="wochenplan-08-kreuztabellen.html#cb371-7" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(polintr, gndr),<span class="dv">1</span>)</span>
+<span id="cb371-8"><a href="wochenplan-08-kreuztabellen.html#cb371-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb371-9"><a href="wochenplan-08-kreuztabellen.html#cb371-9" aria-hidden="true" tabindex="-1"></a><span class="co">#Randsummen ergänzen:</span></span>
+<span id="cb371-10"><a href="wochenplan-08-kreuztabellen.html#cb371-10" aria-hidden="true" tabindex="-1"></a><span class="fu">addmargins</span>(<span class="fu">prop.table</span>(<span class="fu">table</span>(polintr, gndr),<span class="dv">2</span>))</span>
+<span id="cb371-11"><a href="wochenplan-08-kreuztabellen.html#cb371-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb371-12"><a href="wochenplan-08-kreuztabellen.html#cb371-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Warum könnten wir eine der beiden Randsummen weglassen? Wieso nicht?</span></span>
+<span id="cb371-13"><a href="wochenplan-08-kreuztabellen.html#cb371-13" aria-hidden="true" tabindex="-1"></a><span class="co"># V1</span></span>
+<span id="cb371-14"><a href="wochenplan-08-kreuztabellen.html#cb371-14" aria-hidden="true" tabindex="-1"></a><span class="fu">addmargins</span>(<span class="fu">prop.table</span>(<span class="fu">table</span>(polintr, gndr),<span class="dv">2</span>),<span class="dv">1</span>)</span>
+<span id="cb371-15"><a href="wochenplan-08-kreuztabellen.html#cb371-15" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">addmargins</span>(<span class="fu">prop.table</span>(<span class="fu">table</span>(polintr, gndr),<span class="dv">2</span>),<span class="dv">1</span>),<span class="dv">2</span>)</span>
+<span id="cb371-16"><a href="wochenplan-08-kreuztabellen.html#cb371-16" aria-hidden="true" tabindex="-1"></a><span class="co">#V2</span></span>
+<span id="cb371-17"><a href="wochenplan-08-kreuztabellen.html#cb371-17" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">addmargins</span>(<span class="fu">prop.table</span>(<span class="fu">table</span>(polintr, gndr),<span class="dv">2</span>)),<span class="dv">2</span>)</span></code></pre></div>
+<p>Hier wäre nun unsere benötigte Tabelle:</p>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="wochenplan-08-kreuztabellen.html#cb372-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">addmargins</span>(<span class="fu">prop.table</span>(<span class="fu">table</span>(polintr, gndr),<span class="dv">2</span>),<span class="dv">1</span>),<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##                        gndr
+## polintr                 Male Female
+##   Not at all interested 0.08   0.11
+##   Hardly interested     0.29   0.39
+##   Quite interested      0.41   0.40
+##   Very interested       0.22   0.10
+##   Sum                   1.00   1.00</code></pre>
+<p>Diese verdeutlicht, dass zwischen den Variablen ein Zusammenhang bestehen könnte, da Männer anscheinend öfters angeben, sehr an Politik interessiert zu sein.</p>
+<p> 
+4. Die Funktion <code>CrossTable()</code> ist Teil des Paketes “gmodels” und ermöglicht die flexible und detailreiche Arbeit mit Kreuztabellen. Versuchen Sie mittels dieser Funktion die Kreuztabelle aus Aufgabe 2 nachzubauen.</p>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="wochenplan-08-kreuztabellen.html#cb374-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;gmodels&quot;)</span></span>
+<span id="cb374-2"><a href="wochenplan-08-kreuztabellen.html#cb374-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gmodels)</span>
+<span id="cb374-3"><a href="wochenplan-08-kreuztabellen.html#cb374-3" aria-hidden="true" tabindex="-1"></a>?CrossTable</span></code></pre></div>
+<pre><code>## starting httpd help server ... done</code></pre>
+<p>Ein Blick in die Hilfeseite zeigt uns, dass wir vor allem diejenigen Argument anders definieren müssen, die wir nicht in unserer Tabelle haben wollen. Das heisst wir müssen angeben (<code>FALSE</code>), dass wir keine Spalten- und Tabellenprozente sowie keine Angaben zum Chi-Quadrat-Beiträgen haben möchten. Leider scheint aber kein Argument vorhanden zu sein, mit der wir die absoluten Zahlen entfernen und die Randverteilung auch noch gemäss der Tabelle oben darstellen könnten.</p>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="wochenplan-08-kreuztabellen.html#cb376-1" aria-hidden="true" tabindex="-1"></a><span class="fu">CrossTable</span>(polintr, gndr, </span>
+<span id="cb376-2"><a href="wochenplan-08-kreuztabellen.html#cb376-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">digits =</span> <span class="dv">2</span>,</span>
+<span id="cb376-3"><a href="wochenplan-08-kreuztabellen.html#cb376-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">prop.r =</span> F,</span>
+<span id="cb376-4"><a href="wochenplan-08-kreuztabellen.html#cb376-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">prop.t =</span> F,</span>
+<span id="cb376-5"><a href="wochenplan-08-kreuztabellen.html#cb376-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">prop.chisq =</span> F,</span>
+<span id="cb376-6"><a href="wochenplan-08-kreuztabellen.html#cb376-6" aria-hidden="true" tabindex="-1"></a>           )</span></code></pre></div>
+<pre><code>## 
+##  
+##    Cell Contents
+## |-------------------------|
+## |                       N |
+## |           N / Col Total |
+## |-------------------------|
+## 
+##  
+## Total Observations in Table:  200 
+## 
+##  
+##                       | gndr 
+##               polintr |      Male |    Female | Row Total | 
+## ----------------------|-----------|-----------|-----------|
+## Not at all interested |         8 |        11 |        19 | 
+##                       |      0.08 |      0.11 |           | 
+## ----------------------|-----------|-----------|-----------|
+##     Hardly interested |        30 |        37 |        67 | 
+##                       |      0.29 |      0.39 |           | 
+## ----------------------|-----------|-----------|-----------|
+##      Quite interested |        43 |        38 |        81 | 
+##                       |      0.41 |      0.40 |           | 
+## ----------------------|-----------|-----------|-----------|
+##       Very interested |        23 |        10 |        33 | 
+##                       |      0.22 |      0.10 |           | 
+## ----------------------|-----------|-----------|-----------|
+##          Column Total |       104 |        96 |       200 | 
+##                       |      0.52 |      0.48 |           | 
+## ----------------------|-----------|-----------|-----------|
+## 
+## </code></pre>
+<p>Hingegen bietet die Funktion über das Argument <code>format</code> noch eine schöne Darstellungsweise, die <strong>Josias Bruder</strong> genutzt hat:</p>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="wochenplan-08-kreuztabellen.html#cb378-1" aria-hidden="true" tabindex="-1"></a><span class="fu">CrossTable</span>(polintr, gndr, </span>
+<span id="cb378-2"><a href="wochenplan-08-kreuztabellen.html#cb378-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">digits =</span> <span class="dv">2</span>,</span>
+<span id="cb378-3"><a href="wochenplan-08-kreuztabellen.html#cb378-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">prop.r =</span> F,</span>
+<span id="cb378-4"><a href="wochenplan-08-kreuztabellen.html#cb378-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">prop.t =</span> F,</span>
+<span id="cb378-5"><a href="wochenplan-08-kreuztabellen.html#cb378-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">prop.chisq =</span> F,</span>
+<span id="cb378-6"><a href="wochenplan-08-kreuztabellen.html#cb378-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">format =</span> <span class="st">&quot;SPSS&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##    Cell Contents
+## |-------------------------|
+## |                   Count |
+## |          Column Percent |
+## |-------------------------|
+## 
+## Total Observations in Table:  200 
+## 
+##                       | gndr 
+##               polintr |     Male  |   Female  | Row Total | 
+## ----------------------|-----------|-----------|-----------|
+## Not at all interested |        8  |       11  |       19  | 
+##                       |     7.69% |    11.46% |           | 
+## ----------------------|-----------|-----------|-----------|
+##     Hardly interested |       30  |       37  |       67  | 
+##                       |    28.85% |    38.54% |           | 
+## ----------------------|-----------|-----------|-----------|
+##      Quite interested |       43  |       38  |       81  | 
+##                       |    41.35% |    39.58% |           | 
+## ----------------------|-----------|-----------|-----------|
+##       Very interested |       23  |       10  |       33  | 
+##                       |    22.12% |    10.42% |           | 
+## ----------------------|-----------|-----------|-----------|
+##          Column Total |      104  |       96  |      200  | 
+##                       |    52.00% |    48.00% |           | 
+## ----------------------|-----------|-----------|-----------|
+## 
+## </code></pre>
+<p><em>Hinweis</em>: Die Funktion <code>CrossTable()</code> kennt keinen Weg mit fehlenden Wert umzugehen. Sollten Sie also einen fehlenden Wert in einer Variable haben müssen Sie diesen selber “entfernen.” Hier ein Beispiel, in dem ein fehlender Wert beim Fall 45 (z.Bsp. bei der Variable “polintr”) vorhanden wäre:</p>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="wochenplan-08-kreuztabellen.html#cb380-1" aria-hidden="true" tabindex="-1"></a><span class="fu">CrossTable</span>(polintr[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">45</span>)], gndr[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">45</span>)], </span>
+<span id="cb380-2"><a href="wochenplan-08-kreuztabellen.html#cb380-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">digits =</span> <span class="dv">2</span>,</span>
+<span id="cb380-3"><a href="wochenplan-08-kreuztabellen.html#cb380-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">prop.r =</span> F,</span>
+<span id="cb380-4"><a href="wochenplan-08-kreuztabellen.html#cb380-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">prop.t =</span> F,</span>
+<span id="cb380-5"><a href="wochenplan-08-kreuztabellen.html#cb380-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">prop.chisq =</span> F,</span>
+<span id="cb380-6"><a href="wochenplan-08-kreuztabellen.html#cb380-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">format =</span> <span class="st">&quot;SPSS&quot;</span>)</span></code></pre></div>
+<p> 
+5. Mittels <code>CrossTable()</code> lassen sich nicht nur Tabellen erstellen, sondern auch Chi-Quadrat Tests durchführen.
++ Kopieren Sie Ihren Kode der Kreuztabelle aus Ausgabe 4, ergänzen Sie diesen um das nötige Argument für den Chi-Quadrat Test und speichern Sie dies als ein neues Objekt ‘CT_Ergebnis.’
++ Greifen Sie anschliessend auf die darin enthaltenen Angaben zum Chi-Quadrat Test zu und interpretieren Sie diese -– sowohl deskriptiv als auch inferenzstatistisch.</p>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="wochenplan-08-kreuztabellen.html#cb381-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(daten_ess)</span>
+<span id="cb381-2"><a href="wochenplan-08-kreuztabellen.html#cb381-2" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis <span class="ot">&lt;-</span> <span class="fu">CrossTable</span>(daten_ess<span class="sc">$</span>polintr, daten_ess<span class="sc">$</span>gndr, </span>
+<span id="cb381-3"><a href="wochenplan-08-kreuztabellen.html#cb381-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">digits =</span> <span class="dv">2</span>,</span>
+<span id="cb381-4"><a href="wochenplan-08-kreuztabellen.html#cb381-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">prop.r =</span> F,</span>
+<span id="cb381-5"><a href="wochenplan-08-kreuztabellen.html#cb381-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">prop.t =</span> F,</span>
+<span id="cb381-6"><a href="wochenplan-08-kreuztabellen.html#cb381-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">prop.chisq =</span> F,</span>
+<span id="cb381-7"><a href="wochenplan-08-kreuztabellen.html#cb381-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">chisq =</span> T) <span class="co">#Achtung: hier muss nun das Format &#39;SPSS&#39; entfernt werden</span></span></code></pre></div>
+<pre><code>## 
+##  
+##    Cell Contents
+## |-------------------------|
+## |                       N |
+## |           N / Col Total |
+## |-------------------------|
+## 
+##  
+## Total Observations in Table:  200 
+## 
+##  
+##                       | daten_ess$gndr 
+##     daten_ess$polintr |      Male |    Female | Row Total | 
+## ----------------------|-----------|-----------|-----------|
+## Not at all interested |         8 |        11 |        19 | 
+##                       |      0.08 |      0.11 |           | 
+## ----------------------|-----------|-----------|-----------|
+##     Hardly interested |        30 |        37 |        67 | 
+##                       |      0.29 |      0.39 |           | 
+## ----------------------|-----------|-----------|-----------|
+##      Quite interested |        43 |        38 |        81 | 
+##                       |      0.41 |      0.40 |           | 
+## ----------------------|-----------|-----------|-----------|
+##       Very interested |        23 |        10 |        33 | 
+##                       |      0.22 |      0.10 |           | 
+## ----------------------|-----------|-----------|-----------|
+##          Column Total |       104 |        96 |       200 | 
+##                       |      0.52 |      0.48 |           | 
+## ----------------------|-----------|-----------|-----------|
+## 
+##  
+## Statistics for All Table Factors
+## 
+## 
+## Pearson&#39;s Chi-squared test 
+## ------------------------------------------------------------
+## Chi^2 =  6.325002     d.f. =  3     p =  0.09682547 
+## 
+## 
+## </code></pre>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="wochenplan-08-kreuztabellen.html#cb383-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(CT_Ergebnis)</span></code></pre></div>
+<pre><code>##          Length Class Mode   
+## t        8      table numeric
+## prop.row 8      table numeric
+## prop.col 8      table numeric
+## prop.tbl 8      table numeric
+## chisq    9      htest list</code></pre>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="wochenplan-08-kreuztabellen.html#cb385-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(CT_Ergebnis)</span></code></pre></div>
+<pre><code>## List of 5
+##  $ t       : &#39;table&#39; int [1:4, 1:2] 8 30 43 23 11 37 38 10
+##   ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
+##   .. ..$ y: chr [1:2] &quot;Male&quot; &quot;Female&quot;
+##  $ prop.row: &#39;table&#39; num [1:4, 1:2] 0.421 0.448 0.531 0.697 0.579 ...
+##   ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
+##   .. ..$ y: chr [1:2] &quot;Male&quot; &quot;Female&quot;
+##  $ prop.col: &#39;table&#39; num [1:4, 1:2] 0.0769 0.2885 0.4135 0.2212 0.1146 ...
+##   ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
+##   .. ..$ y: chr [1:2] &quot;Male&quot; &quot;Female&quot;
+##  $ prop.tbl: &#39;table&#39; num [1:4, 1:2] 0.04 0.15 0.215 0.115 0.055 0.185 0.19 0.05
+##   ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
+##   .. ..$ y: chr [1:2] &quot;Male&quot; &quot;Female&quot;
+##  $ chisq   :List of 9
+##   ..$ statistic: Named num 6.33
+##   .. ..- attr(*, &quot;names&quot;)= chr &quot;X-squared&quot;
+##   ..$ parameter: Named int 3
+##   .. ..- attr(*, &quot;names&quot;)= chr &quot;df&quot;
+##   ..$ p.value  : num 0.0968
+##   ..$ method   : chr &quot;Pearson&#39;s Chi-squared test&quot;
+##   ..$ data.name: chr &quot;t&quot;
+##   ..$ observed : &#39;table&#39; int [1:4, 1:2] 8 30 43 23 11 37 38 10
+##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
+##   .. .. ..$ y: chr [1:2] &quot;Male&quot; &quot;Female&quot;
+##   ..$ expected : num [1:4, 1:2] 9.88 34.84 42.12 17.16 9.12 ...
+##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
+##   .. .. ..$ y: chr [1:2] &quot;Male&quot; &quot;Female&quot;
+##   ..$ residuals: &#39;table&#39; num [1:4, 1:2] -0.598 -0.82 0.136 1.41 0.623 ...
+##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
+##   .. .. ..$ y: chr [1:2] &quot;Male&quot; &quot;Female&quot;
+##   ..$ stdres   : &#39;table&#39; num [1:4, 1:2] -0.907 -1.451 0.254 2.227 0.907 ...
+##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
+##   .. .. ..$ y: chr [1:2] &quot;Male&quot; &quot;Female&quot;
+##   ..- attr(*, &quot;class&quot;)= chr &quot;htest&quot;</code></pre>
+<p>Neben den verschiedenen Werten der Tabellen (Fallzahlen sowie den Spalten-, Reihen- und Tabellenprozenten) finden wir auch das Unterobjekt des Chi-Quadrattests: “chisq.” Auf dieses können wir sowohl insgesamt zugreifen…</p>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="wochenplan-08-kreuztabellen.html#cb387-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  t
+## X-squared = 6.325, df = 3, p-value = 0.09683</code></pre>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="wochenplan-08-kreuztabellen.html#cb389-1" aria-hidden="true" tabindex="-1"></a><span class="co">#oder etwas umständlicher, aber auch möglich:</span></span>
+<span id="cb389-2"><a href="wochenplan-08-kreuztabellen.html#cb389-2" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis[<span class="st">&quot;chisq&quot;</span>]</span></code></pre></div>
+<pre><code>## $chisq
+## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  t
+## X-squared = 6.325, df = 3, p-value = 0.09683</code></pre>
+<p>…als eben auch auf die Unterelemente:</p>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="wochenplan-08-kreuztabellen.html#cb391-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>statistic</span></code></pre></div>
+<pre><code>## X-squared 
+##  6.325002</code></pre>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="wochenplan-08-kreuztabellen.html#cb393-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>parameter</span></code></pre></div>
+<pre><code>## df 
+##  3</code></pre>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="wochenplan-08-kreuztabellen.html#cb395-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>p.value</span></code></pre></div>
+<pre><code>## [1] 0.09682547</code></pre>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="wochenplan-08-kreuztabellen.html#cb397-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>method</span></code></pre></div>
+<pre><code>## [1] &quot;Pearson&#39;s Chi-squared test&quot;</code></pre>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="wochenplan-08-kreuztabellen.html#cb399-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>data.name</span></code></pre></div>
+<pre><code>## [1] &quot;t&quot;</code></pre>
+<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="wochenplan-08-kreuztabellen.html#cb401-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>observed</span></code></pre></div>
+<pre><code>##                        y
+## x                       Male Female
+##   Not at all interested    8     11
+##   Hardly interested       30     37
+##   Quite interested        43     38
+##   Very interested         23     10</code></pre>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="wochenplan-08-kreuztabellen.html#cb403-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>expected</span></code></pre></div>
+<pre><code>##                        y
+## x                        Male Female
+##   Not at all interested  9.88   9.12
+##   Hardly interested     34.84  32.16
+##   Quite interested      42.12  38.88
+##   Very interested       17.16  15.84</code></pre>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="wochenplan-08-kreuztabellen.html#cb405-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>residuals</span></code></pre></div>
+<pre><code>##                        y
+## x                             Male     Female
+##   Not at all interested -0.5981077  0.6225302
+##   Hardly interested     -0.8199857  0.8534682
+##   Quite interested       0.1355934 -0.1411301
+##   Very interested        1.4097893 -1.4673552</code></pre>
+<p>Wie können wir die Ergebnisse nun interpretieren?<br />
+Zuerst <em>deskriptiv statistisch</em>: Wir erhalten einen Chi-Quadrat Wert gemäss Pearson von:</p>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="wochenplan-08-kreuztabellen.html#cb407-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>statistic</span></code></pre></div>
+<pre><code>## X-squared 
+##  6.325002</code></pre>
+<p>Das heisst dass ein Zusammenhang zwischen den beiden Variablen Geschlecht und Politikinteresse besteht. Allerdings ist die Grössenordnung dieses Wertes nicht nur durch eine Stärke des Zusammenhangs bestimmt, sondern auch durch das Tabellenformat <span class="citation">(<a href="#ref-DiazBone2019" role="doc-biblioref">Diaz-Bone 2019, 86</a>)</span>. Dieses Tabellenformat wird über die Freiheitsgrade (<em>df</em>) deutlich: (i-1) x (j-1). Oder eben:</p>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="wochenplan-08-kreuztabellen.html#cb409-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>parameter</span></code></pre></div>
+<pre><code>## df 
+##  3</code></pre>
+<p>Möchte man hingegen verschiedene Zusammenhänge und deren Stärke miteinander vergleichen, so kann man auf Cramer’s V zurückgreifen (etwa über die Funktion <code>cramersV()</code> im Paket „lsr“).</p>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="wochenplan-08-kreuztabellen.html#cb411-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;lsr&quot;)</span></span>
+<span id="cb411-2"><a href="wochenplan-08-kreuztabellen.html#cb411-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lsr)</span>
+<span id="cb411-3"><a href="wochenplan-08-kreuztabellen.html#cb411-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cramersV</span>(daten_ess<span class="sc">$</span>polintr, daten_ess<span class="sc">$</span>gndr)</span></code></pre></div>
+<pre><code>## [1] 0.1778342</code></pre>
+<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="wochenplan-08-kreuztabellen.html#cb413-1" aria-hidden="true" tabindex="-1"></a><span class="co">#oder auch manuell:</span></span>
+<span id="cb413-2"><a href="wochenplan-08-kreuztabellen.html#cb413-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>statistic<span class="sc">/</span>(<span class="dv">200</span><span class="sc">*</span>(<span class="dv">2-1</span>)))</span></code></pre></div>
+<pre><code>## X-squared 
+## 0.1778342</code></pre>
+<p>Cramer’s V verweist so auf einen schwachen bis mittleren Zusammenhang.</p>
+<p>Anschliessend können wir zur <em>inferenzstatistischen Betrachtung</em> übergehen:<br />
+Einige von den Teilnehmer*innen haben den Chi-Quadrat Test “von Hand” durchgeführt. Dies ist natürlich auch möglich <span class="citation">(vgl. <a href="#ref-DiazBone2019" role="doc-biblioref">Diaz-Bone 2019, 86</a>)</span>:</p>
+<ol style="list-style-type: decimal">
+<li><p>Hypothesen<br />
+H0: In der Grundgesamtheit besteht kein Zusammenhang zwischen Geschlecht und Politikinteresse.
+H1: Es besteht in der Grundgesamtheit ein Zusammenhang zwischen Geschlecht und Politikinteresse.</p></li>
+<li><p>Stichprobnerverteilung<br />
+Wiederum können wir die Stichprobernvertilung mittels des “parameter”-Unterobjektes bestimmen, nämlich als Verteilung mittels 3 Freiheitsgraden:</p></li>
+</ol>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="wochenplan-08-kreuztabellen.html#cb415-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>parameter</span></code></pre></div>
+<pre><code>## df 
+##  3</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Annahme- und Rückweisungsbereich<br />
+Der Test soll mit einem Signifikanzniveau von 5% durchgeführt werden:</li>
+</ol>
+<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="wochenplan-08-kreuztabellen.html#cb417-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qchisq</span>(<span class="fl">0.95</span>,<span class="dv">3</span>, <span class="at">lower.tail =</span> T)</span></code></pre></div>
+<pre><code>## [1] 7.814728</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Auswertung der STichprobe und Testentscheidung<br />
+Der Stichprobenkennwert ist:</li>
+</ol>
+<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="wochenplan-08-kreuztabellen.html#cb419-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>statistic</span></code></pre></div>
+<pre><code>## X-squared 
+##  6.325002</code></pre>
+<p>Dieser Wert fällt nun in den Rückweisungsbereich und der Stichprobenbefund ist signifikant. Die H0 muss verworfen werden und auch in der Grundgesamtheit besteht ein Zusammenhang zwischen Geschlecht und Politikinteresse.</p>
+<p>Dieses Vorgehen entspricht allerdings nicht der Realität des statistischen Arbeitens. Wir arbeiten nämlich direkt mit dem sogenannten “p-Wert.” Dieser Wert liegt bei:</p>
+<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="wochenplan-08-kreuztabellen.html#cb421-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>p.value</span></code></pre></div>
+<pre><code>## [1] 0.09682547</code></pre>
+<p>Unser berechnete Prüfwert Chi-Quadrat fällt auf einem 5% Signifikanzniveau in den Ablehnungsbereich beziehungsweise können wir auf einem 95% Signifikanzniveau die Alternativhypothese annehmen, dass auch in der Grundgesamtheit ein Zusammenhang zwischen den beiden Variablen besteht <span class="citation">(vgl. auch <a href="#ref-Manderscheid2017" role="doc-biblioref">Manderscheid 2017, 165f</a>)</span>. Der p-Wert dreht dabei die Logik etwas um: Konkret sagt dieser Wert nämlich aus, dass lediglich eine</p>
+<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="wochenplan-08-kreuztabellen.html#cb423-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>p.value,<span class="dv">3</span>)<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
+<pre><code>## [1] 9.7</code></pre>
+<p>…% Wahrscheinlichkeit besteht, dass unser Zusammenhang in der Stichprobe zufällig aufgetreten ist.</p>
+<p>Ist jetzt das einfach ein <em>dummes Beispiel</em>? Wir könnten uns jetzt nochmals anschauen, wie dieser Chi-Quadrat Wert zustandekommt:</p>
+<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="wochenplan-08-kreuztabellen.html#cb425-1" aria-hidden="true" tabindex="-1"></a><span class="fu">CrossTable</span>(daten_ess<span class="sc">$</span>polintr, daten_ess<span class="sc">$</span>gndr, </span>
+<span id="cb425-2"><a href="wochenplan-08-kreuztabellen.html#cb425-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">prop.r =</span> F,</span>
+<span id="cb425-3"><a href="wochenplan-08-kreuztabellen.html#cb425-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">prop.t =</span> F,</span>
+<span id="cb425-4"><a href="wochenplan-08-kreuztabellen.html#cb425-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">prop.c =</span> F)</span></code></pre></div>
+<pre><code>## 
+##  
+##    Cell Contents
+## |-------------------------|
+## |                       N |
+## | Chi-square contribution |
+## |-------------------------|
+## 
+##  
+## Total Observations in Table:  200 
+## 
+##  
+##                       | daten_ess$gndr 
+##     daten_ess$polintr |      Male |    Female | Row Total | 
+## ----------------------|-----------|-----------|-----------|
+## Not at all interested |         8 |        11 |        19 | 
+##                       |     0.358 |     0.388 |           | 
+## ----------------------|-----------|-----------|-----------|
+##     Hardly interested |        30 |        37 |        67 | 
+##                       |     0.672 |     0.728 |           | 
+## ----------------------|-----------|-----------|-----------|
+##      Quite interested |        43 |        38 |        81 | 
+##                       |     0.018 |     0.020 |           | 
+## ----------------------|-----------|-----------|-----------|
+##       Very interested |        23 |        10 |        33 | 
+##                       |     1.988 |     2.153 |           | 
+## ----------------------|-----------|-----------|-----------|
+##          Column Total |       104 |        96 |       200 | 
+## ----------------------|-----------|-----------|-----------|
+## 
+## </code></pre>
+<p>Und dort sehen wir, dass vor allem die Unterschiede in der ersten Ausprägung (“polintr = 1”) die Differenz ausmachen.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-DiazBone2019" class="csl-entry">
+Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.
+</div>
+<div id="ref-Manderscheid2017" class="csl-entry">
+Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit r. Eine Einführung</em>. Wiesbaden: Springer VS.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="11">
+<li id="fn11"><p>Nutzen Sie falls möglich einen von Ihnen selbst zufällig erstellen Datensatz. Sollte dies aus einem Grund nicht geklappt haben finden Sie auf OLAT eine zur Verfügung gestellte CSV-Datei.<a href="wochenplan-08-kreuztabellen.html#fnref11" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="wochenplan-07-datenaufbereitung.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="wochenplan-09-faktoren.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/08_WP08_EinfuehrungDatenanalyse-Kreuztabellen.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

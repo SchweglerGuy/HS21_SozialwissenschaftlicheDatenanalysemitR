@@ -1,6 +1,6 @@
-# Wochenplan 09
+# Wochenplan 09: Faktoren
 
-...zur 09. & 10. Einheit, Umgang mit Faktoren
+...im Rahmen der 09. und  10.Einheit.
 
 ## Lernziele
 
@@ -15,18 +15,294 @@ Die folgenden konkreten Lernziele lassen sich für ein erstes Kennenlernen von F
 * Sie wissen, wie man Levels neu benennt, umsortiert, zusammenfasst und/oder nicht benötigte Levels entfernt. 
 
 
-## Aufgaben
+## Einführung Faktoren (Lösung Aufgaben)
 
-1. Laden Sie Ihr Datenimport-Skript und fügen Sie einen Abschnitt zur Definition und Aufbereitung einzelner Variablen als Faktoren ein. Arbeiten Sie anschliessend in einem R Markdown weiter.
+```{r include=FALSE}
+source(file = "Daten/ess_import_a.R")
+```
 
-2. Gehen Sie unseren Übungsdatensatz konzentriert durch und überlegen Sie, welche Variablen als geordnete oder ungeordnete Faktoren gespeichert werden sollten. 
+**Einführung:** Neben Vektoren (die wir bisher vor allem mit metrischen Variablen gleichgesetzt haben) sind Faktoren ein weiterer wichtiger Objekttyp der für die Organisation von sozialwissenschaftlichen Beobachtungen in Form von Variablen relevant ist [@Manderscheid2017, 35]. Dieser Objekttyp enthält nun nicht mehr die Zahlen in einer Reihe, sondern "Levels". Sie legen eine beschränkte Auswahl an Ausprägungen fest, welche eine Variable annehmen kann. Die Levels representieren dann benannte Elemente (die Labels) und wir können diese insbesondere für Variablen mit nominalen oder ordinalen Skalenniveau verwenden. Der Unterschied zwischen numerischen Variablen/Vektoren und kategorial Variablen/Faktoren wird in R wichtig, denn zwischen den Objekttypen wird differenziert. Das heisst das gewisse Funktionen nicht mehr mit Faktoren ausgeführt werden können.
 
-3. Definieren Sie nun jede dieser Variablen als Faktor (die einzige Ausnahme soll die Variable "isco08" sein).
+Im folgenden wird der Umgang mit Faktoren über die Möglichkeiten der Basisversion von R erläutert. Im Buch *R for Data Science* [@WickhamGrolemund2016, Kap.15] wird als mögliche Vertiefung das Paket "forcats" eingeführt, das Teil des sogenannten Tidyverse ist. Es bietet eine Vielfalt an Werkzeuge für den Umgang mit kategorialen Variablen und Faktoren.
 
-4. Überprüfen Sie mittels Kreuztabellen, ob Ihre Faktoren sinnvoll und fehlerfrei definiert sind. 
+Die Frage, welche Variablen wirklich zu Faktoren umgewandelt werden sollten, ist dabei gar nicht immer so klar. Drei Beispiele: “agea”, “pdwrk” und “happy” -- welche davon sollten zu Faktoren werden? Die Variable zu Alter ist ohne Zweifel eine metrische Variable und wir sollten sie als Vektor im Datensatz belassen. Die zweite Variable "pdwrk" ist hingegen klar eine nominale Variable und daher ein Faktor. Allerdings könnten wir diese eigentlich auch als numerische Variable im Datensatz belassen, da sie 0-1 kodiert ist. Solche "Dummy"-Variablen können wir in der Form oftmals in Verfahren integrieren (etwa bei Korrelationen oder Regressionen). Die Variable "happy" wiederum ist streng genommen eine ordinale Variable, und deshalb eigentlich ein Faktor. Allerdings behandeln wir Variablen mit über 5-6 Abstufungen meistens als metrische Variablen. "Happy" sollte daher als Vektor im Datensatz belassen werden.  
 
-5. Inkludieren Sie die einwandfrei funktionierenden Lösungen zur Faktorendefinition in Ihr Datenimportskript. Testen Sie danach, ob das Skript funktioniert: Löschen Sie Ihre Environment (und alle Objekte), laden Sie mittels `source()` den Datensatz neu und rufen Sie dann -- als Test -- eine als Faktor definierte Variable auf.
+Auch von Josias Bruder hat eine Frage zur Diskussion gestellt:
 
-&nbsp;
+> Entsprechen edulvla und eisced geordneten oder ungeordneten Faktoren? Gewissermassen stehen die einzelnen Ausbildungsstufen in einer Hierarchie, allerdings ist die Reihenfolge aufgrund des Wertes 0 (not possible to harmonise) unzulässig. Auch wirft die Bewertung von unterschiedenen Bildungslevel Fragen auf (im Sinne: was ist mehr Wert? / Besser?).
 
-Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "FL09_NameVorname.pdf" und geben das Dokument via OLAT vor der nächsten Einheit ab.
+Hier bietet sich eine einfach pragmatische Antwort auf der einen und eine etwas komplexere Antwort auf der anderen Seite an. Die pragmatische Antwort würde die Variable geordnet kodieren und akzeptieren, dass wir hier gesellschaftliche Vorstellungen von "besseren" Bildungsniveaus übernehmen. Gegebenenfalls könnte die Variable in einer zweiten Weise als ungeordneter Faktor abgespeichert werden um auch die Ausprägung "0" abzubilden. Die komplexere Antwort auf die Frage wäre, dass auch eine solche anscheinende Hierarchie zu einem Forschungsgegenstand werden kann. Siehe auch hierfür die Ergebnisse folgender [Studie](https://www.seco.admin.ch/seco/de/home/Publikationen_Dienstleistungen/Publikationen_und_Formulare/Arbeit/Arbeitsmarkt/Informationen_Arbeitsmarktforschung/wert_ausbildungen_schweizer_arbeitsmarkt.html), die feststellte, dass sich Löhne und Arbeitsmarkterfolg für verschiedene Bildungsabschlüsse weitgehend parallel entwickelt.
+
+Trotz all dieser Schwierigkeiten können die verschiedenen Variablen wie folgt aufgeteilt werden:
+
+* "cntry": Charakter-Konstante    
+* "essround": numerische Konstante  
+* "idno", "pspwght", "pweight", "yrbrn", "agea", "eduyrs" & "wkhtot" : numerische Variablen  
+* “happy” & “hinctna”: ebenfalls numerische Varablen (vgl. Anmerkungen unten)  
+* "gndr", "chldhm", "pdwrk", “edctn”, “uemp3m” & "isco08": ungeordnete Faktoren  
+* “polintr”, “edulvla” & “eisced”: geordnete Faktoren
+
+**Wiederholung zu geordneten und ungeordneten Faktoren:** Im folgenden wollen wir nun einige Faktoren im Datensatz definieren, etwa eine ungeordnete oder eben nominale Variable ("gndr"):
+```{r}
+table(daten_ess$gndr)
+daten_ess$gndr <- factor(daten_ess$gndr)
+levels(daten_ess$gndr) <- c("Male", "Female")
+table(daten_ess$gndr)
+```
+
+Wir können weiter auch unnötige/nicht benötigte Levels in einem (ungeordneten) Faktor entfernen ("uemp3m"):
+```{r}
+table(daten_ess$uemp3m)
+daten_ess$uemp3m <- factor(daten_ess$uemp3m)
+levels(daten_ess$uemp3m) <- c("Has been unemployed", "Has never been unemployed", "Refusal", "Don't know", "No answer")
+table(daten_ess$uemp3m)
+
+#Wir sehen nun, dass einige Levels keine Ausprägungen haben. Diese können wir anschliessend wieder entfernen über 'drop':
+str(daten_ess$uemp3m)
+?drop
+daten_ess$uemp3m <- daten_ess$uemp3m[drop=T]
+table(daten_ess$uemp3m)
+str(daten_ess$uemp3m)
+```
+
+Ebenfalls können wir einen geordneten Faktoren im Datensatz definieren anhand eines Beispiels ("eisced"):
+```{r}
+daten_ess$eisced <- factor(daten_ess$eisced, ordered = T)
+levels(daten_ess$eisced) <- c("ES-ISCED I",
+                              "ES-ISCED II", 
+                              "ES-ISCED IIIb",
+                              "ES-ISCED IIIa",
+                              "ES-ISCED IV",
+                              "ES-ISCED V1",
+                              "ES-ISCED V2")
+#Eine etwas andere Überprüfung:
+table(as.numeric(daten_ess$eisced), daten_ess$eisced)
+```
+*Als Hinweis*: Für solche (Kreuz-)Tabellen zur Überprüfung bietet sich die einfache `table()`-Funktion an. Natürlich kann auch `CrossTable()` des Paketes "gmodels" genutzt werden -- die Funktion scheint aber etwas zu komplex hierfür zu sein.
+
+Die Variable "polintr" als weiterer geordneter Faktor stellt uns vor ein Problem, da die Ausprägung "1" (und nicht etwa "4") dem höchsten Wert entspricht:
+```{r}
+table(daten_ess$polintr)
+daten_ess$polintr_v1 <- factor(daten_ess$polintr, ordered = T)
+levels(daten_ess$polintr_v1) <- c("Very interested", 
+                               "Quite interested", 
+                               "Hardly interested", 
+                               "Not at all interested")
+
+# So scheint die Reihenfolge noch nicht zu stimmen:
+str(daten_ess$polintr_v1)
+# Und diese Lösung scheint nur fehlende Werte zu ergeben?
+daten_ess$polintr_v1 <- ordered(daten_ess$polintr, 
+                             levels = c("Not at all interested", 
+                                        "Hardly interested", 
+                                        "Quite interested", 
+                                        "Very interested"))
+str(daten_ess$polintr_v1)
+
+# Wir müssen also einen Umgang machen:
+daten_ess$polintr_v2 <- factor(daten_ess$polintr, 
+                            levels =c(4,3,2,1), 
+                            ordered = T)
+str(daten_ess$polintr_v2)
+levels(daten_ess$polintr_v2) <- c("Not at all interested", "Hardly interested",
+                               "Quite interested", "Very interested")
+
+str(daten_ess$polintr_v2)
+table(daten_ess$polintr_v2)
+
+```
+
+
+Die Levels scheinen also auch direkt in der `factor()`-Funktion integrierbar zu sein. Lässt sich dies auch bei einer anderen (ungeordneten) Faktorvariable übernehmen ("chldhm")?
+```{r}
+#chldhm
+table(daten_ess$chldhm)
+daten_ess$chldhm_v1 <- factor(daten_ess$chldhm, 
+                              levels = c("Respondent lives with children at household grid",
+                                         "Does not", "Not available"))
+table(daten_ess$chldhm_v1)
+daten_ess$chldhm_v2 <- factor(daten_ess$chldhm, 
+                              levels = c("Respondent lives with children at household grid",
+                                         "Does not"))
+table(daten_ess$chldhm_v2)
+```
+Dies scheint nicht zu funktionieren. Was könnte hier nun das Problem gewesen sein? Für ein besseres Verständnis von Faktoren ist es lohnenswert, sich die Unterscheidung von Levels *und Labels* zu vergegenwärtigen (vgl. auch [hier](https://stackoverflow.com/questions/5869539/confusion-between-factor-levels-and-factor-labels)).
+
+**Levels und Labels:** Die Levels definieren, was in einem Faktor "reingehen" kann, also was von diesem als gültiges Datum angesehen wird. Die Labels bestimmen, was anschliessend vom Faktor ausgegeben wird. Wenn wir aber im Code die Definition des Faktors und die Definition von dessen Levels trennen,  ignorieren wir diese Unterscheidung:
+```{r}
+daten_ess$chldhm <- factor(daten_ess$chldhm)
+levels(daten_ess$chldhm) <- c("Respondent lives with children at household grid", 
+                              "Does not", "Not available")
+daten_ess$chldhm <- daten_ess$chldhm[drop=T]
+table(daten_ess$chldhm)
+```
+
+Wir können uns den Unterschied vergegenwärtigen, hier am Beispiel einer weiteren, ungeordneten kategorialen Variable ("pdwrk"):
+```{r}
+table(daten_ess$pdwrk)
+
+#Hier kodieren wir die Variable zu einem Charakterformat um und bauen einen Schreibfehler ein:
+daten_ess$pdwrk[daten_ess$pdwrk==0] <- "not marked" 
+daten_ess$pdwrk[daten_ess$pdwrk==1] <- "marked"
+daten_ess$pdwrk[18] <- "markwd" 
+class(daten_ess$pdwrk)
+table(daten_ess$pdwrk)
+
+#Anschliessend definieren wir die Variable als Faktor und bestimmen ihre Levels:
+daten_ess$pdwrk <- factor(daten_ess$pdwrk, 
+                          levels = c("not marked", "marked"))
+
+table(daten_ess$pdwrk)
+
+#Unser Schreibfehler wurde daher nicht akzeptiert ("er geht nicht in die Varialbe rein"):
+which(is.na(daten_ess$pdwrk))
+
+# Jetzt definieren wir in einem zweiten Schritt die Labels:
+daten_ess$pdwrk <- factor(factor(daten_ess$pdwrk), 
+                          labels = c("no paidwork for the last 7", "has been doing paid work"))
+table(daten_ess$pdwrk)
+```
+
+Diese Unterscheidung können wir nun gleichzeitig nutzen, etwa bei ungeordneten Faktoren (“edctn”):
+```{r}
+table(daten_ess$edctn)
+daten_ess$edctn <- factor(daten_ess$edctn,
+                          levels = c(0,1),
+                          labels = c("Not marked", "Marked"))
+table(daten_ess$edctn)
+```
+
+Ebenfalls können wir diesen Unterschied zwischen Levels und Labels nutzen, um fehlende Werte direkt auszuschliessend, etwa bei folgenden geordneten Faktor ("edulvla"):
+```{r}
+table(daten_ess$edulvla)
+daten_ess$edulvla <- factor(daten_ess$edulvla,
+                            levels = c(1,2,3,4,5),
+                            labels = c("ISCED 0-1",
+                                       "ISCED 2",
+                                       "ISCED 3",
+                                       "ISCED 4",
+                                       "ISCED 5-6"),
+                            ordered = T)
+table(daten_ess$edulvla)
+str(daten_ess$edulvla)
+summary(daten_ess$edulvla)
+```
+*Als Hinweis*: Da die Variable "edulvla" als geordneter Faktor definiert wird, wurde auch die Ausprägung "Other" (55) ausgeschlossen. Diese könnte als gültige Ausprägung integriert werden, wenn die Variable als ungeordnet-kategorial/nominal definiert würde.
+
+Nicht zuletzt hilft uns die Unterscheidungen von Levels und Labels bei dem komplizierten Fall der Variable "polintr":
+```{r}
+table(daten_ess$polintr)
+daten_ess$polintr <- factor(daten_ess$polintr, 
+                            levels = c(4,3,2,1),
+                            labels = c("Not at all interested", 
+                                        "Hardly interested", 
+                                        "Quite interested", 
+                                        "Very interested"),
+                            ordered = T)
+str(daten_ess$polintr)
+table(daten_ess$polintr)
+```
+
+**Eine kleine Aufgabe:** Wir können uns den Unterschied zwischen Levels und Labels auch nochmals an einer kleinen Aufgabe verdeutlichen. Versuchen Sie aus den beiden Variablen "edctn" und "pdwrk" eine neue Variable "beschaeft" zu erstellen. 
+```{r}
+table(daten_ess$edctn, daten_ess$pdwrk)
+```
+Erstellen Sie zuerst einen Charakter-Vektor für die neue Variable, bevor Sie diese zu einem Faktor umwandeln. Versuchen Sie dann die Trennung zwischen Levels und Labels zu beachten. Arbeiten Sie mit folgendes Levels...
+* working
+* eduction
+* both 
+* none
+...und mit beliebigen Labels.
+
+```{r}
+daten_ess$beschaeft <- 0 #da anschliessend Levels definiert werden können wir hier irgdeinen Wert einfügen.
+daten_ess$beschaeft[daten_ess$pdwrk=="has been doing paid work"] <- "working"
+daten_ess$beschaeft[daten_ess$edctn=="Marked"] <- "eduction"
+daten_ess$beschaeft[daten_ess$pdwrk=="has been doing paid work" &
+                      daten_ess$edctn=="Marked"] <- "both"
+daten_ess$beschaeft[daten_ess$pdwrk!="has been doing paid work" &
+                      daten_ess$edctn!="Marked"] <- "none"
+table(daten_ess$beschaeft)
+class(daten_ess$beschaeft)
+daten_ess$beschaeft <- factor(daten_ess$beschaeft,
+                              levels = c("working", 
+                                         "eduction", 
+                                         "both", 
+                                         "none"))
+table(daten_ess$beschaeft)
+daten_ess$beschaeft <- factor(daten_ess$beschaeft,
+                              levels = c("working", 
+                                         "eduction", 
+                                         "both", 
+                                         "none"),
+                              labels = c("Arbeitende Person", 
+                                         "Person in Ausbildung", 
+                                         "Arbeit und Ausbildung", 
+                                         "Weder Arbeit noch Ausbildung"))
+
+table(daten_ess$beschaeft)
+```
+
+
+**Integration ins Skript zur Datenaufbereitung:** Mit diesem Bewusstsein für Levels und Labels können wir alle kategorialen Variablen im Datensatz jeweils über einen Befehl definieren. Dieses Vorgehen wird dann Datenaufbereitungsskript integriert. Hier ein Vorschlag:
+```{r eval=FALSE}
+# Faktoren definieren
+## ungeordnete Faktoren
+daten_ess$gndr <- factor(daten_ess$gndr, 
+                         levels = c(1,2),
+                         labels = c("Male", "Female"))
+daten_ess$chldhm <- factor(daten_ess$chldhm, 
+                         levels = c(0,1),
+                         labels = c("Respondent lives with children at household grid",
+                                    "Does not"))
+daten_ess$pdwrk <- factor(daten_ess$pdwrk, 
+                         levels = c(1,2),
+                         labels = c("Not marked",
+                                    "Marked"))
+daten_ess$edctn <- factor(daten_ess$edctn, 
+                         levels = c(1,2),
+                         labels = c("Not marked",
+                                    "Marked"))
+daten_ess$uemp3m <- factor(daten_ess$uemp3m, 
+                         levels = c(1,2,7,8),
+                         labels = c("Yes", "No",
+                                    "Refusal", "Don't know"))
+## geordnete Faktoren
+daten_ess$polintr <- factor(daten_ess$polintr, 
+                            levels = c(4,3,2,1),
+                            labels = c("Not at all interested", 
+                                        "Hardly interested", 
+                                        "Quite interested", 
+                                        "Very interested"),
+                            ordered = T)
+daten_ess$edulvla <- factor(daten_ess$edulvla,
+                            levels = c(1,2,3,4,5),
+                            labels = c("ISCED 0-1",
+                                       "ISCED 2",
+                                       "ISCED 3",
+                                       "ISCED 4",
+                                       "ISCED 5-6"),
+                            ordered = T)
+
+daten_ess$eisced <- factor(daten_ess$eisced,
+                            levels = c(0,1,2,3,4,5,6,7),
+                            labels = c("Not possible to harmonise into ES-ISCED",
+                                       "ES-ISCED I",
+                                       "ES-ISCED II",
+                                       "ES-ISCED IIIb",
+                                       "ES-ISCED IIIa",
+                                       "ES-ISCED IV",
+                                       "ES-ISCED V1",
+                                       "ES-ISCED V2"),
+                            ordered = T)
+```
+
+Zur Überprüfung kann wie in der letzten Aufgabenstellung formuliert zuerst die Environment (und alle Objekte) gelöscht werden. Dies geht mit folgender Funktion:
+```{r}
+rm(list = ls())
+```
+Anschliessend kann der mittels `source()` der Datensatz neu geladen werden und -- als Test -- eine als Faktor definierte Variable aufgerufen werden:
+```{r}
+source(file = "Daten/ess_import.R")
+plot(daten_ess$gndr)
+```
