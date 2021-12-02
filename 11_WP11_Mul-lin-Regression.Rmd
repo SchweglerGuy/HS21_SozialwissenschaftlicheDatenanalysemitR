@@ -1,0 +1,25 @@
+# Wochenplan 11
+
+...zur 11. & 12. Einheit
+
+## Lernziele
+
+Im Rahmen des 11. Wochenplans wollen wir uns einem multiplen linearen Regressionsmodell widmen. Wie immer möchten wir uns dazu als erstes einen Überblick zu möglichen Variablen verschaffen und eine Fragestellung formulieren, bevor dann ein Modell berechnet und interpretiert werden kann. Anschliessend gilt es über eine grafische Residuenanalyse die Anwendungsvoraussetzungen für die multiple lineare Regression zu testen sowie über den Ausschluss von gewissen Fällen das Modell zu verbessern.
+
+Konkret lassen sich folgende Ziele für diesen nächsten Wochenplan festlegen:
+* Sie verstehen, wie Sie mittels Korrelationstabellen erste Ideen für ein multiples Modell sammeln können.
+* Sie können multiple lineare Regressionsanalysen in R korrekt modellieren, durchführen und interpretieren.
+* Sie verstehen, wie die Anwendung von `plot()` auf unser Ergebnisobjekt bei der Analyse der Qualität und Aussagekraft eines Regressionsmodells helfen kann.
+* Sie können Ausreisser in einem Regressionsmodell ausschliessen und die damit erreichten Veränderungen im Modell einschätzen.
+
+## Aufgaben
+
+1.	Laden Sie Ihr Datenimport-Skript. Arbeiten Sie anschliessend in einem R-Markdown-Dokument weiter.
+
+2.	Berechnen Sie mittels der Funktion `rcorr()`, die Teil des Paketes “Hmisc” ist, eine Korrelationstabelle zwischen den Variablen “wkhtot”, “agae”, “edulvla” und “chldhm”.
+
+3.	Interpretieren Sie die Korrelationstabelle (bzw. deren verschiedenen Teile): Wo sehen Sie bereits Zusammenhänge, wo nicht? Formulieren Sie anschliessend eine Fragestellung sowie eine Hypothese zu diesen Variablen für ein multiples lineares Regressionsmodell.
+
+4. Berechnen Sie anschliessend Ihr Regressionsmodell mittels der Funktion `lm()`. Speichern Sie das Modell wie immer als Objekt ab und interpretieren Sie es anschliessend.
+
+Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "FL11_NameVorname.pdf" und geben das Dokument via OLAT vor der nächsten Einheit ab.

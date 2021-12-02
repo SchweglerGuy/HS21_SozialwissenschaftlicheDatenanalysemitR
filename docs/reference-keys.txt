@@ -33,6 +33,9 @@ aufgaben-4
 wochenplan-09-faktoren
 lernziele-6
 einführung-faktoren-lösung-aufgaben
-wochenplan-10
+wochenplan-10-einführung-regression
 lernziele-7
 aufgaben-5
+wochenplan-11
+lernziele-8
+aufgaben-6

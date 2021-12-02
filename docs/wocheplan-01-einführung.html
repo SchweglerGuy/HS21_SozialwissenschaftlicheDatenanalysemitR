@@ -211,10 +211,15 @@ div.csl-indent {
 <li class="chapter" data-level="9.1" data-path="wochenplan-09-faktoren.html"><a href="wochenplan-09-faktoren.html#lernziele-6"><i class="fa fa-check"></i><b>9.1</b> Lernziele</a></li>
 <li class="chapter" data-level="9.2" data-path="wochenplan-09-faktoren.html"><a href="wochenplan-09-faktoren.html#einführung-faktoren-lösung-aufgaben"><i class="fa fa-check"></i><b>9.2</b> Einführung Faktoren (Lösung Aufgaben)</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="wochenplan-10.html"><a href="wochenplan-10.html"><i class="fa fa-check"></i><b>10</b> Wochenplan 10</a>
+<li class="chapter" data-level="10" data-path="wochenplan-10-einführung-regression.html"><a href="wochenplan-10-einführung-regression.html"><i class="fa fa-check"></i><b>10</b> Wochenplan 10: Einführung Regression</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="wochenplan-10.html"><a href="wochenplan-10.html#lernziele-7"><i class="fa fa-check"></i><b>10.1</b> Lernziele</a></li>
-<li class="chapter" data-level="10.2" data-path="wochenplan-10.html"><a href="wochenplan-10.html#aufgaben-5"><i class="fa fa-check"></i><b>10.2</b> Aufgaben</a></li>
+<li class="chapter" data-level="10.1" data-path="wochenplan-10-einführung-regression.html"><a href="wochenplan-10-einführung-regression.html#lernziele-7"><i class="fa fa-check"></i><b>10.1</b> Lernziele</a></li>
+<li class="chapter" data-level="10.2" data-path="wochenplan-10-einführung-regression.html"><a href="wochenplan-10-einführung-regression.html#aufgaben-5"><i class="fa fa-check"></i><b>10.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="wochenplan-11.html"><a href="wochenplan-11.html"><i class="fa fa-check"></i><b>11</b> Wochenplan 11</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="wochenplan-11.html"><a href="wochenplan-11.html#lernziele-8"><i class="fa fa-check"></i><b>11.1</b> Lernziele</a></li>
+<li class="chapter" data-level="11.2" data-path="wochenplan-11.html"><a href="wochenplan-11.html#aufgaben-6"><i class="fa fa-check"></i><b>11.2</b> Aufgaben</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -364,12 +369,12 @@ und R wird automatisch gestartet wird, wenn Sie RStudio starten <span class="cit
 <p>Dabei wird n - 1 verwendet, da bei kleineren Stichprobenumfängen die Standardabweichung überschätzt wird. Bei grösseren Stichprobenumfängen wird dies dann immer weniger wichtig:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="wocheplan-01-einführung.html#cb10-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>) <span class="co">#eine standardnormalverteilte Varialbe mit n = 50</span></span>
 <span id="cb10-2"><a href="wocheplan-01-einführung.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(z)</span></code></pre></div>
-<pre><code>## [1] 1.038562</code></pre>
+<pre><code>## [1] 0.9782287</code></pre>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="wocheplan-01-einführung.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(</span>
 <span id="cb12-2"><a href="wocheplan-01-einführung.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>((z <span class="sc">-</span> <span class="fu">mean</span>(z))<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb12-3"><a href="wocheplan-01-einführung.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">/</span> (<span class="fu">length</span>(z))</span>
 <span id="cb12-4"><a href="wocheplan-01-einführung.html#cb12-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-<pre><code>## [1] 1.038042</code></pre>
+<pre><code>## [1] 0.9777394</code></pre>
 
 </div>
 </div>

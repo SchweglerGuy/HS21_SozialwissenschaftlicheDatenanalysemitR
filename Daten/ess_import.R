@@ -4,9 +4,6 @@
 #write.csv(daten_ess, file = "Daten/ESS1-8e01_HS21.csv")
 daten_ess <- read.csv(file = "Daten/ESS1-8e01_HS21.csv")
 
-# nicht benoetigte Variablen loeschen
-## bisher keine nicht benoetigen Variablen vorhanden
-
 
 # Definieren von fehlenden Werten
 daten_ess$yrbrn[daten_ess$yrbrn==7777 |
@@ -16,6 +13,8 @@ daten_ess$agea[daten_ess$agea==999] <- NA
 daten_ess$edulvla[daten_ess$edulvla>5] <- NA
 daten_ess$eisced[daten_ess$eisced>7] <- NA
 daten_ess$eduyrs[daten_ess$eduyrs>76] <- NA
+daten_ess$wkhtot[daten_ess$wkhtot>200] <- NA
+daten_ess$hinctnta[daten_ess$hinctnta>10] <- NA
 
 # Fehler in den Faellen Korrigieren
 ## Fall 132
@@ -39,7 +38,7 @@ daten_ess$gndr <- factor(daten_ess$gndr,
                          levels = c(1,2),
                          labels = c("Male", "Female"))
 daten_ess$chldhm <- factor(daten_ess$chldhm, 
-                           levels = c(0,1),
+                           levels = c(1,2),
                            labels = c("Respondent lives with children at household grid",
                                       "Does not"))
 daten_ess$pdwrk <- factor(daten_ess$pdwrk, 
@@ -84,3 +83,7 @@ daten_ess$eisced <- factor(daten_ess$eisced,
                            ordered = T)
 
 
+
+# nicht benoetigte Variablen loeschen
+daten_ess$X <- NULL
+daten_ess$x <- NULL

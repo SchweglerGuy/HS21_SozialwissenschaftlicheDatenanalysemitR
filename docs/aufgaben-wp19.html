@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>15 04. Aufgaben WP19 | Sozialwissenschaftliche Datenanalyse mit R</title>
+  <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="15 04. Aufgaben WP19 | Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="15 04. Aufgaben WP19 | Sozialwissenschaftliche Datenanalyse mit R" />
+  
+  <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
+  
+
+<meta name="author" content="Kenneth Horvath &amp; Guy Schwegler" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lernziele-wp10.html"/>
+<link rel="next" href="vorstellung-wp11.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R - HS21</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Einführung</a></li>
+<li class="chapter" data-level="1" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html"><i class="fa fa-check"></i><b>1</b> Wocheplan 01: Einführung</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#sozialwissenschaftliche-datenanalyse"><i class="fa fa-check"></i><b>1.1</b> Sozialwissenschaftliche Datenanalyse</a></li>
+<li class="chapter" data-level="1.2" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#ziel-des-kurses"><i class="fa fa-check"></i><b>1.2</b> Ziel des Kurses</a></li>
+<li class="chapter" data-level="1.3" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#r-als-programm-rstudio"><i class="fa fa-check"></i><b>1.3</b> R als Programm &amp; RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#lernziele-der-ersten-woche"><i class="fa fa-check"></i><b>1.4</b> Lernziele der ersten Woche</a></li>
+<li class="chapter" data-level="1.5" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#aufgaben-der-ersten-woche"><i class="fa fa-check"></i><b>1.5</b> Aufgaben der ersten Woche</a></li>
+<li class="chapter" data-level="1.6" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#ergänzung-standardabweichung-zwischen-grundgesamtheit-und-stichprobe"><i class="fa fa-check"></i><b>1.6</b> Ergänzung: Standardabweichung zwischen Grundgesamtheit und Stichprobe</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="wochenplan-02-grundlagen-i.html"><a href="wochenplan-02-grundlagen-i.html"><i class="fa fa-check"></i><b>2</b> Wochenplan 02: Grundlagen I</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="wochenplan-02-grundlagen-i.html"><a href="wochenplan-02-grundlagen-i.html#lernziele"><i class="fa fa-check"></i><b>2.1</b> Lernziele</a></li>
+<li class="chapter" data-level="2.2" data-path="wochenplan-02-grundlagen-i.html"><a href="wochenplan-02-grundlagen-i.html#aufgaben"><i class="fa fa-check"></i><b>2.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="wochenplan-03-grundlagen-ii.html"><a href="wochenplan-03-grundlagen-ii.html"><i class="fa fa-check"></i><b>3</b> Wochenplan 03: Grundlagen II</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="wochenplan-03-grundlagen-ii.html"><a href="wochenplan-03-grundlagen-ii.html#lernziele-1"><i class="fa fa-check"></i><b>3.1</b> Lernziele</a></li>
+<li class="chapter" data-level="3.2" data-path="wochenplan-03-grundlagen-ii.html"><a href="wochenplan-03-grundlagen-ii.html#aufgaben-1"><i class="fa fa-check"></i><b>3.2</b> Aufgaben</a></li>
+<li class="chapter" data-level="3.3" data-path="wochenplan-03-grundlagen-ii.html"><a href="wochenplan-03-grundlagen-ii.html#ergänzung-seitenumbruch-im-rmarkdown"><i class="fa fa-check"></i><b>3.3</b> Ergänzung: Seitenumbruch im RMarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wochenplan-04-grafiken.html"><a href="wochenplan-04-grafiken.html"><i class="fa fa-check"></i><b>4</b> Wochenplan 04: Grafiken</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="wochenplan-04-grafiken.html"><a href="wochenplan-04-grafiken.html#lernziele-2"><i class="fa fa-check"></i><b>4.1</b> Lernziele</a></li>
+<li class="chapter" data-level="4.2" data-path="wochenplan-04-grafiken.html"><a href="wochenplan-04-grafiken.html#aufgaben-2"><i class="fa fa-check"></i><b>4.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="wochenplan-05-indizieren.html"><a href="wochenplan-05-indizieren.html"><i class="fa fa-check"></i><b>5</b> Wochenplan 05: Indizieren</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="wochenplan-05-indizieren.html"><a href="wochenplan-05-indizieren.html#lernziele-wp05"><i class="fa fa-check"></i><b>5.1</b> Lernziele WP05</a></li>
+<li class="chapter" data-level="5.2" data-path="wochenplan-05-indizieren.html"><a href="wochenplan-05-indizieren.html#hinweise-indizieren-subsetting"><i class="fa fa-check"></i><b>5.2</b> Hinweise Indizieren &amp; Subsetting</a></li>
+<li class="chapter" data-level="5.3" data-path="wochenplan-05-indizieren.html"><a href="wochenplan-05-indizieren.html#aufgaben-wp05"><i class="fa fa-check"></i><b>5.3</b> Aufgaben WP05</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="wochenplan-06-code-rezipieren.html"><a href="wochenplan-06-code-rezipieren.html"><i class="fa fa-check"></i><b>6</b> Wochenplan 06: Code Rezipieren</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="wochenplan-06-code-rezipieren.html"><a href="wochenplan-06-code-rezipieren.html#lernziele-3"><i class="fa fa-check"></i><b>6.1</b> Lernziele</a></li>
+<li class="chapter" data-level="6.2" data-path="wochenplan-06-code-rezipieren.html"><a href="wochenplan-06-code-rezipieren.html#besprechung-skript-standardfehler.r"><i class="fa fa-check"></i><b>6.2</b> Besprechung Skript “standardfehler.R”</a></li>
+<li class="chapter" data-level="6.3" data-path="wochenplan-06-code-rezipieren.html"><a href="wochenplan-06-code-rezipieren.html#ggplot2-darstellung"><i class="fa fa-check"></i><b>6.3</b> ggplot2 Darstellung</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="wochenplan-07-datenaufbereitung.html"><a href="wochenplan-07-datenaufbereitung.html"><i class="fa fa-check"></i><b>7</b> Wochenplan 07: Datenaufbereitung</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="wochenplan-07-datenaufbereitung.html"><a href="wochenplan-07-datenaufbereitung.html#lernziele-4"><i class="fa fa-check"></i><b>7.1</b> Lernziele</a></li>
+<li class="chapter" data-level="7.2" data-path="wochenplan-07-datenaufbereitung.html"><a href="wochenplan-07-datenaufbereitung.html#aufgaben-3"><i class="fa fa-check"></i><b>7.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="wochenplan-08-kreuztabellen.html"><a href="wochenplan-08-kreuztabellen.html"><i class="fa fa-check"></i><b>8</b> Wochenplan 08: Kreuztabellen</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="wochenplan-08-kreuztabellen.html"><a href="wochenplan-08-kreuztabellen.html#lernziele-5"><i class="fa fa-check"></i><b>8.1</b> Lernziele</a></li>
+<li class="chapter" data-level="8.2" data-path="wochenplan-08-kreuztabellen.html"><a href="wochenplan-08-kreuztabellen.html#aufgaben-4"><i class="fa fa-check"></i><b>8.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="wochenplan-09-faktoren.html"><a href="wochenplan-09-faktoren.html"><i class="fa fa-check"></i><b>9</b> Wochenplan 09: Faktoren</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="wochenplan-09-faktoren.html"><a href="wochenplan-09-faktoren.html#lernziele-6"><i class="fa fa-check"></i><b>9.1</b> Lernziele</a></li>
+<li class="chapter" data-level="9.2" data-path="wochenplan-09-faktoren.html"><a href="wochenplan-09-faktoren.html#einführung-faktoren-lösung-aufgaben"><i class="fa fa-check"></i><b>9.2</b> Einführung Faktoren (Lösung Aufgaben)</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="wochenplan-10-einführung-regression.html"><a href="wochenplan-10-einführung-regression.html"><i class="fa fa-check"></i><b>10</b> Wochenplan 10: Einführung Regression</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="wochenplan-10-einführung-regression.html"><a href="wochenplan-10-einführung-regression.html#lernziele-7"><i class="fa fa-check"></i><b>10.1</b> Lernziele</a></li>
+<li class="chapter" data-level="10.2" data-path="wochenplan-10-einführung-regression.html"><a href="wochenplan-10-einführung-regression.html#aufgaben-5"><i class="fa fa-check"></i><b>10.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="wochenplan-11.html"><a href="wochenplan-11.html"><i class="fa fa-check"></i><b>11</b> Wochenplan 11</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="wochenplan-11.html"><a href="wochenplan-11.html#lernziele-8"><i class="fa fa-check"></i><b>11.1</b> Lernziele</a></li>
+<li class="chapter" data-level="11.2" data-path="wochenplan-11.html"><a href="wochenplan-11.html#aufgaben-6"><i class="fa fa-check"></i><b>11.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="12" data-path="rückblick-faktoren.html"><a href="rückblick-faktoren.html"><i class="fa fa-check"></i><b>12</b> 1. Rückblick Faktoren</a></li>
+<li class="chapter" data-level="13" data-path="einführung-einheit.html"><a href="einführung-einheit.html"><i class="fa fa-check"></i><b>13</b> 2. Einführung Einheit</a></li>
+<li class="chapter" data-level="14" data-path="lernziele-wp10.html"><a href="lernziele-wp10.html"><i class="fa fa-check"></i><b>14</b> 03. Lernziele WP10</a></li>
+<li class="chapter" data-level="15" data-path="aufgaben-wp19.html"><a href="aufgaben-wp19.html"><i class="fa fa-check"></i><b>15</b> 04. Aufgaben WP19</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="aufgaben-wp19.html"><a href="aufgaben-wp19.html#einführung-regression-verschiedene-modelle"><i class="fa fa-check"></i><b>15.1</b> 4.1 Einführung Regression: verschiedene Modelle</a></li>
+<li class="chapter" data-level="15.2" data-path="aufgaben-wp19.html"><a href="aufgaben-wp19.html#interpretation-der-modelle-breakout-rooms"><i class="fa fa-check"></i><b>15.2</b> 4.2 Interpretation der Modelle (Breakout Rooms)</a></li>
+<li class="chapter" data-level="15.3" data-path="aufgaben-wp19.html"><a href="aufgaben-wp19.html#gemeinsame-interpretation"><i class="fa fa-check"></i><b>15.3</b> 4.3 Gemeinsame Interpretation</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="vorstellung-wp11.html"><a href="vorstellung-wp11.html"><i class="fa fa-check"></i><b>16</b> 05. Vorstellung WP11</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="vorstellung-wp11.html"><a href="vorstellung-wp11.html#lernziele-9"><i class="fa fa-check"></i><b>16.1</b> Lernziele</a></li>
+<li class="chapter" data-level="16.2" data-path="vorstellung-wp11.html"><a href="vorstellung-wp11.html#aufgaben-7"><i class="fa fa-check"></i><b>16.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="./">Universität Luzern</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sozialwissenschaftliche Datenanalyse mit R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="aufgaben-wp19" class="section level1" number="15">
+<h1><span class="header-section-number">15</span> 04. Aufgaben WP19</h1>
+<div id="einführung-regression-verschiedene-modelle" class="section level2" number="15.1">
+<h2><span class="header-section-number">15.1</span> 4.1 Einführung Regression: verschiedene Modelle</h2>
+<p>Aufgabe 1: Laden Sie Ihr Datenimport-Skript. Arbeiten Sie anschliessend in einem R Markdown-Dokument weiter.</p>
+<div class="sourceCode" id="cb540"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb540-1"><a href="aufgaben-wp19.html#cb540-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Nochmals zur Vollständigkeit:</span></span>
+<span id="cb540-2"><a href="aufgaben-wp19.html#cb540-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/Users/SchweglG/R_Daten/06_HS21/R_Seminar-HS21&quot;</span>)</span>
+<span id="cb540-3"><a href="aufgaben-wp19.html#cb540-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;ess_import.R&quot;</span>)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Formulieren Sie zwei inhaltliche Fragestellungen, die Sie anhand unserer ESS-Daten mit einem einfachen (bivariaten) Regressionsmodell beantworten können. Eine der beiden Fragestellungen soll eine kategoriale Variable als unabhängige Variable enthalten. Nutzen Sie je ein Streudiagramm, um erste Hinweis zu Ihren Fragestellungen zu erhalten.</li>
+</ol>
+<p>Die bivariate Regressionsanalyse berechnet die gerichtete (asymmetrische) Beziehung zwischen zwei metrischen Variablen, in der einfachsten Form einer unabhängigen Variable X auf eine abhängige Variable Y. Dabei repräsentiert X die Ursache und Y die Wirkung. Im Rahmen einer solchen Regressionsanalyse können auch kategoriale Variablen als unabhängige Variablen hinzugezogen werden. Bei kategorialen Variablen mit mehreren Ausprägungen wird allerdings ein multiples Modell generiert, das für die jeweiligen Ausprägungen einmal eine Referenzkategorie und für den Rest eine Dummy-Variable erstellt. Wir werden anschliessend noch sehen, was dies genau bedeutet.</p>
+<p>Im folgenden Arbeitn wir mit vier verschiedenen Beispielen, zuerst zwei für rein metrische Modelle:</p>
+<ol style="list-style-type: decimal">
+<li>“eduyrs” &amp; “wkhtot”: Oesch, Leutener, Keller</li>
+</ol>
+<div class="sourceCode" id="cb541"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb541-1"><a href="aufgaben-wp19.html#cb541-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(daten_ess<span class="sc">$</span>eduyrs, daten_ess<span class="sc">$</span>wkhtot)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>“agea” &amp; “happy”: Lattmann, Bazzingher</li>
+</ol>
+<div class="sourceCode" id="cb542"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb542-1"><a href="aufgaben-wp19.html#cb542-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(daten_ess<span class="sc">$</span>agea, daten_ess<span class="sc">$</span>happy)</span></code></pre></div>
+<p>Und zwei Beispiele für Modelle, die eine kategoriale Variable enhalten:</p>
+<ol start="3" style="list-style-type: decimal">
+<li>“gndr” &amp; “edyurs”: Meyer, Haab</li>
+</ol>
+<div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb543-1"><a href="aufgaben-wp19.html#cb543-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(daten_ess<span class="sc">$</span>gndr, daten_ess<span class="sc">$</span>eduyrs)</span>
+<span id="cb543-2"><a href="aufgaben-wp19.html#cb543-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">jitter</span>(<span class="fu">as.numeric</span>(daten_ess<span class="sc">$</span>gndr)), </span>
+<span id="cb543-3"><a href="aufgaben-wp19.html#cb543-3" aria-hidden="true" tabindex="-1"></a>     <span class="fu">jitter</span>(<span class="fu">as.numeric</span>(daten_ess<span class="sc">$</span>eduyrs)))</span></code></pre></div>
+<p>Als Frage vorab: Hier scheint kein Zusammenhang vorhanden zu sein. Was ist das Problem? Und wie könnten wir das anders angehen?</p>
+<ol start="4" style="list-style-type: decimal">
+<li>“eisced” &amp; “Einkommen”:</li>
+</ol>
+<div class="sourceCode" id="cb544"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb544-1"><a href="aufgaben-wp19.html#cb544-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(daten_ess<span class="sc">$</span>eisced, daten_ess<span class="sc">$</span>hinctnta)</span>
+<span id="cb544-2"><a href="aufgaben-wp19.html#cb544-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">jitter</span>(<span class="fu">as.numeric</span>(daten_ess<span class="sc">$</span>eisced)), </span>
+<span id="cb544-3"><a href="aufgaben-wp19.html#cb544-3" aria-hidden="true" tabindex="-1"></a>     <span class="fu">jitter</span>(<span class="fu">as.numeric</span>(daten_ess<span class="sc">$</span>hinctnta)))</span>
+<span id="cb544-4"><a href="aufgaben-wp19.html#cb544-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(daten_ess<span class="sc">$</span>eisced, <span class="fu">factor</span>(daten_ess<span class="sc">$</span>hinctnta))</span></code></pre></div>
+<p>Bei folgendem Beispiele scheint Problem vorhanden zu sein… Was ist schief gelaufen?</p>
+<p>“agea” &amp; “polintr”: Sigrist, Lattmann, Haab</p>
+<div class="sourceCode" id="cb545"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb545-1"><a href="aufgaben-wp19.html#cb545-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">jitter</span>(daten_ess<span class="sc">$</span>agea), </span>
+<span id="cb545-2"><a href="aufgaben-wp19.html#cb545-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">jitter</span>(<span class="fu">as.numeric</span>(daten_ess<span class="sc">$</span>polintr)))</span></code></pre></div>
+<p>Als Frage: Wäe dasselbe Problem bei “happy” auch vorhanden? Und was wäre bei “eisced?”</p>
+<div class="sourceCode" id="cb546"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb546-1"><a href="aufgaben-wp19.html#cb546-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(daten_ess<span class="sc">$</span>happy)</span>
+<span id="cb546-2"><a href="aufgaben-wp19.html#cb546-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(daten_ess<span class="sc">$</span>eisced)</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Formulieren und überprüfen Sie Ihre beiden Modelle mittels der Funktion <code>lm()</code>. Machen Sie sich dazu vorab mit dieser Funktion vertraut (Hilfeseite der Funktion, Online-Tutorials …). Erläutern Sie <code>lm()</code> kurz in eigenen Worten!</li>
+</ol>
+<div class="sourceCode" id="cb547"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb547-1"><a href="aufgaben-wp19.html#cb547-1" aria-hidden="true" tabindex="-1"></a>?lm</span></code></pre></div>
+<p>Die Funktion <code>lm()</code> ist der Befehl in R zur Berechnung von linearen Modellen allgemein. Er “übersetzt” die normale Regressionsgleichung: y = b0 + b1x + e zur Formulierung <code>response ~ term</code>. Mit der überstetzten Formel können dann auch multiple, lineare Regressionen dargestellt werden, <code>response ~ term + term</code>, oder um Interaktionsterme ergänzt werden: <code>response ~ term + term * term</code>. Die weiteren Argumente (neben der eigentlichen Formel sowie der Angabe des Datensatzes) erlauben etwa die Daten zu unterteilen, Gewichtungen einzubauen oder den Umgang mit fehlenden Werten genauer zu bestimmen. Im Folgenden brauchen wir die Funktion und ihre Argumente aber nicht weiter zu spezifizieren, sondern die Standardeinstellungen der Argumente reichen aus.</p>
+<p>Wir wollen hier zwei Modelle ins Zentrum rücken, nämlich der Zusammenhang zwischen Bildungsjahren und Arbeitsstunden (“eduyrs” &amp; “wkhtot,” a) und Ausbildungsniveau und Einkommen (b) – bei letzterem greifen wir aber auf “edulvla” (anstatt “eisced”), um das Einkommen zu erklären (“hinctnta”) .</p>
+<div class="sourceCode" id="cb548"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb548-1"><a href="aufgaben-wp19.html#cb548-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Modell a)</span></span>
+<span id="cb548-2"><a href="aufgaben-wp19.html#cb548-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> wkhtot <span class="sc">~</span> eduyrs, <span class="at">data =</span> daten_ess)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = wkhtot ~ eduyrs, data = daten_ess)
+## 
+## Coefficients:
+## (Intercept)       eduyrs  
+##     42.0991      -0.3883</code></pre>
+<div class="sourceCode" id="cb550"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb550-1"><a href="aufgaben-wp19.html#cb550-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Modell b)</span></span>
+<span id="cb550-2"><a href="aufgaben-wp19.html#cb550-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> hinctnta <span class="sc">~</span> edulvla, <span class="at">data =</span> daten_ess)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = hinctnta ~ edulvla, data = daten_ess)
+## 
+## Coefficients:
+## (Intercept)    edulvla.L    edulvla.Q    edulvla.C    edulvla^4  
+##      5.0260       3.4796      -0.6466       0.2904      -0.4557</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Weisen Sie Ihre Regressionsanalysen jeweils einem “Ergebnisobjekt” zu! Wie ist dieses Objekt aufgebaut? Welche Komponenten und Informationen beinhaltet es?</li>
+</ol>
+<div class="sourceCode" id="cb552"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb552-1"><a href="aufgaben-wp19.html#cb552-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Modell a)</span></span>
+<span id="cb552-2"><a href="aufgaben-wp19.html#cb552-2" aria-hidden="true" tabindex="-1"></a>modell_a <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> wkhtot <span class="sc">~</span> eduyrs, <span class="at">data =</span> daten_ess)</span>
+<span id="cb552-3"><a href="aufgaben-wp19.html#cb552-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb552-4"><a href="aufgaben-wp19.html#cb552-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Modell b)</span></span>
+<span id="cb552-5"><a href="aufgaben-wp19.html#cb552-5" aria-hidden="true" tabindex="-1"></a>modell_b <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> hinctnta <span class="sc">~</span> edulvla, <span class="at">data =</span> daten_ess)</span></code></pre></div>
+<p>Die Funktion <code>lm()</code> generiert uns eine Listenobjekt mit 13 bzw. 14 weiteren Unterobjekten. Die genauen Details, was in diesen Ergebnisobjekten zu finden ist, können wir der Hilfeseite unter <em>Value</em> entnehmen.</p>
+<div class="sourceCode" id="cb553"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb553-1"><a href="aufgaben-wp19.html#cb553-1" aria-hidden="true" tabindex="-1"></a>?lm</span>
+<span id="cb553-2"><a href="aufgaben-wp19.html#cb553-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(modell_a)</span>
+<span id="cb553-3"><a href="aufgaben-wp19.html#cb553-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(modell_b)</span></code></pre></div>
+<blockquote>
+<p>An object of class ‘lm’ is a list containing at least the following components:<br />
+1. coefficients: a named vector of coefficients<br />
+2. residuals: the residuals, that is response minus fitted values.<br />
+3. effects: the uncorrelated single-degree-of-freedom values obtained by projecting the data onto the successive orthogonal subspaces generated by the QR decomposition during the fitting process
+4. rank: the numeric rank of the fitted linear model.<br />
+5. fitted.values: the fitted mean values.<br />
+6. assign: [GS: Nummern der Variablen]<br />
+7. qr: [GS: Werte des Vorhersagemodells/kleinste Quadrate in den beiden Dimensionen]
+weights: (only for weighted fits) the specified weights.<br />
+8. df.residual: the residual degrees of freedom.<br />
+9. na.action: (where relevant) information returned by model.frame on the special handling of NAs.<br />
+10. xlevels: (only where relevant) a record of the levels of the factors used in fitting.<br />
+11. call: the matched call.<br />
+12. terms: the terms object used.<br />
+contrasts: (only where relevant) the contrasts used.<br />
+13. model: if requested (the default), the model frame used.</p>
+</blockquote>
+<p>Wie immer können wir auf diese Elemente zugreifen, z.Bsp. um uns ein Streudiagramm der Residuen ausgeben zu lassen:</p>
+<div class="sourceCode" id="cb554"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb554-1"><a href="aufgaben-wp19.html#cb554-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modell_a<span class="sc">$</span>model<span class="sc">$</span>wkhtot, modell_a<span class="sc">$</span>residuals)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-214-1.png" width="672" /></p>
+<p>Beim Ergebnisobjekt des Modells b) sehen wir nun eine Veränderung, nämliche dass als weiteres Element der Liste “contrasts” hinzugekommen ist (als Hinweis auf die “Kontrastierung” bei der kategorialen, unabhängigen Variable, siehe auch unten).</p>
+</div>
+<div id="interpretation-der-modelle-breakout-rooms" class="section level2" number="15.2">
+<h2><span class="header-section-number">15.2</span> 4.2 Interpretation der Modelle (Breakout Rooms)</h2>
+<ol start="5" style="list-style-type: decimal">
+<li>Interpretieren Sie die Ergebnisse Ihrer beiden Regressionsanalysen.</li>
+</ol>
+<p>Aufteilen in Breakout-Rooms, zufällig in 2er Teams und dann nochmals das Ergebnis der <code>summary()</code>-Funktion des eigenen Modells druchgehen, einmal das rein metrische Modell und einmal dasjenige mit einer kategorialen Variable.</p>
+</div>
+<div id="gemeinsame-interpretation" class="section level2" number="15.3">
+<h2><span class="header-section-number">15.3</span> 4.3 Gemeinsame Interpretation</h2>
+<p>Für die Interpretation des Modells bzw. des Objektes verwenden wir die <code>summary()</code>-Funktion. Diese können wir anhand unseres ersten Modells erläutern:</p>
+<div class="sourceCode" id="cb555"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb555-1"><a href="aufgaben-wp19.html#cb555-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modell_a)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = wkhtot ~ eduyrs, data = daten_ess)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -38.605  -5.993   4.454   9.890  51.783 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  42.0991     4.1782   10.08   &lt;2e-16 ***
+## eduyrs       -0.3883     0.3563   -1.09    0.277    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 16.22 on 179 degrees of freedom
+##   (19 Beobachtungen als fehlend gelöscht)
+## Multiple R-squared:  0.006588,   Adjusted R-squared:  0.001039 
+## F-statistic: 1.187 on 1 and 179 DF,  p-value: 0.2774</code></pre>
+<p>Die Funktion gibt uns anschliessend verschiedenste Kennzahlen aus. Die Auflistung beginnt mit der Formel (<em>Call</em>), geht über zu einer kurzen Beschreibung der Verteilung der Residuen (<em>Residuals</em>), bevor dann die Koeffizienten und anschliessend eine Übersicht zum gesamten Modell folgen.</p>
+<p>Zuerst sind es die eigentlichen Werte der Koeffizienten (<em>Estimate</em>), d.h. der b0-Wert (<em>Intercept</em>) und der Koeffizient der unabhängigen Variable. Ersterer gibt den Vorhersagewert an, wenn die unabhängige Variable 0 wäre (34.3691), während letzterer die Zunahme des Vorhersagewertes bei einer Zunahme der unabhängigen Variable um 1 angibt (0.3596).</p>
+<p>Die zweite Kennzahl ist der Standardfehler (<em>Std.Error</em>), also die durchschnittliche Abweichung der Koeffizienten, da diese ja auf Stichprobendaten beruhen. Das heisst wir würden einen neuen Wert bekommen, wenn wir eine neue Stichprobe ziehen würden und dieser Wert würde im Durchschnitt um 0.3251 abweichen. Als Daumenregel für diesen Wert: Das Ergebnis von Regressionskoeffizient – (2 x SE) sollte nicht 0 überschreiten beziehungsweise im Vergleich zum Koeffizienten das Vorzeichen wechseln. Sonst wäre das ein Hinweis, dass kein Einfluss der unabhängigen Variable besteht (da jeweils rund +2x &amp; -2x Standardfehler rund 95% der Ausprägungen einer Normalverteilung repräsentieren). Es gilt also den Standardfehler im Zusammenhang zum Regressionskoeffizient zu betrachten.</p>
+<p>Die dritte Kennzahl ist der T-Wert (<em>t value</em>), was der eigentlichen Testwerte für die t-Verteilung repräsentiert. Als Daumenregel: T Wert die grösser als 2 sind werden meistens signifikant sein.</p>
+<p>Der p-Wert (<em>Pr(&gt;|t|)</em>) ist der Signifikanzwert für einzelne Regressionskoeffizienten. Wiederum: Die Kennzahl gibt uns an, wie wahrscheinlich es ist, einen solchen (oder grösseren) Wert für den Regressionskoeffizienten zu erhalten unter der Annahme, dass die Nullhypothese in der Grundgesamtheit zutreffen würde. Zusätzlich findet sich auch jeweils noch der Hinweis zu den Sternchen als Signifikanzcodes.</p>
+<p>Anschliessend folgen weitere Kennwerte zum gesamten Modell:</p>
+<p>Die Standardabweichung der Residuen wird ausgegeben (<em>Residual standard error</em>) sowie die Freiheitsgrade (<em>degrees of freedom</em>), das heisst N - J - 1, wobei J die Anzahl unabhängiger Variablen ist.</p>
+<p>Danach folgen das multiple R-Quadrart (<em>Multiple R-squared</em>) sowie (<em>Adjusted R-squared</em>). Ersteres gibt uns die Erklärungsleistung des Modells sowie zugleich die Stärke des gerichteten, statistischen Zusammenhangs zwischen X und Y an. Letzteres ist ein Gütemass, dass die Erklärungsleistung im Bezug zu den Anzahl Variablen betrachtet und den Wert für Stichprobendaten etwas anpasst.</p>
+<p>Schliesslich finden sich noch die Angaben zum F-Test (<em>F-statistic</em>). Dieser Wert weisst aus, ob das Modell auch über eine Erklärungsleistung in der Grundgesamtheit verfügt. Hier wird global getestet, ob der Regressionsansatz insgesamt etwas aussagt <span class="citation">(<a href="#ref-DiazBone2019" role="doc-biblioref">Diaz-Bone 2019, 221</a>)</span>. Dazu gibt uns das Modell sowohl den konkreten F-Test-Wert (und wiederum die Freiheitsgrade der Verteilung) als auch den p-Wert an. Dieser sagt uns nun aus, ob das Modell auch in der Grundgesamtheit eine Erklärungsleistung besitzt (wiederum wie wahrscheinlich es ist, einen solchen oder grösseren R-Quadrat Wert zu erhalten unter der Annahme, dass das die Nullhypothese zutrifft).</p>
+<p>Als Rückfrage: Sollten wir den F-Test/den P-Wert des gesammten Modells überhaupt noch interpretieren, wenn bereits sehr tiefe Werte der Koeffiziienten in der Stichprobe vorhanden sind?</p>
+<div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb557-1"><a href="aufgaben-wp19.html#cb557-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modell_b)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = hinctnta ~ edulvla, data = daten_ess)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.0448 -1.9184 -0.0448  1.9552  5.5000 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   5.0260     0.3852  13.048  &lt; 2e-16 ***
+## edulvla.L     3.4796     0.9461   3.678 0.000332 ***
+## edulvla.Q    -0.6466     0.8128  -0.796 0.427630    
+## edulvla.C     0.2904     0.9603   0.302 0.762778    
+## edulvla^4    -0.4557     0.6996  -0.651 0.515840    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.238 on 143 degrees of freedom
+##   (52 Beobachtungen als fehlend gelöscht)
+## Multiple R-squared:  0.1921, Adjusted R-squared:  0.1695 
+## F-statistic: 8.503 on 4 and 143 DF,  p-value: 3.49e-06</code></pre>
+<p>Im Unterschied zum ersten Modell sehen wir beim zweiten Modell, dass die einzelnen Ausprägungen der kategorialen Variable eigene Koeffizienten und zugehörige Kennwerte erhalten. R wandelt kategoriale, unabhängige Variablen automatisch in Dummy-Variablen um, die jeweils mit 0 und 1 kodiert sind. Jeder dieser Koeffizienten der Dummy-Variablen gibt die Veränderung gegenüber der Referenzkategorie an (5.0263), die jetzt auch b0 entspricht. Im Umgang mit kategorialen Variablen mit mehreren Ausprägungen wird also bereits ein multiples lineares Modell erstellt.</p>
+<p>Die etwas speziellen Bezeichnungen der Kategorien resultieren daraus, da die Variable ein geordneter Faktor ist und geben eine Rangfolge an (ohne jetzt weiter auf die genauen Bezeichnungen einzugehen): ): L=<em>linear trend</em> [1 dimensional], Q=<em>quadratic trend</em> [2 dimensional], C=<em>cubic trend</em> [3 dimensional], ^4=[4 dimensional].</p>
+<p>Wenn wir keinen geordneten Faktor verwenden dann werden uns auch die eigentlichen Namen der Levels ausgegeben:</p>
+<div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb559-1"><a href="aufgaben-wp19.html#cb559-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>edulvla_no <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">as.numeric</span>(daten_ess<span class="sc">$</span>edulvla),</span>
+<span id="cb559-2"><a href="aufgaben-wp19.html#cb559-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>),</span>
+<span id="cb559-3"><a href="aufgaben-wp19.html#cb559-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;ISCED 0-1&quot;</span>,</span>
+<span id="cb559-4"><a href="aufgaben-wp19.html#cb559-4" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 2&quot;</span>,</span>
+<span id="cb559-5"><a href="aufgaben-wp19.html#cb559-5" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 3&quot;</span>,</span>
+<span id="cb559-6"><a href="aufgaben-wp19.html#cb559-6" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 4&quot;</span>,</span>
+<span id="cb559-7"><a href="aufgaben-wp19.html#cb559-7" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 5-6&quot;</span>),</span>
+<span id="cb559-8"><a href="aufgaben-wp19.html#cb559-8" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> F)</span>
+<span id="cb559-9"><a href="aufgaben-wp19.html#cb559-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb559-10"><a href="aufgaben-wp19.html#cb559-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb559-11"><a href="aufgaben-wp19.html#cb559-11" aria-hidden="true" tabindex="-1"></a>modell_b_no <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> hinctnta <span class="sc">~</span> edulvla_no, <span class="at">data =</span> daten_ess)</span>
+<span id="cb559-12"><a href="aufgaben-wp19.html#cb559-12" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modell_b_no)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = hinctnta ~ edulvla_no, data = daten_ess)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.0448 -1.9184 -0.0448  1.9552  5.5000 
+## 
+## Coefficients:
+##                     Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)            2.333      1.292   1.806 0.073075 .  
+## edulvla_noISCED 2      2.167      1.365   1.588 0.114587    
+## edulvla_noISCED 3      2.711      1.321   2.053 0.041914 *  
+## edulvla_noISCED 4      4.000      1.827   2.189 0.030235 *  
+## edulvla_noISCED 5-6    4.585      1.331   3.444 0.000752 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.238 on 143 degrees of freedom
+##   (52 Beobachtungen als fehlend gelöscht)
+## Multiple R-squared:  0.1921, Adjusted R-squared:  0.1695 
+## F-statistic: 8.503 on 4 and 143 DF,  p-value: 3.49e-06</code></pre>
+<p>Jetzt sehen wir auch, dass das Modell besser “performt,” da keine Ordnung mehr in den Faktoren angenommen wird. Trotzdem bleiben die einzelnen Kategorien als Koeffizienten nicht signifikant…</p>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-DiazBone2019" class="csl-entry">
+Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lernziele-wp10.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vorstellung-wp11.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/HS21_R_VorbereitungE11.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
