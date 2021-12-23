@@ -221,6 +221,14 @@ div.csl-indent {
 <li class="chapter" data-level="11.1" data-path="wochenplan-11.html"><a href="wochenplan-11.html#lernziele-8"><i class="fa fa-check"></i><b>11.1</b> Lernziele</a></li>
 <li class="chapter" data-level="11.2" data-path="wochenplan-11.html"><a href="wochenplan-11.html#aufgaben-6"><i class="fa fa-check"></i><b>11.2</b> Aufgaben</a></li>
 </ul></li>
+<li class="chapter" data-level="12" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html"><i class="fa fa-check"></i><b>12</b> Ergänzungen Einheit 14 (WP13/14)</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#dateiformat-rds"><i class="fa fa-check"></i><b>12.1</b> Dateiformat RDS</a></li>
+<li class="chapter" data-level="12.2" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#relevanz-von-stichprobengrösse"><i class="fa fa-check"></i><b>12.2</b> Relevanz von Stichprobengrösse</a></li>
+<li class="chapter" data-level="12.3" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#übung-zur-multiplen-linearen-regression"><i class="fa fa-check"></i><b>12.3</b> Übung zur multiplen, linearen Regression</a></li>
+<li class="chapter" data-level="12.4" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#anwendungsvoraussetzungen"><i class="fa fa-check"></i><b>12.4</b> Anwendungsvoraussetzungen</a></li>
+<li class="chapter" data-level="12.5" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#exkurs-residuenwolken"><i class="fa fa-check"></i><b>12.5</b> Exkurs: Residuenwolken</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="./">Universität Luzern</a></li>
@@ -313,7 +321,7 @@ div.csl-indent {
 <span id="cb362-3"><a href="wochenplan-08-kreuztabellen.html#cb362-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>gndr)</span></code></pre></div>
 <pre><code>## 
 ##   Male Female 
-##    113     87</code></pre>
+##    100    100</code></pre>
 <div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="wochenplan-08-kreuztabellen.html#cb364-1" aria-hidden="true" tabindex="-1"></a><span class="do">##die Funktion</span></span>
 <span id="cb364-2"><a href="wochenplan-08-kreuztabellen.html#cb364-2" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(daten_ess)</span>
 <span id="cb364-3"><a href="wochenplan-08-kreuztabellen.html#cb364-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -321,7 +329,7 @@ div.csl-indent {
 <span id="cb364-5"><a href="wochenplan-08-kreuztabellen.html#cb364-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gndr)</span></code></pre></div>
 <pre><code>## gndr
 ##   Male Female 
-##    113     87</code></pre>
+##    100    100</code></pre>
 <p>Ohne die <code>attach()</code>-Funktion würde die letzte Zeile des Code-Chunks oben zu einer Fehlermeldung führen.</p>
 <p><strong>Fabio Keller</strong> hat dies nochmals etwas anders formuliert, um den Prozess der Funktion zu verdeutlichen:<br />
 “Standardmässig gibt es das Global Environment, also die Super-Umgebung, in der alle Objekte existieren, die wir bisher erstellt haben. Die Funktion <code>attach()</code> erstellt eine zusätzliche Umgebung, in der Objekte existieren können. Sie zerteilt ein DataFrame, das mit dem <code>what</code> Argument angegeben wird, in seine einzelnen Variablen und lässt sie als freie Objekte in der neuen Umgebung leben, dessen Name man mit dem
@@ -353,9 +361,9 @@ Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die <em>Arbeit mi
 <div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="wochenplan-08-kreuztabellen.html#cb368-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(polintr)</span></code></pre></div>
 <pre><code>## polintr
 ## Not at all interested     Hardly interested      Quite interested 
-##                    18                    57                    87 
+##                    26                    63                    82 
 ##       Very interested 
-##                    38</code></pre>
+##                    29</code></pre>
 <div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="wochenplan-08-kreuztabellen.html#cb370-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Womöglich verfügt die Variable &quot;polintr&quot; über fehlende Werte. Diese können wir definieren:</span></span>
 <span id="cb370-2"><a href="wochenplan-08-kreuztabellen.html#cb370-2" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>polintr[daten_ess<span class="sc">$</span>polintr<span class="sc">&gt;</span><span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
 <span id="cb370-3"><a href="wochenplan-08-kreuztabellen.html#cb370-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Dieser Befehl könnten wir dann ebenfalls in unser Import-Skript übernehmen.</span></span></code></pre></div>
@@ -381,10 +389,10 @@ Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die <em>Arbeit mi
 <div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="wochenplan-08-kreuztabellen.html#cb372-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">addmargins</span>(<span class="fu">prop.table</span>(<span class="fu">table</span>(polintr, gndr),<span class="dv">2</span>),<span class="dv">1</span>),<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##                        gndr
 ## polintr                 Male Female
-##   Not at all interested 0.06   0.13
-##   Hardly interested     0.25   0.33
-##   Quite interested      0.46   0.40
-##   Very interested       0.23   0.14
+##   Not at all interested 0.14   0.12
+##   Hardly interested     0.28   0.35
+##   Quite interested      0.40   0.42
+##   Very interested       0.18   0.11
 ##   Sum                   1.00   1.00</code></pre>
 <p>Diese verdeutlicht, dass zwischen den Variablen ein Zusammenhang bestehen könnte, da Männer anscheinend öfters angeben, sehr an Politik interessiert zu sein.</p>
 <p> 
@@ -415,20 +423,20 @@ Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die <em>Arbeit mi
 ##                       | gndr 
 ##               polintr |      Male |    Female | Row Total | 
 ## ----------------------|-----------|-----------|-----------|
-## Not at all interested |         7 |        11 |        18 | 
-##                       |      0.06 |      0.13 |           | 
+## Not at all interested |        14 |        12 |        26 | 
+##                       |      0.14 |      0.12 |           | 
 ## ----------------------|-----------|-----------|-----------|
-##     Hardly interested |        28 |        29 |        57 | 
-##                       |      0.25 |      0.33 |           | 
+##     Hardly interested |        28 |        35 |        63 | 
+##                       |      0.28 |      0.35 |           | 
 ## ----------------------|-----------|-----------|-----------|
-##      Quite interested |        52 |        35 |        87 | 
-##                       |      0.46 |      0.40 |           | 
+##      Quite interested |        40 |        42 |        82 | 
+##                       |      0.40 |      0.42 |           | 
 ## ----------------------|-----------|-----------|-----------|
-##       Very interested |        26 |        12 |        38 | 
-##                       |      0.23 |      0.14 |           | 
+##       Very interested |        18 |        11 |        29 | 
+##                       |      0.18 |      0.11 |           | 
 ## ----------------------|-----------|-----------|-----------|
-##          Column Total |       113 |        87 |       200 | 
-##                       |      0.56 |      0.43 |           | 
+##          Column Total |       100 |       100 |       200 | 
+##                       |      0.50 |      0.50 |           | 
 ## ----------------------|-----------|-----------|-----------|
 ## 
 ## </code></pre>
@@ -451,20 +459,20 @@ Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die <em>Arbeit mi
 ##                       | gndr 
 ##               polintr |     Male  |   Female  | Row Total | 
 ## ----------------------|-----------|-----------|-----------|
-## Not at all interested |        7  |       11  |       18  | 
-##                       |     6.19% |    12.64% |           | 
+## Not at all interested |       14  |       12  |       26  | 
+##                       |    14.00% |    12.00% |           | 
 ## ----------------------|-----------|-----------|-----------|
-##     Hardly interested |       28  |       29  |       57  | 
-##                       |    24.78% |    33.33% |           | 
+##     Hardly interested |       28  |       35  |       63  | 
+##                       |    28.00% |    35.00% |           | 
 ## ----------------------|-----------|-----------|-----------|
-##      Quite interested |       52  |       35  |       87  | 
-##                       |    46.02% |    40.23% |           | 
+##      Quite interested |       40  |       42  |       82  | 
+##                       |    40.00% |    42.00% |           | 
 ## ----------------------|-----------|-----------|-----------|
-##       Very interested |       26  |       12  |       38  | 
-##                       |    23.01% |    13.79% |           | 
+##       Very interested |       18  |       11  |       29  | 
+##                       |    18.00% |    11.00% |           | 
 ## ----------------------|-----------|-----------|-----------|
-##          Column Total |      113  |       87  |      200  | 
-##                       |    56.50% |    43.50% |           | 
+##          Column Total |      100  |      100  |      200  | 
+##                       |    50.00% |    50.00% |           | 
 ## ----------------------|-----------|-----------|-----------|
 ## 
 ## </code></pre>
@@ -501,20 +509,20 @@ Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die <em>Arbeit mi
 ##                       | daten_ess$gndr 
 ##     daten_ess$polintr |      Male |    Female | Row Total | 
 ## ----------------------|-----------|-----------|-----------|
-## Not at all interested |         7 |        11 |        18 | 
-##                       |      0.06 |      0.13 |           | 
+## Not at all interested |        14 |        12 |        26 | 
+##                       |      0.14 |      0.12 |           | 
 ## ----------------------|-----------|-----------|-----------|
-##     Hardly interested |        28 |        29 |        57 | 
-##                       |      0.25 |      0.33 |           | 
+##     Hardly interested |        28 |        35 |        63 | 
+##                       |      0.28 |      0.35 |           | 
 ## ----------------------|-----------|-----------|-----------|
-##      Quite interested |        52 |        35 |        87 | 
-##                       |      0.46 |      0.40 |           | 
+##      Quite interested |        40 |        42 |        82 | 
+##                       |      0.40 |      0.42 |           | 
 ## ----------------------|-----------|-----------|-----------|
-##       Very interested |        26 |        12 |        38 | 
-##                       |      0.23 |      0.14 |           | 
+##       Very interested |        18 |        11 |        29 | 
+##                       |      0.18 |      0.11 |           | 
 ## ----------------------|-----------|-----------|-----------|
-##          Column Total |       113 |        87 |       200 | 
-##                       |      0.56 |      0.43 |           | 
+##          Column Total |       100 |       100 |       200 | 
+##                       |      0.50 |      0.50 |           | 
 ## ----------------------|-----------|-----------|-----------|
 ## 
 ##  
@@ -523,7 +531,7 @@ Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die <em>Arbeit mi
 ## 
 ## Pearson&#39;s Chi-squared test 
 ## ------------------------------------------------------------
-## Chi^2 =  6.109416     d.f. =  3     p =  0.1064066 
+## Chi^2 =  2.67006     d.f. =  3     p =  0.4453394 
 ## 
 ## 
 ## </code></pre>
@@ -536,43 +544,43 @@ Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die <em>Arbeit mi
 ## chisq    9      htest list</code></pre>
 <div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="wochenplan-08-kreuztabellen.html#cb385-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(CT_Ergebnis)</span></code></pre></div>
 <pre><code>## List of 5
-##  $ t       : &#39;table&#39; int [1:4, 1:2] 7 28 52 26 11 29 35 12
+##  $ t       : &#39;table&#39; int [1:4, 1:2] 14 28 40 18 12 35 42 11
 ##   ..- attr(*, &quot;dimnames&quot;)=List of 2
 ##   .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
 ##   .. ..$ y: chr [1:2] &quot;Male&quot; &quot;Female&quot;
-##  $ prop.row: &#39;table&#39; num [1:4, 1:2] 0.389 0.491 0.598 0.684 0.611 ...
+##  $ prop.row: &#39;table&#39; num [1:4, 1:2] 0.538 0.444 0.488 0.621 0.462 ...
 ##   ..- attr(*, &quot;dimnames&quot;)=List of 2
 ##   .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
 ##   .. ..$ y: chr [1:2] &quot;Male&quot; &quot;Female&quot;
-##  $ prop.col: &#39;table&#39; num [1:4, 1:2] 0.0619 0.2478 0.4602 0.2301 0.1264 ...
+##  $ prop.col: &#39;table&#39; num [1:4, 1:2] 0.14 0.28 0.4 0.18 0.12 0.35 0.42 0.11
 ##   ..- attr(*, &quot;dimnames&quot;)=List of 2
 ##   .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
 ##   .. ..$ y: chr [1:2] &quot;Male&quot; &quot;Female&quot;
-##  $ prop.tbl: &#39;table&#39; num [1:4, 1:2] 0.035 0.14 0.26 0.13 0.055 0.145 0.175 0.06
+##  $ prop.tbl: &#39;table&#39; num [1:4, 1:2] 0.07 0.14 0.2 0.09 0.06 0.175 0.21 0.055
 ##   ..- attr(*, &quot;dimnames&quot;)=List of 2
 ##   .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
 ##   .. ..$ y: chr [1:2] &quot;Male&quot; &quot;Female&quot;
 ##  $ chisq   :List of 9
-##   ..$ statistic: Named num 6.11
+##   ..$ statistic: Named num 2.67
 ##   .. ..- attr(*, &quot;names&quot;)= chr &quot;X-squared&quot;
 ##   ..$ parameter: Named int 3
 ##   .. ..- attr(*, &quot;names&quot;)= chr &quot;df&quot;
-##   ..$ p.value  : num 0.106
+##   ..$ p.value  : num 0.445
 ##   ..$ method   : chr &quot;Pearson&#39;s Chi-squared test&quot;
 ##   ..$ data.name: chr &quot;t&quot;
-##   ..$ observed : &#39;table&#39; int [1:4, 1:2] 7 28 52 26 11 29 35 12
+##   ..$ observed : &#39;table&#39; int [1:4, 1:2] 14 28 40 18 12 35 42 11
 ##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
 ##   .. .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
 ##   .. .. ..$ y: chr [1:2] &quot;Male&quot; &quot;Female&quot;
-##   ..$ expected : num [1:4, 1:2] 10.17 32.2 49.16 21.47 7.83 ...
+##   ..$ expected : num [1:4, 1:2] 13 31.5 41 14.5 13 31.5 41 14.5
 ##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
 ##   .. .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
 ##   .. .. ..$ y: chr [1:2] &quot;Male&quot; &quot;Female&quot;
-##   ..$ residuals: &#39;table&#39; num [1:4, 1:2] -0.994 -0.741 0.406 0.978 1.133 ...
+##   ..$ residuals: &#39;table&#39; num [1:4, 1:2] 0.277 -0.624 -0.156 0.919 -0.277 ...
 ##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
 ##   .. .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
 ##   .. .. ..$ y: chr [1:2] &quot;Male&quot; &quot;Female&quot;
-##   ..$ stdres   : &#39;table&#39; num [1:4, 1:2] -1.58 -1.329 0.819 1.647 1.58 ...
+##   ..$ stdres   : &#39;table&#39; num [1:4, 1:2] 0.421 -1.066 -0.288 1.406 -0.421 ...
 ##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
 ##   .. .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
 ##   .. .. ..$ y: chr [1:2] &quot;Male&quot; &quot;Female&quot;
@@ -583,7 +591,7 @@ Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die <em>Arbeit mi
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  t
-## X-squared = 6.1094, df = 3, p-value = 0.1064</code></pre>
+## X-squared = 2.6701, df = 3, p-value = 0.4453</code></pre>
 <div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="wochenplan-08-kreuztabellen.html#cb389-1" aria-hidden="true" tabindex="-1"></a><span class="co">#oder etwas umständlicher, aber auch möglich:</span></span>
 <span id="cb389-2"><a href="wochenplan-08-kreuztabellen.html#cb389-2" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis[<span class="st">&quot;chisq&quot;</span>]</span></code></pre></div>
 <pre><code>## $chisq
@@ -591,16 +599,16 @@ Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die <em>Arbeit mi
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  t
-## X-squared = 6.1094, df = 3, p-value = 0.1064</code></pre>
+## X-squared = 2.6701, df = 3, p-value = 0.4453</code></pre>
 <p>…als eben auch auf die Unterelemente:</p>
 <div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="wochenplan-08-kreuztabellen.html#cb391-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>statistic</span></code></pre></div>
 <pre><code>## X-squared 
-##  6.109416</code></pre>
+##   2.67006</code></pre>
 <div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="wochenplan-08-kreuztabellen.html#cb393-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>parameter</span></code></pre></div>
 <pre><code>## df 
 ##  3</code></pre>
 <div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="wochenplan-08-kreuztabellen.html#cb395-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>p.value</span></code></pre></div>
-<pre><code>## [1] 0.1064066</code></pre>
+<pre><code>## [1] 0.4453394</code></pre>
 <div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="wochenplan-08-kreuztabellen.html#cb397-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>method</span></code></pre></div>
 <pre><code>## [1] &quot;Pearson&#39;s Chi-squared test&quot;</code></pre>
 <div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="wochenplan-08-kreuztabellen.html#cb399-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>data.name</span></code></pre></div>
@@ -608,29 +616,29 @@ Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die <em>Arbeit mi
 <div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="wochenplan-08-kreuztabellen.html#cb401-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>observed</span></code></pre></div>
 <pre><code>##                        y
 ## x                       Male Female
-##   Not at all interested    7     11
-##   Hardly interested       28     29
-##   Quite interested        52     35
-##   Very interested         26     12</code></pre>
+##   Not at all interested   14     12
+##   Hardly interested       28     35
+##   Quite interested        40     42
+##   Very interested         18     11</code></pre>
 <div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="wochenplan-08-kreuztabellen.html#cb403-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>expected</span></code></pre></div>
 <pre><code>##                        y
-## x                         Male Female
-##   Not at all interested 10.170  7.830
-##   Hardly interested     32.205 24.795
-##   Quite interested      49.155 37.845
-##   Very interested       21.470 16.530</code></pre>
+## x                       Male Female
+##   Not at all interested 13.0   13.0
+##   Hardly interested     31.5   31.5
+##   Quite interested      41.0   41.0
+##   Very interested       14.5   14.5</code></pre>
 <div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="wochenplan-08-kreuztabellen.html#cb405-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>residuals</span></code></pre></div>
 <pre><code>##                        y
 ## x                             Male     Female
-##   Not at all interested -0.9940284  1.1328656
-##   Hardly interested     -0.7409764  0.8444695
-##   Quite interested       0.4057873 -0.4624641
-##   Very interested        0.9776472 -1.1141965</code></pre>
+##   Not at all interested  0.2773501 -0.2773501
+##   Hardly interested     -0.6236096  0.6236096
+##   Quite interested      -0.1561738  0.1561738
+##   Very interested        0.9191450 -0.9191450</code></pre>
 <p>Wie können wir die Ergebnisse nun interpretieren?<br />
 Zuerst <em>deskriptiv statistisch</em>: Wir erhalten einen Chi-Quadrat Wert gemäss Pearson von:</p>
 <div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="wochenplan-08-kreuztabellen.html#cb407-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>statistic</span></code></pre></div>
 <pre><code>## X-squared 
-##  6.109416</code></pre>
+##   2.67006</code></pre>
 <p>Das heisst dass ein Zusammenhang zwischen den beiden Variablen Geschlecht und Politikinteresse besteht. Allerdings ist die Grössenordnung dieses Wertes nicht nur durch eine Stärke des Zusammenhangs bestimmt, sondern auch durch das Tabellenformat <span class="citation">(<a href="#ref-DiazBone2019" role="doc-biblioref">Diaz-Bone 2019, 86</a>)</span>. Dieses Tabellenformat wird über die Freiheitsgrade (<em>df</em>) deutlich: (i-1) x (j-1). Oder eben:</p>
 <div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="wochenplan-08-kreuztabellen.html#cb409-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>parameter</span></code></pre></div>
 <pre><code>## df 
@@ -639,11 +647,11 @@ Zuerst <em>deskriptiv statistisch</em>: Wir erhalten einen Chi-Quadrat Wert gem�
 <div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="wochenplan-08-kreuztabellen.html#cb411-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;lsr&quot;)</span></span>
 <span id="cb411-2"><a href="wochenplan-08-kreuztabellen.html#cb411-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lsr)</span>
 <span id="cb411-3"><a href="wochenplan-08-kreuztabellen.html#cb411-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cramersV</span>(daten_ess<span class="sc">$</span>polintr, daten_ess<span class="sc">$</span>gndr)</span></code></pre></div>
-<pre><code>## [1] 0.1747772</code></pre>
+<pre><code>## [1] 0.1155435</code></pre>
 <div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="wochenplan-08-kreuztabellen.html#cb413-1" aria-hidden="true" tabindex="-1"></a><span class="co">#oder auch manuell:</span></span>
 <span id="cb413-2"><a href="wochenplan-08-kreuztabellen.html#cb413-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>statistic<span class="sc">/</span>(<span class="dv">200</span><span class="sc">*</span>(<span class="dv">2-1</span>)))</span></code></pre></div>
 <pre><code>## X-squared 
-## 0.1747772</code></pre>
+## 0.1155435</code></pre>
 <p>Cramer’s V verweist so auf einen schwachen bis mittleren Zusammenhang.</p>
 <p>Anschliessend können wir zur <em>inferenzstatistischen Betrachtung</em> übergehen:<br />
 Einige von den Teilnehmer*innen haben den Chi-Quadrat Test “von Hand” durchgeführt. Dies ist natürlich auch möglich <span class="citation">(vgl. <a href="#ref-DiazBone2019" role="doc-biblioref">Diaz-Bone 2019, 86</a>)</span>:</p>
@@ -669,14 +677,14 @@ Der Stichprobenkennwert ist:</li>
 </ol>
 <div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="wochenplan-08-kreuztabellen.html#cb419-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>statistic</span></code></pre></div>
 <pre><code>## X-squared 
-##  6.109416</code></pre>
+##   2.67006</code></pre>
 <p>Dieser Wert fällt nun in den Rückweisungsbereich und der Stichprobenbefund ist signifikant. Die H0 muss verworfen werden und auch in der Grundgesamtheit besteht ein Zusammenhang zwischen Geschlecht und Politikinteresse.</p>
 <p>Dieses Vorgehen entspricht allerdings nicht der Realität des statistischen Arbeitens. Wir arbeiten nämlich direkt mit dem sogenannten “p-Wert.” Dieser Wert liegt bei:</p>
 <div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="wochenplan-08-kreuztabellen.html#cb421-1" aria-hidden="true" tabindex="-1"></a>CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>p.value</span></code></pre></div>
-<pre><code>## [1] 0.1064066</code></pre>
+<pre><code>## [1] 0.4453394</code></pre>
 <p>Unser berechnete Prüfwert Chi-Quadrat fällt auf einem 5% Signifikanzniveau in den Ablehnungsbereich beziehungsweise können wir auf einem 95% Signifikanzniveau die Alternativhypothese annehmen, dass auch in der Grundgesamtheit ein Zusammenhang zwischen den beiden Variablen besteht <span class="citation">(vgl. auch <a href="#ref-Manderscheid2017" role="doc-biblioref">Manderscheid 2017, 165f</a>)</span>. Der p-Wert dreht dabei die Logik etwas um: Konkret sagt dieser Wert nämlich aus, dass lediglich eine</p>
 <div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="wochenplan-08-kreuztabellen.html#cb423-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(CT_Ergebnis<span class="sc">$</span>chisq<span class="sc">$</span>p.value,<span class="dv">3</span>)<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
-<pre><code>## [1] 10.6</code></pre>
+<pre><code>## [1] 44.5</code></pre>
 <p>…% Wahrscheinlichkeit besteht, dass unser Zusammenhang in der Stichprobe zufällig aufgetreten ist.</p>
 <p>Ist jetzt das einfach ein <em>dummes Beispiel</em>? Wir könnten uns jetzt nochmals anschauen, wie dieser Chi-Quadrat Wert zustandekommt:</p>
 <div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="wochenplan-08-kreuztabellen.html#cb425-1" aria-hidden="true" tabindex="-1"></a><span class="fu">CrossTable</span>(daten_ess<span class="sc">$</span>polintr, daten_ess<span class="sc">$</span>gndr, </span>
@@ -698,19 +706,19 @@ Der Stichprobenkennwert ist:</li>
 ##                       | daten_ess$gndr 
 ##     daten_ess$polintr |      Male |    Female | Row Total | 
 ## ----------------------|-----------|-----------|-----------|
-## Not at all interested |         7 |        11 |        18 | 
-##                       |     0.988 |     1.283 |           | 
+## Not at all interested |        14 |        12 |        26 | 
+##                       |     0.077 |     0.077 |           | 
 ## ----------------------|-----------|-----------|-----------|
-##     Hardly interested |        28 |        29 |        57 | 
-##                       |     0.549 |     0.713 |           | 
+##     Hardly interested |        28 |        35 |        63 | 
+##                       |     0.389 |     0.389 |           | 
 ## ----------------------|-----------|-----------|-----------|
-##      Quite interested |        52 |        35 |        87 | 
-##                       |     0.165 |     0.214 |           | 
+##      Quite interested |        40 |        42 |        82 | 
+##                       |     0.024 |     0.024 |           | 
 ## ----------------------|-----------|-----------|-----------|
-##       Very interested |        26 |        12 |        38 | 
-##                       |     0.956 |     1.241 |           | 
+##       Very interested |        18 |        11 |        29 | 
+##                       |     0.845 |     0.845 |           | 
 ## ----------------------|-----------|-----------|-----------|
-##          Column Total |       113 |        87 |       200 | 
+##          Column Total |       100 |       100 |       200 | 
 ## ----------------------|-----------|-----------|-----------|
 ## 
 ## </code></pre>

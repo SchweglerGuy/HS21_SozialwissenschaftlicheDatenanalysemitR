@@ -221,6 +221,14 @@ div.csl-indent {
 <li class="chapter" data-level="11.1" data-path="wochenplan-11.html"><a href="wochenplan-11.html#lernziele-8"><i class="fa fa-check"></i><b>11.1</b> Lernziele</a></li>
 <li class="chapter" data-level="11.2" data-path="wochenplan-11.html"><a href="wochenplan-11.html#aufgaben-6"><i class="fa fa-check"></i><b>11.2</b> Aufgaben</a></li>
 </ul></li>
+<li class="chapter" data-level="12" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html"><i class="fa fa-check"></i><b>12</b> Ergänzungen Einheit 14 (WP13/14)</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#dateiformat-rds"><i class="fa fa-check"></i><b>12.1</b> Dateiformat RDS</a></li>
+<li class="chapter" data-level="12.2" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#relevanz-von-stichprobengrösse"><i class="fa fa-check"></i><b>12.2</b> Relevanz von Stichprobengrösse</a></li>
+<li class="chapter" data-level="12.3" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#übung-zur-multiplen-linearen-regression"><i class="fa fa-check"></i><b>12.3</b> Übung zur multiplen, linearen Regression</a></li>
+<li class="chapter" data-level="12.4" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#anwendungsvoraussetzungen"><i class="fa fa-check"></i><b>12.4</b> Anwendungsvoraussetzungen</a></li>
+<li class="chapter" data-level="12.5" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#exkurs-residuenwolken"><i class="fa fa-check"></i><b>12.5</b> Exkurs: Residuenwolken</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="./">Universität Luzern</a></li>
@@ -369,12 +377,12 @@ und R wird automatisch gestartet wird, wenn Sie RStudio starten <span class="cit
 <p>Dabei wird n - 1 verwendet, da bei kleineren Stichprobenumfängen die Standardabweichung überschätzt wird. Bei grösseren Stichprobenumfängen wird dies dann immer weniger wichtig:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="wocheplan-01-einführung.html#cb10-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>) <span class="co">#eine standardnormalverteilte Varialbe mit n = 50</span></span>
 <span id="cb10-2"><a href="wocheplan-01-einführung.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(z)</span></code></pre></div>
-<pre><code>## [1] 0.9782287</code></pre>
+<pre><code>## [1] 1.014677</code></pre>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="wocheplan-01-einführung.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(</span>
 <span id="cb12-2"><a href="wocheplan-01-einführung.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>((z <span class="sc">-</span> <span class="fu">mean</span>(z))<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb12-3"><a href="wocheplan-01-einführung.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">/</span> (<span class="fu">length</span>(z))</span>
 <span id="cb12-4"><a href="wocheplan-01-einführung.html#cb12-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-<pre><code>## [1] 0.9777394</code></pre>
+<pre><code>## [1] 1.014169</code></pre>
 
 </div>
 </div>

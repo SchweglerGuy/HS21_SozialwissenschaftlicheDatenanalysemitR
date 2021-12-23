@@ -1,4 +1,9 @@
 fig:unnamed-chunk-1
+fig:unnamed-chunk-219
+fig:unnamed-chunk-220
+fig:unnamed-chunk-221
+fig:unnamed-chunk-222
+fig:unnamed-chunk-223
 wocheplan-01-einführung
 sozialwissenschaftliche-datenanalyse
 ziel-des-kurses
@@ -39,3 +44,9 @@ aufgaben-5
 wochenplan-11
 lernziele-8
 aufgaben-6
+ergänzungen-einheit-14-wp1314
+dateiformat-rds
+relevanz-von-stichprobengrösse
+übung-zur-multiplen-linearen-regression
+anwendungsvoraussetzungen
+exkurs-residuenwolken

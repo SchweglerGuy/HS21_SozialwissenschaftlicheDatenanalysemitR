@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>12 Ergänzungen Einheit 14 (WP13/14) | Sozialwissenschaftliche Datenanalyse mit R</title>
+  <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="12 Ergänzungen Einheit 14 (WP13/14) | Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="12 Ergänzungen Einheit 14 (WP13/14) | Sozialwissenschaftliche Datenanalyse mit R" />
+  
+  <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS21 und dient als Ergebnisicherung im Seminarverlauf." />
+  
+
+<meta name="author" content="Kenneth Horvath &amp; Guy Schwegler" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="wochenplan-11.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R - HS21</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Einführung</a></li>
+<li class="chapter" data-level="1" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html"><i class="fa fa-check"></i><b>1</b> Wocheplan 01: Einführung</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#sozialwissenschaftliche-datenanalyse"><i class="fa fa-check"></i><b>1.1</b> Sozialwissenschaftliche Datenanalyse</a></li>
+<li class="chapter" data-level="1.2" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#ziel-des-kurses"><i class="fa fa-check"></i><b>1.2</b> Ziel des Kurses</a></li>
+<li class="chapter" data-level="1.3" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#r-als-programm-rstudio"><i class="fa fa-check"></i><b>1.3</b> R als Programm &amp; RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#lernziele-der-ersten-woche"><i class="fa fa-check"></i><b>1.4</b> Lernziele der ersten Woche</a></li>
+<li class="chapter" data-level="1.5" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#aufgaben-der-ersten-woche"><i class="fa fa-check"></i><b>1.5</b> Aufgaben der ersten Woche</a></li>
+<li class="chapter" data-level="1.6" data-path="wocheplan-01-einführung.html"><a href="wocheplan-01-einführung.html#ergänzung-standardabweichung-zwischen-grundgesamtheit-und-stichprobe"><i class="fa fa-check"></i><b>1.6</b> Ergänzung: Standardabweichung zwischen Grundgesamtheit und Stichprobe</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="wochenplan-02-grundlagen-i.html"><a href="wochenplan-02-grundlagen-i.html"><i class="fa fa-check"></i><b>2</b> Wochenplan 02: Grundlagen I</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="wochenplan-02-grundlagen-i.html"><a href="wochenplan-02-grundlagen-i.html#lernziele"><i class="fa fa-check"></i><b>2.1</b> Lernziele</a></li>
+<li class="chapter" data-level="2.2" data-path="wochenplan-02-grundlagen-i.html"><a href="wochenplan-02-grundlagen-i.html#aufgaben"><i class="fa fa-check"></i><b>2.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="wochenplan-03-grundlagen-ii.html"><a href="wochenplan-03-grundlagen-ii.html"><i class="fa fa-check"></i><b>3</b> Wochenplan 03: Grundlagen II</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="wochenplan-03-grundlagen-ii.html"><a href="wochenplan-03-grundlagen-ii.html#lernziele-1"><i class="fa fa-check"></i><b>3.1</b> Lernziele</a></li>
+<li class="chapter" data-level="3.2" data-path="wochenplan-03-grundlagen-ii.html"><a href="wochenplan-03-grundlagen-ii.html#aufgaben-1"><i class="fa fa-check"></i><b>3.2</b> Aufgaben</a></li>
+<li class="chapter" data-level="3.3" data-path="wochenplan-03-grundlagen-ii.html"><a href="wochenplan-03-grundlagen-ii.html#ergänzung-seitenumbruch-im-rmarkdown"><i class="fa fa-check"></i><b>3.3</b> Ergänzung: Seitenumbruch im RMarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wochenplan-04-grafiken.html"><a href="wochenplan-04-grafiken.html"><i class="fa fa-check"></i><b>4</b> Wochenplan 04: Grafiken</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="wochenplan-04-grafiken.html"><a href="wochenplan-04-grafiken.html#lernziele-2"><i class="fa fa-check"></i><b>4.1</b> Lernziele</a></li>
+<li class="chapter" data-level="4.2" data-path="wochenplan-04-grafiken.html"><a href="wochenplan-04-grafiken.html#aufgaben-2"><i class="fa fa-check"></i><b>4.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="wochenplan-05-indizieren.html"><a href="wochenplan-05-indizieren.html"><i class="fa fa-check"></i><b>5</b> Wochenplan 05: Indizieren</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="wochenplan-05-indizieren.html"><a href="wochenplan-05-indizieren.html#lernziele-wp05"><i class="fa fa-check"></i><b>5.1</b> Lernziele WP05</a></li>
+<li class="chapter" data-level="5.2" data-path="wochenplan-05-indizieren.html"><a href="wochenplan-05-indizieren.html#hinweise-indizieren-subsetting"><i class="fa fa-check"></i><b>5.2</b> Hinweise Indizieren &amp; Subsetting</a></li>
+<li class="chapter" data-level="5.3" data-path="wochenplan-05-indizieren.html"><a href="wochenplan-05-indizieren.html#aufgaben-wp05"><i class="fa fa-check"></i><b>5.3</b> Aufgaben WP05</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="wochenplan-06-code-rezipieren.html"><a href="wochenplan-06-code-rezipieren.html"><i class="fa fa-check"></i><b>6</b> Wochenplan 06: Code Rezipieren</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="wochenplan-06-code-rezipieren.html"><a href="wochenplan-06-code-rezipieren.html#lernziele-3"><i class="fa fa-check"></i><b>6.1</b> Lernziele</a></li>
+<li class="chapter" data-level="6.2" data-path="wochenplan-06-code-rezipieren.html"><a href="wochenplan-06-code-rezipieren.html#besprechung-skript-standardfehler.r"><i class="fa fa-check"></i><b>6.2</b> Besprechung Skript “standardfehler.R”</a></li>
+<li class="chapter" data-level="6.3" data-path="wochenplan-06-code-rezipieren.html"><a href="wochenplan-06-code-rezipieren.html#ggplot2-darstellung"><i class="fa fa-check"></i><b>6.3</b> ggplot2 Darstellung</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="wochenplan-07-datenaufbereitung.html"><a href="wochenplan-07-datenaufbereitung.html"><i class="fa fa-check"></i><b>7</b> Wochenplan 07: Datenaufbereitung</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="wochenplan-07-datenaufbereitung.html"><a href="wochenplan-07-datenaufbereitung.html#lernziele-4"><i class="fa fa-check"></i><b>7.1</b> Lernziele</a></li>
+<li class="chapter" data-level="7.2" data-path="wochenplan-07-datenaufbereitung.html"><a href="wochenplan-07-datenaufbereitung.html#aufgaben-3"><i class="fa fa-check"></i><b>7.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="wochenplan-08-kreuztabellen.html"><a href="wochenplan-08-kreuztabellen.html"><i class="fa fa-check"></i><b>8</b> Wochenplan 08: Kreuztabellen</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="wochenplan-08-kreuztabellen.html"><a href="wochenplan-08-kreuztabellen.html#lernziele-5"><i class="fa fa-check"></i><b>8.1</b> Lernziele</a></li>
+<li class="chapter" data-level="8.2" data-path="wochenplan-08-kreuztabellen.html"><a href="wochenplan-08-kreuztabellen.html#aufgaben-4"><i class="fa fa-check"></i><b>8.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="wochenplan-09-faktoren.html"><a href="wochenplan-09-faktoren.html"><i class="fa fa-check"></i><b>9</b> Wochenplan 09: Faktoren</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="wochenplan-09-faktoren.html"><a href="wochenplan-09-faktoren.html#lernziele-6"><i class="fa fa-check"></i><b>9.1</b> Lernziele</a></li>
+<li class="chapter" data-level="9.2" data-path="wochenplan-09-faktoren.html"><a href="wochenplan-09-faktoren.html#einführung-faktoren-lösung-aufgaben"><i class="fa fa-check"></i><b>9.2</b> Einführung Faktoren (Lösung Aufgaben)</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="wochenplan-10-einführung-regression.html"><a href="wochenplan-10-einführung-regression.html"><i class="fa fa-check"></i><b>10</b> Wochenplan 10: Einführung Regression</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="wochenplan-10-einführung-regression.html"><a href="wochenplan-10-einführung-regression.html#lernziele-7"><i class="fa fa-check"></i><b>10.1</b> Lernziele</a></li>
+<li class="chapter" data-level="10.2" data-path="wochenplan-10-einführung-regression.html"><a href="wochenplan-10-einführung-regression.html#aufgaben-5"><i class="fa fa-check"></i><b>10.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="wochenplan-11.html"><a href="wochenplan-11.html"><i class="fa fa-check"></i><b>11</b> Wochenplan 11</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="wochenplan-11.html"><a href="wochenplan-11.html#lernziele-8"><i class="fa fa-check"></i><b>11.1</b> Lernziele</a></li>
+<li class="chapter" data-level="11.2" data-path="wochenplan-11.html"><a href="wochenplan-11.html#aufgaben-6"><i class="fa fa-check"></i><b>11.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html"><i class="fa fa-check"></i><b>12</b> Ergänzungen Einheit 14 (WP13/14)</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#dateiformat-rds"><i class="fa fa-check"></i><b>12.1</b> Dateiformat RDS</a></li>
+<li class="chapter" data-level="12.2" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#relevanz-von-stichprobengrösse"><i class="fa fa-check"></i><b>12.2</b> Relevanz von Stichprobengrösse</a></li>
+<li class="chapter" data-level="12.3" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#übung-zur-multiplen-linearen-regression"><i class="fa fa-check"></i><b>12.3</b> Übung zur multiplen, linearen Regression</a></li>
+<li class="chapter" data-level="12.4" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#anwendungsvoraussetzungen"><i class="fa fa-check"></i><b>12.4</b> Anwendungsvoraussetzungen</a></li>
+<li class="chapter" data-level="12.5" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#exkurs-residuenwolken"><i class="fa fa-check"></i><b>12.5</b> Exkurs: Residuenwolken</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="./">Universität Luzern</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sozialwissenschaftliche Datenanalyse mit R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ergänzungen-einheit-14-wp1314" class="section level1" number="12">
+<h1><span class="header-section-number">12</span> Ergänzungen Einheit 14 (WP13/14)</h1>
+<p>Im folgenden Abschnitt werden einige Punkte erläutert, die Teil der letzten Einheit des Seminars waren beziehungsweise Teil des WP13/14 (da die 12.Sitzung und damit der WP12 ausgefallen ist). Wir möchten nochmals auf die multiple, lineare Regression und das bereits eingeführte Modell eingehen. Über einen gemeinsam geteilten Datensatz sollen die Interpretation dieser Regressionsmodelle im Detail besprochen werden. Das bietet auch die Möglichkeit, das R-eigene Dateiformat zum Speichern von Datensätzen zu verwenden. Neben der Repetition der Interpretation gilt es weiter über eine grafische Residuenanalyse die Anwendungsvoraussetzungen für die multiple lineare Regression zu testen.</p>
+<p>Das heisst wir widmen uns folgenden Lernziele:</p>
+<ul>
+<li>Sie können multiple lineare Regressionsanalysen in R korrekt modellieren, durchführen und interpretieren.</li>
+<li>Sie verstehen, wie die Anwendung von <code>plot()</code> auf unser Ergebnisobjekt bei der Analyse der Qualität und Aussagekraft eines Regressionsmodells helfen kann.</li>
+<li>Sie können Ausreisser in einem Regressionsmodell ausschliessen und die damit erreichten Veränderungen im Modell einschätzen.</li>
+</ul>
+<p>…und ergänzen diese um folgenden Aspekt:</p>
+<ul>
+<li>Sie haben eine Möglichkeit kennengerlernt, wie wir in einem R-eigenen Dateiformat Datensätze abspeichern und aufrufen können.</li>
+</ul>
+<div id="dateiformat-rds" class="section level2" number="12.1">
+<h2><span class="header-section-number">12.1</span> Dateiformat RDS</h2>
+<p>Das Speichern eines einzelnen Objektes in einem R-eigenen Dateiformat ist möglich mittels <code>saveRDS()</code>.<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> Das Einlesen der gespeicherten Datei erfolgt dann wieder über <code>readRDS()</code>.</p>
+<div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb559-1"><a href="ergänzungen-einheit-14-wp1314.html#cb559-1" aria-hidden="true" tabindex="-1"></a>?<span class="fu">saveRDS</span>()</span>
+<span id="cb559-2"><a href="ergänzungen-einheit-14-wp1314.html#cb559-2" aria-hidden="true" tabindex="-1"></a>?<span class="fu">readRDS</span>()</span></code></pre></div>
+<p><em>saveRDS and readRDS provide the means to save a single R object to a connection (typically a file) and to restore the object, quite possibly under a different name.</em></p>
+<p>Damit ist die Möglichkeit gegeben, die Bearbeitung eines Datensatz (das Löschen von unötigen Fällen und Fehlern, Umkodieren, Definieren von Faktoren, usw.) nicht als Code zu sichern, sondern eben als ein Datei selber, die den Datensatz enthält. Wir können daher in unserem Import Skrit die Funktionen zur Zufallsauswahl von 200 Fällen löschen und dann eben einen <code>saveDRS()</code>-Befehl ergänzen. Die so erstelle Datei landet dann natürlich in unserem definierten Arbeitsverzeichnis:</p>
+<div class="sourceCode" id="cb560"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb560-1"><a href="ergänzungen-einheit-14-wp1314.html#cb560-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Laden der Daten</span></span>
+<span id="cb560-2"><a href="ergänzungen-einheit-14-wp1314.html#cb560-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/Users/SchweglG/R_Daten/06_HS21/R_Seminar-HS21&quot;</span>)</span>
+<span id="cb560-3"><a href="ergänzungen-einheit-14-wp1314.html#cb560-3" aria-hidden="true" tabindex="-1"></a>daten_ess <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;Daten/ESS1-8e01.csv&quot;</span>)</span>
+<span id="cb560-4"><a href="ergänzungen-einheit-14-wp1314.html#cb560-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb560-5"><a href="ergänzungen-einheit-14-wp1314.html#cb560-5" aria-hidden="true" tabindex="-1"></a><span class="co"># nicht benoetigte Variablen loeschen</span></span>
+<span id="cb560-6"><a href="ergänzungen-einheit-14-wp1314.html#cb560-6" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>x <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb560-7"><a href="ergänzungen-einheit-14-wp1314.html#cb560-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb560-8"><a href="ergänzungen-einheit-14-wp1314.html#cb560-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Definieren von fehlenden Werten</span></span>
+<span id="cb560-9"><a href="ergänzungen-einheit-14-wp1314.html#cb560-9" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>yrbrn[daten_ess<span class="sc">$</span>yrbrn<span class="sc">==</span><span class="dv">7777</span> <span class="sc">|</span></span>
+<span id="cb560-10"><a href="ergänzungen-einheit-14-wp1314.html#cb560-10" aria-hidden="true" tabindex="-1"></a>                  daten_ess<span class="sc">$</span>yrbrn<span class="sc">==</span><span class="dv">8888</span> <span class="sc">|</span></span>
+<span id="cb560-11"><a href="ergänzungen-einheit-14-wp1314.html#cb560-11" aria-hidden="true" tabindex="-1"></a>                  daten_ess<span class="sc">$</span>yrbrn<span class="sc">==</span><span class="dv">9999</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="do">## usw... </span></span>
+<span id="cb560-12"><a href="ergänzungen-einheit-14-wp1314.html#cb560-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb560-13"><a href="ergänzungen-einheit-14-wp1314.html#cb560-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Fehler in den Faellen korrigieren</span></span>
+<span id="cb560-14"><a href="ergänzungen-einheit-14-wp1314.html#cb560-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Fall 132</span></span>
+<span id="cb560-15"><a href="ergänzungen-einheit-14-wp1314.html#cb560-15" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>agea[<span class="dv">132</span>] <span class="ot">&lt;-</span> <span class="dv">2016</span> <span class="sc">-</span> daten_ess<span class="sc">$</span>yrbrn[<span class="dv">132</span>] <span class="do">## usw... </span></span>
+<span id="cb560-16"><a href="ergänzungen-einheit-14-wp1314.html#cb560-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb560-17"><a href="ergänzungen-einheit-14-wp1314.html#cb560-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Faktoren definieren</span></span>
+<span id="cb560-18"><a href="ergänzungen-einheit-14-wp1314.html#cb560-18" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>gndr <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>gndr, </span>
+<span id="cb560-19"><a href="ergänzungen-einheit-14-wp1314.html#cb560-19" aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),</span>
+<span id="cb560-20"><a href="ergänzungen-einheit-14-wp1314.html#cb560-20" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>)) <span class="do">## usw... </span></span>
+<span id="cb560-21"><a href="ergänzungen-einheit-14-wp1314.html#cb560-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb560-22"><a href="ergänzungen-einheit-14-wp1314.html#cb560-22" aria-hidden="true" tabindex="-1"></a><span class="do">## geordnete Faktoren</span></span>
+<span id="cb560-23"><a href="ergänzungen-einheit-14-wp1314.html#cb560-23" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>polintr <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>polintr, </span>
+<span id="cb560-24"><a href="ergänzungen-einheit-14-wp1314.html#cb560-24" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>),</span>
+<span id="cb560-25"><a href="ergänzungen-einheit-14-wp1314.html#cb560-25" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Not at all interested&quot;</span>, </span>
+<span id="cb560-26"><a href="ergänzungen-einheit-14-wp1314.html#cb560-26" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;Hardly interested&quot;</span>, </span>
+<span id="cb560-27"><a href="ergänzungen-einheit-14-wp1314.html#cb560-27" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;Quite interested&quot;</span>, </span>
+<span id="cb560-28"><a href="ergänzungen-einheit-14-wp1314.html#cb560-28" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;Very interested&quot;</span>), <span class="do">## usw... </span></span>
+<span id="cb560-29"><a href="ergänzungen-einheit-14-wp1314.html#cb560-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb560-30"><a href="ergänzungen-einheit-14-wp1314.html#cb560-30" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(<span class="at">file =</span> <span class="st">&quot;daten_ess_E14.rds&quot;</span>)</span></code></pre></div>
+<p>Was bietet diese Variante zum Umgang mit Datensätzen für Vorteile? Dies ermöglicht eine Kontrolle und einen etwas vereinfachten Umgang mit aufbereiteten Datensätzen, der auch optimiert ist für R (im Gegensatz etwa zu SPSS oder STATA Dateien). Im Seminar erläuterte Josias Bruderer zwei weitere Aspekte: Erstens erfolgt nur eine Lese- und keine Rechenoperation, was eben zu mehr Geschwindigkeit führt. Zweitens benötigt einE jeweiligeR BenutzerIn nicht all die Pakete, die wir womögilch zur Aufbereitung eines Datensatzes verwendet haben.</p>
+<p>Was ist ein Nachteil im Umgang mit diesem Dateiformat? Mit dieser Vorgehensweise verlieren wir wiederum etwas Transparenz. Wir kreiieren uns hier eine Blackbox – und damit etwas, was wir bisher immer versucht haben zu umgehen.</p>
+<div class="sourceCode" id="cb561"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb561-1"><a href="ergänzungen-einheit-14-wp1314.html#cb561-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/Users/SchweglG/R_Daten/06_HS21/R_Seminar-HS21&quot;</span>)</span>
+<span id="cb561-2"><a href="ergänzungen-einheit-14-wp1314.html#cb561-2" aria-hidden="true" tabindex="-1"></a>daten_ess_f <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="at">file =</span> <span class="st">&quot;daten_ess_E14.rds&quot;</span>)</span></code></pre></div>
+</div>
+<div id="relevanz-von-stichprobengrösse" class="section level2" number="12.2">
+<h2><span class="header-section-number">12.2</span> Relevanz von Stichprobengrösse</h2>
+<p>Bereits im Rahmen des WP11 haben wir uns der Korrelationstabelle gewidmet. Hier soll zuerst ergänzend noch eine etwas andere Variante präsentiert werden, wie wir die Tabelle mittels der Funktion <code>attach()</code> erstellen können und so direkt eine Beschriftungen erhalten. Anschliessend können wir die Werte wiederum kurz interpretieren.</p>
+<div class="sourceCode" id="cb562"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb562-1"><a href="ergänzungen-einheit-14-wp1314.html#cb562-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
+<span id="cb562-2"><a href="ergänzungen-einheit-14-wp1314.html#cb562-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb562-3"><a href="ergänzungen-einheit-14-wp1314.html#cb562-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(daten_ess_f)</span>
+<span id="cb562-4"><a href="ergänzungen-einheit-14-wp1314.html#cb562-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb562-5"><a href="ergänzungen-einheit-14-wp1314.html#cb562-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rcorr</span>(<span class="fu">cbind</span>(wkhtot,</span>
+<span id="cb562-6"><a href="ergänzungen-einheit-14-wp1314.html#cb562-6" aria-hidden="true" tabindex="-1"></a>            agea,</span>
+<span id="cb562-7"><a href="ergänzungen-einheit-14-wp1314.html#cb562-7" aria-hidden="true" tabindex="-1"></a>            edulvla,</span>
+<span id="cb562-8"><a href="ergänzungen-einheit-14-wp1314.html#cb562-8" aria-hidden="true" tabindex="-1"></a>            chldhm),</span>
+<span id="cb562-9"><a href="ergänzungen-einheit-14-wp1314.html#cb562-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">type =</span> <span class="st">&quot;pearson&quot;</span>)</span></code></pre></div>
+<pre><code>##         wkhtot agea edulvla chldhm
+## wkhtot    1.00 0.00    0.13   0.11
+## agea      0.00 1.00    0.02   0.08
+## edulvla   0.13 0.02    1.00  -0.09
+## chldhm    0.11 0.08   -0.09   1.00
+## 
+## n
+##         wkhtot agea edulvla chldhm
+## wkhtot    1394 1390    1386   1394
+## agea      1390 1518    1509   1518
+## edulvla   1386 1509    1516   1516
+## chldhm    1394 1518    1516   1525
+## 
+## P
+##         wkhtot agea   edulvla chldhm
+## wkhtot         0.8788 0.0000  0.0000
+## agea    0.8788        0.3715  0.0015
+## edulvla 0.0000 0.3715         0.0003
+## chldhm  0.0000 0.0015 0.0003</code></pre>
+<div class="sourceCode" id="cb564"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb564-1"><a href="ergänzungen-einheit-14-wp1314.html#cb564-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(daten_ess_f)</span></code></pre></div>
+<p>Welche Korrelationenswerte sehen wir (deskripitv)?<br />
+-kleine positive Korrelationen zwischen “wkhtot” und “edulvla” sowie zwischen “wkhtot” und “chldhm”<br />
+-sehr kleine negative Korrelation zwischen “edulvla” und “chldhm”<br />
+-sehr kleiner Korrelationswert zwischen “zwischen”chldhm” und “agea”<br />
+-kaum vorhandene Korrlation zwischen “edulvla” und “agea” sowie “wkhtot” und “agea”</p>
+<p>Trotz der geringen Korrelationswerte sehen wir aber, dass ausser zwei alle Zusammenhänge auch auf die Grundgesamtheit übertragbar sind (lediglich “edulvla” und “agea” sowie “wkhtot” und “agea” sind nicht signfikant). Zum Vergleich: Als wir mit einem 200er Datensatz gearbeitet haben waren diese Werte noch nicht signifikant.</p>
+<div class="sourceCode" id="cb565"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb565-1"><a href="ergänzungen-einheit-14-wp1314.html#cb565-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="at">file =</span> <span class="st">&quot;Daten/ess_import.R&quot;</span>)</span>
+<span id="cb565-2"><a href="ergänzungen-einheit-14-wp1314.html#cb565-2" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(daten_ess)</span>
+<span id="cb565-3"><a href="ergänzungen-einheit-14-wp1314.html#cb565-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rcorr</span>(<span class="fu">cbind</span>(wkhtot,</span>
+<span id="cb565-4"><a href="ergänzungen-einheit-14-wp1314.html#cb565-4" aria-hidden="true" tabindex="-1"></a>            agea,</span>
+<span id="cb565-5"><a href="ergänzungen-einheit-14-wp1314.html#cb565-5" aria-hidden="true" tabindex="-1"></a>            edulvla,</span>
+<span id="cb565-6"><a href="ergänzungen-einheit-14-wp1314.html#cb565-6" aria-hidden="true" tabindex="-1"></a>            chldhm),</span>
+<span id="cb565-7"><a href="ergänzungen-einheit-14-wp1314.html#cb565-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">type =</span> <span class="st">&quot;pearson&quot;</span>)</span></code></pre></div>
+<pre><code>##         wkhtot  agea edulvla chldhm
+## wkhtot    1.00 -0.10    0.11  -0.01
+## agea     -0.10  1.00    0.04   0.04
+## edulvla   0.11  0.04    1.00  -0.01
+## chldhm   -0.01  0.04   -0.01   1.00
+## 
+## n
+##         wkhtot agea edulvla chldhm
+## wkhtot     181  181     178    181
+## agea       181  200     197    200
+## edulvla    178  197     197    197
+## chldhm     181  200     197    200
+## 
+## P
+##         wkhtot agea   edulvla chldhm
+## wkhtot         0.1648 0.1449  0.9295
+## agea    0.1648        0.5747  0.5987
+## edulvla 0.1449 0.5747         0.8765
+## chldhm  0.9295 0.5987 0.8765</code></pre>
+<div class="sourceCode" id="cb567"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb567-1"><a href="ergänzungen-einheit-14-wp1314.html#cb567-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(daten_ess)</span></code></pre></div>
+<p>Da statistische Signifkanz stark von der Stichprobengrösse abhängig ist, sollte sie nicht überbewertet werden. Wichtig ist die verschiedenen Kennzahlen miteinander zu betrachte: die deskriptiven Werte, die Standardfehler, die p-Werte (Signifikanz) und die Stichprobengrösse.</p>
+</div>
+<div id="übung-zur-multiplen-linearen-regression" class="section level2" number="12.3">
+<h2><span class="header-section-number">12.3</span> Übung zur multiplen, linearen Regression</h2>
+<p>Anschliessend können wir das multiple, lineare Regressionsmodell nochmals erstellen. Dieses soll uns die Wirkung des Bildungsniveau sowie der Tatsache, ob jemand mit Kindern zuhause lebt, auf die wöchentlichen Arbeitsstunden aufzeigen. Die Variable zum Alter der Personen verwenden wir als Kontrollvariable. Weiter integrieren wir wiederum die Variable “edulvla” als nicht-geordneter Faktor:</p>
+<div class="sourceCode" id="cb568"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb568-1"><a href="ergänzungen-einheit-14-wp1314.html#cb568-1" aria-hidden="true" tabindex="-1"></a>daten_ess_f<span class="sc">$</span>edulvla_no <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess_f<span class="sc">$</span>edulvla, <span class="at">ordered =</span> F)</span>
+<span id="cb568-2"><a href="ergänzungen-einheit-14-wp1314.html#cb568-2" aria-hidden="true" tabindex="-1"></a>modell_m <span class="ot">&lt;-</span> <span class="fu">lm</span>(wkhtot <span class="sc">~</span> agea <span class="sc">+</span> edulvla_no <span class="sc">+</span> chldhm, <span class="at">data =</span> daten_ess_f)</span>
+<span id="cb568-3"><a href="ergänzungen-einheit-14-wp1314.html#cb568-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modell_m)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = wkhtot ~ agea + edulvla_no + chldhm, data = daten_ess_f)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -41.607 -10.028   4.595   9.716  62.096 
+## 
+## Coefficients:
+##                     Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)         35.54966    3.19870  11.114  &lt; 2e-16 ***
+## agea                -0.01167    0.02489  -0.469    0.639    
+## edulvla_noISCED 2   -4.58629    3.08366  -1.487    0.137    
+## edulvla_noISCED 3   -2.27678    2.94290  -0.774    0.439    
+## edulvla_noISCED 4   -1.56067    3.79260  -0.412    0.681    
+## edulvla_noISCED 5-6  2.41428    2.96493   0.814    0.416    
+## chldhmDoes not       4.41304    0.93014   4.744 2.31e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 16.43 on 1375 degrees of freedom
+##   (143 Beobachtungen als fehlend gelöscht)
+## Multiple R-squared:  0.03677,    Adjusted R-squared:  0.03257 
+## F-statistic: 8.748 on 6 and 1375 DF,  p-value: 2.258e-09</code></pre>
+<p>Folgende Sätze wurden im Seminar präsentiert (kursiv) und es galt Sie mittels Text zu ergänzen.</p>
+<ol style="list-style-type: decimal">
+<li><p><em>Insgesamt erklärt das berechnete Regressionsmodell lediglich…</em> lediglich 3% der Variation der Variable “wkhtot.”</p></li>
+<li><p><em>Trotzdem weisst das gesamte Modell auch in der…</em> Grundgesamtheit eine Erklärungsleistung auf.</p></li>
+<li><p><em>Wenn wir übergehen zu den einzelnen Koeffizienten so wird deutlich, dass abgesehen vom bO-Wert lediglich…</em> die Variable “chldhm” auch in der Grundgesamtheit eine Wirkung auf die geleisteten Arbeiststunden aufweist.</p></li>
+<li><p><em>Dies zeigt sich auch an den jeweiligen…</em> Standardfehlern, die alle sehr hoch sind im Vergleich zu den Koeffizienten (ausser bei “chldhm”).</p></li>
+<li><p><em>Deskriptiv statistisch betrachtet wird wiederum der starke Effekt der Variable…</em> “chldhm” deutlich: Wenn jemand nicht mit Kindern lebt erhöht dies den Vorhersagewert für “wkhtot” um fast 4.5h.</p></li>
+<li><p><em>Eine ähnlich hoher Effekt – allerdings negativ und nicht signifikant – zeigt sich auch bei einem Wechsel vom…</em> ersten Bildungsniveau zu ISCED 2.<br />
+</p></li>
+<li><p><em>Ein positiver Effekt einer als Dummy-Variable kodierter Ausprägung von…</em> knapp 2.5 zeigt sich beim Wechsel vom ersten zum letzten Bildungsniveau.<br />
+</p></li>
+<li><p><em>Die Kontrollvariable…</em> Alter hat einen sehr geringen Einfluss auf den Vorhersagtwerte, nämlich eine Abnahme um 0.01 Arbeitsstunden pro Altersjahr.</p></li>
+<li><p><em>Für den (empirisch nicht sinnvollen) Fall dass jemand Kinder hätte, 0…</em> Jahre alt wäre und sich auf dem ersten Bildungsniveau befinden würde, würde das Modell 35.5h Arbeitsstunden pro Woche ausweisen.</p></li>
+</ol>
+</div>
+<div id="anwendungsvoraussetzungen" class="section level2" number="12.4">
+<h2><span class="header-section-number">12.4</span> Anwendungsvoraussetzungen</h2>
+<p>Nachdem wir uns der Interpretation des Modells gewidmet haben können wir noch die Anwendungsvoraussetzungen testen. Diese sind folgende:</p>
+<ol style="list-style-type: decimal">
+<li>Linearität</li>
+<li>Keine hohe Multikollinearität</li>
+<li>Varianzhomogenität der Residuen</li>
+<li>Normalverteilung der Residuen</li>
+<li>Unkorreliertheit der Residuen (lediglich bei Zeitreihendaten relevant)</li>
+</ol>
+<p>Die Frage nach der <strong>Multikollinearität (4)</strong> haben wir bereits in der Korrelationstabelle angeschnitten, können dies aber auch noch genauer prüfen. Dies erfolgt mittels der Funktion <code>vif()</code> wie dies etwa <strong>Vanessa Leutner</strong> und <strong>Julien Lattmann</strong> gemacht haben:</p>
+<div class="sourceCode" id="cb570"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb570-1"><a href="ergänzungen-einheit-14-wp1314.html#cb570-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code></pre></div>
+<pre><code>## Lade nötiges Paket: carData</code></pre>
+<div class="sourceCode" id="cb572"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb572-1"><a href="ergänzungen-einheit-14-wp1314.html#cb572-1" aria-hidden="true" tabindex="-1"></a>?vif</span></code></pre></div>
+<p>Der ausgegebene <em>variance inflation factor</em> entspricht dem Umkehrwert der Toleranz <span class="citation">(vgl. <a href="#ref-DiazBone2019" role="doc-biblioref">Diaz-Bone 2019, 207f</a>)</span>:</p>
+<div class="sourceCode" id="cb573"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb573-1"><a href="ergänzungen-einheit-14-wp1314.html#cb573-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="fu">vif</span>(modell_m)</span></code></pre></div>
+<pre><code>##                 GVIF   Df GVIF^(1/(2*Df))
+## agea       0.9790688 1.00       0.9894791
+## edulvla_no 0.9795957 0.25       0.9974264
+## chldhm     0.9807544 1.00       0.9903305</code></pre>
+<p>Der Toleranzwert variiert zwischen 0 und 1. Dabei gibt er uns an, wie stark eine jeweilige unabhängige Variable durch eine andere unabhängige Variable erklärt werden kann. Wirklich zu einem Problem werden die Werte nur dann, wenn sie sehr klein sind (z.Bsp. unter 0.2).</p>
+<p>Für die weiteren Anwendungsvoraussetzungen bietet R eine detaillierte Residuenanalyse an. Dies funktioniert so, dass wir mittels der Funktion <code>plot()</code> auf das Ergebnisobjekt des Regressionsmodell zugreifen. Damit werden uns vier verschiedenen Plots zur grafisch gestützten Residuenanalyse ausgegeben:</p>
+<div class="sourceCode" id="cb575"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb575-1"><a href="ergänzungen-einheit-14-wp1314.html#cb575-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modell_m)</span></code></pre></div>
+<p>Die erste Grafik ist ein Streudiagramm der Residuen und der Vorhersagwerte. Da hier der Vorhersagwerte (und nicht die abhängige Variable) auf der X-Achse abgebildet ist lassen sich hier alle unabhängigen Variablen überprüfen, und zwar auf die Frage der <strong>Linearität (1)</strong> hin.<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> Ein spezifisches Muster im Plot würde auf fehlende Linearität hinweisen oder auch darauf, dass es weitere erklärende Variablen gibt, die noch nicht im Modell eingeschlossen sind <span class="citation">(<a href="#ref-Manderscheid2017" role="doc-biblioref">Manderscheid 2017, 194</a>)</span>.<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a> In unserem Fall scheint die Linearitätsannahme nicht verletzt zu sein und es zeigt sich auch kein (starkes) spezifisches Muster zu zeigen.</p>
+<p>Die zweite Grafik, der Normal-Q-Q Plot, gibt uns Hinweise zu der <strong>Normalverteilung der Residuen (4)</strong>. Dazu werden die empirischen Verteilungen der Residuen (z-standardisiert) gegen die Quantile geplottet, die bei einer Normalverteilung zu erwarten wären. Quantile sind hier die Wahrscheinlichkeiten: In der theoretischen Normalverteilung liegen links und rechts von 0 je 50%. Je weiter die Werte von Null abweichen, desto weniger Fälle liegen dort (links von -1 wären noch rund 13% der Fälle). Die theoretische Normalverteilung (die gerade, gestrichelte Linie) wird dann mit der empirischen Verteilung verglichen (die über Kreise gebildete, “wackelige” Linie). Ziel sollte es sei, dass eben im mindestens im Bereich + 1 x Standardabweichung und - 1 x Standardabweichung (68% der Fälle) die beiden Linien ziemlich deckungsgleich wären. Bei grösseren Stichproben werden die Abweichungen immer weniger problematisch (vgl. auch Diaz-Bone 2019:231). Hier zeigen sich allerdings bereits grössere Abweichungen.</p>
+<p>Die dritte Grafik der Scale-Location prüft die <strong>Varianzhomogenität der Residuen (3)</strong> (Homoskedaszität) in dem die Vorhersagwerte gegen die standardisierten Residuen geplottet werden. Die Punkte sollten hier horizontal in einheitlicher Breite variieren <span class="citation">(<a href="#ref-Manderscheid2017" role="doc-biblioref">Manderscheid 2017, 194</a>)</span>. Wie bereits bei der ersten Grafik findet sich hier eine rote Linie, ein sogenannter <em>Smoother</em>. Dies ist eine immer aufs neue geschätzte Line, die im optimalfall gerade verlaufen sollte. Hier sehen wir nun, dass das wir vor allem bei grösseren Vorhersagewerte auch etwas grössere Residuen haben (unabhängig davon ob diese positiv oder negativ sind). Hier scheint also eine gewisse Heteroskedaszität vorzuliegen.</p>
+<p>Die vierte und letzte Grafik stellt die Residuen dem sogenannten Leverage Wert gegenüber. Dieser Wert gibt an, wie stark ein jeweiliger Punkt auf das Modell wirkt (dessen Hebelwirkung). Je stärker ein solcher Leverage-Wert eines Punktes ist – je weiter rechts er ist – desto geringer sollte die Residue sein. Insbesondere die Werte ausserhalb der <em>Cook’s Distance</em> sollten wir genauer betrachten und uns überlegen, was dabei los ist (dies ist hier nicht ersichtlich, findet sich aber etwa <a href="https://www.statology.org/residuals-vs-leverage-plot/">hier</a>).</p>
+<p>In allen vier Grafiken, welche die Funktion <code>plot()</code> von unserem Modell erzeugt hat, wurden immer wieder bestimmte Fälle ausgewiesen. Dies sind Fälle, die das Modell womöglich stark beeinflussen (bzw. dessen Modellgüte reduzieren). Diese Fälle – insbesondere diejenige im letzten Plot – können wir versuchsweise ausschliessen und ein neues Modell rechnen (natürlich müssten wir diese Fälle auch noch genauer betrachten). Es zeigt sich dann allerdings, dass kaum eine Verbesserung erreicht wurde. Unser Modell bleibt auch nachher diesem Schritt ziemlich schlecht…</p>
+<div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb576-1"><a href="ergänzungen-einheit-14-wp1314.html#cb576-1" aria-hidden="true" tabindex="-1"></a>modell_m2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(wkhtot <span class="sc">~</span> agea <span class="sc">+</span> edulvla_no <span class="sc">+</span> chldhm, <span class="at">data =</span> daten_ess[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">130</span>,<span class="dv">159</span>,<span class="dv">228</span>,<span class="dv">768</span>,<span class="dv">216</span>, <span class="dv">277</span>),])</span>
+<span id="cb576-2"><a href="ergänzungen-einheit-14-wp1314.html#cb576-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modell_m2)</span></code></pre></div>
+</div>
+<div id="exkurs-residuenwolken" class="section level2" number="12.5">
+<h2><span class="header-section-number">12.5</span> Exkurs: Residuenwolken</h2>
+Im folgenden sollen fünf verschiedenen Residuenwolken und deren jeweiligen Diagnose kurz beschrieben werden. Die erste Residuenwolke verweist auf ein schlechtes Modell – aber es gleichzeitig auch ein Modell, das sonst kein Problem aufweist/keine Anwendungsvoraussetzungen verletzt.
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-219"></span>
+<img src="Bilder/ResWo1.jpg" alt="Residuenwolke 1" width="116" />
+<p class="caption">
+Figure 12.1: Residuenwolke 1
+</p>
+</div>
+Die zweite Residuenwolke zeigt auf, dass die Residuen nicht normalverteilt sind: Die Extremwerte kommen häufiger als andere.
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-220"></span>
+<img src="Bilder/ResWo2.jpg" alt="Residuenwolke 2" width="116" />
+<p class="caption">
+Figure 12.2: Residuenwolke 2
+</p>
+</div>
+Die dritte Residuenwolke verweist auf einen fehlende Linearität, denn hier scheint ein quadratischer Zusammenhang vorhanden zu sein.
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-221"></span>
+<img src="Bilder/ResWo3.jpg" alt="Residuenwolke 3" width="108" />
+<p class="caption">
+Figure 12.3: Residuenwolke 3
+</p>
+</div>
+Bei der vierten Residuenwolke ist zwar Linearität gegebe, aber hier scheint eine wichtige unabhängige Variable zu fehlen. Deshalb können wir hier Varian<em>in</em>homogenität oder eben Heteroskedastizität feststellen.
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-222"></span>
+<img src="Bilder/ResWo4.jpg" alt="Residuenwolke 4" width="116" />
+<p class="caption">
+Figure 12.4: Residuenwolke 4
+</p>
+</div>
+Bei der fünten Residuenwolke sehen wir ebenfalls ein schlechtes Modell und ein klarer Fall von Heteroskedastizität. In diesem Beispiel ist die verletzte Anwendungsvoraussetzung allerdings nicht so einfach auf eine fehlende unabhängige Variable zurückzuführen.
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-223"></span>
+<img src="Bilder/ResWo5.jpg" alt="Residuenwolke 5" width="116" />
+<p class="caption">
+Figure 12.5: Residuenwolke 5
+</p>
+</div>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-DiazBone2019" class="csl-entry">
+Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.
+</div>
+<div id="ref-Manderscheid2017" class="csl-entry">
+Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit r. Eine Einführung</em>. Wiesbaden: Springer VS.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="12">
+<li id="fn12"><p>Mittels der Funktion <code>save()</code> können weiter mehrere Objekte/eine ganze Environment abgespeichert werden. Beim Laden behalten dann allerdings der Name der Objekte nicht geändert werden<a href="ergänzungen-einheit-14-wp1314.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn13"><p>Die genauere Prüfung der Linearität von einzelnen Variablen kann beispielsweise über die Funktion <code>leveragePlots()</code> des Paketes „car“ erfolgen.<a href="ergänzungen-einheit-14-wp1314.html#fnref13" class="footnote-back">↩︎</a></p></li>
+<li id="fn14"><p>Siehe auch der Exkurs zu den Residuenwolken für eine Übersicht zu den verschiedenen Mustern<a href="ergänzungen-einheit-14-wp1314.html#fnref14" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="wochenplan-11.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/12_Ergaenzungen-E14.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

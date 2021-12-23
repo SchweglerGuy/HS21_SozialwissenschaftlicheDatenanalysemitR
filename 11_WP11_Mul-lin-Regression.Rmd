@@ -6,20 +6,106 @@
 
 Im Rahmen des 11. Wochenplans wollen wir uns einem multiplen linearen Regressionsmodell widmen. Wie immer möchten wir uns dazu als erstes einen Überblick zu möglichen Variablen verschaffen und eine Fragestellung formulieren, bevor dann ein Modell berechnet und interpretiert werden kann. Anschliessend gilt es über eine grafische Residuenanalyse die Anwendungsvoraussetzungen für die multiple lineare Regression zu testen sowie über den Ausschluss von gewissen Fällen das Modell zu verbessern.
 
-Konkret lassen sich folgende Ziele für diesen nächsten Wochenplan festlegen:
+Konkret lassen sich folgende beiden Ziele für diesen nächsten Wochenplan festlegen:
+
 * Sie verstehen, wie Sie mittels Korrelationstabellen erste Ideen für ein multiples Modell sammeln können.
 * Sie können multiple lineare Regressionsanalysen in R korrekt modellieren, durchführen und interpretieren.
-* Sie verstehen, wie die Anwendung von `plot()` auf unser Ergebnisobjekt bei der Analyse der Qualität und Aussagekraft eines Regressionsmodells helfen kann.
-* Sie können Ausreisser in einem Regressionsmodell ausschliessen und die damit erreichten Veränderungen im Modell einschätzen.
+
+Die weiteren Aspekte zur multiplen linearen Regression werdeb dann im nächsten Abschnitt behandelt.
 
 ## Aufgaben
 
 1.	Laden Sie Ihr Datenimport-Skript. Arbeiten Sie anschliessend in einem R-Markdown-Dokument weiter.
 
-2.	Berechnen Sie mittels der Funktion `rcorr()`, die Teil des Paketes “Hmisc” ist, eine Korrelationstabelle zwischen den Variablen “wkhtot”, “agae”, “edulvla” und “chldhm”.
+```{r include=FALSE}
+source(file = "Daten/ess_import.R")
+```
+
+```{r eval=FALSE}
+setwd("C:/Users/SchweglG/R_Daten/06_HS21/R_Seminar-HS21")
+source(file = "Daten/ess_import.R")
+```
+
+&nbsp;
+
+2.	Berechnen Sie mittels der Funktion `rcorr()`, die Teil des Paketes “Hmisc” ist, eine Korrelationstabelle zwischen den Variablen “wkhtot”, “agea”, “edulvla” und “chldhm”.
+
+Wieso sollten wir eine Korrelationstabelle erstellen? Eine solche Tabelle liefert uns einen schnellen Überblick zu verschiedenen Variablen und deren Zusammenhängen, wie eben zu "wkhtot", "agea", "edulvla" und "chldhm". Trotzdem macht es jeweils Sinn, sich zuerst die Variablen noch einzeln anzuschauen:
+
+```{r}
+attach(daten_ess) #eine gute Gelegenheit für die attach-Funktion?
+summary(agea)
+summary(edulvla)
+summary(chldhm)
+summary(wkhtot)
+detach(daten_ess)
+```
+
+Über den `summary()`-Funktion werden schnell Verteilungen deutlich -- etwa die Schiefe bei der Variable "edulvla" -- und auch das Vorhandensein von fehlenden Werte -- wie etwa bei “wkhtot”.
+
+Anschliessend können wir nochmals die Hilfeseite der Funktion `rcorr()` aufrufen. Dabei wird ersichtlich, dass wir eben eine Matrix als Input der Funktion benötigen.
+```{r}
+library(Hmisc)
+?rcorr
+```
+
+Die Matrix erstellen wir wiefolgt:
+```{r}
+corr_m <- cbind(daten_ess$wkhtot, daten_ess$agea,
+                daten_ess$edulvla, daten_ess$chldhm)
+head(corr_m)
+colnames(corr_m) <- c("wkhtot", "agea", "edulvla", "chldhm")
+head(corr_m)
+```
+
+&nbsp;
 
 3.	Interpretieren Sie die Korrelationstabelle (bzw. deren verschiedenen Teile): Wo sehen Sie bereits Zusammenhänge, wo nicht? Formulieren Sie anschliessend eine Fragestellung sowie eine Hypothese zu diesen Variablen für ein multiples lineares Regressionsmodell.
 
+Anschliessend berechen wir die Korrelationstabelle:
+```{r}
+rcorr(corr_m, type = "pearson")
+```
+
+Die Funktion gibt uns nun drei verschiedene Tabellen aus: Zuerst die eigentlichen Korrelationswerte (1) dann die Fallzahlen (2), wo die fehlende Werte, die wir oben in der Summary gesehen haben wieder deutlich werden, und schliesslich die p-Werte für die einzelnen Korrelationen (3). Schnell wird auch deutlich, dass die Tabelle redundante Informationen besitzt, da sie über die diagonale Achse gespiegelt ist (d.h. der jeweilige Wert von „edulvla“ und „agea“ ist natürlich derselbe Werte wie derjenige von „agea“ und „edulvla“).
+
+Welche Korrelationenswerte sehen wir (deskripitv)?  
+-kleine positive Korrelationen zwischen "wkhtot" und "edulvla", "wkhtot" und "chldhm" sowie "agea" und "chldhm"  
+-kleine negative Korrelation zwischen "edulvla" und "chldhm" siwue "agea" und "wkhtot"  
+-sehr kleine Korrelationswerte zwischen zwischen "agea" und "edulvla"
+
+Weiter sehen wir, wo eben fehlende Werte vorhanden sind wie etwa der eine fehlende Werte bei "edulvla".
+
+Dann wird deutlich, dass lediglich ein Zusammenhang auf einem 95% Niveau signifikant ist, nämlich der Zusammenhang zwischen "edulvla" und "chldhm". Alle anderen Korrelationswerte haben eine hohe Wahrscheinlichkeit, dass sie unserer Stichprobe aufgetreten sind, obwohl in der Grundgesamtheit kein Zusammenhang zwischen den Variablen besteht.
+
+Anschliessend können wir übergehen unser multiples lineares Modell zu formulieren. Dabei integrieren wir eine Richtung in die betrachteten Zusammenhänge und definieren so eine abhängige Variable (auf die eingewirkt wird) und verschiedenen unabhängige Variablen (die wirken). Bereits jetzt sollte deutlich sein, dass nur die Variable “wkhtot” zur abhängigen Variable werden kann. Alle anderen Variablen sind entweder inhaltlich nicht sinnvoll ("agea") oder wären nicht geeignet für ein lineares Regressionsmodell ("edulvla" und "chldhm"). 
+
+Hier einige Beispiele für die Regressionsmodelle in Form von Forschungsfragen:  
+V1 - reduziert:  
+*Katrin Oesch*:  Wie stark beeinflusst die Tatsache, ob Kinder im Haushalt leben und der hoechste Ausbildungsabschluss die duchschnittlich geleisteten Arbeitsstunden pro Woche im Hauptjob?  
+*Julien Lattmann*: Inwiefern können das Bildungsniveau und die Anzahl Kinder im Haushalt vohersagen, wieviel jemand pro Woche arbeitet?  
+Warum fehlt hier die Varialbe "agea"? Diese könnten wir trotz einem anders gelagerten Interesse auch einfach als Kontrollvariable integrieren.  
+V2 - vollständig:  
+*Vanesse Leutener*: Wie gross ist der Anteil der Variation von wkhtot, der durch die gemeinsame Variation der Variablen agea, edulvla und chldhm erklärt werden kann?  
+Als These von *Valentina Meyer*: Die Anzahl Arbeitsstunden (wkhtot, av) hängt davon ab, welches Bildungslevel (edulvl) und welches Alter (agea) die befragte Person hat.
+
+&nbsp;
+
 4. Berechnen Sie anschliessend Ihr Regressionsmodell mittels der Funktion `lm()`. Speichern Sie das Modell wie immer als Objekt ab und interpretieren Sie es anschliessend.
 
-Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "FL11_NameVorname.pdf" und geben das Dokument via OLAT vor der nächsten Einheit ab.
+Anschliessend können wir unser multiples lineares Modell formulieren. Die Auseinandersetzungen der vergangenen Wochen haben gezeigt, dass es angebracht ist die Variable "edulvla" als nicht-geordneter Faktor zu integrieren:
+```{r}
+daten_ess$edulvla_no <- factor(daten_ess$edulvla, ordered = F)
+```
+
+Dann formulieren wir das Modell:
+```{r}
+modell_m <- lm(wkhtot ~ agea + edulvla_no + chldhm, data = daten_ess)
+summary(modell_m)
+```
+
+Die Koeffizienten unseres Modells lassen sich wie folgt interpretieren: Wenn jemand 0 Jahre alt ist, auf dem „ISCED 0-1“ Bildungsniveau ist und Kinder zuhause hat, dann würde diese Person 41.7h pro Woche arbeiten (*Intercept*). Mit jeden zusätzlichen Altersjahr arbeitet eine Person gemäss dem Modell 0.005h weniger. Wechselt man vom ersten auf das zweite Bildungsniveau so arbeitet man 11.5 weniger, beim Wechsel auf das dritte Bildungsniveau 10.1h weniger, usw. Keine Kinder im Haushalt zu haben führt dazu, dass man rund 3h mehr arbeitet pro Woche.
+
+Von den Koeffizienten ist keine einzige Variable signifikant (mit Ausnahme des bo-Wertes). Alle Werte haben hohe Wahrscheinlichkeiten zufällig aufzutreten, wenn sie keinen Effekt hätten in der Grundgesamtheit (etwa der Koeffizient von „ISCED 5-6“ hat eine Wahrscheinlichkeit von 80% völlig zufällig aufgetreten zu sein). Dies sieht man auch anhand der Standardfehler, die alle sehr grosse zufällige Streuung der Koeffizienten ausweisen. Als *Hinweis*: Hier sieht man sehr schön, wie die t-Werte entstehen, nämlich einfach über die Berechnung von Estimate(bj)/St.Error(Sigma bj).
+
+Unser Modell beziehungsweise unsere unabhängigen Variablen erklären rund 8% bzw. 5% der Varianz von der Variable „wkhtot“. Dieser Wert selber ist signifikant auf einem 95% Niveau. Oder umgekehrt formuliert: Es besteht lediglich eine Wahrescheinlichkeit von 2.4%, dass unser r-Quadrat Wert zufällig in der Stichprobe aufgetreten ist, obwohl das Modell in der Grundgesamtheit keine Erklärungsleistung besitzt.

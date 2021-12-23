@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="wochenplan-10-einführung-regression.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="ergänzungen-einheit-14-wp1314.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -221,6 +221,14 @@ div.csl-indent {
 <li class="chapter" data-level="11.1" data-path="wochenplan-11.html"><a href="wochenplan-11.html#lernziele-8"><i class="fa fa-check"></i><b>11.1</b> Lernziele</a></li>
 <li class="chapter" data-level="11.2" data-path="wochenplan-11.html"><a href="wochenplan-11.html#aufgaben-6"><i class="fa fa-check"></i><b>11.2</b> Aufgaben</a></li>
 </ul></li>
+<li class="chapter" data-level="12" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html"><i class="fa fa-check"></i><b>12</b> Ergänzungen Einheit 14 (WP13/14)</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#dateiformat-rds"><i class="fa fa-check"></i><b>12.1</b> Dateiformat RDS</a></li>
+<li class="chapter" data-level="12.2" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#relevanz-von-stichprobengrösse"><i class="fa fa-check"></i><b>12.2</b> Relevanz von Stichprobengrösse</a></li>
+<li class="chapter" data-level="12.3" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#übung-zur-multiplen-linearen-regression"><i class="fa fa-check"></i><b>12.3</b> Übung zur multiplen, linearen Regression</a></li>
+<li class="chapter" data-level="12.4" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#anwendungsvoraussetzungen"><i class="fa fa-check"></i><b>12.4</b> Anwendungsvoraussetzungen</a></li>
+<li class="chapter" data-level="12.5" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#exkurs-residuenwolken"><i class="fa fa-check"></i><b>12.5</b> Exkurs: Residuenwolken</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="./">Universität Luzern</a></li>
@@ -248,21 +256,150 @@ div.csl-indent {
 <div id="lernziele-8" class="section level2" number="11.1">
 <h2><span class="header-section-number">11.1</span> Lernziele</h2>
 <p>Im Rahmen des 11. Wochenplans wollen wir uns einem multiplen linearen Regressionsmodell widmen. Wie immer möchten wir uns dazu als erstes einen Überblick zu möglichen Variablen verschaffen und eine Fragestellung formulieren, bevor dann ein Modell berechnet und interpretiert werden kann. Anschliessend gilt es über eine grafische Residuenanalyse die Anwendungsvoraussetzungen für die multiple lineare Regression zu testen sowie über den Ausschluss von gewissen Fällen das Modell zu verbessern.</p>
-<p>Konkret lassen sich folgende Ziele für diesen nächsten Wochenplan festlegen:
-* Sie verstehen, wie Sie mittels Korrelationstabellen erste Ideen für ein multiples Modell sammeln können.
-* Sie können multiple lineare Regressionsanalysen in R korrekt modellieren, durchführen und interpretieren.
-* Sie verstehen, wie die Anwendung von <code>plot()</code> auf unser Ergebnisobjekt bei der Analyse der Qualität und Aussagekraft eines Regressionsmodells helfen kann.
-* Sie können Ausreisser in einem Regressionsmodell ausschliessen und die damit erreichten Veränderungen im Modell einschätzen.</p>
+<p>Konkret lassen sich folgende beiden Ziele für diesen nächsten Wochenplan festlegen:</p>
+<ul>
+<li>Sie verstehen, wie Sie mittels Korrelationstabellen erste Ideen für ein multiples Modell sammeln können.</li>
+<li>Sie können multiple lineare Regressionsanalysen in R korrekt modellieren, durchführen und interpretieren.</li>
+</ul>
+<p>Die weiteren Aspekte zur multiplen linearen Regression werdeb dann im nächsten Abschnitt behandelt.</p>
 </div>
 <div id="aufgaben-6" class="section level2" number="11.2">
 <h2><span class="header-section-number">11.2</span> Aufgaben</h2>
 <ol style="list-style-type: decimal">
-<li><p>Laden Sie Ihr Datenimport-Skript. Arbeiten Sie anschliessend in einem R-Markdown-Dokument weiter.</p></li>
-<li><p>Berechnen Sie mittels der Funktion <code>rcorr()</code>, die Teil des Paketes “Hmisc” ist, eine Korrelationstabelle zwischen den Variablen “wkhtot,” “agae,” “edulvla” und “chldhm.”</p></li>
-<li><p>Interpretieren Sie die Korrelationstabelle (bzw. deren verschiedenen Teile): Wo sehen Sie bereits Zusammenhänge, wo nicht? Formulieren Sie anschliessend eine Fragestellung sowie eine Hypothese zu diesen Variablen für ein multiples lineares Regressionsmodell.</p></li>
-<li><p>Berechnen Sie anschliessend Ihr Regressionsmodell mittels der Funktion <code>lm()</code>. Speichern Sie das Modell wie immer als Objekt ab und interpretieren Sie es anschliessend.</p></li>
+<li>Laden Sie Ihr Datenimport-Skript. Arbeiten Sie anschliessend in einem R-Markdown-Dokument weiter.</li>
 </ol>
-<p>Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit “FL11_NameVorname.pdf” und geben das Dokument via OLAT vor der nächsten Einheit ab.</p>
+<div class="sourceCode" id="cb533"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb533-1"><a href="wochenplan-11.html#cb533-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/Users/SchweglG/R_Daten/06_HS21/R_Seminar-HS21&quot;</span>)</span>
+<span id="cb533-2"><a href="wochenplan-11.html#cb533-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="at">file =</span> <span class="st">&quot;Daten/ess_import.R&quot;</span>)</span></code></pre></div>
+<p> </p>
+<ol start="2" style="list-style-type: decimal">
+<li>Berechnen Sie mittels der Funktion <code>rcorr()</code>, die Teil des Paketes “Hmisc” ist, eine Korrelationstabelle zwischen den Variablen “wkhtot,” “agea,” “edulvla” und “chldhm.”</li>
+</ol>
+<p>Wieso sollten wir eine Korrelationstabelle erstellen? Eine solche Tabelle liefert uns einen schnellen Überblick zu verschiedenen Variablen und deren Zusammenhängen, wie eben zu “wkhtot,” “agea,” “edulvla” und “chldhm.” Trotzdem macht es jeweils Sinn, sich zuerst die Variablen noch einzeln anzuschauen:</p>
+<div class="sourceCode" id="cb534"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb534-1"><a href="wochenplan-11.html#cb534-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(daten_ess) <span class="co">#eine gute Gelegenheit für die attach-Funktion?</span></span>
+<span id="cb534-2"><a href="wochenplan-11.html#cb534-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(agea)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   15.00   30.75   47.00   45.49   59.00   85.00</code></pre>
+<div class="sourceCode" id="cb536"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb536-1"><a href="wochenplan-11.html#cb536-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(edulvla)</span></code></pre></div>
+<pre><code>## ISCED 0-1   ISCED 2   ISCED 3   ISCED 4 ISCED 5-6      NA&#39;s 
+##         6        41        88         6        56         3</code></pre>
+<div class="sourceCode" id="cb538"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb538-1"><a href="wochenplan-11.html#cb538-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(chldhm)</span></code></pre></div>
+<pre><code>## Respondent lives with children at household grid 
+##                                               70 
+##                                         Does not 
+##                                              130</code></pre>
+<div class="sourceCode" id="cb540"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb540-1"><a href="wochenplan-11.html#cb540-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(wkhtot)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##    0.00   27.00   42.00   36.76   45.00   70.00      19</code></pre>
+<div class="sourceCode" id="cb542"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb542-1"><a href="wochenplan-11.html#cb542-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(daten_ess)</span></code></pre></div>
+<p>Über den <code>summary()</code>-Funktion werden schnell Verteilungen deutlich – etwa die Schiefe bei der Variable “edulvla” – und auch das Vorhandensein von fehlenden Werte – wie etwa bei “wkhtot.”</p>
+<p>Anschliessend können wir nochmals die Hilfeseite der Funktion <code>rcorr()</code> aufrufen. Dabei wird ersichtlich, dass wir eben eine Matrix als Input der Funktion benötigen.</p>
+<div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb543-1"><a href="wochenplan-11.html#cb543-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span></code></pre></div>
+<pre><code>## Lade nötiges Paket: lattice</code></pre>
+<pre><code>## Lade nötiges Paket: survival</code></pre>
+<pre><code>## Lade nötiges Paket: Formula</code></pre>
+<pre><code>## 
+## Attache Paket: &#39;Hmisc&#39;</code></pre>
+<pre><code>## Die folgenden Objekte sind maskiert von &#39;package:base&#39;:
+## 
+##     format.pval, units</code></pre>
+<div class="sourceCode" id="cb549"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb549-1"><a href="wochenplan-11.html#cb549-1" aria-hidden="true" tabindex="-1"></a>?rcorr</span></code></pre></div>
+<p>Die Matrix erstellen wir wiefolgt:</p>
+<div class="sourceCode" id="cb550"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb550-1"><a href="wochenplan-11.html#cb550-1" aria-hidden="true" tabindex="-1"></a>corr_m <span class="ot">&lt;-</span> <span class="fu">cbind</span>(daten_ess<span class="sc">$</span>wkhtot, daten_ess<span class="sc">$</span>agea,</span>
+<span id="cb550-2"><a href="wochenplan-11.html#cb550-2" aria-hidden="true" tabindex="-1"></a>                daten_ess<span class="sc">$</span>edulvla, daten_ess<span class="sc">$</span>chldhm)</span>
+<span id="cb550-3"><a href="wochenplan-11.html#cb550-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(corr_m)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]   60   22    5    2
+## [2,]   41   64    4    2
+## [3,]   35   35    5    1
+## [4,]   45   25    3    2
+## [5,]   40   59   NA    1
+## [6,]   32   37    5    1</code></pre>
+<div class="sourceCode" id="cb552"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb552-1"><a href="wochenplan-11.html#cb552-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(corr_m) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;wkhtot&quot;</span>, <span class="st">&quot;agea&quot;</span>, <span class="st">&quot;edulvla&quot;</span>, <span class="st">&quot;chldhm&quot;</span>)</span>
+<span id="cb552-2"><a href="wochenplan-11.html#cb552-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(corr_m)</span></code></pre></div>
+<pre><code>##      wkhtot agea edulvla chldhm
+## [1,]     60   22       5      2
+## [2,]     41   64       4      2
+## [3,]     35   35       5      1
+## [4,]     45   25       3      2
+## [5,]     40   59      NA      1
+## [6,]     32   37       5      1</code></pre>
+<p> </p>
+<ol start="3" style="list-style-type: decimal">
+<li>Interpretieren Sie die Korrelationstabelle (bzw. deren verschiedenen Teile): Wo sehen Sie bereits Zusammenhänge, wo nicht? Formulieren Sie anschliessend eine Fragestellung sowie eine Hypothese zu diesen Variablen für ein multiples lineares Regressionsmodell.</li>
+</ol>
+<p>Anschliessend berechen wir die Korrelationstabelle:</p>
+<div class="sourceCode" id="cb554"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb554-1"><a href="wochenplan-11.html#cb554-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rcorr</span>(corr_m, <span class="at">type =</span> <span class="st">&quot;pearson&quot;</span>)</span></code></pre></div>
+<pre><code>##         wkhtot  agea edulvla chldhm
+## wkhtot    1.00 -0.10    0.11  -0.01
+## agea     -0.10  1.00    0.04   0.04
+## edulvla   0.11  0.04    1.00  -0.01
+## chldhm   -0.01  0.04   -0.01   1.00
+## 
+## n
+##         wkhtot agea edulvla chldhm
+## wkhtot     181  181     178    181
+## agea       181  200     197    200
+## edulvla    178  197     197    197
+## chldhm     181  200     197    200
+## 
+## P
+##         wkhtot agea   edulvla chldhm
+## wkhtot         0.1648 0.1449  0.9295
+## agea    0.1648        0.5747  0.5987
+## edulvla 0.1449 0.5747         0.8765
+## chldhm  0.9295 0.5987 0.8765</code></pre>
+<p>Die Funktion gibt uns nun drei verschiedene Tabellen aus: Zuerst die eigentlichen Korrelationswerte (1) dann die Fallzahlen (2), wo die fehlende Werte, die wir oben in der Summary gesehen haben wieder deutlich werden, und schliesslich die p-Werte für die einzelnen Korrelationen (3). Schnell wird auch deutlich, dass die Tabelle redundante Informationen besitzt, da sie über die diagonale Achse gespiegelt ist (d.h. der jeweilige Wert von „edulvla“ und „agea“ ist natürlich derselbe Werte wie derjenige von „agea“ und „edulvla“).</p>
+<p>Welche Korrelationenswerte sehen wir (deskripitv)?<br />
+-kleine positive Korrelationen zwischen “wkhtot” und “edulvla,” “wkhtot” und “chldhm” sowie “agea” und “chldhm”<br />
+-kleine negative Korrelation zwischen “edulvla” und “chldhm” siwue “agea” und “wkhtot”<br />
+-sehr kleine Korrelationswerte zwischen zwischen “agea” und “edulvla”</p>
+<p>Weiter sehen wir, wo eben fehlende Werte vorhanden sind wie etwa der eine fehlende Werte bei “edulvla.”</p>
+<p>Dann wird deutlich, dass lediglich ein Zusammenhang auf einem 95% Niveau signifikant ist, nämlich der Zusammenhang zwischen “edulvla” und “chldhm.” Alle anderen Korrelationswerte haben eine hohe Wahrscheinlichkeit, dass sie unserer Stichprobe aufgetreten sind, obwohl in der Grundgesamtheit kein Zusammenhang zwischen den Variablen besteht.</p>
+<p>Anschliessend können wir übergehen unser multiples lineares Modell zu formulieren. Dabei integrieren wir eine Richtung in die betrachteten Zusammenhänge und definieren so eine abhängige Variable (auf die eingewirkt wird) und verschiedenen unabhängige Variablen (die wirken). Bereits jetzt sollte deutlich sein, dass nur die Variable “wkhtot” zur abhängigen Variable werden kann. Alle anderen Variablen sind entweder inhaltlich nicht sinnvoll (“agea”) oder wären nicht geeignet für ein lineares Regressionsmodell (“edulvla” und “chldhm”).</p>
+<p>Hier einige Beispiele für die Regressionsmodelle in Form von Forschungsfragen:<br />
+V1 - reduziert:<br />
+<em>Katrin Oesch</em>: Wie stark beeinflusst die Tatsache, ob Kinder im Haushalt leben und der hoechste Ausbildungsabschluss die duchschnittlich geleisteten Arbeitsstunden pro Woche im Hauptjob?<br />
+<em>Julien Lattmann</em>: Inwiefern können das Bildungsniveau und die Anzahl Kinder im Haushalt vohersagen, wieviel jemand pro Woche arbeitet?<br />
+Warum fehlt hier die Varialbe “agea?” Diese könnten wir trotz einem anders gelagerten Interesse auch einfach als Kontrollvariable integrieren.<br />
+V2 - vollständig:<br />
+<em>Vanesse Leutener</em>: Wie gross ist der Anteil der Variation von wkhtot, der durch die gemeinsame Variation der Variablen agea, edulvla und chldhm erklärt werden kann?<br />
+Als These von <em>Valentina Meyer</em>: Die Anzahl Arbeitsstunden (wkhtot, av) hängt davon ab, welches Bildungslevel (edulvl) und welches Alter (agea) die befragte Person hat.</p>
+<p> </p>
+<ol start="4" style="list-style-type: decimal">
+<li>Berechnen Sie anschliessend Ihr Regressionsmodell mittels der Funktion <code>lm()</code>. Speichern Sie das Modell wie immer als Objekt ab und interpretieren Sie es anschliessend.</li>
+</ol>
+<p>Anschliessend können wir unser multiples lineares Modell formulieren. Die Auseinandersetzungen der vergangenen Wochen haben gezeigt, dass es angebracht ist die Variable “edulvla” als nicht-geordneter Faktor zu integrieren:</p>
+<div class="sourceCode" id="cb556"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb556-1"><a href="wochenplan-11.html#cb556-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>edulvla_no <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>edulvla, <span class="at">ordered =</span> F)</span></code></pre></div>
+<p>Dann formulieren wir das Modell:</p>
+<div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb557-1"><a href="wochenplan-11.html#cb557-1" aria-hidden="true" tabindex="-1"></a>modell_m <span class="ot">&lt;-</span> <span class="fu">lm</span>(wkhtot <span class="sc">~</span> agea <span class="sc">+</span> edulvla_no <span class="sc">+</span> chldhm, <span class="at">data =</span> daten_ess)</span>
+<span id="cb557-2"><a href="wochenplan-11.html#cb557-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modell_m)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = wkhtot ~ agea + edulvla_no + chldhm, data = daten_ess)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -38.469  -8.622   3.456   9.170  33.778 
+## 
+## Coefficients:
+##                      Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)          51.19795    7.61602   6.722 2.56e-10 ***
+## agea                 -0.10006    0.06643  -1.506   0.1338    
+## edulvla_noISCED 2   -14.53823    7.01734  -2.072   0.0398 *  
+## edulvla_noISCED 3   -10.57326    6.68716  -1.581   0.1157    
+## edulvla_noISCED 4   -16.45756    9.16319  -1.796   0.0743 .  
+## edulvla_noISCED 5-6  -7.17038    6.77776  -1.058   0.2916    
+## chldhmDoes not        0.74300    2.28406   0.325   0.7454    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 14.4 on 171 degrees of freedom
+##   (22 Beobachtungen als fehlend gelöscht)
+## Multiple R-squared:  0.05682,    Adjusted R-squared:  0.02372 
+## F-statistic: 1.717 on 6 and 171 DF,  p-value: 0.1198</code></pre>
+<p>Die Koeffizienten unseres Modells lassen sich wie folgt interpretieren: Wenn jemand 0 Jahre alt ist, auf dem „ISCED 0-1“ Bildungsniveau ist und Kinder zuhause hat, dann würde diese Person 41.7h pro Woche arbeiten (<em>Intercept</em>). Mit jeden zusätzlichen Altersjahr arbeitet eine Person gemäss dem Modell 0.005h weniger. Wechselt man vom ersten auf das zweite Bildungsniveau so arbeitet man 11.5 weniger, beim Wechsel auf das dritte Bildungsniveau 10.1h weniger, usw. Keine Kinder im Haushalt zu haben führt dazu, dass man rund 3h mehr arbeitet pro Woche.</p>
+<p>Von den Koeffizienten ist keine einzige Variable signifikant (mit Ausnahme des bo-Wertes). Alle Werte haben hohe Wahrscheinlichkeiten zufällig aufzutreten, wenn sie keinen Effekt hätten in der Grundgesamtheit (etwa der Koeffizient von „ISCED 5-6“ hat eine Wahrscheinlichkeit von 80% völlig zufällig aufgetreten zu sein). Dies sieht man auch anhand der Standardfehler, die alle sehr grosse zufällige Streuung der Koeffizienten ausweisen. Als <em>Hinweis</em>: Hier sieht man sehr schön, wie die t-Werte entstehen, nämlich einfach über die Berechnung von Estimate(bj)/St.Error(Sigma bj).</p>
+<p>Unser Modell beziehungsweise unsere unabhängigen Variablen erklären rund 8% bzw. 5% der Varianz von der Variable „wkhtot“. Dieser Wert selber ist signifikant auf einem 95% Niveau. Oder umgekehrt formuliert: Es besteht lediglich eine Wahrescheinlichkeit von 2.4%, dass unser r-Quadrat Wert zufällig in der Stichprobe aufgetreten ist, obwohl das Modell in der Grundgesamtheit keine Erklärungsleistung besitzt.</p>
 
 </div>
 </div>
@@ -272,7 +409,7 @@ div.csl-indent {
         </div>
       </div>
 <a href="wochenplan-10-einführung-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ergänzungen-einheit-14-wp1314.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

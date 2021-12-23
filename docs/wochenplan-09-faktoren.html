@@ -221,6 +221,14 @@ div.csl-indent {
 <li class="chapter" data-level="11.1" data-path="wochenplan-11.html"><a href="wochenplan-11.html#lernziele-8"><i class="fa fa-check"></i><b>11.1</b> Lernziele</a></li>
 <li class="chapter" data-level="11.2" data-path="wochenplan-11.html"><a href="wochenplan-11.html#aufgaben-6"><i class="fa fa-check"></i><b>11.2</b> Aufgaben</a></li>
 </ul></li>
+<li class="chapter" data-level="12" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html"><i class="fa fa-check"></i><b>12</b> Ergänzungen Einheit 14 (WP13/14)</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#dateiformat-rds"><i class="fa fa-check"></i><b>12.1</b> Dateiformat RDS</a></li>
+<li class="chapter" data-level="12.2" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#relevanz-von-stichprobengrösse"><i class="fa fa-check"></i><b>12.2</b> Relevanz von Stichprobengrösse</a></li>
+<li class="chapter" data-level="12.3" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#übung-zur-multiplen-linearen-regression"><i class="fa fa-check"></i><b>12.3</b> Übung zur multiplen, linearen Regression</a></li>
+<li class="chapter" data-level="12.4" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#anwendungsvoraussetzungen"><i class="fa fa-check"></i><b>12.4</b> Anwendungsvoraussetzungen</a></li>
+<li class="chapter" data-level="12.5" data-path="ergänzungen-einheit-14-wp1314.html"><a href="ergänzungen-einheit-14-wp1314.html#exkurs-residuenwolken"><i class="fa fa-check"></i><b>12.5</b> Exkurs: Residuenwolken</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="./">Universität Luzern</a></li>
@@ -285,37 +293,37 @@ div.csl-indent {
 <div class="sourceCode" id="cb427"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb427-1"><a href="wochenplan-09-faktoren.html#cb427-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>gndr)</span></code></pre></div>
 <pre><code>## 
 ##   1   2 
-## 113  87</code></pre>
+## 100 100</code></pre>
 <div class="sourceCode" id="cb429"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb429-1"><a href="wochenplan-09-faktoren.html#cb429-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>gndr <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>gndr)</span>
 <span id="cb429-2"><a href="wochenplan-09-faktoren.html#cb429-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(daten_ess<span class="sc">$</span>gndr) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>)</span>
 <span id="cb429-3"><a href="wochenplan-09-faktoren.html#cb429-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>gndr)</span></code></pre></div>
 <pre><code>## 
 ##   Male Female 
-##    113     87</code></pre>
+##    100    100</code></pre>
 <p>Wir können weiter auch unnötige/nicht benötigte Levels in einem (ungeordneten) Faktor entfernen (“uemp3m”):</p>
 <div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="wochenplan-09-faktoren.html#cb431-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>uemp3m)</span></code></pre></div>
 <pre><code>## 
 ##   1   2 
-##  35 165</code></pre>
+##  48 152</code></pre>
 <div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="wochenplan-09-faktoren.html#cb433-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>uemp3m <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>uemp3m)</span>
 <span id="cb433-2"><a href="wochenplan-09-faktoren.html#cb433-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(daten_ess<span class="sc">$</span>uemp3m) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Has been unemployed&quot;</span>, <span class="st">&quot;Has never been unemployed&quot;</span>, <span class="st">&quot;Refusal&quot;</span>, <span class="st">&quot;Don&#39;t know&quot;</span>, <span class="st">&quot;No answer&quot;</span>)</span>
 <span id="cb433-3"><a href="wochenplan-09-faktoren.html#cb433-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>uemp3m)</span></code></pre></div>
 <pre><code>## 
 ##       Has been unemployed Has never been unemployed                   Refusal 
-##                        35                       165                         0 
+##                        48                       152                         0 
 ##                Don&#39;t know                 No answer 
 ##                         0                         0</code></pre>
 <div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="wochenplan-09-faktoren.html#cb435-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Wir sehen nun, dass einige Levels keine Ausprägungen haben. Diese können wir anschliessend wieder entfernen über &#39;drop&#39;:</span></span>
 <span id="cb435-2"><a href="wochenplan-09-faktoren.html#cb435-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(daten_ess<span class="sc">$</span>uemp3m)</span></code></pre></div>
-<pre><code>##  Factor w/ 5 levels &quot;Has been unemployed&quot;,..: 2 2 2 1 2 2 2 2 1 2 ...</code></pre>
+<pre><code>##  Factor w/ 5 levels &quot;Has been unemployed&quot;,..: 2 2 2 2 2 1 1 2 1 1 ...</code></pre>
 <div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="wochenplan-09-faktoren.html#cb437-1" aria-hidden="true" tabindex="-1"></a>?drop</span>
 <span id="cb437-2"><a href="wochenplan-09-faktoren.html#cb437-2" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>uemp3m <span class="ot">&lt;-</span> daten_ess<span class="sc">$</span>uemp3m[drop<span class="ot">=</span>T]</span>
 <span id="cb437-3"><a href="wochenplan-09-faktoren.html#cb437-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>uemp3m)</span></code></pre></div>
 <pre><code>## 
 ##       Has been unemployed Has never been unemployed 
-##                        35                       165</code></pre>
+##                        48                       152</code></pre>
 <div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="wochenplan-09-faktoren.html#cb439-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(daten_ess<span class="sc">$</span>uemp3m)</span></code></pre></div>
-<pre><code>##  Factor w/ 2 levels &quot;Has been unemployed&quot;,..: 2 2 2 1 2 2 2 2 1 2 ...</code></pre>
+<pre><code>##  Factor w/ 2 levels &quot;Has been unemployed&quot;,..: 2 2 2 2 2 1 1 2 1 1 ...</code></pre>
 <p>Ebenfalls können wir einen geordneten Faktoren im Datensatz definieren anhand eines Beispiels (“eisced”):</p>
 <div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="wochenplan-09-faktoren.html#cb441-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>eisced <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>eisced, <span class="at">ordered =</span> T)</span>
 <span id="cb441-2"><a href="wochenplan-09-faktoren.html#cb441-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(daten_ess<span class="sc">$</span>eisced) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;ES-ISCED I&quot;</span>,</span>
@@ -327,74 +335,56 @@ div.csl-indent {
 <span id="cb441-8"><a href="wochenplan-09-faktoren.html#cb441-8" aria-hidden="true" tabindex="-1"></a>                              <span class="st">&quot;ES-ISCED V2&quot;</span>)</span>
 <span id="cb441-9"><a href="wochenplan-09-faktoren.html#cb441-9" aria-hidden="true" tabindex="-1"></a><span class="co">#Eine etwas andere Überprüfung:</span></span>
 <span id="cb441-10"><a href="wochenplan-09-faktoren.html#cb441-10" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">as.numeric</span>(daten_ess<span class="sc">$</span>eisced), daten_ess<span class="sc">$</span>eisced)</span></code></pre></div>
-<pre><code>##    
-##     ES-ISCED I ES-ISCED II ES-ISCED IIIb ES-ISCED IIIa ES-ISCED IV ES-ISCED V1
-##   1          4           0             0             0           0           0
-##   2          0          42             0             0           0           0
-##   3          0           0            68             0           0           0
-##   4          0           0             0            16           0           0
-##   5          0           0             0             0          28           0
-##   6          0           0             0             0           0          17
-##   7          0           0             0             0           0           0
-##    
-##     ES-ISCED V2
-##   1           0
-##   2           0
-##   3           0
-##   4           0
-##   5           0
-##   6           0
-##   7          25</code></pre>
 <p><em>Als Hinweis</em>: Für solche (Kreuz-)Tabellen zur Überprüfung bietet sich die einfache <code>table()</code>-Funktion an. Natürlich kann auch <code>CrossTable()</code> des Paketes “gmodels” genutzt werden – die Funktion scheint aber etwas zu komplex hierfür zu sein.</p>
 <p>Die Variable “polintr” als weiterer geordneter Faktor stellt uns vor ein Problem, da die Ausprägung “1” (und nicht etwa “4”) dem höchsten Wert entspricht:</p>
-<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="wochenplan-09-faktoren.html#cb443-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>polintr)</span></code></pre></div>
+<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="wochenplan-09-faktoren.html#cb442-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>polintr)</span></code></pre></div>
 <pre><code>## 
 ##  1  2  3  4 
-## 38 87 57 18</code></pre>
-<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="wochenplan-09-faktoren.html#cb445-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>polintr_v1 <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>polintr, <span class="at">ordered =</span> T)</span>
-<span id="cb445-2"><a href="wochenplan-09-faktoren.html#cb445-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(daten_ess<span class="sc">$</span>polintr_v1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Very interested&quot;</span>, </span>
-<span id="cb445-3"><a href="wochenplan-09-faktoren.html#cb445-3" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Quite interested&quot;</span>, </span>
-<span id="cb445-4"><a href="wochenplan-09-faktoren.html#cb445-4" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Hardly interested&quot;</span>, </span>
-<span id="cb445-5"><a href="wochenplan-09-faktoren.html#cb445-5" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Not at all interested&quot;</span>)</span>
-<span id="cb445-6"><a href="wochenplan-09-faktoren.html#cb445-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb445-7"><a href="wochenplan-09-faktoren.html#cb445-7" aria-hidden="true" tabindex="-1"></a><span class="co"># So scheint die Reihenfolge noch nicht zu stimmen:</span></span>
-<span id="cb445-8"><a href="wochenplan-09-faktoren.html#cb445-8" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(daten_ess<span class="sc">$</span>polintr_v1)</span></code></pre></div>
-<pre><code>##  Ord.factor w/ 4 levels &quot;Very interested&quot;&lt;..: 3 3 1 1 3 3 2 3 3 3 ...</code></pre>
-<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="wochenplan-09-faktoren.html#cb447-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Und diese Lösung scheint nur fehlende Werte zu ergeben?</span></span>
-<span id="cb447-2"><a href="wochenplan-09-faktoren.html#cb447-2" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>polintr_v1 <span class="ot">&lt;-</span> <span class="fu">ordered</span>(daten_ess<span class="sc">$</span>polintr, </span>
-<span id="cb447-3"><a href="wochenplan-09-faktoren.html#cb447-3" aria-hidden="true" tabindex="-1"></a>                             <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Not at all interested&quot;</span>, </span>
-<span id="cb447-4"><a href="wochenplan-09-faktoren.html#cb447-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Hardly interested&quot;</span>, </span>
-<span id="cb447-5"><a href="wochenplan-09-faktoren.html#cb447-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Quite interested&quot;</span>, </span>
-<span id="cb447-6"><a href="wochenplan-09-faktoren.html#cb447-6" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Very interested&quot;</span>))</span>
-<span id="cb447-7"><a href="wochenplan-09-faktoren.html#cb447-7" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(daten_ess<span class="sc">$</span>polintr_v1)</span></code></pre></div>
+## 29 82 63 26</code></pre>
+<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="wochenplan-09-faktoren.html#cb444-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>polintr_v1 <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>polintr, <span class="at">ordered =</span> T)</span>
+<span id="cb444-2"><a href="wochenplan-09-faktoren.html#cb444-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(daten_ess<span class="sc">$</span>polintr_v1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Very interested&quot;</span>, </span>
+<span id="cb444-3"><a href="wochenplan-09-faktoren.html#cb444-3" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Quite interested&quot;</span>, </span>
+<span id="cb444-4"><a href="wochenplan-09-faktoren.html#cb444-4" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Hardly interested&quot;</span>, </span>
+<span id="cb444-5"><a href="wochenplan-09-faktoren.html#cb444-5" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Not at all interested&quot;</span>)</span>
+<span id="cb444-6"><a href="wochenplan-09-faktoren.html#cb444-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb444-7"><a href="wochenplan-09-faktoren.html#cb444-7" aria-hidden="true" tabindex="-1"></a><span class="co"># So scheint die Reihenfolge noch nicht zu stimmen:</span></span>
+<span id="cb444-8"><a href="wochenplan-09-faktoren.html#cb444-8" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(daten_ess<span class="sc">$</span>polintr_v1)</span></code></pre></div>
+<pre><code>##  Ord.factor w/ 4 levels &quot;Very interested&quot;&lt;..: 3 3 1 1 1 2 4 2 3 4 ...</code></pre>
+<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="wochenplan-09-faktoren.html#cb446-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Und diese Lösung scheint nur fehlende Werte zu ergeben?</span></span>
+<span id="cb446-2"><a href="wochenplan-09-faktoren.html#cb446-2" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>polintr_v1 <span class="ot">&lt;-</span> <span class="fu">ordered</span>(daten_ess<span class="sc">$</span>polintr, </span>
+<span id="cb446-3"><a href="wochenplan-09-faktoren.html#cb446-3" aria-hidden="true" tabindex="-1"></a>                             <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Not at all interested&quot;</span>, </span>
+<span id="cb446-4"><a href="wochenplan-09-faktoren.html#cb446-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Hardly interested&quot;</span>, </span>
+<span id="cb446-5"><a href="wochenplan-09-faktoren.html#cb446-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Quite interested&quot;</span>, </span>
+<span id="cb446-6"><a href="wochenplan-09-faktoren.html#cb446-6" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Very interested&quot;</span>))</span>
+<span id="cb446-7"><a href="wochenplan-09-faktoren.html#cb446-7" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(daten_ess<span class="sc">$</span>polintr_v1)</span></code></pre></div>
 <pre><code>##  Ord.factor w/ 4 levels &quot;Not at all interested&quot;&lt;..: NA NA NA NA NA NA NA NA NA NA ...</code></pre>
-<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="wochenplan-09-faktoren.html#cb449-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wir müssen also einen Umgang machen:</span></span>
-<span id="cb449-2"><a href="wochenplan-09-faktoren.html#cb449-2" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>polintr_v2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>polintr, </span>
-<span id="cb449-3"><a href="wochenplan-09-faktoren.html#cb449-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>), </span>
-<span id="cb449-4"><a href="wochenplan-09-faktoren.html#cb449-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> T)</span>
-<span id="cb449-5"><a href="wochenplan-09-faktoren.html#cb449-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(daten_ess<span class="sc">$</span>polintr_v2)</span></code></pre></div>
-<pre><code>##  Ord.factor w/ 4 levels &quot;4&quot;&lt;&quot;3&quot;&lt;&quot;2&quot;&lt;&quot;1&quot;: 2 2 4 4 2 2 3 2 2 2 ...</code></pre>
-<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="wochenplan-09-faktoren.html#cb451-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(daten_ess<span class="sc">$</span>polintr_v2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Not at all interested&quot;</span>, <span class="st">&quot;Hardly interested&quot;</span>,</span>
-<span id="cb451-2"><a href="wochenplan-09-faktoren.html#cb451-2" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Quite interested&quot;</span>, <span class="st">&quot;Very interested&quot;</span>)</span>
-<span id="cb451-3"><a href="wochenplan-09-faktoren.html#cb451-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb451-4"><a href="wochenplan-09-faktoren.html#cb451-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(daten_ess<span class="sc">$</span>polintr_v2)</span></code></pre></div>
-<pre><code>##  Ord.factor w/ 4 levels &quot;Not at all interested&quot;&lt;..: 2 2 4 4 2 2 3 2 2 2 ...</code></pre>
-<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="wochenplan-09-faktoren.html#cb453-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>polintr_v2)</span></code></pre></div>
+<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="wochenplan-09-faktoren.html#cb448-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wir müssen also einen Umgang machen:</span></span>
+<span id="cb448-2"><a href="wochenplan-09-faktoren.html#cb448-2" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>polintr_v2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>polintr, </span>
+<span id="cb448-3"><a href="wochenplan-09-faktoren.html#cb448-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>), </span>
+<span id="cb448-4"><a href="wochenplan-09-faktoren.html#cb448-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> T)</span>
+<span id="cb448-5"><a href="wochenplan-09-faktoren.html#cb448-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(daten_ess<span class="sc">$</span>polintr_v2)</span></code></pre></div>
+<pre><code>##  Ord.factor w/ 4 levels &quot;4&quot;&lt;&quot;3&quot;&lt;&quot;2&quot;&lt;&quot;1&quot;: 2 2 4 4 4 3 1 3 2 1 ...</code></pre>
+<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="wochenplan-09-faktoren.html#cb450-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(daten_ess<span class="sc">$</span>polintr_v2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Not at all interested&quot;</span>, <span class="st">&quot;Hardly interested&quot;</span>,</span>
+<span id="cb450-2"><a href="wochenplan-09-faktoren.html#cb450-2" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Quite interested&quot;</span>, <span class="st">&quot;Very interested&quot;</span>)</span>
+<span id="cb450-3"><a href="wochenplan-09-faktoren.html#cb450-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb450-4"><a href="wochenplan-09-faktoren.html#cb450-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(daten_ess<span class="sc">$</span>polintr_v2)</span></code></pre></div>
+<pre><code>##  Ord.factor w/ 4 levels &quot;Not at all interested&quot;&lt;..: 2 2 4 4 4 3 1 3 2 1 ...</code></pre>
+<div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb452-1"><a href="wochenplan-09-faktoren.html#cb452-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>polintr_v2)</span></code></pre></div>
 <pre><code>## 
 ## Not at all interested     Hardly interested      Quite interested 
-##                    18                    57                    87 
+##                    26                    63                    82 
 ##       Very interested 
-##                    38</code></pre>
+##                    29</code></pre>
 <p>Die Levels scheinen also auch direkt in der <code>factor()</code>-Funktion integrierbar zu sein. Lässt sich dies auch bei einer anderen (ungeordneten) Faktorvariable übernehmen (“chldhm”)?</p>
-<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="wochenplan-09-faktoren.html#cb455-1" aria-hidden="true" tabindex="-1"></a><span class="co">#chldhm</span></span>
-<span id="cb455-2"><a href="wochenplan-09-faktoren.html#cb455-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>chldhm)</span></code></pre></div>
+<div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb454-1"><a href="wochenplan-09-faktoren.html#cb454-1" aria-hidden="true" tabindex="-1"></a><span class="co">#chldhm</span></span>
+<span id="cb454-2"><a href="wochenplan-09-faktoren.html#cb454-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>chldhm)</span></code></pre></div>
 <pre><code>## 
 ##   1   2 
-##  68 132</code></pre>
-<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="wochenplan-09-faktoren.html#cb457-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>chldhm_v1 <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>chldhm, </span>
-<span id="cb457-2"><a href="wochenplan-09-faktoren.html#cb457-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Respondent lives with children at household grid&quot;</span>,</span>
-<span id="cb457-3"><a href="wochenplan-09-faktoren.html#cb457-3" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;Does not&quot;</span>, <span class="st">&quot;Not available&quot;</span>))</span>
-<span id="cb457-4"><a href="wochenplan-09-faktoren.html#cb457-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>chldhm_v1)</span></code></pre></div>
+##  70 130</code></pre>
+<div class="sourceCode" id="cb456"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb456-1"><a href="wochenplan-09-faktoren.html#cb456-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>chldhm_v1 <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>chldhm, </span>
+<span id="cb456-2"><a href="wochenplan-09-faktoren.html#cb456-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Respondent lives with children at household grid&quot;</span>,</span>
+<span id="cb456-3"><a href="wochenplan-09-faktoren.html#cb456-3" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;Does not&quot;</span>, <span class="st">&quot;Not available&quot;</span>))</span>
+<span id="cb456-4"><a href="wochenplan-09-faktoren.html#cb456-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>chldhm_v1)</span></code></pre></div>
 <pre><code>## 
 ## Respondent lives with children at household grid 
 ##                                                0 
@@ -402,10 +392,10 @@ div.csl-indent {
 ##                                                0 
 ##                                    Not available 
 ##                                                0</code></pre>
-<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="wochenplan-09-faktoren.html#cb459-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>chldhm_v2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>chldhm, </span>
-<span id="cb459-2"><a href="wochenplan-09-faktoren.html#cb459-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Respondent lives with children at household grid&quot;</span>,</span>
-<span id="cb459-3"><a href="wochenplan-09-faktoren.html#cb459-3" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;Does not&quot;</span>))</span>
-<span id="cb459-4"><a href="wochenplan-09-faktoren.html#cb459-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>chldhm_v2)</span></code></pre></div>
+<div class="sourceCode" id="cb458"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb458-1"><a href="wochenplan-09-faktoren.html#cb458-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>chldhm_v2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>chldhm, </span>
+<span id="cb458-2"><a href="wochenplan-09-faktoren.html#cb458-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Respondent lives with children at household grid&quot;</span>,</span>
+<span id="cb458-3"><a href="wochenplan-09-faktoren.html#cb458-3" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;Does not&quot;</span>))</span>
+<span id="cb458-4"><a href="wochenplan-09-faktoren.html#cb458-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>chldhm_v2)</span></code></pre></div>
 <pre><code>## 
 ## Respondent lives with children at household grid 
 ##                                                0 
@@ -413,209 +403,209 @@ div.csl-indent {
 ##                                                0</code></pre>
 <p>Dies scheint nicht zu funktionieren. Was könnte hier nun das Problem gewesen sein? Für ein besseres Verständnis von Faktoren ist es lohnenswert, sich die Unterscheidung von Levels <em>und Labels</em> zu vergegenwärtigen (vgl. auch <a href="https://stackoverflow.com/questions/5869539/confusion-between-factor-levels-and-factor-labels">hier</a>).</p>
 <p><strong>Levels und Labels:</strong> Die Levels definieren, was in einem Faktor “reingehen” kann, also was von diesem als gültiges Datum angesehen wird. Die Labels bestimmen, was anschliessend vom Faktor ausgegeben wird. Wenn wir aber im Code die Definition des Faktors und die Definition von dessen Levels trennen, ignorieren wir diese Unterscheidung:</p>
-<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="wochenplan-09-faktoren.html#cb461-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>chldhm <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>chldhm)</span>
-<span id="cb461-2"><a href="wochenplan-09-faktoren.html#cb461-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(daten_ess<span class="sc">$</span>chldhm) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Respondent lives with children at household grid&quot;</span>, </span>
-<span id="cb461-3"><a href="wochenplan-09-faktoren.html#cb461-3" aria-hidden="true" tabindex="-1"></a>                              <span class="st">&quot;Does not&quot;</span>, <span class="st">&quot;Not available&quot;</span>)</span>
-<span id="cb461-4"><a href="wochenplan-09-faktoren.html#cb461-4" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>chldhm <span class="ot">&lt;-</span> daten_ess<span class="sc">$</span>chldhm[drop<span class="ot">=</span>T]</span>
-<span id="cb461-5"><a href="wochenplan-09-faktoren.html#cb461-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>chldhm)</span></code></pre></div>
+<div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb460-1"><a href="wochenplan-09-faktoren.html#cb460-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>chldhm <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>chldhm)</span>
+<span id="cb460-2"><a href="wochenplan-09-faktoren.html#cb460-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(daten_ess<span class="sc">$</span>chldhm) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Respondent lives with children at household grid&quot;</span>, </span>
+<span id="cb460-3"><a href="wochenplan-09-faktoren.html#cb460-3" aria-hidden="true" tabindex="-1"></a>                              <span class="st">&quot;Does not&quot;</span>, <span class="st">&quot;Not available&quot;</span>)</span>
+<span id="cb460-4"><a href="wochenplan-09-faktoren.html#cb460-4" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>chldhm <span class="ot">&lt;-</span> daten_ess<span class="sc">$</span>chldhm[drop<span class="ot">=</span>T]</span>
+<span id="cb460-5"><a href="wochenplan-09-faktoren.html#cb460-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>chldhm)</span></code></pre></div>
 <pre><code>## 
 ## Respondent lives with children at household grid 
-##                                               68 
+##                                               70 
 ##                                         Does not 
-##                                              132</code></pre>
+##                                              130</code></pre>
 <p>Wir können uns den Unterschied vergegenwärtigen, hier am Beispiel einer weiteren, ungeordneten kategorialen Variable (“pdwrk”):</p>
-<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="wochenplan-09-faktoren.html#cb463-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>pdwrk)</span></code></pre></div>
+<div class="sourceCode" id="cb462"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb462-1"><a href="wochenplan-09-faktoren.html#cb462-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>pdwrk)</span></code></pre></div>
 <pre><code>## 
 ##   0   1 
-##  82 118</code></pre>
-<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="wochenplan-09-faktoren.html#cb465-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Hier kodieren wir die Variable zu einem Charakterformat um und bauen einen Schreibfehler ein:</span></span>
-<span id="cb465-2"><a href="wochenplan-09-faktoren.html#cb465-2" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>pdwrk[daten_ess<span class="sc">$</span>pdwrk<span class="sc">==</span><span class="dv">0</span>] <span class="ot">&lt;-</span> <span class="st">&quot;not marked&quot;</span> </span>
-<span id="cb465-3"><a href="wochenplan-09-faktoren.html#cb465-3" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>pdwrk[daten_ess<span class="sc">$</span>pdwrk<span class="sc">==</span><span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">&quot;marked&quot;</span></span>
-<span id="cb465-4"><a href="wochenplan-09-faktoren.html#cb465-4" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>pdwrk[<span class="dv">18</span>] <span class="ot">&lt;-</span> <span class="st">&quot;markwd&quot;</span> </span>
-<span id="cb465-5"><a href="wochenplan-09-faktoren.html#cb465-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(daten_ess<span class="sc">$</span>pdwrk)</span></code></pre></div>
+##  65 135</code></pre>
+<div class="sourceCode" id="cb464"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb464-1"><a href="wochenplan-09-faktoren.html#cb464-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Hier kodieren wir die Variable zu einem Charakterformat um und bauen einen Schreibfehler ein:</span></span>
+<span id="cb464-2"><a href="wochenplan-09-faktoren.html#cb464-2" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>pdwrk[daten_ess<span class="sc">$</span>pdwrk<span class="sc">==</span><span class="dv">0</span>] <span class="ot">&lt;-</span> <span class="st">&quot;not marked&quot;</span> </span>
+<span id="cb464-3"><a href="wochenplan-09-faktoren.html#cb464-3" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>pdwrk[daten_ess<span class="sc">$</span>pdwrk<span class="sc">==</span><span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">&quot;marked&quot;</span></span>
+<span id="cb464-4"><a href="wochenplan-09-faktoren.html#cb464-4" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>pdwrk[<span class="dv">18</span>] <span class="ot">&lt;-</span> <span class="st">&quot;markwd&quot;</span> </span>
+<span id="cb464-5"><a href="wochenplan-09-faktoren.html#cb464-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(daten_ess<span class="sc">$</span>pdwrk)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="wochenplan-09-faktoren.html#cb467-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>pdwrk)</span></code></pre></div>
+<div class="sourceCode" id="cb466"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb466-1"><a href="wochenplan-09-faktoren.html#cb466-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>pdwrk)</span></code></pre></div>
 <pre><code>## 
 ##     marked     markwd not marked 
-##        117          1         82</code></pre>
-<div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="wochenplan-09-faktoren.html#cb469-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Anschliessend definieren wir die Variable als Faktor und bestimmen ihre Levels:</span></span>
-<span id="cb469-2"><a href="wochenplan-09-faktoren.html#cb469-2" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>pdwrk <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>pdwrk, </span>
-<span id="cb469-3"><a href="wochenplan-09-faktoren.html#cb469-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;not marked&quot;</span>, <span class="st">&quot;marked&quot;</span>))</span>
-<span id="cb469-4"><a href="wochenplan-09-faktoren.html#cb469-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb469-5"><a href="wochenplan-09-faktoren.html#cb469-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>pdwrk)</span></code></pre></div>
+##        134          1         65</code></pre>
+<div class="sourceCode" id="cb468"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb468-1"><a href="wochenplan-09-faktoren.html#cb468-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Anschliessend definieren wir die Variable als Faktor und bestimmen ihre Levels:</span></span>
+<span id="cb468-2"><a href="wochenplan-09-faktoren.html#cb468-2" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>pdwrk <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>pdwrk, </span>
+<span id="cb468-3"><a href="wochenplan-09-faktoren.html#cb468-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;not marked&quot;</span>, <span class="st">&quot;marked&quot;</span>))</span>
+<span id="cb468-4"><a href="wochenplan-09-faktoren.html#cb468-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb468-5"><a href="wochenplan-09-faktoren.html#cb468-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>pdwrk)</span></code></pre></div>
 <pre><code>## 
 ## not marked     marked 
-##         82        117</code></pre>
-<div class="sourceCode" id="cb471"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb471-1"><a href="wochenplan-09-faktoren.html#cb471-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Unser Schreibfehler wurde daher nicht akzeptiert (&quot;er geht nicht in die Varialbe rein&quot;):</span></span>
-<span id="cb471-2"><a href="wochenplan-09-faktoren.html#cb471-2" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(<span class="fu">is.na</span>(daten_ess<span class="sc">$</span>pdwrk))</span></code></pre></div>
+##         65        134</code></pre>
+<div class="sourceCode" id="cb470"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb470-1"><a href="wochenplan-09-faktoren.html#cb470-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Unser Schreibfehler wurde daher nicht akzeptiert (&quot;er geht nicht in die Varialbe rein&quot;):</span></span>
+<span id="cb470-2"><a href="wochenplan-09-faktoren.html#cb470-2" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(<span class="fu">is.na</span>(daten_ess<span class="sc">$</span>pdwrk))</span></code></pre></div>
 <pre><code>## [1] 18</code></pre>
-<div class="sourceCode" id="cb473"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb473-1"><a href="wochenplan-09-faktoren.html#cb473-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Jetzt definieren wir in einem zweiten Schritt die Labels:</span></span>
-<span id="cb473-2"><a href="wochenplan-09-faktoren.html#cb473-2" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>pdwrk <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">factor</span>(daten_ess<span class="sc">$</span>pdwrk), </span>
-<span id="cb473-3"><a href="wochenplan-09-faktoren.html#cb473-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;no paidwork for the last 7&quot;</span>, <span class="st">&quot;has been doing paid work&quot;</span>))</span>
-<span id="cb473-4"><a href="wochenplan-09-faktoren.html#cb473-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>pdwrk)</span></code></pre></div>
+<div class="sourceCode" id="cb472"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb472-1"><a href="wochenplan-09-faktoren.html#cb472-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Jetzt definieren wir in einem zweiten Schritt die Labels:</span></span>
+<span id="cb472-2"><a href="wochenplan-09-faktoren.html#cb472-2" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>pdwrk <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">factor</span>(daten_ess<span class="sc">$</span>pdwrk), </span>
+<span id="cb472-3"><a href="wochenplan-09-faktoren.html#cb472-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;no paidwork for the last 7&quot;</span>, <span class="st">&quot;has been doing paid work&quot;</span>))</span>
+<span id="cb472-4"><a href="wochenplan-09-faktoren.html#cb472-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>pdwrk)</span></code></pre></div>
 <pre><code>## 
 ## no paidwork for the last 7   has been doing paid work 
-##                         82                        117</code></pre>
+##                         65                        134</code></pre>
 <p>Diese Unterscheidung können wir nun gleichzeitig nutzen, etwa bei ungeordneten Faktoren (“edctn”):</p>
-<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb475-1"><a href="wochenplan-09-faktoren.html#cb475-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>edctn)</span></code></pre></div>
+<div class="sourceCode" id="cb474"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb474-1"><a href="wochenplan-09-faktoren.html#cb474-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>edctn)</span></code></pre></div>
 <pre><code>## 
 ##   0   1 
-## 182  18</code></pre>
-<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb477-1"><a href="wochenplan-09-faktoren.html#cb477-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>edctn <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>edctn,</span>
-<span id="cb477-2"><a href="wochenplan-09-faktoren.html#cb477-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
-<span id="cb477-3"><a href="wochenplan-09-faktoren.html#cb477-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Not marked&quot;</span>, <span class="st">&quot;Marked&quot;</span>))</span>
-<span id="cb477-4"><a href="wochenplan-09-faktoren.html#cb477-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>edctn)</span></code></pre></div>
+## 186  14</code></pre>
+<div class="sourceCode" id="cb476"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb476-1"><a href="wochenplan-09-faktoren.html#cb476-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>edctn <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>edctn,</span>
+<span id="cb476-2"><a href="wochenplan-09-faktoren.html#cb476-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
+<span id="cb476-3"><a href="wochenplan-09-faktoren.html#cb476-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Not marked&quot;</span>, <span class="st">&quot;Marked&quot;</span>))</span>
+<span id="cb476-4"><a href="wochenplan-09-faktoren.html#cb476-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>edctn)</span></code></pre></div>
 <pre><code>## 
 ## Not marked     Marked 
-##        182         18</code></pre>
+##        186         14</code></pre>
 <p>Ebenfalls können wir diesen Unterschied zwischen Levels und Labels nutzen, um fehlende Werte direkt auszuschliessend, etwa bei folgenden geordneten Faktor (“edulvla”):</p>
-<div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb479-1"><a href="wochenplan-09-faktoren.html#cb479-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>edulvla)</span></code></pre></div>
+<div class="sourceCode" id="cb478"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb478-1"><a href="wochenplan-09-faktoren.html#cb478-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>edulvla)</span></code></pre></div>
 <pre><code>## 
 ##  1  2  3  4  5 
-##  4 42 84  7 63</code></pre>
-<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb481-1"><a href="wochenplan-09-faktoren.html#cb481-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>edulvla <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>edulvla,</span>
-<span id="cb481-2"><a href="wochenplan-09-faktoren.html#cb481-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>),</span>
-<span id="cb481-3"><a href="wochenplan-09-faktoren.html#cb481-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;ISCED 0-1&quot;</span>,</span>
-<span id="cb481-4"><a href="wochenplan-09-faktoren.html#cb481-4" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 2&quot;</span>,</span>
-<span id="cb481-5"><a href="wochenplan-09-faktoren.html#cb481-5" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 3&quot;</span>,</span>
-<span id="cb481-6"><a href="wochenplan-09-faktoren.html#cb481-6" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 4&quot;</span>,</span>
-<span id="cb481-7"><a href="wochenplan-09-faktoren.html#cb481-7" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 5-6&quot;</span>),</span>
-<span id="cb481-8"><a href="wochenplan-09-faktoren.html#cb481-8" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> T)</span>
-<span id="cb481-9"><a href="wochenplan-09-faktoren.html#cb481-9" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>edulvla)</span></code></pre></div>
+##  6 41 88  6 56</code></pre>
+<div class="sourceCode" id="cb480"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb480-1"><a href="wochenplan-09-faktoren.html#cb480-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>edulvla <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>edulvla,</span>
+<span id="cb480-2"><a href="wochenplan-09-faktoren.html#cb480-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>),</span>
+<span id="cb480-3"><a href="wochenplan-09-faktoren.html#cb480-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;ISCED 0-1&quot;</span>,</span>
+<span id="cb480-4"><a href="wochenplan-09-faktoren.html#cb480-4" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 2&quot;</span>,</span>
+<span id="cb480-5"><a href="wochenplan-09-faktoren.html#cb480-5" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 3&quot;</span>,</span>
+<span id="cb480-6"><a href="wochenplan-09-faktoren.html#cb480-6" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 4&quot;</span>,</span>
+<span id="cb480-7"><a href="wochenplan-09-faktoren.html#cb480-7" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 5-6&quot;</span>),</span>
+<span id="cb480-8"><a href="wochenplan-09-faktoren.html#cb480-8" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> T)</span>
+<span id="cb480-9"><a href="wochenplan-09-faktoren.html#cb480-9" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>edulvla)</span></code></pre></div>
 <pre><code>## 
 ## ISCED 0-1   ISCED 2   ISCED 3   ISCED 4 ISCED 5-6 
-##         4        42        84         7        63</code></pre>
-<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb483-1"><a href="wochenplan-09-faktoren.html#cb483-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(daten_ess<span class="sc">$</span>edulvla)</span></code></pre></div>
-<pre><code>##  Ord.factor w/ 5 levels &quot;ISCED 0-1&quot;&lt;&quot;ISCED 2&quot;&lt;..: 3 5 2 2 2 3 5 2 2 3 ...</code></pre>
-<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="wochenplan-09-faktoren.html#cb485-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(daten_ess<span class="sc">$</span>edulvla)</span></code></pre></div>
-<pre><code>## ISCED 0-1   ISCED 2   ISCED 3   ISCED 4 ISCED 5-6 
-##         4        42        84         7        63</code></pre>
+##         6        41        88         6        56</code></pre>
+<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb482-1"><a href="wochenplan-09-faktoren.html#cb482-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(daten_ess<span class="sc">$</span>edulvla)</span></code></pre></div>
+<pre><code>##  Ord.factor w/ 5 levels &quot;ISCED 0-1&quot;&lt;&quot;ISCED 2&quot;&lt;..: 5 4 5 3 NA 5 2 3 5 2 ...</code></pre>
+<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb484-1"><a href="wochenplan-09-faktoren.html#cb484-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(daten_ess<span class="sc">$</span>edulvla)</span></code></pre></div>
+<pre><code>## ISCED 0-1   ISCED 2   ISCED 3   ISCED 4 ISCED 5-6      NA&#39;s 
+##         6        41        88         6        56         3</code></pre>
 <p><em>Als Hinweis</em>: Da die Variable “edulvla” als geordneter Faktor definiert wird, wurde auch die Ausprägung “Other” (55) ausgeschlossen. Diese könnte als gültige Ausprägung integriert werden, wenn die Variable als ungeordnet-kategorial/nominal definiert würde.</p>
 <p>Nicht zuletzt hilft uns die Unterscheidungen von Levels und Labels bei dem komplizierten Fall der Variable “polintr”:</p>
-<div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="wochenplan-09-faktoren.html#cb487-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>polintr)</span></code></pre></div>
+<div class="sourceCode" id="cb486"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb486-1"><a href="wochenplan-09-faktoren.html#cb486-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>polintr)</span></code></pre></div>
 <pre><code>## 
 ##  1  2  3  4 
-## 38 87 57 18</code></pre>
-<div class="sourceCode" id="cb489"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb489-1"><a href="wochenplan-09-faktoren.html#cb489-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>polintr <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>polintr, </span>
-<span id="cb489-2"><a href="wochenplan-09-faktoren.html#cb489-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>),</span>
-<span id="cb489-3"><a href="wochenplan-09-faktoren.html#cb489-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Not at all interested&quot;</span>, </span>
-<span id="cb489-4"><a href="wochenplan-09-faktoren.html#cb489-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Hardly interested&quot;</span>, </span>
-<span id="cb489-5"><a href="wochenplan-09-faktoren.html#cb489-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Quite interested&quot;</span>, </span>
-<span id="cb489-6"><a href="wochenplan-09-faktoren.html#cb489-6" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Very interested&quot;</span>),</span>
-<span id="cb489-7"><a href="wochenplan-09-faktoren.html#cb489-7" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> T)</span>
-<span id="cb489-8"><a href="wochenplan-09-faktoren.html#cb489-8" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(daten_ess<span class="sc">$</span>polintr)</span></code></pre></div>
-<pre><code>##  Ord.factor w/ 4 levels &quot;Not at all interested&quot;&lt;..: 2 2 4 4 2 2 3 2 2 2 ...</code></pre>
-<div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="wochenplan-09-faktoren.html#cb491-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>polintr)</span></code></pre></div>
+## 29 82 63 26</code></pre>
+<div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="wochenplan-09-faktoren.html#cb488-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>polintr <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>polintr, </span>
+<span id="cb488-2"><a href="wochenplan-09-faktoren.html#cb488-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>),</span>
+<span id="cb488-3"><a href="wochenplan-09-faktoren.html#cb488-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Not at all interested&quot;</span>, </span>
+<span id="cb488-4"><a href="wochenplan-09-faktoren.html#cb488-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Hardly interested&quot;</span>, </span>
+<span id="cb488-5"><a href="wochenplan-09-faktoren.html#cb488-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Quite interested&quot;</span>, </span>
+<span id="cb488-6"><a href="wochenplan-09-faktoren.html#cb488-6" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Very interested&quot;</span>),</span>
+<span id="cb488-7"><a href="wochenplan-09-faktoren.html#cb488-7" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> T)</span>
+<span id="cb488-8"><a href="wochenplan-09-faktoren.html#cb488-8" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(daten_ess<span class="sc">$</span>polintr)</span></code></pre></div>
+<pre><code>##  Ord.factor w/ 4 levels &quot;Not at all interested&quot;&lt;..: 2 2 4 4 4 3 1 3 2 1 ...</code></pre>
+<div class="sourceCode" id="cb490"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb490-1"><a href="wochenplan-09-faktoren.html#cb490-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>polintr)</span></code></pre></div>
 <pre><code>## 
 ## Not at all interested     Hardly interested      Quite interested 
-##                    18                    57                    87 
+##                    26                    63                    82 
 ##       Very interested 
-##                    38</code></pre>
+##                    29</code></pre>
 <p><strong>Eine kleine Aufgabe:</strong> Wir können uns den Unterschied zwischen Levels und Labels auch nochmals an einer kleinen Aufgabe verdeutlichen. Versuchen Sie aus den beiden Variablen “edctn” und “pdwrk” eine neue Variable “beschaeft” zu erstellen.</p>
-<div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="wochenplan-09-faktoren.html#cb493-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>edctn, daten_ess<span class="sc">$</span>pdwrk)</span></code></pre></div>
+<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb492-1"><a href="wochenplan-09-faktoren.html#cb492-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>edctn, daten_ess<span class="sc">$</span>pdwrk)</span></code></pre></div>
 <pre><code>##             
 ##              no paidwork for the last 7 has been doing paid work
-##   Not marked                         67                      114
-##   Marked                             15                        3</code></pre>
+##   Not marked                         57                      128
+##   Marked                              8                        6</code></pre>
 <p>Erstellen Sie zuerst einen Charakter-Vektor für die neue Variable, bevor Sie diese zu einem Faktor umwandeln. Versuchen Sie dann die Trennung zwischen Levels und Labels zu beachten. Arbeiten Sie mit folgendes Levels…
 * working
 * eduction
 * both
 * none
 …und mit beliebigen Labels.</p>
-<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="wochenplan-09-faktoren.html#cb495-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>beschaeft <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="co">#da anschliessend Levels definiert werden können wir hier irgdeinen Wert einfügen.</span></span>
-<span id="cb495-2"><a href="wochenplan-09-faktoren.html#cb495-2" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>beschaeft[daten_ess<span class="sc">$</span>pdwrk<span class="sc">==</span><span class="st">&quot;has been doing paid work&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;working&quot;</span></span>
-<span id="cb495-3"><a href="wochenplan-09-faktoren.html#cb495-3" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>beschaeft[daten_ess<span class="sc">$</span>edctn<span class="sc">==</span><span class="st">&quot;Marked&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;eduction&quot;</span></span>
-<span id="cb495-4"><a href="wochenplan-09-faktoren.html#cb495-4" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>beschaeft[daten_ess<span class="sc">$</span>pdwrk<span class="sc">==</span><span class="st">&quot;has been doing paid work&quot;</span> <span class="sc">&amp;</span></span>
-<span id="cb495-5"><a href="wochenplan-09-faktoren.html#cb495-5" aria-hidden="true" tabindex="-1"></a>                      daten_ess<span class="sc">$</span>edctn<span class="sc">==</span><span class="st">&quot;Marked&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;both&quot;</span></span>
-<span id="cb495-6"><a href="wochenplan-09-faktoren.html#cb495-6" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>beschaeft[daten_ess<span class="sc">$</span>pdwrk<span class="sc">!=</span><span class="st">&quot;has been doing paid work&quot;</span> <span class="sc">&amp;</span></span>
-<span id="cb495-7"><a href="wochenplan-09-faktoren.html#cb495-7" aria-hidden="true" tabindex="-1"></a>                      daten_ess<span class="sc">$</span>edctn<span class="sc">!=</span><span class="st">&quot;Marked&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;none&quot;</span></span>
-<span id="cb495-8"><a href="wochenplan-09-faktoren.html#cb495-8" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>beschaeft)</span></code></pre></div>
+<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="wochenplan-09-faktoren.html#cb494-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>beschaeft <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="co">#da anschliessend Levels definiert werden können wir hier irgdeinen Wert einfügen.</span></span>
+<span id="cb494-2"><a href="wochenplan-09-faktoren.html#cb494-2" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>beschaeft[daten_ess<span class="sc">$</span>pdwrk<span class="sc">==</span><span class="st">&quot;has been doing paid work&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;working&quot;</span></span>
+<span id="cb494-3"><a href="wochenplan-09-faktoren.html#cb494-3" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>beschaeft[daten_ess<span class="sc">$</span>edctn<span class="sc">==</span><span class="st">&quot;Marked&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;eduction&quot;</span></span>
+<span id="cb494-4"><a href="wochenplan-09-faktoren.html#cb494-4" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>beschaeft[daten_ess<span class="sc">$</span>pdwrk<span class="sc">==</span><span class="st">&quot;has been doing paid work&quot;</span> <span class="sc">&amp;</span></span>
+<span id="cb494-5"><a href="wochenplan-09-faktoren.html#cb494-5" aria-hidden="true" tabindex="-1"></a>                      daten_ess<span class="sc">$</span>edctn<span class="sc">==</span><span class="st">&quot;Marked&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;both&quot;</span></span>
+<span id="cb494-6"><a href="wochenplan-09-faktoren.html#cb494-6" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>beschaeft[daten_ess<span class="sc">$</span>pdwrk<span class="sc">!=</span><span class="st">&quot;has been doing paid work&quot;</span> <span class="sc">&amp;</span></span>
+<span id="cb494-7"><a href="wochenplan-09-faktoren.html#cb494-7" aria-hidden="true" tabindex="-1"></a>                      daten_ess<span class="sc">$</span>edctn<span class="sc">!=</span><span class="st">&quot;Marked&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;none&quot;</span></span>
+<span id="cb494-8"><a href="wochenplan-09-faktoren.html#cb494-8" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>beschaeft)</span></code></pre></div>
 <pre><code>## 
 ##        0     both eduction     none  working 
-##        1        3       15       67      114</code></pre>
-<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="wochenplan-09-faktoren.html#cb497-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(daten_ess<span class="sc">$</span>beschaeft)</span></code></pre></div>
+##        1        6        8       57      128</code></pre>
+<div class="sourceCode" id="cb496"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb496-1"><a href="wochenplan-09-faktoren.html#cb496-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(daten_ess<span class="sc">$</span>beschaeft)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="wochenplan-09-faktoren.html#cb499-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>beschaeft <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>beschaeft,</span>
-<span id="cb499-2"><a href="wochenplan-09-faktoren.html#cb499-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;working&quot;</span>, </span>
-<span id="cb499-3"><a href="wochenplan-09-faktoren.html#cb499-3" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;eduction&quot;</span>, </span>
-<span id="cb499-4"><a href="wochenplan-09-faktoren.html#cb499-4" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;both&quot;</span>, </span>
-<span id="cb499-5"><a href="wochenplan-09-faktoren.html#cb499-5" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;none&quot;</span>))</span>
-<span id="cb499-6"><a href="wochenplan-09-faktoren.html#cb499-6" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>beschaeft)</span></code></pre></div>
+<div class="sourceCode" id="cb498"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb498-1"><a href="wochenplan-09-faktoren.html#cb498-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>beschaeft <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>beschaeft,</span>
+<span id="cb498-2"><a href="wochenplan-09-faktoren.html#cb498-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;working&quot;</span>, </span>
+<span id="cb498-3"><a href="wochenplan-09-faktoren.html#cb498-3" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;eduction&quot;</span>, </span>
+<span id="cb498-4"><a href="wochenplan-09-faktoren.html#cb498-4" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;both&quot;</span>, </span>
+<span id="cb498-5"><a href="wochenplan-09-faktoren.html#cb498-5" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;none&quot;</span>))</span>
+<span id="cb498-6"><a href="wochenplan-09-faktoren.html#cb498-6" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>beschaeft)</span></code></pre></div>
 <pre><code>## 
 ##  working eduction     both     none 
-##      114       15        3       67</code></pre>
-<div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb501-1"><a href="wochenplan-09-faktoren.html#cb501-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>beschaeft <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>beschaeft,</span>
-<span id="cb501-2"><a href="wochenplan-09-faktoren.html#cb501-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;working&quot;</span>, </span>
-<span id="cb501-3"><a href="wochenplan-09-faktoren.html#cb501-3" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;eduction&quot;</span>, </span>
-<span id="cb501-4"><a href="wochenplan-09-faktoren.html#cb501-4" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;both&quot;</span>, </span>
-<span id="cb501-5"><a href="wochenplan-09-faktoren.html#cb501-5" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;none&quot;</span>),</span>
-<span id="cb501-6"><a href="wochenplan-09-faktoren.html#cb501-6" aria-hidden="true" tabindex="-1"></a>                              <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Arbeitende Person&quot;</span>, </span>
-<span id="cb501-7"><a href="wochenplan-09-faktoren.html#cb501-7" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;Person in Ausbildung&quot;</span>, </span>
-<span id="cb501-8"><a href="wochenplan-09-faktoren.html#cb501-8" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;Arbeit und Ausbildung&quot;</span>, </span>
-<span id="cb501-9"><a href="wochenplan-09-faktoren.html#cb501-9" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;Weder Arbeit noch Ausbildung&quot;</span>))</span>
-<span id="cb501-10"><a href="wochenplan-09-faktoren.html#cb501-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb501-11"><a href="wochenplan-09-faktoren.html#cb501-11" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>beschaeft)</span></code></pre></div>
+##      128        8        6       57</code></pre>
+<div class="sourceCode" id="cb500"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb500-1"><a href="wochenplan-09-faktoren.html#cb500-1" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>beschaeft <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>beschaeft,</span>
+<span id="cb500-2"><a href="wochenplan-09-faktoren.html#cb500-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;working&quot;</span>, </span>
+<span id="cb500-3"><a href="wochenplan-09-faktoren.html#cb500-3" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;eduction&quot;</span>, </span>
+<span id="cb500-4"><a href="wochenplan-09-faktoren.html#cb500-4" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;both&quot;</span>, </span>
+<span id="cb500-5"><a href="wochenplan-09-faktoren.html#cb500-5" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;none&quot;</span>),</span>
+<span id="cb500-6"><a href="wochenplan-09-faktoren.html#cb500-6" aria-hidden="true" tabindex="-1"></a>                              <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Arbeitende Person&quot;</span>, </span>
+<span id="cb500-7"><a href="wochenplan-09-faktoren.html#cb500-7" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;Person in Ausbildung&quot;</span>, </span>
+<span id="cb500-8"><a href="wochenplan-09-faktoren.html#cb500-8" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;Arbeit und Ausbildung&quot;</span>, </span>
+<span id="cb500-9"><a href="wochenplan-09-faktoren.html#cb500-9" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;Weder Arbeit noch Ausbildung&quot;</span>))</span>
+<span id="cb500-10"><a href="wochenplan-09-faktoren.html#cb500-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb500-11"><a href="wochenplan-09-faktoren.html#cb500-11" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten_ess<span class="sc">$</span>beschaeft)</span></code></pre></div>
 <pre><code>## 
 ##            Arbeitende Person         Person in Ausbildung 
-##                          114                           15 
+##                          128                            8 
 ##        Arbeit und Ausbildung Weder Arbeit noch Ausbildung 
-##                            3                           67</code></pre>
+##                            6                           57</code></pre>
 <p><strong>Integration ins Skript zur Datenaufbereitung:</strong> Mit diesem Bewusstsein für Levels und Labels können wir alle kategorialen Variablen im Datensatz jeweils über einen Befehl definieren. Dieses Vorgehen wird dann Datenaufbereitungsskript integriert. Hier ein Vorschlag:</p>
-<div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="wochenplan-09-faktoren.html#cb503-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Faktoren definieren</span></span>
-<span id="cb503-2"><a href="wochenplan-09-faktoren.html#cb503-2" aria-hidden="true" tabindex="-1"></a><span class="do">## ungeordnete Faktoren</span></span>
-<span id="cb503-3"><a href="wochenplan-09-faktoren.html#cb503-3" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>gndr <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>gndr, </span>
-<span id="cb503-4"><a href="wochenplan-09-faktoren.html#cb503-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),</span>
-<span id="cb503-5"><a href="wochenplan-09-faktoren.html#cb503-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>))</span>
-<span id="cb503-6"><a href="wochenplan-09-faktoren.html#cb503-6" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>chldhm <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>chldhm, </span>
-<span id="cb503-7"><a href="wochenplan-09-faktoren.html#cb503-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
-<span id="cb503-8"><a href="wochenplan-09-faktoren.html#cb503-8" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Respondent lives with children at household grid&quot;</span>,</span>
-<span id="cb503-9"><a href="wochenplan-09-faktoren.html#cb503-9" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Does not&quot;</span>))</span>
-<span id="cb503-10"><a href="wochenplan-09-faktoren.html#cb503-10" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>pdwrk <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>pdwrk, </span>
-<span id="cb503-11"><a href="wochenplan-09-faktoren.html#cb503-11" aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),</span>
-<span id="cb503-12"><a href="wochenplan-09-faktoren.html#cb503-12" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Not marked&quot;</span>,</span>
-<span id="cb503-13"><a href="wochenplan-09-faktoren.html#cb503-13" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Marked&quot;</span>))</span>
-<span id="cb503-14"><a href="wochenplan-09-faktoren.html#cb503-14" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>edctn <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>edctn, </span>
-<span id="cb503-15"><a href="wochenplan-09-faktoren.html#cb503-15" aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),</span>
-<span id="cb503-16"><a href="wochenplan-09-faktoren.html#cb503-16" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Not marked&quot;</span>,</span>
-<span id="cb503-17"><a href="wochenplan-09-faktoren.html#cb503-17" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Marked&quot;</span>))</span>
-<span id="cb503-18"><a href="wochenplan-09-faktoren.html#cb503-18" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>uemp3m <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>uemp3m, </span>
-<span id="cb503-19"><a href="wochenplan-09-faktoren.html#cb503-19" aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">8</span>),</span>
-<span id="cb503-20"><a href="wochenplan-09-faktoren.html#cb503-20" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>, <span class="st">&quot;No&quot;</span>,</span>
-<span id="cb503-21"><a href="wochenplan-09-faktoren.html#cb503-21" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Refusal&quot;</span>, <span class="st">&quot;Don&#39;t know&quot;</span>))</span>
-<span id="cb503-22"><a href="wochenplan-09-faktoren.html#cb503-22" aria-hidden="true" tabindex="-1"></a><span class="do">## geordnete Faktoren</span></span>
-<span id="cb503-23"><a href="wochenplan-09-faktoren.html#cb503-23" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>polintr <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>polintr, </span>
-<span id="cb503-24"><a href="wochenplan-09-faktoren.html#cb503-24" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>),</span>
-<span id="cb503-25"><a href="wochenplan-09-faktoren.html#cb503-25" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Not at all interested&quot;</span>, </span>
-<span id="cb503-26"><a href="wochenplan-09-faktoren.html#cb503-26" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Hardly interested&quot;</span>, </span>
-<span id="cb503-27"><a href="wochenplan-09-faktoren.html#cb503-27" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Quite interested&quot;</span>, </span>
-<span id="cb503-28"><a href="wochenplan-09-faktoren.html#cb503-28" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Very interested&quot;</span>),</span>
-<span id="cb503-29"><a href="wochenplan-09-faktoren.html#cb503-29" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> T)</span>
-<span id="cb503-30"><a href="wochenplan-09-faktoren.html#cb503-30" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>edulvla <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>edulvla,</span>
-<span id="cb503-31"><a href="wochenplan-09-faktoren.html#cb503-31" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>),</span>
-<span id="cb503-32"><a href="wochenplan-09-faktoren.html#cb503-32" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;ISCED 0-1&quot;</span>,</span>
-<span id="cb503-33"><a href="wochenplan-09-faktoren.html#cb503-33" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 2&quot;</span>,</span>
-<span id="cb503-34"><a href="wochenplan-09-faktoren.html#cb503-34" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 3&quot;</span>,</span>
-<span id="cb503-35"><a href="wochenplan-09-faktoren.html#cb503-35" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 4&quot;</span>,</span>
-<span id="cb503-36"><a href="wochenplan-09-faktoren.html#cb503-36" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 5-6&quot;</span>),</span>
-<span id="cb503-37"><a href="wochenplan-09-faktoren.html#cb503-37" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> T)</span>
-<span id="cb503-38"><a href="wochenplan-09-faktoren.html#cb503-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb503-39"><a href="wochenplan-09-faktoren.html#cb503-39" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>eisced <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>eisced,</span>
-<span id="cb503-40"><a href="wochenplan-09-faktoren.html#cb503-40" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>),</span>
-<span id="cb503-41"><a href="wochenplan-09-faktoren.html#cb503-41" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Not possible to harmonise into ES-ISCED&quot;</span>,</span>
-<span id="cb503-42"><a href="wochenplan-09-faktoren.html#cb503-42" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ES-ISCED I&quot;</span>,</span>
-<span id="cb503-43"><a href="wochenplan-09-faktoren.html#cb503-43" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ES-ISCED II&quot;</span>,</span>
-<span id="cb503-44"><a href="wochenplan-09-faktoren.html#cb503-44" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ES-ISCED IIIb&quot;</span>,</span>
-<span id="cb503-45"><a href="wochenplan-09-faktoren.html#cb503-45" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ES-ISCED IIIa&quot;</span>,</span>
-<span id="cb503-46"><a href="wochenplan-09-faktoren.html#cb503-46" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ES-ISCED IV&quot;</span>,</span>
-<span id="cb503-47"><a href="wochenplan-09-faktoren.html#cb503-47" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ES-ISCED V1&quot;</span>,</span>
-<span id="cb503-48"><a href="wochenplan-09-faktoren.html#cb503-48" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ES-ISCED V2&quot;</span>),</span>
-<span id="cb503-49"><a href="wochenplan-09-faktoren.html#cb503-49" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb502"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb502-1"><a href="wochenplan-09-faktoren.html#cb502-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Faktoren definieren</span></span>
+<span id="cb502-2"><a href="wochenplan-09-faktoren.html#cb502-2" aria-hidden="true" tabindex="-1"></a><span class="do">## ungeordnete Faktoren</span></span>
+<span id="cb502-3"><a href="wochenplan-09-faktoren.html#cb502-3" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>gndr <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>gndr, </span>
+<span id="cb502-4"><a href="wochenplan-09-faktoren.html#cb502-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),</span>
+<span id="cb502-5"><a href="wochenplan-09-faktoren.html#cb502-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>))</span>
+<span id="cb502-6"><a href="wochenplan-09-faktoren.html#cb502-6" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>chldhm <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>chldhm, </span>
+<span id="cb502-7"><a href="wochenplan-09-faktoren.html#cb502-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
+<span id="cb502-8"><a href="wochenplan-09-faktoren.html#cb502-8" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Respondent lives with children at household grid&quot;</span>,</span>
+<span id="cb502-9"><a href="wochenplan-09-faktoren.html#cb502-9" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Does not&quot;</span>))</span>
+<span id="cb502-10"><a href="wochenplan-09-faktoren.html#cb502-10" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>pdwrk <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>pdwrk, </span>
+<span id="cb502-11"><a href="wochenplan-09-faktoren.html#cb502-11" aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),</span>
+<span id="cb502-12"><a href="wochenplan-09-faktoren.html#cb502-12" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Not marked&quot;</span>,</span>
+<span id="cb502-13"><a href="wochenplan-09-faktoren.html#cb502-13" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Marked&quot;</span>))</span>
+<span id="cb502-14"><a href="wochenplan-09-faktoren.html#cb502-14" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>edctn <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>edctn, </span>
+<span id="cb502-15"><a href="wochenplan-09-faktoren.html#cb502-15" aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),</span>
+<span id="cb502-16"><a href="wochenplan-09-faktoren.html#cb502-16" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Not marked&quot;</span>,</span>
+<span id="cb502-17"><a href="wochenplan-09-faktoren.html#cb502-17" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Marked&quot;</span>))</span>
+<span id="cb502-18"><a href="wochenplan-09-faktoren.html#cb502-18" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>uemp3m <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>uemp3m, </span>
+<span id="cb502-19"><a href="wochenplan-09-faktoren.html#cb502-19" aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">8</span>),</span>
+<span id="cb502-20"><a href="wochenplan-09-faktoren.html#cb502-20" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>, <span class="st">&quot;No&quot;</span>,</span>
+<span id="cb502-21"><a href="wochenplan-09-faktoren.html#cb502-21" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Refusal&quot;</span>, <span class="st">&quot;Don&#39;t know&quot;</span>))</span>
+<span id="cb502-22"><a href="wochenplan-09-faktoren.html#cb502-22" aria-hidden="true" tabindex="-1"></a><span class="do">## geordnete Faktoren</span></span>
+<span id="cb502-23"><a href="wochenplan-09-faktoren.html#cb502-23" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>polintr <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>polintr, </span>
+<span id="cb502-24"><a href="wochenplan-09-faktoren.html#cb502-24" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>),</span>
+<span id="cb502-25"><a href="wochenplan-09-faktoren.html#cb502-25" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Not at all interested&quot;</span>, </span>
+<span id="cb502-26"><a href="wochenplan-09-faktoren.html#cb502-26" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Hardly interested&quot;</span>, </span>
+<span id="cb502-27"><a href="wochenplan-09-faktoren.html#cb502-27" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Quite interested&quot;</span>, </span>
+<span id="cb502-28"><a href="wochenplan-09-faktoren.html#cb502-28" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Very interested&quot;</span>),</span>
+<span id="cb502-29"><a href="wochenplan-09-faktoren.html#cb502-29" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> T)</span>
+<span id="cb502-30"><a href="wochenplan-09-faktoren.html#cb502-30" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>edulvla <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>edulvla,</span>
+<span id="cb502-31"><a href="wochenplan-09-faktoren.html#cb502-31" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>),</span>
+<span id="cb502-32"><a href="wochenplan-09-faktoren.html#cb502-32" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;ISCED 0-1&quot;</span>,</span>
+<span id="cb502-33"><a href="wochenplan-09-faktoren.html#cb502-33" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 2&quot;</span>,</span>
+<span id="cb502-34"><a href="wochenplan-09-faktoren.html#cb502-34" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 3&quot;</span>,</span>
+<span id="cb502-35"><a href="wochenplan-09-faktoren.html#cb502-35" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 4&quot;</span>,</span>
+<span id="cb502-36"><a href="wochenplan-09-faktoren.html#cb502-36" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ISCED 5-6&quot;</span>),</span>
+<span id="cb502-37"><a href="wochenplan-09-faktoren.html#cb502-37" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> T)</span>
+<span id="cb502-38"><a href="wochenplan-09-faktoren.html#cb502-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb502-39"><a href="wochenplan-09-faktoren.html#cb502-39" aria-hidden="true" tabindex="-1"></a>daten_ess<span class="sc">$</span>eisced <span class="ot">&lt;-</span> <span class="fu">factor</span>(daten_ess<span class="sc">$</span>eisced,</span>
+<span id="cb502-40"><a href="wochenplan-09-faktoren.html#cb502-40" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>),</span>
+<span id="cb502-41"><a href="wochenplan-09-faktoren.html#cb502-41" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Not possible to harmonise into ES-ISCED&quot;</span>,</span>
+<span id="cb502-42"><a href="wochenplan-09-faktoren.html#cb502-42" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ES-ISCED I&quot;</span>,</span>
+<span id="cb502-43"><a href="wochenplan-09-faktoren.html#cb502-43" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ES-ISCED II&quot;</span>,</span>
+<span id="cb502-44"><a href="wochenplan-09-faktoren.html#cb502-44" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ES-ISCED IIIb&quot;</span>,</span>
+<span id="cb502-45"><a href="wochenplan-09-faktoren.html#cb502-45" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ES-ISCED IIIa&quot;</span>,</span>
+<span id="cb502-46"><a href="wochenplan-09-faktoren.html#cb502-46" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ES-ISCED IV&quot;</span>,</span>
+<span id="cb502-47"><a href="wochenplan-09-faktoren.html#cb502-47" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ES-ISCED V1&quot;</span>,</span>
+<span id="cb502-48"><a href="wochenplan-09-faktoren.html#cb502-48" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;ES-ISCED V2&quot;</span>),</span>
+<span id="cb502-49"><a href="wochenplan-09-faktoren.html#cb502-49" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> T)</span></code></pre></div>
 <p>Zur Überprüfung kann wie in der letzten Aufgabenstellung formuliert zuerst die Environment (und alle Objekte) gelöscht werden. Dies geht mit folgender Funktion:</p>
-<div class="sourceCode" id="cb504"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb504-1"><a href="wochenplan-09-faktoren.html#cb504-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="wochenplan-09-faktoren.html#cb503-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code></pre></div>
 <p>Anschliessend kann der mittels <code>source()</code> der Datensatz neu geladen werden und – als Test – eine als Faktor definierte Variable aufgerufen werden:</p>
-<div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb505-1"><a href="wochenplan-09-faktoren.html#cb505-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="at">file =</span> <span class="st">&quot;Daten/ess_import.R&quot;</span>)</span>
-<span id="cb505-2"><a href="wochenplan-09-faktoren.html#cb505-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(daten_ess<span class="sc">$</span>gndr)</span></code></pre></div>
+<div class="sourceCode" id="cb504"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb504-1"><a href="wochenplan-09-faktoren.html#cb504-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="at">file =</span> <span class="st">&quot;Daten/ess_import.R&quot;</span>)</span>
+<span id="cb504-2"><a href="wochenplan-09-faktoren.html#cb504-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(daten_ess<span class="sc">$</span>gndr)</span></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-179-1.png" width="672" /></p>
 
 </div>

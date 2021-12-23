@@ -18,7 +18,7 @@ Die folgenden konkreten Lernziele lassen sich für ein erstes Kennenlernen von F
 ## Einführung Faktoren (Lösung Aufgaben)
 
 ```{r include=FALSE}
-source(file = "Daten/ess_import_a.R")
+source(file = "Daten/ess_import_b.R")
 ```
 
 **Einführung:** Neben Vektoren (die wir bisher vor allem mit metrischen Variablen gleichgesetzt haben) sind Faktoren ein weiterer wichtiger Objekttyp der für die Organisation von sozialwissenschaftlichen Beobachtungen in Form von Variablen relevant ist [@Manderscheid2017, 35]. Dieser Objekttyp enthält nun nicht mehr die Zahlen in einer Reihe, sondern "Levels". Sie legen eine beschränkte Auswahl an Ausprägungen fest, welche eine Variable annehmen kann. Die Levels representieren dann benannte Elemente (die Labels) und wir können diese insbesondere für Variablen mit nominalen oder ordinalen Skalenniveau verwenden. Der Unterschied zwischen numerischen Variablen/Vektoren und kategorial Variablen/Faktoren wird in R wichtig, denn zwischen den Objekttypen wird differenziert. Das heisst das gewisse Funktionen nicht mehr mit Faktoren ausgeführt werden können.
@@ -66,7 +66,7 @@ str(daten_ess$uemp3m)
 ```
 
 Ebenfalls können wir einen geordneten Faktoren im Datensatz definieren anhand eines Beispiels ("eisced"):
-```{r}
+```{r eval=FALSE}
 daten_ess$eisced <- factor(daten_ess$eisced, ordered = T)
 levels(daten_ess$eisced) <- c("ES-ISCED I",
                               "ES-ISCED II", 
